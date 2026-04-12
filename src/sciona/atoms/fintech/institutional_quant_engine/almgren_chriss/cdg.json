@@ -1,0 +1,71 @@
+{
+  "nodes": [
+    {
+      "node_id": "almgren_chriss_root",
+      "parent_id": null,
+      "name": "ageoa.institutional_quant_engine.almgren_chriss",
+      "description": "Consolidated module for ageoa.institutional_quant_engine.almgren_chriss.",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "decomposed",
+      "children": [
+        "computeoptimaltrajectory"
+      ],
+      "depth": 0,
+      "type_signature": "module",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "Grouped atoms sharing an upstream family or module.",
+      "critic_notes": "Auto-generated module CDG for consolidation.",
+      "decomposition_rationale": "Replaces singleton atom subpackages with a flat module layout."
+    },
+    {
+      "node_id": "computeoptimaltrajectory",
+      "parent_id": "almgren_chriss_root",
+      "name": "computeoptimaltrajectory",
+      "description": "Computes the optimal share-execution trajectory over the planning horizon given risk preference.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "total_shares",
+          "type_desc": "float",
+          "constraints": "required argument"
+        },
+        {
+          "name": "days",
+          "type_desc": "int",
+          "constraints": "required argument"
+        },
+        {
+          "name": "risk_aversion",
+          "type_desc": "float",
+          "constraints": "required argument"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "np.ndarray",
+          "constraints": "function return value"
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(total_shares: float, days: int, risk_aversion: float) -> np.ndarray",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "Direct callable atom in the consolidated module.",
+      "critic_notes": "Signature derived from the Python wrapper definition.",
+      "decomposition_rationale": "Leaf atom."
+    }
+  ],
+  "edges": []
+}

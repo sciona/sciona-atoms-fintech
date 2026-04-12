@@ -1,0 +1,114 @@
+{
+  "nodes": [
+    {
+      "node_id": "MarketMaker_root",
+      "parent_id": null,
+      "name": "MarketMaker",
+      "description": "Ingested pipeline from MarketMaker",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "decomposed",
+      "children": [
+        "initializemarketmakerstate",
+        "computeinventoryadjustedquotes"
+      ],
+      "depth": 0,
+      "type_signature": "",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "initializemarketmakerstate",
+      "parent_id": "MarketMaker_root",
+      "name": "InitializeMarketMakerState",
+      "description": "Construct the immutable market-making state object with model parameters and initial market/inventory values.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "s0",
+          "type_desc": "float",
+          "constraints": "Initial reference/mid price."
+        },
+        {
+          "name": "inventory",
+          "type_desc": "float",
+          "constraints": "Initial inventory position."
+        }
+      ],
+      "outputs": [
+        {
+          "name": "state_model",
+          "type_desc": "object",
+          "constraints": "Immutable state; contains all persistent fields previously stored on self."
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(s0: float, inventory: float) -> StateModelSpec {gamma: float, k: float, q: float, s: float, sigma: float}",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "InitializeImmutableParameterizedState. Creates a single immutable state record by binding runtime initial conditions to a preconfigured set of model coefficients. The transform maps two scalar inputs into designated state coordinates and preserves all coefficients as persistent fields in a typed container. This establishes a canonical initial condition for downstream iterative or recursive updates.. Applications: Initialize a control-system state vector for a robot with fixed controller gains and initial pose/error terms., Seed a compartmental simulation in computational biology with fixed rate constants and initial population levels., Create an initial hidden-state object in signal processing with preset noise parameters and starting estimate values., Instantiate a finite-element or PDE solver run-state with fixed material constants and initial field amplitudes.",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "computeinventoryadjustedquotes",
+      "parent_id": "MarketMaker_root",
+      "name": "ComputeInventoryAdjustedQuotes",
+      "description": "Deterministically compute market quotes from the current immutable state without mutating persistent values.",
+      "concept_type": "arithmetic",
+      "inputs": [
+        {
+          "name": "state_model",
+          "type_desc": "object",
+          "constraints": "Read-only input state."
+        }
+      ],
+      "outputs": [
+        {
+          "name": "quotes",
+          "type_desc": "object",
+          "constraints": "Pure arithmetic output derived from state_model."
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(state_model: StateModelSpec {gamma: float, k: float, q: float, s: float, sigma: float}) -> QuotePair {bid: float, ask: float}",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "Deterministic State-to-Ordered-Boundary Projection. Transforms an immutable 5-scalar state vector into a 2-scalar ordered boundary pair using a closed-form arithmetic mapping. The mapping computes a central reference value from baseline and signed imbalance terms, then applies a width/offset term driven by dispersion and sensitivity parameters to produce lower and upper bounds. No persistent state is modified, so identical inputs always yield identical outputs.. Applications: Autonomous control: compute lower/upper actuator command limits from current system offset, gain parameters, and noise scale., Clinical decision support: derive asymmetric intervention thresholds around a physiological baseline using uncertainty and patient-state imbalance., Distributed systems: generate dynamic lower/upper throttling bounds from queue imbalance, latency variance, and tuning coefficients., Materials process engineering: set real-time acceptable process-window bounds from measured drift, volatility, and risk tolerance parameters.",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "initializemarketmakerstate",
+      "target_id": "computeinventoryadjustedquotes",
+      "output_name": "state_model",
+      "input_name": "state_model",
+      "source_type": "StateModelSpec",
+      "target_type": "StateModelSpec",
+      "requires_glue": false
+    }
+  ],
+  "metadata": {
+    "source": "ingester",
+    "class_name": "MarketMaker"
+  }
+}

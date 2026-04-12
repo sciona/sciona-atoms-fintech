@@ -1,0 +1,266 @@
+[
+  {
+    "pdg_node": {
+      "predicate_id": "initialize_glft_state",
+      "statement": "() -> tuple[float, float]",
+      "informal_desc": "Initializes the state for the GLFT model coefficients.",
+      "prover": "python",
+      "context": {}
+    },
+    "verified_match": {
+      "candidate": {
+        "declaration": {
+          "name": "initialize_glft_state",
+          "type_signature": "() -> tuple[float, float]",
+          "docstring": "Initializes the state for the GLFT model coefficients.",
+          "conceptual_summary": "initialize_2d_scalar_state. Generates a fixed, two-dimensional state vector represented by two independent scalar floating-point values. This function acts as a factory, providing a deterministic, hardcoded starting point for any system or model requiring a two-parameter initial condition.. Applications: Initializing the starting (x, y) coordinates for a particle in a 2D particle filter for robot localization., Setting the initial proportional and integral gain parameters for a PI controller in a feedback control system before an auto-tuning process begins., Defining the initial population sizes for two interacting species in a Lotka-Volterra predator-prey model., Establishing the starting weights for a two-neuron, single-layer perceptron in a simple neural network.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      },
+      "verified": true,
+      "compiler_output": "",
+      "proof_term": "",
+      "error_message": "",
+      "verification_level": "type_checked"
+    },
+    "all_candidates": [
+      {
+        "declaration": {
+          "name": "initialize_glft_state",
+          "type_signature": "() -> tuple[float, float]",
+          "docstring": "Initializes the state for the GLFT model coefficients.",
+          "conceptual_summary": "initialize_2d_scalar_state. Generates a fixed, two-dimensional state vector represented by two independent scalar floating-point values. This function acts as a factory, providing a deterministic, hardcoded starting point for any system or model requiring a two-parameter initial condition.. Applications: Initializing the starting (x, y) coordinates for a particle in a 2D particle filter for robot localization., Setting the initial proportional and integral gain parameters for a PI controller in a feedback control system before an auto-tuning process begins., Defining the initial population sizes for two interacting species in a Lotka-Volterra predator-prey model., Establishing the starting weights for a two-neuron, single-layer perceptron in a simple neural network.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      }
+    ],
+    "all_verifications": [
+      {
+        "candidate": {
+          "declaration": {
+            "name": "initialize_glft_state",
+            "type_signature": "() -> tuple[float, float]",
+            "docstring": "Initializes the state for the GLFT model coefficients.",
+            "conceptual_summary": "initialize_2d_scalar_state. Generates a fixed, two-dimensional state vector represented by two independent scalar floating-point values. This function acts as a factory, providing a deterministic, hardcoded starting point for any system or model requiring a two-parameter initial condition.. Applications: Initializing the starting (x, y) coordinates for a particle in a 2D particle filter for robot localization., Setting the initial proportional and integral gain parameters for a PI controller in a feedback control system before an auto-tuning process begins., Defining the initial population sizes for two interacting species in a Lotka-Volterra predator-prey model., Establishing the starting weights for a two-neuron, single-layer perceptron in a simple neural network.",
+            "source_lib": "ingester",
+            "prover": "python",
+            "raw_code": ""
+          },
+          "score": 1.0,
+          "retrieval_method": "ingester"
+        },
+        "verified": true,
+        "compiler_output": "",
+        "proof_term": "",
+        "error_message": "",
+        "verification_level": "type_checked"
+      }
+    ]
+  },
+  {
+    "pdg_node": {
+      "predicate_id": "update_glft_coefficients",
+      "statement": "(last_c1: float, last_c2: float, xi: float, gamma: float, delta: float, A: float, k: float) -> tuple[float, float]",
+      "informal_desc": "Updates the GLFT model coefficients based on market parameters and the previous state. This embodies the core state transition.",
+      "prover": "python",
+      "context": {}
+    },
+    "verified_match": {
+      "candidate": {
+        "declaration": {
+          "name": "update_glft_coefficients",
+          "type_signature": "(last_c1: float, last_c2: float, xi: float, gamma: float, delta: float, A: float, k: float) -> tuple[float, float]",
+          "docstring": "Updates the GLFT model coefficients based on market parameters and the previous state. This embodies the core state transition.",
+          "conceptual_summary": "iterative_coupled_scalar_update. Calculates the subsequent state of a 2-dimensional system from its preceding state. The transformation is a deterministic function of the two previous state components and a set of scalar control parameters, modeling a single step in a discrete-time evolution.. Applications: Simulating predator-prey population dynamics, where the two state variables represent the populations of two interacting species., Modeling the concentration of two chemical species in a reaction network over a discrete time step., Updating the position and velocity of a simulated physical object in a 2D physics engine, subject to forces defined by the control parameters., Evolving the activation level and fatigue state of a neuron in a computational neuroscience model.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      },
+      "verified": true,
+      "compiler_output": "",
+      "proof_term": "",
+      "error_message": "",
+      "verification_level": "type_checked"
+    },
+    "all_candidates": [
+      {
+        "declaration": {
+          "name": "update_glft_coefficients",
+          "type_signature": "(last_c1: float, last_c2: float, xi: float, gamma: float, delta: float, A: float, k: float) -> tuple[float, float]",
+          "docstring": "Updates the GLFT model coefficients based on market parameters and the previous state. This embodies the core state transition.",
+          "conceptual_summary": "iterative_coupled_scalar_update. Calculates the subsequent state of a 2-dimensional system from its preceding state. The transformation is a deterministic function of the two previous state components and a set of scalar control parameters, modeling a single step in a discrete-time evolution.. Applications: Simulating predator-prey population dynamics, where the two state variables represent the populations of two interacting species., Modeling the concentration of two chemical species in a reaction network over a discrete time step., Updating the position and velocity of a simulated physical object in a 2D physics engine, subject to forces defined by the control parameters., Evolving the activation level and fatigue state of a neuron in a computational neuroscience model.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      }
+    ],
+    "all_verifications": [
+      {
+        "candidate": {
+          "declaration": {
+            "name": "update_glft_coefficients",
+            "type_signature": "(last_c1: float, last_c2: float, xi: float, gamma: float, delta: float, A: float, k: float) -> tuple[float, float]",
+            "docstring": "Updates the GLFT model coefficients based on market parameters and the previous state. This embodies the core state transition.",
+            "conceptual_summary": "iterative_coupled_scalar_update. Calculates the subsequent state of a 2-dimensional system from its preceding state. The transformation is a deterministic function of the two previous state components and a set of scalar control parameters, modeling a single step in a discrete-time evolution.. Applications: Simulating predator-prey population dynamics, where the two state variables represent the populations of two interacting species., Modeling the concentration of two chemical species in a reaction network over a discrete time step., Updating the position and velocity of a simulated physical object in a 2D physics engine, subject to forces defined by the control parameters., Evolving the activation level and fatigue state of a neuron in a computational neuroscience model.",
+            "source_lib": "ingester",
+            "prover": "python",
+            "raw_code": ""
+          },
+          "score": 1.0,
+          "retrieval_method": "ingester"
+        },
+        "verified": true,
+        "compiler_output": "",
+        "proof_term": "",
+        "error_message": "",
+        "verification_level": "type_checked"
+      }
+    ]
+  },
+  {
+    "pdg_node": {
+      "predicate_id": "calculate_half_spread",
+      "statement": "(c1: float, c2: float, delta: float, volatility: float, adj1: float) -> float",
+      "informal_desc": "Computes the half spread based on market coefficients, order size, and volatility.",
+      "prover": "python",
+      "context": {}
+    },
+    "verified_match": {
+      "candidate": {
+        "declaration": {
+          "name": "calculate_half_spread",
+          "type_signature": "(c1: float, c2: float, delta: float, volatility: float, adj1: float) -> float",
+          "docstring": "Computes the half spread based on market coefficients, order size, and volatility.",
+          "conceptual_summary": "",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      },
+      "verified": true,
+      "compiler_output": "",
+      "proof_term": "",
+      "error_message": "",
+      "verification_level": "type_checked"
+    },
+    "all_candidates": [
+      {
+        "declaration": {
+          "name": "calculate_half_spread",
+          "type_signature": "(c1: float, c2: float, delta: float, volatility: float, adj1: float) -> float",
+          "docstring": "Computes the half spread based on market coefficients, order size, and volatility.",
+          "conceptual_summary": "",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      }
+    ],
+    "all_verifications": [
+      {
+        "candidate": {
+          "declaration": {
+            "name": "calculate_half_spread",
+            "type_signature": "(c1: float, c2: float, delta: float, volatility: float, adj1: float) -> float",
+            "docstring": "Computes the half spread based on market coefficients, order size, and volatility.",
+            "conceptual_summary": "",
+            "source_lib": "ingester",
+            "prover": "python",
+            "raw_code": ""
+          },
+          "score": 1.0,
+          "retrieval_method": "ingester"
+        },
+        "verified": true,
+        "compiler_output": "",
+        "proof_term": "",
+        "error_message": "",
+        "verification_level": "type_checked"
+      }
+    ]
+  },
+  {
+    "pdg_node": {
+      "predicate_id": "validate_spread_to_c1_ratio",
+      "statement": "(half_spread: float, c1: float, threshold: float) -> bool",
+      "informal_desc": "Checks if the ratio of the half-spread to the c1 coefficient is below a specified threshold, optimizing the balance between execution probability and adverse selection risk.",
+      "prover": "python",
+      "context": {}
+    },
+    "verified_match": {
+      "candidate": {
+        "declaration": {
+          "name": "validate_spread_to_c1_ratio",
+          "type_signature": "(half_spread: float, c1: float, threshold: float) -> bool",
+          "docstring": "Checks if the ratio of the half-spread to the c1 coefficient is below a specified threshold, optimizing the balance between execution probability and adverse selection risk.",
+          "conceptual_summary": "",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      },
+      "verified": true,
+      "compiler_output": "",
+      "proof_term": "",
+      "error_message": "",
+      "verification_level": "type_checked"
+    },
+    "all_candidates": [
+      {
+        "declaration": {
+          "name": "validate_spread_to_c1_ratio",
+          "type_signature": "(half_spread: float, c1: float, threshold: float) -> bool",
+          "docstring": "Checks if the ratio of the half-spread to the c1 coefficient is below a specified threshold, optimizing the balance between execution probability and adverse selection risk.",
+          "conceptual_summary": "",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      }
+    ],
+    "all_verifications": [
+      {
+        "candidate": {
+          "declaration": {
+            "name": "validate_spread_to_c1_ratio",
+            "type_signature": "(half_spread: float, c1: float, threshold: float) -> bool",
+            "docstring": "Checks if the ratio of the half-spread to the c1 coefficient is below a specified threshold, optimizing the balance between execution probability and adverse selection risk.",
+            "conceptual_summary": "",
+            "source_lib": "ingester",
+            "prover": "python",
+            "raw_code": ""
+          },
+          "score": 1.0,
+          "retrieval_method": "ingester"
+        },
+        "verified": true,
+        "compiler_output": "",
+        "proof_term": "",
+        "error_message": "",
+        "verification_level": "type_checked"
+      }
+    ]
+  }
+]

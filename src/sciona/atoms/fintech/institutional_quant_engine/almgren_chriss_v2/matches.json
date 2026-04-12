@@ -1,0 +1,134 @@
+[
+  {
+    "pdg_node": {
+      "predicate_id": "riskaversioninit",
+      "statement": "(risk_aversion: float \u2014 non-negative scalar (\u03bb) penalizing variance relative to expected execution cost) -> float \u2014 validated scalar stored as immutable model parameter",
+      "informal_desc": "Bootstraps the Almgren-Chriss model by storing the scalar risk-aversion parameter that governs the volatility-vs-impact trade-off in all subsequent trajectory computations.",
+      "prover": "python",
+      "context": {}
+    },
+    "verified_match": {
+      "candidate": {
+        "declaration": {
+          "name": "riskaversioninit",
+          "type_signature": "(risk_aversion: float \u2014 non-negative scalar (\u03bb) penalizing variance relative to expected execution cost) -> float \u2014 validated scalar stored as immutable model parameter",
+          "docstring": "Bootstraps the Almgren-Chriss model by storing the scalar risk-aversion parameter that governs the volatility-vs-impact trade-off in all subsequent trajectory computations.",
+          "conceptual_summary": "ScalarTradeoffWeightInit. Accepts a single non-negative scalar that encodes the relative penalty weight between two competing optimization objectives, validates its domain constraint (\u2265 0), and persists it as an immutable configuration constant for all downstream computations. This initializer acts as the seed of a parameterized cost functional, fixing the convex combination coefficient that continuously governs how strongly one loss term (e.g., variance, dispersion, uncertainty) is penalized relative to another (e.g., expected cost, throughput, fidelity). The stored constant functions as a Lagrange-multiplier-like hyperparameter that shifts the Pareto frontier traversal point across the feasible solution space.. Applications: Robotics motion planning: initializing a scalar stiffness-vs-energy-expenditure trade-off coefficient in a trajectory optimizer, where higher values penalize joint-torque variance more strongly relative to path length cost, shifting the robot's behavior from aggressive to smooth motion profiles, Bayesian neural network inference: seeding a precision hyperparameter (inverse variance weight) that governs the relative contribution of the KL-divergence regularization term versus the likelihood reconstruction loss in a variational autoencoder's ELBO objective, controlling posterior concentration, Structural engineering topology optimization: storing a compliance-vs-material-volume penalty scalar in a SIMP (Solid Isotropic Material with Penalization) solver, where the constant determines how aggressively mass distribution uncertainty is penalized relative to structural stiffness in each density-field update step, Epidemiological compartmental modeling: binding a non-negative scalar that weights intervention cost (economic disruption) against transmission-rate variance in a stochastic SIR/SEIR optimal-control formulation, fixing the risk-sensitivity level before integrating the Hamilton-Jacobi-Bellman equations forward in time",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      },
+      "verified": true,
+      "compiler_output": "",
+      "proof_term": "",
+      "error_message": "",
+      "verification_level": "type_checked"
+    },
+    "all_candidates": [
+      {
+        "declaration": {
+          "name": "riskaversioninit",
+          "type_signature": "(risk_aversion: float \u2014 non-negative scalar (\u03bb) penalizing variance relative to expected execution cost) -> float \u2014 validated scalar stored as immutable model parameter",
+          "docstring": "Bootstraps the Almgren-Chriss model by storing the scalar risk-aversion parameter that governs the volatility-vs-impact trade-off in all subsequent trajectory computations.",
+          "conceptual_summary": "ScalarTradeoffWeightInit. Accepts a single non-negative scalar that encodes the relative penalty weight between two competing optimization objectives, validates its domain constraint (\u2265 0), and persists it as an immutable configuration constant for all downstream computations. This initializer acts as the seed of a parameterized cost functional, fixing the convex combination coefficient that continuously governs how strongly one loss term (e.g., variance, dispersion, uncertainty) is penalized relative to another (e.g., expected cost, throughput, fidelity). The stored constant functions as a Lagrange-multiplier-like hyperparameter that shifts the Pareto frontier traversal point across the feasible solution space.. Applications: Robotics motion planning: initializing a scalar stiffness-vs-energy-expenditure trade-off coefficient in a trajectory optimizer, where higher values penalize joint-torque variance more strongly relative to path length cost, shifting the robot's behavior from aggressive to smooth motion profiles, Bayesian neural network inference: seeding a precision hyperparameter (inverse variance weight) that governs the relative contribution of the KL-divergence regularization term versus the likelihood reconstruction loss in a variational autoencoder's ELBO objective, controlling posterior concentration, Structural engineering topology optimization: storing a compliance-vs-material-volume penalty scalar in a SIMP (Solid Isotropic Material with Penalization) solver, where the constant determines how aggressively mass distribution uncertainty is penalized relative to structural stiffness in each density-field update step, Epidemiological compartmental modeling: binding a non-negative scalar that weights intervention cost (economic disruption) against transmission-rate variance in a stochastic SIR/SEIR optimal-control formulation, fixing the risk-sensitivity level before integrating the Hamilton-Jacobi-Bellman equations forward in time",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      }
+    ],
+    "all_verifications": [
+      {
+        "candidate": {
+          "declaration": {
+            "name": "riskaversioninit",
+            "type_signature": "(risk_aversion: float \u2014 non-negative scalar (\u03bb) penalizing variance relative to expected execution cost) -> float \u2014 validated scalar stored as immutable model parameter",
+            "docstring": "Bootstraps the Almgren-Chriss model by storing the scalar risk-aversion parameter that governs the volatility-vs-impact trade-off in all subsequent trajectory computations.",
+            "conceptual_summary": "ScalarTradeoffWeightInit. Accepts a single non-negative scalar that encodes the relative penalty weight between two competing optimization objectives, validates its domain constraint (\u2265 0), and persists it as an immutable configuration constant for all downstream computations. This initializer acts as the seed of a parameterized cost functional, fixing the convex combination coefficient that continuously governs how strongly one loss term (e.g., variance, dispersion, uncertainty) is penalized relative to another (e.g., expected cost, throughput, fidelity). The stored constant functions as a Lagrange-multiplier-like hyperparameter that shifts the Pareto frontier traversal point across the feasible solution space.. Applications: Robotics motion planning: initializing a scalar stiffness-vs-energy-expenditure trade-off coefficient in a trajectory optimizer, where higher values penalize joint-torque variance more strongly relative to path length cost, shifting the robot's behavior from aggressive to smooth motion profiles, Bayesian neural network inference: seeding a precision hyperparameter (inverse variance weight) that governs the relative contribution of the KL-divergence regularization term versus the likelihood reconstruction loss in a variational autoencoder's ELBO objective, controlling posterior concentration, Structural engineering topology optimization: storing a compliance-vs-material-volume penalty scalar in a SIMP (Solid Isotropic Material with Penalization) solver, where the constant determines how aggressively mass distribution uncertainty is penalized relative to structural stiffness in each density-field update step, Epidemiological compartmental modeling: binding a non-negative scalar that weights intervention cost (economic disruption) against transmission-rate variance in a stochastic SIR/SEIR optimal-control formulation, fixing the risk-sensitivity level before integrating the Hamilton-Jacobi-Bellman equations forward in time",
+            "source_lib": "ingester",
+            "prover": "python",
+            "raw_code": ""
+          },
+          "score": 1.0,
+          "retrieval_method": "ingester"
+        },
+        "verified": true,
+        "compiler_output": "",
+        "proof_term": "",
+        "error_message": "",
+        "verification_level": "type_checked"
+      }
+    ]
+  },
+  {
+    "pdg_node": {
+      "predicate_id": "optimalexecutiontrajectory",
+      "statement": "(risk_aversion: float \u2014 risk-aversion coefficient \u03bb flowing in from RiskAversionInit, total_shares: float \u2014 initial inventory X to be fully liquidated by the end of the horizon, days: int \u2014 number of discrete trading periods T over which liquidation occurs) -> array[float] of length (days+1) \u2014 optimal share holdings x_0, x_1, \u2026, x_T where x_0 = total_shares and x_T = 0",
+      "informal_desc": "Solves the Almgren-Chriss discrete-time optimal liquidation problem: given total shares and a horizon in days, applies dynamic-programming / optimal-control to produce the cost-minimizing share-selling schedule that balances market-impact cost against price-risk, parameterised by risk_aversion.",
+      "prover": "python",
+      "context": {}
+    },
+    "verified_match": {
+      "candidate": {
+        "declaration": {
+          "name": "optimalexecutiontrajectory",
+          "type_signature": "(risk_aversion: float \u2014 risk-aversion coefficient \u03bb flowing in from RiskAversionInit, total_shares: float \u2014 initial inventory X to be fully liquidated by the end of the horizon, days: int \u2014 number of discrete trading periods T over which liquidation occurs) -> array[float] of length (days+1) \u2014 optimal share holdings x_0, x_1, \u2026, x_T where x_0 = total_shares and x_T = 0",
+          "docstring": "Solves the Almgren-Chriss discrete-time optimal liquidation problem: given total shares and a horizon in days, applies dynamic-programming / optimal-control to produce the cost-minimizing share-selling schedule that balances market-impact cost against price-risk, parameterised by risk_aversion.",
+          "conceptual_summary": "ConstrainedResourceDepletionOptimizer. Given a fixed scalar quantity to be fully consumed across a finite sequence of discrete time steps, applies backward-induction dynamic programming to compute the cost-minimizing depletion schedule. The optimization balances two competing convex penalty functionals: a flow-rate-dependent execution cost (penalizing large incremental reductions per step) against an inventory-dependent variance cost (penalizing slow depletion of the remaining quantity), governed by a scalar trade-off coefficient. The result is a monotonically non-increasing state trajectory from the full initial quantity to zero, where each intermediate value represents the globally optimal residual quantity to hold at that time step.. Applications: Radiotherapy dose fractionation scheduling: given a total ionizing-radiation dose to be delivered to a tumor over a fixed number of treatment sessions, find the per-session dose sequence that minimizes cumulative healthy-tissue damage (a rate-dependent cost) while controlling residual tumor-burden variance across the horizon, Battery discharge trajectory optimization: given a fixed stored-energy quantity in an electrochemical cell to be fully discharged over T discrete intervals, compute the current-draw schedule that minimizes resistive heating losses (convex in draw rate) while penalizing large residual charge at intermediate steps to reduce capacity fade risk, Bandwidth-constrained data pipeline draining: given a fixed-size data buffer to be fully transmitted across T scheduling slots, determine the per-slot transmission-volume sequence that minimizes total congestion-penalty cost (convex in instantaneous throughput) while trading off against the variance of queue backlog over time, Pharmaceutical dissolution rate planning: given a fixed drug payload in a controlled-release scaffold to be fully eluted over T biological time windows, derive the per-window elution quantity that minimizes tissue-toxicity cost (convex in instantaneous concentration spike) while penalizing slow clearance of residual payload relative to a target pharmacokinetic profile",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      },
+      "verified": true,
+      "compiler_output": "",
+      "proof_term": "",
+      "error_message": "",
+      "verification_level": "type_checked"
+    },
+    "all_candidates": [
+      {
+        "declaration": {
+          "name": "optimalexecutiontrajectory",
+          "type_signature": "(risk_aversion: float \u2014 risk-aversion coefficient \u03bb flowing in from RiskAversionInit, total_shares: float \u2014 initial inventory X to be fully liquidated by the end of the horizon, days: int \u2014 number of discrete trading periods T over which liquidation occurs) -> array[float] of length (days+1) \u2014 optimal share holdings x_0, x_1, \u2026, x_T where x_0 = total_shares and x_T = 0",
+          "docstring": "Solves the Almgren-Chriss discrete-time optimal liquidation problem: given total shares and a horizon in days, applies dynamic-programming / optimal-control to produce the cost-minimizing share-selling schedule that balances market-impact cost against price-risk, parameterised by risk_aversion.",
+          "conceptual_summary": "ConstrainedResourceDepletionOptimizer. Given a fixed scalar quantity to be fully consumed across a finite sequence of discrete time steps, applies backward-induction dynamic programming to compute the cost-minimizing depletion schedule. The optimization balances two competing convex penalty functionals: a flow-rate-dependent execution cost (penalizing large incremental reductions per step) against an inventory-dependent variance cost (penalizing slow depletion of the remaining quantity), governed by a scalar trade-off coefficient. The result is a monotonically non-increasing state trajectory from the full initial quantity to zero, where each intermediate value represents the globally optimal residual quantity to hold at that time step.. Applications: Radiotherapy dose fractionation scheduling: given a total ionizing-radiation dose to be delivered to a tumor over a fixed number of treatment sessions, find the per-session dose sequence that minimizes cumulative healthy-tissue damage (a rate-dependent cost) while controlling residual tumor-burden variance across the horizon, Battery discharge trajectory optimization: given a fixed stored-energy quantity in an electrochemical cell to be fully discharged over T discrete intervals, compute the current-draw schedule that minimizes resistive heating losses (convex in draw rate) while penalizing large residual charge at intermediate steps to reduce capacity fade risk, Bandwidth-constrained data pipeline draining: given a fixed-size data buffer to be fully transmitted across T scheduling slots, determine the per-slot transmission-volume sequence that minimizes total congestion-penalty cost (convex in instantaneous throughput) while trading off against the variance of queue backlog over time, Pharmaceutical dissolution rate planning: given a fixed drug payload in a controlled-release scaffold to be fully eluted over T biological time windows, derive the per-window elution quantity that minimizes tissue-toxicity cost (convex in instantaneous concentration spike) while penalizing slow clearance of residual payload relative to a target pharmacokinetic profile",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      }
+    ],
+    "all_verifications": [
+      {
+        "candidate": {
+          "declaration": {
+            "name": "optimalexecutiontrajectory",
+            "type_signature": "(risk_aversion: float \u2014 risk-aversion coefficient \u03bb flowing in from RiskAversionInit, total_shares: float \u2014 initial inventory X to be fully liquidated by the end of the horizon, days: int \u2014 number of discrete trading periods T over which liquidation occurs) -> array[float] of length (days+1) \u2014 optimal share holdings x_0, x_1, \u2026, x_T where x_0 = total_shares and x_T = 0",
+            "docstring": "Solves the Almgren-Chriss discrete-time optimal liquidation problem: given total shares and a horizon in days, applies dynamic-programming / optimal-control to produce the cost-minimizing share-selling schedule that balances market-impact cost against price-risk, parameterised by risk_aversion.",
+            "conceptual_summary": "ConstrainedResourceDepletionOptimizer. Given a fixed scalar quantity to be fully consumed across a finite sequence of discrete time steps, applies backward-induction dynamic programming to compute the cost-minimizing depletion schedule. The optimization balances two competing convex penalty functionals: a flow-rate-dependent execution cost (penalizing large incremental reductions per step) against an inventory-dependent variance cost (penalizing slow depletion of the remaining quantity), governed by a scalar trade-off coefficient. The result is a monotonically non-increasing state trajectory from the full initial quantity to zero, where each intermediate value represents the globally optimal residual quantity to hold at that time step.. Applications: Radiotherapy dose fractionation scheduling: given a total ionizing-radiation dose to be delivered to a tumor over a fixed number of treatment sessions, find the per-session dose sequence that minimizes cumulative healthy-tissue damage (a rate-dependent cost) while controlling residual tumor-burden variance across the horizon, Battery discharge trajectory optimization: given a fixed stored-energy quantity in an electrochemical cell to be fully discharged over T discrete intervals, compute the current-draw schedule that minimizes resistive heating losses (convex in draw rate) while penalizing large residual charge at intermediate steps to reduce capacity fade risk, Bandwidth-constrained data pipeline draining: given a fixed-size data buffer to be fully transmitted across T scheduling slots, determine the per-slot transmission-volume sequence that minimizes total congestion-penalty cost (convex in instantaneous throughput) while trading off against the variance of queue backlog over time, Pharmaceutical dissolution rate planning: given a fixed drug payload in a controlled-release scaffold to be fully eluted over T biological time windows, derive the per-window elution quantity that minimizes tissue-toxicity cost (convex in instantaneous concentration spike) while penalizing slow clearance of residual payload relative to a target pharmacokinetic profile",
+            "source_lib": "ingester",
+            "prover": "python",
+            "raw_code": ""
+          },
+          "score": 1.0,
+          "retrieval_method": "ingester"
+        },
+        "verified": true,
+        "compiler_output": "",
+        "proof_term": "",
+        "error_message": "",
+        "verification_level": "type_checked"
+      }
+    ]
+  }
+]

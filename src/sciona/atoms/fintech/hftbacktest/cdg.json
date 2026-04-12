@@ -1,0 +1,420 @@
+{
+  "nodes": [
+    {
+      "node_id": "HFTBacktestGLFT_root",
+      "parent_id": null,
+      "name": "HFTBacktestGLFT",
+      "description": "Ingested pipeline from HFTBacktestGLFT",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "decomposed",
+      "children": [
+        "initialize_glft_state",
+        "update_glft_coefficients",
+        "evaluate_spread_conditions"
+      ],
+      "depth": 0,
+      "type_signature": "",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "initialize_glft_state",
+      "parent_id": "HFTBacktestGLFT_root",
+      "name": "initialize_glft_state",
+      "description": "Initializes the state for the GLFT model coefficients.",
+      "concept_type": "state_init",
+      "inputs": [
+        {
+          "name": "_trigger",
+          "type_desc": "NoneType",
+          "constraints": "sentinel input for zero-parameter initializer",
+          "required": false,
+          "default_value_repr": "None"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "initial_c1",
+          "type_desc": "float",
+          "constraints": "Represents the initial value of the state variable 'c1'.",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "initial_c2",
+          "type_desc": "float",
+          "constraints": "Represents the initial value of the state variable 'c2'.",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "() -> tuple[float, float]",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "initialize_2d_scalar_state. Generates a fixed, two-dimensional state vector represented by two independent scalar floating-point values. This function acts as a factory, providing a deterministic, hardcoded starting point for any system or model requiring a two-parameter initial condition.. Applications: Initializing the starting (x, y) coordinates for a particle in a 2D particle filter for robot localization., Setting the initial proportional and integral gain parameters for a PI controller in a feedback control system before an auto-tuning process begins., Defining the initial population sizes for two interacting species in a Lotka-Volterra predator-prey model., Establishing the starting weights for a two-neuron, single-layer perceptron in a simple neural network.",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "update_glft_coefficients",
+      "parent_id": "HFTBacktestGLFT_root",
+      "name": "update_glft_coefficients",
+      "description": "Updates the GLFT model coefficients based on market parameters and the previous state. This embodies the core state transition.",
+      "concept_type": "algebra",
+      "inputs": [
+        {
+          "name": "last_c1",
+          "type_desc": "float",
+          "constraints": "The previous state of the 'c1' coefficient.",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "last_c2",
+          "type_desc": "float",
+          "constraints": "The previous state of the 'c2' coefficient.",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "xi",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "gamma",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "delta",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "A",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "k",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "next_c1",
+          "type_desc": "float",
+          "constraints": "The updated state of the 'c1' coefficient.",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "next_c2",
+          "type_desc": "float",
+          "constraints": "The updated state of the 'c2' coefficient.",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(last_c1: float, last_c2: float, xi: float, gamma: float, delta: float, A: float, k: float) -> tuple[float, float]",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "iterative_coupled_scalar_update. Calculates the subsequent state of a 2-dimensional system from its preceding state. The transformation is a deterministic function of the two previous state components and a set of scalar control parameters, modeling a single step in a discrete-time evolution.. Applications: Simulating predator-prey population dynamics, where the two state variables represent the populations of two interacting species., Modeling the concentration of two chemical species in a reaction network over a discrete time step., Updating the position and velocity of a simulated physical object in a 2D physics engine, subject to forces defined by the control parameters., Evolving the activation level and fatigue state of a neuron in a computational neuroscience model.",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "evaluate_spread_conditions",
+      "parent_id": "HFTBacktestGLFT_root",
+      "name": "evaluate_spread_conditions",
+      "description": "Computes the half-spread from the current state and checks if it meets a validity condition against the c1 coefficient.",
+      "concept_type": "observability",
+      "inputs": [
+        {
+          "name": "c1",
+          "type_desc": "float",
+          "constraints": "Current value of the 'c1' coefficient.",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "c2",
+          "type_desc": "float",
+          "constraints": "Current value of the 'c2' coefficient.",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "delta",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "volatility",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "adj1",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "threshold",
+          "type_desc": "float",
+          "constraints": "finite scalar",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "half_spread",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "is_valid_ratio",
+          "type_desc": "bool",
+          "constraints": "boolean flag",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "decomposed",
+      "children": [
+        "calculate_half_spread",
+        "validate_spread_to_c1_ratio"
+      ],
+      "depth": 1,
+      "type_signature": "(c1: float, c2: float, delta: float, volatility: float, adj1: float, threshold: float) -> tuple[float, bool]",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "gated_ratio_validity_check. Synthesizes a new scalar magnitude from a set of input parameters, including metrics for difference and variability. It then evaluates this derived magnitude by comparing its ratio with a primary input parameter against a predefined threshold, producing a boolean validity flag.. Applications: Control Systems: In a PID controller, evaluating if the derivative term (rate of change) is disproportionately large compared to the integral term (accumulated error) to detect potential instability., Signal Processing: Assessing the signal-to-noise ratio (SNR) by comparing a derived noise metric (e.g., standard deviation) against the primary signal's amplitude to flag corrupted measurements., Epidemiology: Checking if the projected growth rate of new cases (derived from transmission and population metrics) exceeds a critical ratio relative to available healthcare capacity (e.g., hospital beds)., Materials Science: Predicting material fatigue by comparing a derived stress concentration value (calculated from load and geometry) to the material's intrinsic yield strength to determine if a failure threshold has been breached.",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "calculate_half_spread",
+      "parent_id": "evaluate_spread_conditions",
+      "name": "calculate_half_spread",
+      "description": "Computes the half spread based on market coefficients, order size, and volatility.",
+      "concept_type": "arithmetic",
+      "inputs": [
+        {
+          "name": "c1",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "c2",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "delta",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "volatility",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "adj1",
+          "type_desc": "float",
+          "constraints": "Adjustment factor for the half spread",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "half_spread",
+          "type_desc": "float",
+          "constraints": "The calculated half spread value",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 2,
+      "type_signature": "(c1: float, c2: float, delta: float, volatility: float, adj1: float) -> float",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "validate_spread_to_c1_ratio",
+      "parent_id": "evaluate_spread_conditions",
+      "name": "validate_spread_to_c1_ratio",
+      "description": "Checks if the ratio of the half-spread to the c1 coefficient is below a specified threshold, optimizing the balance between execution probability and adverse selection risk.",
+      "concept_type": "conditional_routing",
+      "inputs": [
+        {
+          "name": "half_spread",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "c1",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "threshold",
+          "type_desc": "float",
+          "constraints": "The ratio threshold for the heuristic check",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "is_valid_ratio",
+          "type_desc": "bool",
+          "constraints": "True if the ratio is within the acceptable threshold, False otherwise",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 2,
+      "type_signature": "(half_spread: float, c1: float, threshold: float) -> bool",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "calculate_half_spread",
+      "target_id": "validate_spread_to_c1_ratio",
+      "output_name": "half_spread",
+      "input_name": "half_spread",
+      "source_type": "float",
+      "target_type": "float",
+      "requires_glue": false
+    },
+    {
+      "source_id": "initialize_glft_state",
+      "target_id": "update_glft_coefficients",
+      "output_name": "initial_c1",
+      "input_name": "last_c1",
+      "source_type": "float",
+      "target_type": "float",
+      "requires_glue": false
+    },
+    {
+      "source_id": "initialize_glft_state",
+      "target_id": "update_glft_coefficients",
+      "output_name": "initial_c2",
+      "input_name": "last_c2",
+      "source_type": "float",
+      "target_type": "float",
+      "requires_glue": false
+    },
+    {
+      "source_id": "update_glft_coefficients",
+      "target_id": "evaluate_spread_conditions",
+      "output_name": "next_c1",
+      "input_name": "c1",
+      "source_type": "float",
+      "target_type": "float",
+      "requires_glue": false
+    },
+    {
+      "source_id": "update_glft_coefficients",
+      "target_id": "evaluate_spread_conditions",
+      "output_name": "next_c2",
+      "input_name": "c2",
+      "source_type": "float",
+      "target_type": "float",
+      "requires_glue": false
+    }
+  ],
+  "metadata": {
+    "source": "ingester",
+    "class_name": "HFTBacktestGLFT"
+  }
+}

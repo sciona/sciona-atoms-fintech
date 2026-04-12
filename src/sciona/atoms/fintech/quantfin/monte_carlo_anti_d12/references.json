@@ -1,0 +1,455 @@
+{
+  "schema_version": "1.1",
+  "atoms": {
+    "ageoa.quantfin.monte_carlo_anti_d12.avg@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:695": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.monte_carlo_anti_d12.evolve@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:224": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.monte_carlo_anti_d12.insertcf@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:630": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.monte_carlo_anti_d12.insertcf@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:673": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.monte_carlo_anti_d12.insertcflist@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:725": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.monte_carlo_anti_d12.insertcflist@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:761": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.monte_carlo_anti_d12.maxstep@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:281": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.monte_carlo_anti_d12.process@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:377": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.monte_carlo_anti_d12.process@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:475": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.monte_carlo_anti_d12.process@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:548": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.monte_carlo_anti_d12.process@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:603": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.monte_carlo_anti_d12.quicksim@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:158": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.monte_carlo_anti_d12.quicksimanti@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:191": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.monte_carlo_anti_d12.runmc@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:39": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.monte_carlo_anti_d12.runsim@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:339": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.monte_carlo_anti_d12.runsimulation@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:83": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.monte_carlo_anti_d12.runsimulationanti@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:122": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.monte_carlo_anti_d12.simulatestate@ageoa/quantfin/monte_carlo_anti_d12/atoms.py:301": {
+      "references": [
+        {
+          "ref_id": "glasserman2003",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    }
+  }
+}

@@ -1,0 +1,1 @@
+"""Institutional quant engine atoms."""

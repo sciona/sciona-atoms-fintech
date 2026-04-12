@@ -1,0 +1,66 @@
+{
+  "nodes": [
+    {
+      "node_id": "evt_model_root",
+      "parent_id": null,
+      "name": "ageoa.institutional_quant_engine.evt_model",
+      "description": "Consolidated module for ageoa.institutional_quant_engine.evt_model.",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "decomposed",
+      "children": [
+        "fit_gpd_tail"
+      ],
+      "depth": 0,
+      "type_signature": "module",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "Grouped atoms sharing an upstream family or module.",
+      "critic_notes": "Auto-generated module CDG for consolidation.",
+      "decomposition_rationale": "Replaces singleton atom subpackages with a flat module layout."
+    },
+    {
+      "node_id": "fit_gpd_tail",
+      "parent_id": "evt_model_root",
+      "name": "fit_gpd_tail",
+      "description": "Fits a Generalized Pareto Distribution (GPD) to tail losses beyond the given quantile threshold for Extreme Value Theory (EVT) modeling.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "returns",
+          "type_desc": "np.ndarray",
+          "constraints": "required argument"
+        },
+        {
+          "name": "threshold_quantile",
+          "type_desc": "float",
+          "constraints": "required argument"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "np.ndarray",
+          "constraints": "function return value"
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(returns: np.ndarray, threshold_quantile: float) -> np.ndarray",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "Direct callable atom in the consolidated module.",
+      "critic_notes": "Signature derived from the Python wrapper definition.",
+      "decomposition_rationale": "Leaf atom."
+    }
+  ],
+  "edges": []
+}

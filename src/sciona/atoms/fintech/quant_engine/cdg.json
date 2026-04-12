@@ -1,0 +1,249 @@
+{
+  "nodes": [
+    {
+      "node_id": "QuantEngine_root",
+      "parent_id": null,
+      "name": "QuantEngine",
+      "description": "Ingested pipeline from QuantEngine",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "decomposed",
+      "children": [
+        "calculate_ofi",
+        "execute_vwap",
+        "execute_pov",
+        "execute_passive"
+      ],
+      "depth": 0,
+      "type_signature": "",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "calculate_ofi",
+      "parent_id": "QuantEngine_root",
+      "name": "calculate_ofi",
+      "description": "Calculate Order Flow Imbalance (OFI), the net directional pressure from competing bid/ask flow levels, and append to state stream.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "bid_px",
+          "type_desc": "object",
+          "constraints": "valid input",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "bid_qty",
+          "type_desc": "object",
+          "constraints": "valid input",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "ask_px",
+          "type_desc": "object",
+          "constraints": "valid input",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "ask_qty",
+          "type_desc": "object",
+          "constraints": "valid input",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "trade_qty",
+          "type_desc": "object",
+          "constraints": "valid input",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "state",
+          "type_desc": "object",
+          "constraints": "valid input",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "object",
+          "constraints": "valid output",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(...) -> object",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "execute_vwap",
+      "parent_id": "QuantEngine_root",
+      "name": "execute_vwap",
+      "description": "Volume-Weighted Average Price (VWAP) execution strategy logic.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "trade_qty",
+          "type_desc": "object",
+          "constraints": "valid input",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "state",
+          "type_desc": "object",
+          "constraints": "valid input",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "object",
+          "constraints": "valid output",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(...) -> object",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "execute_pov",
+      "parent_id": "QuantEngine_root",
+      "name": "execute_pov",
+      "description": "Percentage of Volume (POV) proportional participation execution strategy logic.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "trade_qty",
+          "type_desc": "object",
+          "constraints": "valid input",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "state",
+          "type_desc": "object",
+          "constraints": "valid input",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "object",
+          "constraints": "valid output",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(...) -> object",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "execute_passive",
+      "parent_id": "QuantEngine_root",
+      "name": "execute_passive",
+      "description": "Default queue-priority execution logic.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "trade_qty",
+          "type_desc": "object",
+          "constraints": "valid input",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "state",
+          "type_desc": "object",
+          "constraints": "valid input",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "object",
+          "constraints": "valid output",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(...) -> object",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    }
+  ],
+  "edges": [],
+  "metadata": {
+    "source": "ingester",
+    "class_name": "QuantEngine"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.1",
+  "atoms": {
+    "ageoa.quantfin.tdma_solver_d12.cotraversevec@ageoa/quantfin/tdma_solver_d12/atoms.py:147": {
+      "references": [
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.tdma_solver_d12.tdmasolver@ageoa/quantfin/tdma_solver_d12/atoms.py:28": {
+      "references": [
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    }
+  }
+}

@@ -1,0 +1,134 @@
+[
+  {
+    "pdg_node": {
+      "predicate_id": "marketmakerstateinit",
+      "statement": "(s0: float \u2014 initial mid-price of the asset, inventory: float \u2014 starting inventory position (signed)) -> tuple[float \u2014 absolute risk-aversion coefficient, float \u2014 market-depth / order-arrival rate parameter, float \u2014 current inventory position, float \u2014 current mid-price, float \u2014 asset price volatility]",
+      "informal_desc": "Bootstraps the market-maker's immutable parameter state from a supplied initial mid-price and inventory position, materialising the five scalar fields \u2014 risk-aversion (gamma), market-depth (k), inventory (q), mid-price (s), and volatility (sigma) \u2014 that all downstream computations consume as pure inputs.",
+      "prover": "python",
+      "context": {}
+    },
+    "verified_match": {
+      "candidate": {
+        "declaration": {
+          "name": "marketmakerstateinit",
+          "type_signature": "(s0: float \u2014 initial mid-price of the asset, inventory: float \u2014 starting inventory position (signed)) -> tuple[float \u2014 absolute risk-aversion coefficient, float \u2014 market-depth / order-arrival rate parameter, float \u2014 current inventory position, float \u2014 current mid-price, float \u2014 asset price volatility]",
+          "docstring": "Bootstraps the market-maker's immutable parameter state from a supplied initial mid-price and inventory position, materialising the five scalar fields \u2014 risk-aversion (gamma), market-depth (k), inventory (q), mid-price (s), and volatility (sigma) \u2014 that all downstream computations consume as pure inputs.",
+          "conceptual_summary": "ImmutableParameterSpaceInitializer. Takes a minimal set of exogenous scalar seed values \u2014 one representing the current state of a measurable quantity and one representing a signed positional offset \u2014 and expands them into a fully-specified, frozen parameter manifold of five scalars that collectively define the operating envelope for all downstream computations. The transform acts as a pure injection: it maps a low-dimensional initialization tuple into a higher-dimensional configuration space, materializing both the supplied runtime values (current magnitude, signed position) and the hardcoded structural constants (sensitivity coefficient, arrival-rate parameter, dispersion coefficient) as a single immutable record. No computation is performed beyond assignment; the output is a static snapshot that serves as the canonical ground truth for all subsequent stateful operations.. Applications: Epidemiological modeling: initializing an SIR/SEIR compartmental model with a seed infection count (signed-position analog) and a baseline population contact rate (magnitude analog), materializing transmission rate (beta), recovery rate (gamma), initial susceptible population (S0), and variance of stochastic contact events \u2014 consumed by all downstream differential equation solvers, Robotics / motion planning: bootstrapping a PID or LQR controller's parameter record from an initial sensor reading (measured state magnitude) and a signed positional error offset, locking in the gain coefficients (proportional, derivative, integral), process-noise covariance, and reference setpoint as an immutable configuration consumed by every control-loop iteration, Quantum circuit simulation: constructing an immutable Hamiltonian parameter record from an initial observable expectation value and a signed spin-polarization offset, materializing coupling strength, decoherence rate, initial state amplitude, and energy dispersion constants that all gate-operation kernels reference as pure inputs, Structural engineering / finite element analysis: seeding an FEA node's material-property record from an initial stress magnitude and a signed strain offset, fixing Young's modulus (stiffness coefficient), Poisson's ratio (lateral-coupling parameter), current displacement vector, reference load magnitude, and material yield dispersion \u2014 forming the immutable per-element parameter block consumed by the global stiffness-matrix assembler",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      },
+      "verified": true,
+      "compiler_output": "",
+      "proof_term": "",
+      "error_message": "",
+      "verification_level": "type_checked"
+    },
+    "all_candidates": [
+      {
+        "declaration": {
+          "name": "marketmakerstateinit",
+          "type_signature": "(s0: float \u2014 initial mid-price of the asset, inventory: float \u2014 starting inventory position (signed)) -> tuple[float \u2014 absolute risk-aversion coefficient, float \u2014 market-depth / order-arrival rate parameter, float \u2014 current inventory position, float \u2014 current mid-price, float \u2014 asset price volatility]",
+          "docstring": "Bootstraps the market-maker's immutable parameter state from a supplied initial mid-price and inventory position, materialising the five scalar fields \u2014 risk-aversion (gamma), market-depth (k), inventory (q), mid-price (s), and volatility (sigma) \u2014 that all downstream computations consume as pure inputs.",
+          "conceptual_summary": "ImmutableParameterSpaceInitializer. Takes a minimal set of exogenous scalar seed values \u2014 one representing the current state of a measurable quantity and one representing a signed positional offset \u2014 and expands them into a fully-specified, frozen parameter manifold of five scalars that collectively define the operating envelope for all downstream computations. The transform acts as a pure injection: it maps a low-dimensional initialization tuple into a higher-dimensional configuration space, materializing both the supplied runtime values (current magnitude, signed position) and the hardcoded structural constants (sensitivity coefficient, arrival-rate parameter, dispersion coefficient) as a single immutable record. No computation is performed beyond assignment; the output is a static snapshot that serves as the canonical ground truth for all subsequent stateful operations.. Applications: Epidemiological modeling: initializing an SIR/SEIR compartmental model with a seed infection count (signed-position analog) and a baseline population contact rate (magnitude analog), materializing transmission rate (beta), recovery rate (gamma), initial susceptible population (S0), and variance of stochastic contact events \u2014 consumed by all downstream differential equation solvers, Robotics / motion planning: bootstrapping a PID or LQR controller's parameter record from an initial sensor reading (measured state magnitude) and a signed positional error offset, locking in the gain coefficients (proportional, derivative, integral), process-noise covariance, and reference setpoint as an immutable configuration consumed by every control-loop iteration, Quantum circuit simulation: constructing an immutable Hamiltonian parameter record from an initial observable expectation value and a signed spin-polarization offset, materializing coupling strength, decoherence rate, initial state amplitude, and energy dispersion constants that all gate-operation kernels reference as pure inputs, Structural engineering / finite element analysis: seeding an FEA node's material-property record from an initial stress magnitude and a signed strain offset, fixing Young's modulus (stiffness coefficient), Poisson's ratio (lateral-coupling parameter), current displacement vector, reference load magnitude, and material yield dispersion \u2014 forming the immutable per-element parameter block consumed by the global stiffness-matrix assembler",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      }
+    ],
+    "all_verifications": [
+      {
+        "candidate": {
+          "declaration": {
+            "name": "marketmakerstateinit",
+            "type_signature": "(s0: float \u2014 initial mid-price of the asset, inventory: float \u2014 starting inventory position (signed)) -> tuple[float \u2014 absolute risk-aversion coefficient, float \u2014 market-depth / order-arrival rate parameter, float \u2014 current inventory position, float \u2014 current mid-price, float \u2014 asset price volatility]",
+            "docstring": "Bootstraps the market-maker's immutable parameter state from a supplied initial mid-price and inventory position, materialising the five scalar fields \u2014 risk-aversion (gamma), market-depth (k), inventory (q), mid-price (s), and volatility (sigma) \u2014 that all downstream computations consume as pure inputs.",
+            "conceptual_summary": "ImmutableParameterSpaceInitializer. Takes a minimal set of exogenous scalar seed values \u2014 one representing the current state of a measurable quantity and one representing a signed positional offset \u2014 and expands them into a fully-specified, frozen parameter manifold of five scalars that collectively define the operating envelope for all downstream computations. The transform acts as a pure injection: it maps a low-dimensional initialization tuple into a higher-dimensional configuration space, materializing both the supplied runtime values (current magnitude, signed position) and the hardcoded structural constants (sensitivity coefficient, arrival-rate parameter, dispersion coefficient) as a single immutable record. No computation is performed beyond assignment; the output is a static snapshot that serves as the canonical ground truth for all subsequent stateful operations.. Applications: Epidemiological modeling: initializing an SIR/SEIR compartmental model with a seed infection count (signed-position analog) and a baseline population contact rate (magnitude analog), materializing transmission rate (beta), recovery rate (gamma), initial susceptible population (S0), and variance of stochastic contact events \u2014 consumed by all downstream differential equation solvers, Robotics / motion planning: bootstrapping a PID or LQR controller's parameter record from an initial sensor reading (measured state magnitude) and a signed positional error offset, locking in the gain coefficients (proportional, derivative, integral), process-noise covariance, and reference setpoint as an immutable configuration consumed by every control-loop iteration, Quantum circuit simulation: constructing an immutable Hamiltonian parameter record from an initial observable expectation value and a signed spin-polarization offset, materializing coupling strength, decoherence rate, initial state amplitude, and energy dispersion constants that all gate-operation kernels reference as pure inputs, Structural engineering / finite element analysis: seeding an FEA node's material-property record from an initial stress magnitude and a signed strain offset, fixing Young's modulus (stiffness coefficient), Poisson's ratio (lateral-coupling parameter), current displacement vector, reference load magnitude, and material yield dispersion \u2014 forming the immutable per-element parameter block consumed by the global stiffness-matrix assembler",
+            "source_lib": "ingester",
+            "prover": "python",
+            "raw_code": ""
+          },
+          "score": 1.0,
+          "retrieval_method": "ingester"
+        },
+        "verified": true,
+        "compiler_output": "",
+        "proof_term": "",
+        "error_message": "",
+        "verification_level": "type_checked"
+      }
+    ]
+  },
+  {
+    "pdg_node": {
+      "predicate_id": "optimalquotecalculation",
+      "statement": "(gamma: float \u2014 absolute risk-aversion coefficient, k: float \u2014 market-depth / order-arrival rate parameter, q: float \u2014 current inventory position, s: float \u2014 current mid-price, sigma: float \u2014 asset price volatility) -> tuple[float \u2014 optimal bid quote, float \u2014 optimal ask quote, float \u2014 inventory-adjusted mid-price, float \u2014 total bid-ask spread]",
+      "informal_desc": "Applies the Avellaneda-Stoikov closed-form formulae to derive (1) the inventory-skewed reservation price r = s \u2212 q\u00b7\u03b3\u00b7\u03c3\u00b2 and (2) the symmetric optimal half-spread \u03b4 = \u03b3\u00b7\u03c3\u00b2\u00b7T + (2/\u03b3)\u00b7ln(1 + \u03b3/k), yielding a firm bid quote (r \u2212 \u03b4/2) and ask quote (r + \u03b4/2) that maximise expected utility under inventory risk.",
+      "prover": "python",
+      "context": {}
+    },
+    "verified_match": {
+      "candidate": {
+        "declaration": {
+          "name": "optimalquotecalculation",
+          "type_signature": "(gamma: float \u2014 absolute risk-aversion coefficient, k: float \u2014 market-depth / order-arrival rate parameter, q: float \u2014 current inventory position, s: float \u2014 current mid-price, sigma: float \u2014 asset price volatility) -> tuple[float \u2014 optimal bid quote, float \u2014 optimal ask quote, float \u2014 inventory-adjusted mid-price, float \u2014 total bid-ask spread]",
+          "docstring": "Applies the Avellaneda-Stoikov closed-form formulae to derive (1) the inventory-skewed reservation price r = s \u2212 q\u00b7\u03b3\u00b7\u03c3\u00b2 and (2) the symmetric optimal half-spread \u03b4 = \u03b3\u00b7\u03c3\u00b2\u00b7T + (2/\u03b3)\u00b7ln(1 + \u03b3/k), yielding a firm bid quote (r \u2212 \u03b4/2) and ask quote (r + \u03b4/2) that maximise expected utility under inventory risk.",
+          "conceptual_summary": "RiskAversion-Weighted Symmetric Interval Placement with Positional Skew. Given a scalar reference point and a signed displacement (positional imbalance), this transform first skews the reference point proportionally to the displacement, a quadratic variance measure, and a risk-aversion scalar \u2014 producing a bias-corrected central anchor. It then computes a symmetric half-interval around that anchor whose width is jointly determined by the risk-aversion scalar, the variance measure, a time-horizon scalar, and a logarithmic correction term derived from an arrival-rate parameter \u2014 yielding a lower bound and upper bound that are equidistant from the corrected anchor and guaranteed to straddle it.. Applications: Adaptive sensor threshold placement in signal detection systems: given a sensor's baseline signal level, its noise variance, and a signed accumulation of recent false-positive or false-negative errors (positional imbalance), compute skew-corrected upper and lower detection thresholds that minimize expected classification loss under a specified penalty-per-deviation parameter., Robotic joint torque bracketing in motion control: given a robot actuator's nominal torque setpoint, the variance of disturbance forces, and the current signed deviation of the joint from its neutral pose, derive an asymmetry-corrected torque command with symmetric upper/lower saturation bounds that balance trajectory tracking against mechanical stress risk., Dynamic pricing interval generation in resource allocation systems: given a baseline resource valuation scalar, the variance of demand fluctuations, and a signed measure of current resource surplus or deficit, compute a corrected target allocation rate and symmetric upper/lower offer bounds that maximize expected throughput utility under inventory-imbalance risk., Ecological habitat corridor width optimization: given a baseline migration corridor centerline, the variance of species dispersal distances, and a signed measure of current population density asymmetry across the corridor, derive a skew-adjusted centerline and symmetric lateral boundary offsets that maximize expected gene-flow utility while penalizing large positional deviations from carrying-capacity balance.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      },
+      "verified": true,
+      "compiler_output": "",
+      "proof_term": "",
+      "error_message": "",
+      "verification_level": "type_checked"
+    },
+    "all_candidates": [
+      {
+        "declaration": {
+          "name": "optimalquotecalculation",
+          "type_signature": "(gamma: float \u2014 absolute risk-aversion coefficient, k: float \u2014 market-depth / order-arrival rate parameter, q: float \u2014 current inventory position, s: float \u2014 current mid-price, sigma: float \u2014 asset price volatility) -> tuple[float \u2014 optimal bid quote, float \u2014 optimal ask quote, float \u2014 inventory-adjusted mid-price, float \u2014 total bid-ask spread]",
+          "docstring": "Applies the Avellaneda-Stoikov closed-form formulae to derive (1) the inventory-skewed reservation price r = s \u2212 q\u00b7\u03b3\u00b7\u03c3\u00b2 and (2) the symmetric optimal half-spread \u03b4 = \u03b3\u00b7\u03c3\u00b2\u00b7T + (2/\u03b3)\u00b7ln(1 + \u03b3/k), yielding a firm bid quote (r \u2212 \u03b4/2) and ask quote (r + \u03b4/2) that maximise expected utility under inventory risk.",
+          "conceptual_summary": "RiskAversion-Weighted Symmetric Interval Placement with Positional Skew. Given a scalar reference point and a signed displacement (positional imbalance), this transform first skews the reference point proportionally to the displacement, a quadratic variance measure, and a risk-aversion scalar \u2014 producing a bias-corrected central anchor. It then computes a symmetric half-interval around that anchor whose width is jointly determined by the risk-aversion scalar, the variance measure, a time-horizon scalar, and a logarithmic correction term derived from an arrival-rate parameter \u2014 yielding a lower bound and upper bound that are equidistant from the corrected anchor and guaranteed to straddle it.. Applications: Adaptive sensor threshold placement in signal detection systems: given a sensor's baseline signal level, its noise variance, and a signed accumulation of recent false-positive or false-negative errors (positional imbalance), compute skew-corrected upper and lower detection thresholds that minimize expected classification loss under a specified penalty-per-deviation parameter., Robotic joint torque bracketing in motion control: given a robot actuator's nominal torque setpoint, the variance of disturbance forces, and the current signed deviation of the joint from its neutral pose, derive an asymmetry-corrected torque command with symmetric upper/lower saturation bounds that balance trajectory tracking against mechanical stress risk., Dynamic pricing interval generation in resource allocation systems: given a baseline resource valuation scalar, the variance of demand fluctuations, and a signed measure of current resource surplus or deficit, compute a corrected target allocation rate and symmetric upper/lower offer bounds that maximize expected throughput utility under inventory-imbalance risk., Ecological habitat corridor width optimization: given a baseline migration corridor centerline, the variance of species dispersal distances, and a signed measure of current population density asymmetry across the corridor, derive a skew-adjusted centerline and symmetric lateral boundary offsets that maximize expected gene-flow utility while penalizing large positional deviations from carrying-capacity balance.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      }
+    ],
+    "all_verifications": [
+      {
+        "candidate": {
+          "declaration": {
+            "name": "optimalquotecalculation",
+            "type_signature": "(gamma: float \u2014 absolute risk-aversion coefficient, k: float \u2014 market-depth / order-arrival rate parameter, q: float \u2014 current inventory position, s: float \u2014 current mid-price, sigma: float \u2014 asset price volatility) -> tuple[float \u2014 optimal bid quote, float \u2014 optimal ask quote, float \u2014 inventory-adjusted mid-price, float \u2014 total bid-ask spread]",
+            "docstring": "Applies the Avellaneda-Stoikov closed-form formulae to derive (1) the inventory-skewed reservation price r = s \u2212 q\u00b7\u03b3\u00b7\u03c3\u00b2 and (2) the symmetric optimal half-spread \u03b4 = \u03b3\u00b7\u03c3\u00b2\u00b7T + (2/\u03b3)\u00b7ln(1 + \u03b3/k), yielding a firm bid quote (r \u2212 \u03b4/2) and ask quote (r + \u03b4/2) that maximise expected utility under inventory risk.",
+            "conceptual_summary": "RiskAversion-Weighted Symmetric Interval Placement with Positional Skew. Given a scalar reference point and a signed displacement (positional imbalance), this transform first skews the reference point proportionally to the displacement, a quadratic variance measure, and a risk-aversion scalar \u2014 producing a bias-corrected central anchor. It then computes a symmetric half-interval around that anchor whose width is jointly determined by the risk-aversion scalar, the variance measure, a time-horizon scalar, and a logarithmic correction term derived from an arrival-rate parameter \u2014 yielding a lower bound and upper bound that are equidistant from the corrected anchor and guaranteed to straddle it.. Applications: Adaptive sensor threshold placement in signal detection systems: given a sensor's baseline signal level, its noise variance, and a signed accumulation of recent false-positive or false-negative errors (positional imbalance), compute skew-corrected upper and lower detection thresholds that minimize expected classification loss under a specified penalty-per-deviation parameter., Robotic joint torque bracketing in motion control: given a robot actuator's nominal torque setpoint, the variance of disturbance forces, and the current signed deviation of the joint from its neutral pose, derive an asymmetry-corrected torque command with symmetric upper/lower saturation bounds that balance trajectory tracking against mechanical stress risk., Dynamic pricing interval generation in resource allocation systems: given a baseline resource valuation scalar, the variance of demand fluctuations, and a signed measure of current resource surplus or deficit, compute a corrected target allocation rate and symmetric upper/lower offer bounds that maximize expected throughput utility under inventory-imbalance risk., Ecological habitat corridor width optimization: given a baseline migration corridor centerline, the variance of species dispersal distances, and a signed measure of current population density asymmetry across the corridor, derive a skew-adjusted centerline and symmetric lateral boundary offsets that maximize expected gene-flow utility while penalizing large positional deviations from carrying-capacity balance.",
+            "source_lib": "ingester",
+            "prover": "python",
+            "raw_code": ""
+          },
+          "score": 1.0,
+          "retrieval_method": "ingester"
+        },
+        "verified": true,
+        "compiler_output": "",
+        "proof_term": "",
+        "error_message": "",
+        "verification_level": "type_checked"
+      }
+    ]
+  }
+]

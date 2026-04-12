@@ -1,0 +1,6 @@
+import importlib
+
+
+def test_institutional_quant_engine_hierarchical_risk_parity_import_smoke() -> None:
+    assert importlib.import_module("sciona.atoms.fintech.institutional_quant_engine.hierarchical_risk_parity") is not None
+    assert importlib.import_module("sciona.probes.fintech.institutional_quant_engine_hierarchical_risk_parity") is not None

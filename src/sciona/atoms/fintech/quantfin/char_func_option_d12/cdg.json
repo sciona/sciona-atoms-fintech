@@ -1,0 +1,343 @@
+{
+  "nodes": [
+    {
+      "node_id": "char_func_option_root",
+      "parent_id": null,
+      "name": "Characteristic Function Option Pricing",
+      "description": "Characteristic-function helpers for damped Fourier option pricing.",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "decomposed",
+      "children": [
+        "charfuncoption",
+        "integrand_f",
+        "cf"
+      ],
+      "depth": 0,
+      "type_signature": "",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "charfuncoption",
+      "parent_id": "char_func_option_root",
+      "name": "CharFuncOption",
+      "description": "Price a European option via a damped characteristic-function inversion formula.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "arg0",
+          "type_desc": "float",
+          "constraints": "auxiliary scalar passthrough"
+        },
+        {
+          "name": "cf",
+          "type_desc": "Callable[[complex], complex]",
+          "constraints": "characteristic function evaluator"
+        },
+        {
+          "name": "charFuncMart",
+          "type_desc": "Callable[[QuantfinContext, QuantfinContext, float], Callable[[complex], complex]]",
+          "constraints": "martingale-corrected characteristic-function builder"
+        },
+        {
+          "name": "d",
+          "type_desc": "float",
+          "constraints": "discount-factor workspace scalar"
+        },
+        {
+          "name": "damp",
+          "type_desc": "float",
+          "constraints": "finite damping coefficient"
+        },
+        {
+          "name": "damp_prime",
+          "type_desc": "float",
+          "constraints": "finite shifted damping coefficient"
+        },
+        {
+          "name": "disc",
+          "type_desc": "Callable[[float], float]",
+          "constraints": "discount curve evaluator"
+        },
+        {
+          "name": "exp",
+          "type_desc": "Callable[[complex], complex]",
+          "constraints": "complex exponential"
+        },
+        {
+          "name": "f",
+          "type_desc": "Callable[[Callable[[complex], complex], complex, complex, complex, Callable[[complex], float], complex, complex, complex], float]",
+          "constraints": "real-valued Fourier integrand helper"
+        },
+        {
+          "name": "fg",
+          "type_desc": "Mapping[str, float | complex | str | bool]",
+          "constraints": "forward-generator context"
+        },
+        {
+          "name": "func1",
+          "type_desc": "Callable[[float], float]",
+          "constraints": "first inversion integrand"
+        },
+        {
+          "name": "func2",
+          "type_desc": "Callable[[float], float]",
+          "constraints": "second inversion integrand"
+        },
+        {
+          "name": "i",
+          "type_desc": "complex",
+          "constraints": "imaginary unit"
+        },
+        {
+          "name": "intF",
+          "type_desc": "Callable[[Callable[[float], float], float, float, float], float]",
+          "constraints": "deterministic scalar integrator"
+        },
+        {
+          "name": "k",
+          "type_desc": "float",
+          "constraints": "log-strike workspace scalar"
+        },
+        {
+          "name": "leftTerm",
+          "type_desc": "complex",
+          "constraints": "damping-dependent numerator factor"
+        },
+        {
+          "name": "log",
+          "type_desc": "Callable[[float], float]",
+          "constraints": "natural logarithm"
+        },
+        {
+          "name": "model",
+          "type_desc": "Mapping[str, float | complex | str | bool]",
+          "constraints": "pricing-model context"
+        },
+        {
+          "name": "opt",
+          "type_desc": "str",
+          "constraints": "option-type label"
+        },
+        {
+          "name": "p1",
+          "type_desc": "float",
+          "constraints": "workspace probability scalar"
+        },
+        {
+          "name": "p2",
+          "type_desc": "float",
+          "constraints": "workspace probability scalar"
+        },
+        {
+          "name": "pi",
+          "type_desc": "float",
+          "constraints": "positive circle constant"
+        },
+        {
+          "name": "q",
+          "type_desc": "float",
+          "constraints": "forward adjustment factor"
+        },
+        {
+          "name": "realPart",
+          "type_desc": "Callable[[complex], float]",
+          "constraints": "real-part extractor"
+        },
+        {
+          "name": "rightTerm",
+          "type_desc": "complex",
+          "constraints": "characteristic-function value"
+        },
+        {
+          "name": "s",
+          "type_desc": "float",
+          "constraints": "spot price"
+        },
+        {
+          "name": "strike",
+          "type_desc": "float",
+          "constraints": "positive strike"
+        },
+        {
+          "name": "tmat",
+          "type_desc": "float",
+          "constraints": "positive time to maturity"
+        },
+        {
+          "name": "v",
+          "type_desc": "complex",
+          "constraints": "complex integration variable"
+        },
+        {
+          "name": "v_prime",
+          "type_desc": "complex",
+          "constraints": "shifted complex integration variable"
+        },
+        {
+          "name": "x",
+          "type_desc": "float",
+          "constraints": "workspace scalar"
+        },
+        {
+          "name": "yc",
+          "type_desc": "Mapping[str, float | complex | str | bool]",
+          "constraints": "yield-curve context"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "price",
+          "type_desc": "float",
+          "constraints": "finite option price"
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(arg0: float, cf: complex->complex callable, charFuncMart: martingale charfunc builder, d: float, damp: float, damp_prime: float, disc: float->float callable, exp: complex->complex callable, f: integrand helper callable, fg: quantfin context mapping, func1: float->float callable, func2: float->float callable, i: complex, intF: scalar integrator callable, k: float, leftTerm: complex, log: float->float callable, model: quantfin context mapping, opt: str, p1: float, p2: float, pi: float, q: float, realPart: complex->float callable, rightTerm: complex, s: float, strike: float, tmat: float, v: complex, v_prime: complex, x: float, yc: quantfin context mapping) -> float",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "integrand_f",
+      "parent_id": "char_func_option_root",
+      "name": "IntegrandF",
+      "description": "Evaluate the real-valued Fourier integrand for characteristic-function pricing.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "exp",
+          "type_desc": "Callable[[complex], complex]",
+          "constraints": "complex exponential"
+        },
+        {
+          "name": "i",
+          "type_desc": "complex",
+          "constraints": "imaginary unit"
+        },
+        {
+          "name": "k",
+          "type_desc": "complex",
+          "constraints": "complex log-strike"
+        },
+        {
+          "name": "leftTerm",
+          "type_desc": "complex",
+          "constraints": "damping-dependent numerator factor"
+        },
+        {
+          "name": "realPart",
+          "type_desc": "Callable[[complex], float]",
+          "constraints": "real-part extractor"
+        },
+        {
+          "name": "rightTerm",
+          "type_desc": "complex",
+          "constraints": "characteristic-function value"
+        },
+        {
+          "name": "v",
+          "type_desc": "complex",
+          "constraints": "complex integration variable"
+        },
+        {
+          "name": "v_prime",
+          "type_desc": "complex",
+          "constraints": "shifted complex integration variable"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "integrand",
+          "type_desc": "float",
+          "constraints": "finite real scalar"
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(exp: complex->complex callable, i: complex, k: complex, leftTerm: complex, realPart: complex->float callable, rightTerm: complex, v: complex, v_prime: complex) -> float",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "cf",
+      "parent_id": "char_func_option_root",
+      "name": "CharacteristicFunction",
+      "description": "Evaluate the martingale-corrected characteristic function at one complex frequency.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "charFuncMart",
+          "type_desc": "Callable[[QuantfinContext, QuantfinContext, float], Callable[[complex], complex]]",
+          "constraints": "martingale-corrected characteristic-function builder"
+        },
+        {
+          "name": "fg",
+          "type_desc": "Mapping[str, float | complex | str | bool]",
+          "constraints": "forward-generator context"
+        },
+        {
+          "name": "model",
+          "type_desc": "Mapping[str, float | complex | str | bool]",
+          "constraints": "pricing-model context"
+        },
+        {
+          "name": "tmat",
+          "type_desc": "float",
+          "constraints": "positive time to maturity"
+        },
+        {
+          "name": "x",
+          "type_desc": "complex",
+          "constraints": "complex frequency"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "cf_x",
+          "type_desc": "complex",
+          "constraints": "finite complex scalar"
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(charFuncMart: martingale charfunc builder, fg: quantfin context mapping, model: quantfin context mapping, tmat: float, x: complex) -> complex",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    }
+  ],
+  "edges": [],
+  "metadata": {
+    "source": "ingester",
+    "class_name": "charFuncOption"
+  }
+}

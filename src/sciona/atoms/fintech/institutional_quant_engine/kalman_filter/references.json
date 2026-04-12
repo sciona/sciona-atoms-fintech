@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.1",
+  "atoms": {
+    "ageoa.institutional_quant_engine.kalman_filter.kalmanfilterinit@ageoa/institutional_quant_engine/kalman_filter/atoms.py:28": {
+      "references": [
+        {
+          "ref_id": "kalman1960",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Kalman-based state estimation attribution."
+          }
+        },
+        {
+          "ref_id": "repo_institutional_quant_engine",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Primary repository attribution for Institutional-Quant-Engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.institutional_quant_engine.kalman_filter.kalmanmeasurementupdate@ageoa/institutional_quant_engine/kalman_filter/atoms.py:65": {
+      "references": [
+        {
+          "ref_id": "kalman1960",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Kalman-based state estimation attribution."
+          }
+        },
+        {
+          "ref_id": "repo_institutional_quant_engine",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Primary repository attribution for Institutional-Quant-Engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    }
+  }
+}

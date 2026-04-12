@@ -1,0 +1,134 @@
+[
+  {
+    "pdg_node": {
+      "predicate_id": "initializeorderstate",
+      "statement": "(my_order_id: string, my_qty: float, orders_ahead: float) -> OrderState",
+      "informal_desc": "Initializes the state of a new order within the queue, capturing its initial quantity and the volume of orders ahead of it.",
+      "prover": "python",
+      "context": {}
+    },
+    "verified_match": {
+      "candidate": {
+        "declaration": {
+          "name": "initializeorderstate",
+          "type_signature": "(my_order_id: string, my_qty: float, orders_ahead: float) -> OrderState",
+          "docstring": "Initializes the state of a new order within the queue, capturing its initial quantity and the volume of orders ahead of it.",
+          "conceptual_summary": "InitializePrioritizedEntity. Instantiates a state record for a new entity entering a sequenced or prioritized system. The transform captures the entity's intrinsic scalar magnitude and the cumulative magnitude of all entities preceding it, packaging these values into an initial state vector with a default status flag.. Applications: In particle physics simulations, initializing a new particle's state with its energy and the cumulative energy of prior particles in a detector event., In epidemiology, seeding a new infection case with its initial viral load and the total number of existing cases in the population to model its spread potential., In network engineering, creating a record for a new data packet in a buffer, noting its size and the total size of packets ahead of it for Quality-of-Service (QoS) latency calculations.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      },
+      "verified": true,
+      "compiler_output": "",
+      "proof_term": "",
+      "error_message": "",
+      "verification_level": "type_checked"
+    },
+    "all_candidates": [
+      {
+        "declaration": {
+          "name": "initializeorderstate",
+          "type_signature": "(my_order_id: string, my_qty: float, orders_ahead: float) -> OrderState",
+          "docstring": "Initializes the state of a new order within the queue, capturing its initial quantity and the volume of orders ahead of it.",
+          "conceptual_summary": "InitializePrioritizedEntity. Instantiates a state record for a new entity entering a sequenced or prioritized system. The transform captures the entity's intrinsic scalar magnitude and the cumulative magnitude of all entities preceding it, packaging these values into an initial state vector with a default status flag.. Applications: In particle physics simulations, initializing a new particle's state with its energy and the cumulative energy of prior particles in a detector event., In epidemiology, seeding a new infection case with its initial viral load and the total number of existing cases in the population to model its spread potential., In network engineering, creating a record for a new data packet in a buffer, noting its size and the total size of packets ahead of it for Quality-of-Service (QoS) latency calculations.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      }
+    ],
+    "all_verifications": [
+      {
+        "candidate": {
+          "declaration": {
+            "name": "initializeorderstate",
+            "type_signature": "(my_order_id: string, my_qty: float, orders_ahead: float) -> OrderState",
+            "docstring": "Initializes the state of a new order within the queue, capturing its initial quantity and the volume of orders ahead of it.",
+            "conceptual_summary": "InitializePrioritizedEntity. Instantiates a state record for a new entity entering a sequenced or prioritized system. The transform captures the entity's intrinsic scalar magnitude and the cumulative magnitude of all entities preceding it, packaging these values into an initial state vector with a default status flag.. Applications: In particle physics simulations, initializing a new particle's state with its energy and the cumulative energy of prior particles in a detector event., In epidemiology, seeding a new infection case with its initial viral load and the total number of existing cases in the population to model its spread potential., In network engineering, creating a record for a new data packet in a buffer, noting its size and the total size of packets ahead of it for Quality-of-Service (QoS) latency calculations.",
+            "source_lib": "ingester",
+            "prover": "python",
+            "raw_code": ""
+          },
+          "score": 1.0,
+          "retrieval_method": "ingester"
+        },
+        "verified": true,
+        "compiler_output": "",
+        "proof_term": "",
+        "error_message": "",
+        "verification_level": "type_checked"
+      }
+    ]
+  },
+  {
+    "pdg_node": {
+      "predicate_id": "updatequeueontrade",
+      "statement": "(current_order_state: OrderState, trade_qty: float) -> OrderState",
+      "informal_desc": "Processes an incoming market trade, reducing the queue ahead and potentially filling the order. This is a deterministic state transition.",
+      "prover": "python",
+      "context": {}
+    },
+    "verified_match": {
+      "candidate": {
+        "declaration": {
+          "name": "updatequeueontrade",
+          "type_signature": "(current_order_state: OrderState, trade_qty: float) -> OrderState",
+          "docstring": "Processes an incoming market trade, reducing the queue ahead and potentially filling the order. This is a deterministic state transition.",
+          "conceptual_summary": "CumulativeThresholdedDecrement. Applies a scalar input to decrement a primary quantitative metric within a state object. If the input exceeds the current value of the primary metric, the remainder is used to increment a secondary metric in the state object. This represents a deterministic state transition where consuming one resource can trigger the accumulation of another.. Applications: Inventory Management: Depleting stock from a primary warehouse and then sourcing from a secondary one once the first is empty., Cellular Biology: Modeling the consumption of a primary energy source (like glucose) by a cell, and switching to a secondary source (like ketones) upon depletion., Digital Signal Processing: Simulating a 'bucket' integrator where an input signal fills a primary register, and overflow is accumulated in a secondary register., Nuclear Physics: Tracking the absorption of incident radiation by a shield material, where exceeding the primary shield's capacity leads to energy deposition in a secondary layer.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      },
+      "verified": true,
+      "compiler_output": "",
+      "proof_term": "",
+      "error_message": "",
+      "verification_level": "type_checked"
+    },
+    "all_candidates": [
+      {
+        "declaration": {
+          "name": "updatequeueontrade",
+          "type_signature": "(current_order_state: OrderState, trade_qty: float) -> OrderState",
+          "docstring": "Processes an incoming market trade, reducing the queue ahead and potentially filling the order. This is a deterministic state transition.",
+          "conceptual_summary": "CumulativeThresholdedDecrement. Applies a scalar input to decrement a primary quantitative metric within a state object. If the input exceeds the current value of the primary metric, the remainder is used to increment a secondary metric in the state object. This represents a deterministic state transition where consuming one resource can trigger the accumulation of another.. Applications: Inventory Management: Depleting stock from a primary warehouse and then sourcing from a secondary one once the first is empty., Cellular Biology: Modeling the consumption of a primary energy source (like glucose) by a cell, and switching to a secondary source (like ketones) upon depletion., Digital Signal Processing: Simulating a 'bucket' integrator where an input signal fills a primary register, and overflow is accumulated in a secondary register., Nuclear Physics: Tracking the absorption of incident radiation by a shield material, where exceeding the primary shield's capacity leads to energy deposition in a secondary layer.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      }
+    ],
+    "all_verifications": [
+      {
+        "candidate": {
+          "declaration": {
+            "name": "updatequeueontrade",
+            "type_signature": "(current_order_state: OrderState, trade_qty: float) -> OrderState",
+            "docstring": "Processes an incoming market trade, reducing the queue ahead and potentially filling the order. This is a deterministic state transition.",
+            "conceptual_summary": "CumulativeThresholdedDecrement. Applies a scalar input to decrement a primary quantitative metric within a state object. If the input exceeds the current value of the primary metric, the remainder is used to increment a secondary metric in the state object. This represents a deterministic state transition where consuming one resource can trigger the accumulation of another.. Applications: Inventory Management: Depleting stock from a primary warehouse and then sourcing from a secondary one once the first is empty., Cellular Biology: Modeling the consumption of a primary energy source (like glucose) by a cell, and switching to a secondary source (like ketones) upon depletion., Digital Signal Processing: Simulating a 'bucket' integrator where an input signal fills a primary register, and overflow is accumulated in a secondary register., Nuclear Physics: Tracking the absorption of incident radiation by a shield material, where exceeding the primary shield's capacity leads to energy deposition in a secondary layer.",
+            "source_lib": "ingester",
+            "prover": "python",
+            "raw_code": ""
+          },
+          "score": 1.0,
+          "retrieval_method": "ingester"
+        },
+        "verified": true,
+        "compiler_output": "",
+        "proof_term": "",
+        "error_message": "",
+        "verification_level": "type_checked"
+      }
+    ]
+  }
+]

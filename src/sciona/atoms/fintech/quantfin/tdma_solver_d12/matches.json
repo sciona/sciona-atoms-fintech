@@ -1,0 +1,134 @@
+[
+  {
+    "pdg_node": {
+      "predicate_id": "tdmasolver",
+      "statement": "(a: Any, aL: Any, ai: Any, b: Any, bL: Any, bi: Any, c: Any, c': Any, cL: Any, cf: Any, ci: Any, ci1: Any, ci1': Any, d: Any, d': Any, dL: Any, df: Any, di: Any, di1': Any, forM_: Any, fromList: Any, head: Any, last: Any, length: Any, map: Any, new: Any, read: Any, reverse: Any, runST: Any, thaw: Any, toList: Any, unsafeFreeze: Any, write: Any, x: Any, xi1: Any, xn: Any) -> Any",
+      "informal_desc": "",
+      "prover": "python",
+      "context": {}
+    },
+    "verified_match": {
+      "candidate": {
+        "declaration": {
+          "name": "tdmasolver",
+          "type_signature": "(a: Any, aL: Any, ai: Any, b: Any, bL: Any, bi: Any, c: Any, c': Any, cL: Any, cf: Any, ci: Any, ci1: Any, ci1': Any, d: Any, d': Any, dL: Any, df: Any, di: Any, di1': Any, forM_: Any, fromList: Any, head: Any, last: Any, length: Any, map: Any, new: Any, read: Any, reverse: Any, runST: Any, thaw: Any, toList: Any, unsafeFreeze: Any, write: Any, x: Any, xi1: Any, xn: Any) -> Any",
+          "docstring": "",
+          "conceptual_summary": "",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      },
+      "verified": true,
+      "compiler_output": "",
+      "proof_term": "",
+      "error_message": "",
+      "verification_level": "type_checked"
+    },
+    "all_candidates": [
+      {
+        "declaration": {
+          "name": "tdmasolver",
+          "type_signature": "(a: Any, aL: Any, ai: Any, b: Any, bL: Any, bi: Any, c: Any, c': Any, cL: Any, cf: Any, ci: Any, ci1: Any, ci1': Any, d: Any, d': Any, dL: Any, df: Any, di: Any, di1': Any, forM_: Any, fromList: Any, head: Any, last: Any, length: Any, map: Any, new: Any, read: Any, reverse: Any, runST: Any, thaw: Any, toList: Any, unsafeFreeze: Any, write: Any, x: Any, xi1: Any, xn: Any) -> Any",
+          "docstring": "",
+          "conceptual_summary": "",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      }
+    ],
+    "all_verifications": [
+      {
+        "candidate": {
+          "declaration": {
+            "name": "tdmasolver",
+            "type_signature": "(a: Any, aL: Any, ai: Any, b: Any, bL: Any, bi: Any, c: Any, c': Any, cL: Any, cf: Any, ci: Any, ci1: Any, ci1': Any, d: Any, d': Any, dL: Any, df: Any, di: Any, di1': Any, forM_: Any, fromList: Any, head: Any, last: Any, length: Any, map: Any, new: Any, read: Any, reverse: Any, runST: Any, thaw: Any, toList: Any, unsafeFreeze: Any, write: Any, x: Any, xi1: Any, xn: Any) -> Any",
+            "docstring": "",
+            "conceptual_summary": "",
+            "source_lib": "ingester",
+            "prover": "python",
+            "raw_code": ""
+          },
+          "score": 1.0,
+          "retrieval_method": "ingester"
+        },
+        "verified": true,
+        "compiler_output": "",
+        "proof_term": "",
+        "error_message": "",
+        "verification_level": "type_checked"
+      }
+    ]
+  },
+  {
+    "pdg_node": {
+      "predicate_id": "cotraversevec",
+      "statement": "(enumFromN: Any, f: Any, fmap: Any, i: Any, l: Any, m: Any, map: Any) -> Any",
+      "informal_desc": "",
+      "prover": "python",
+      "context": {}
+    },
+    "verified_match": {
+      "candidate": {
+        "declaration": {
+          "name": "cotraversevec",
+          "type_signature": "(enumFromN: Any, f: Any, fmap: Any, i: Any, l: Any, m: Any, map: Any) -> Any",
+          "docstring": "",
+          "conceptual_summary": "",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      },
+      "verified": true,
+      "compiler_output": "",
+      "proof_term": "",
+      "error_message": "",
+      "verification_level": "type_checked"
+    },
+    "all_candidates": [
+      {
+        "declaration": {
+          "name": "cotraversevec",
+          "type_signature": "(enumFromN: Any, f: Any, fmap: Any, i: Any, l: Any, m: Any, map: Any) -> Any",
+          "docstring": "",
+          "conceptual_summary": "",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      }
+    ],
+    "all_verifications": [
+      {
+        "candidate": {
+          "declaration": {
+            "name": "cotraversevec",
+            "type_signature": "(enumFromN: Any, f: Any, fmap: Any, i: Any, l: Any, m: Any, map: Any) -> Any",
+            "docstring": "",
+            "conceptual_summary": "",
+            "source_lib": "ingester",
+            "prover": "python",
+            "raw_code": ""
+          },
+          "score": 1.0,
+          "retrieval_method": "ingester"
+        },
+        "verified": true,
+        "compiler_output": "",
+        "proof_term": "",
+        "error_message": "",
+        "verification_level": "type_checked"
+      }
+    ]
+  }
+]

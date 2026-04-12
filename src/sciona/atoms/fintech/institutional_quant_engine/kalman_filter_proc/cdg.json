@@ -1,0 +1,30 @@
+{
+  "nodes": [
+    {
+      "node_id": "KalmanFilter_root",
+      "parent_id": null,
+      "name": "KalmanFilter",
+      "description": "Ingested pipeline from KalmanFilter",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "pending",
+      "children": [],
+      "depth": 0,
+      "type_signature": "",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    }
+  ],
+  "edges": [],
+  "metadata": {
+    "source": "ingester",
+    "class_name": "KalmanFilter"
+  }
+}

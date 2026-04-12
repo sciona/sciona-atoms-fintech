@@ -1,0 +1,66 @@
+{
+  "nodes": [
+    {
+      "node_id": "order_flow_imbalance_root",
+      "parent_id": null,
+      "name": "ageoa.institutional_quant_engine.order_flow_imbalance",
+      "description": "Consolidated module for ageoa.institutional_quant_engine.order_flow_imbalance.",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "decomposed",
+      "children": [
+        "orderflowimbalanceevaluation"
+      ],
+      "depth": 0,
+      "type_signature": "module",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "Grouped atoms sharing an upstream family or module.",
+      "critic_notes": "Auto-generated module CDG for consolidation.",
+      "decomposition_rationale": "Replaces singleton atom subpackages with a flat module layout."
+    },
+    {
+      "node_id": "orderflowimbalanceevaluation",
+      "parent_id": "order_flow_imbalance_root",
+      "name": "orderflowimbalanceevaluation",
+      "description": "Computes the order flow imbalance signal for the current observation relative to the previous observation as a pure, stateless transformation.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "row",
+          "type_desc": "object",
+          "constraints": "required argument"
+        },
+        {
+          "name": "prev_row",
+          "type_desc": "object",
+          "constraints": "required argument"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "float",
+          "constraints": "function return value"
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(row: object, prev_row: object) -> float",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "Direct callable atom in the consolidated module.",
+      "critic_notes": "Signature derived from the Python wrapper definition.",
+      "decomposition_rationale": "Leaf atom."
+    }
+  ],
+  "edges": []
+}

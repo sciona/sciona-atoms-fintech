@@ -1,0 +1,243 @@
+{
+  "nodes": [
+    {
+      "node_id": "MarketMaker_root",
+      "parent_id": null,
+      "name": "MarketMaker",
+      "description": "Ingested pipeline from MarketMaker",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "decomposed",
+      "children": [
+        "marketmakerstateinit",
+        "optimalquotecalculation"
+      ],
+      "depth": 0,
+      "type_signature": "",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "marketmakerstateinit",
+      "parent_id": "MarketMaker_root",
+      "name": "MarketMakerStateInit",
+      "description": "Bootstraps the market-maker's immutable parameter state from a supplied initial mid-price and inventory position, materialising the five scalar fields — risk-aversion (gamma), market-depth (k), inventory (q), mid-price (s), and volatility (sigma) — that all downstream computations consume as pure inputs.",
+      "concept_type": "state_init",
+      "inputs": [
+        {
+          "name": "s0",
+          "type_desc": "float",
+          "constraints": "s0 > 0",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "inventory",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "gamma",
+          "type_desc": "float",
+          "constraints": "gamma > 0",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "k",
+          "type_desc": "float",
+          "constraints": "k > 0",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "q",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "s",
+          "type_desc": "float",
+          "constraints": "s > 0",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "sigma",
+          "type_desc": "float",
+          "constraints": "sigma > 0",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(s0: float, inventory: float) -> tuple[float, float, float, float, float]",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "ImmutableParameterSpaceInitializer. Takes a minimal set of exogenous scalar seed values — one representing the current state of a measurable quantity and one representing a signed positional offset — and expands them into a fully-specified, frozen parameter manifold of five scalars that collectively define the operating envelope for all downstream computations. The transform acts as a pure injection: it maps a low-dimensional initialization tuple into a higher-dimensional configuration space, materializing both the supplied runtime values (current magnitude, signed position) and the hardcoded structural constants (sensitivity coefficient, arrival-rate parameter, dispersion coefficient) as a single immutable record. No computation is performed beyond assignment; the output is a static snapshot that serves as the canonical ground truth for all subsequent stateful operations.. Applications: Epidemiological modeling: initializing an SIR/SEIR compartmental model with a seed infection count (signed-position analog) and a baseline population contact rate (magnitude analog), materializing transmission rate (beta), recovery rate (gamma), initial susceptible population (S0), and variance of stochastic contact events — consumed by all downstream differential equation solvers, Robotics / motion planning: bootstrapping a PID or LQR controller's parameter record from an initial sensor reading (measured state magnitude) and a signed positional error offset, locking in the gain coefficients (proportional, derivative, integral), process-noise covariance, and reference setpoint as an immutable configuration consumed by every control-loop iteration, Quantum circuit simulation: constructing an immutable Hamiltonian parameter record from an initial observable expectation value and a signed spin-polarization offset, materializing coupling strength, decoherence rate, initial state amplitude, and energy dispersion constants that all gate-operation kernels reference as pure inputs, Structural engineering / finite element analysis: seeding an FEA node's material-property record from an initial stress magnitude and a signed strain offset, fixing Young's modulus (stiffness coefficient), Poisson's ratio (lateral-coupling parameter), current displacement vector, reference load magnitude, and material yield dispersion — forming the immutable per-element parameter block consumed by the global stiffness-matrix assembler",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "optimalquotecalculation",
+      "parent_id": "MarketMaker_root",
+      "name": "OptimalQuoteCalculation",
+      "description": "Applies the Avellaneda-Stoikov closed-form formulae to derive (1) the inventory-skewed reservation price r = s − q·γ·σ² and (2) the symmetric optimal half-spread δ = γ·σ²·T + (2/γ)·ln(1 + γ/k), yielding a firm bid quote (r − δ/2) and ask quote (r + δ/2) that maximise expected utility under inventory risk.",
+      "concept_type": "arithmetic",
+      "inputs": [
+        {
+          "name": "gamma",
+          "type_desc": "float",
+          "constraints": "gamma > 0",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "k",
+          "type_desc": "float",
+          "constraints": "k > 0",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "q",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "s",
+          "type_desc": "float",
+          "constraints": "s > 0",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "sigma",
+          "type_desc": "float",
+          "constraints": "sigma > 0",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "bid_price",
+          "type_desc": "float",
+          "constraints": "bid_price < s",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "ask_price",
+          "type_desc": "float",
+          "constraints": "ask_price > s",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "reservation_price",
+          "type_desc": "float",
+          "constraints": "finite numeric value",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "optimal_spread",
+          "type_desc": "float",
+          "constraints": "optimal_spread > 0",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(gamma: float, k: float, q: float, s: float, sigma: float) -> tuple[float, float, float, float]",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "RiskAversion-Weighted Symmetric Interval Placement with Positional Skew. Given a scalar reference point and a signed displacement (positional imbalance), this transform first skews the reference point proportionally to the displacement, a quadratic variance measure, and a risk-aversion scalar — producing a bias-corrected central anchor. It then computes a symmetric half-interval around that anchor whose width is jointly determined by the risk-aversion scalar, the variance measure, a time-horizon scalar, and a logarithmic correction term derived from an arrival-rate parameter — yielding a lower bound and upper bound that are equidistant from the corrected anchor and guaranteed to straddle it.. Applications: Adaptive sensor threshold placement in signal detection systems: given a sensor's baseline signal level, its noise variance, and a signed accumulation of recent false-positive or false-negative errors (positional imbalance), compute skew-corrected upper and lower detection thresholds that minimize expected classification loss under a specified penalty-per-deviation parameter., Robotic joint torque bracketing in motion control: given a robot actuator's nominal torque setpoint, the variance of disturbance forces, and the current signed deviation of the joint from its neutral pose, derive an asymmetry-corrected torque command with symmetric upper/lower saturation bounds that balance trajectory tracking against mechanical stress risk., Dynamic pricing interval generation in resource allocation systems: given a baseline resource valuation scalar, the variance of demand fluctuations, and a signed measure of current resource surplus or deficit, compute a corrected target allocation rate and symmetric upper/lower offer bounds that maximize expected throughput utility under inventory-imbalance risk., Ecological habitat corridor width optimization: given a baseline migration corridor centerline, the variance of species dispersal distances, and a signed measure of current population density asymmetry across the corridor, derive a skew-adjusted centerline and symmetric lateral boundary offsets that maximize expected gene-flow utility while penalizing large positional deviations from carrying-capacity balance.",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "marketmakerstateinit",
+      "target_id": "optimalquotecalculation",
+      "output_name": "gamma",
+      "input_name": "gamma",
+      "source_type": "float",
+      "target_type": "float",
+      "requires_glue": false
+    },
+    {
+      "source_id": "marketmakerstateinit",
+      "target_id": "optimalquotecalculation",
+      "output_name": "k",
+      "input_name": "k",
+      "source_type": "float",
+      "target_type": "float",
+      "requires_glue": false
+    },
+    {
+      "source_id": "marketmakerstateinit",
+      "target_id": "optimalquotecalculation",
+      "output_name": "q",
+      "input_name": "q",
+      "source_type": "float",
+      "target_type": "float",
+      "requires_glue": false
+    },
+    {
+      "source_id": "marketmakerstateinit",
+      "target_id": "optimalquotecalculation",
+      "output_name": "s",
+      "input_name": "s",
+      "source_type": "float",
+      "target_type": "float",
+      "requires_glue": false
+    },
+    {
+      "source_id": "marketmakerstateinit",
+      "target_id": "optimalquotecalculation",
+      "output_name": "sigma",
+      "input_name": "sigma",
+      "source_type": "float",
+      "target_type": "float",
+      "requires_glue": false
+    }
+  ],
+  "metadata": {
+    "source": "ingester",
+    "class_name": "MarketMaker"
+  }
+}

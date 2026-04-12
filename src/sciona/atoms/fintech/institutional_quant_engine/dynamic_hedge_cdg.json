@@ -1,0 +1,71 @@
+{
+  "nodes": [
+    {
+      "node_id": "dynamic_hedge_root",
+      "parent_id": null,
+      "name": "ageoa.institutional_quant_engine.dynamic_hedge",
+      "description": "Consolidated module for ageoa.institutional_quant_engine.dynamic_hedge.",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "decomposed",
+      "children": [
+        "kalman_hedge_ratio"
+      ],
+      "depth": 0,
+      "type_signature": "module",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "Grouped atoms sharing an upstream family or module.",
+      "critic_notes": "Auto-generated module CDG for consolidation.",
+      "decomposition_rationale": "Replaces singleton atom subpackages with a flat module layout."
+    },
+    {
+      "node_id": "kalman_hedge_ratio",
+      "parent_id": "dynamic_hedge_root",
+      "name": "kalman_hedge_ratio",
+      "description": "Estimates a time-varying hedge ratio between two assets using a Kalman filter, tracking a changing relationship.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "asset_a",
+          "type_desc": "np.ndarray",
+          "constraints": "required argument"
+        },
+        {
+          "name": "asset_b",
+          "type_desc": "np.ndarray",
+          "constraints": "required argument"
+        },
+        {
+          "name": "delta",
+          "type_desc": "float",
+          "constraints": "required argument"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "np.ndarray",
+          "constraints": "function return value"
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(asset_a: np.ndarray, asset_b: np.ndarray, delta: float) -> np.ndarray",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "Direct callable atom in the consolidated module.",
+      "critic_notes": "Signature derived from the Python wrapper definition.",
+      "decomposition_rationale": "Leaf atom."
+    }
+  ],
+  "edges": []
+}

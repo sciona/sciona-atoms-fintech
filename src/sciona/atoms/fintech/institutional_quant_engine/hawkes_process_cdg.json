@@ -1,0 +1,125 @@
+{
+  "nodes": [
+    {
+      "node_id": "hawkes_process_root",
+      "parent_id": null,
+      "name": "ageoa.institutional_quant_engine.hawkes_process",
+      "description": "Consolidated module for ageoa.institutional_quant_engine.hawkes_process.",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "decomposed",
+      "children": [
+        "sample_hawkes_event_trajectory",
+        "hawkesprocesssimulator"
+      ],
+      "depth": 0,
+      "type_signature": "module",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "Grouped atoms sharing an upstream family or module.",
+      "critic_notes": "Auto-generated module CDG for consolidation.",
+      "decomposition_rationale": "Replaces singleton atom subpackages with a flat module layout."
+    },
+    {
+      "node_id": "sample_hawkes_event_trajectory",
+      "parent_id": "hawkes_process_root",
+      "name": "sample_hawkes_event_trajectory",
+      "description": "Simulates a Hawkes point-process realization over a finite horizon using the provided base intensity and excitation/decay parameters.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "mu",
+          "type_desc": "float",
+          "constraints": "required argument"
+        },
+        {
+          "name": "alpha",
+          "type_desc": "float",
+          "constraints": "required argument"
+        },
+        {
+          "name": "beta",
+          "type_desc": "float",
+          "constraints": "required argument"
+        },
+        {
+          "name": "T",
+          "type_desc": "float",
+          "constraints": "required argument"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "np.ndarray",
+          "constraints": "function return value"
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(mu: float, alpha: float, beta: float, T: float) -> np.ndarray",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "Direct callable atom in the consolidated module.",
+      "critic_notes": "Signature derived from the Python wrapper definition.",
+      "decomposition_rationale": "Leaf atom."
+    },
+    {
+      "node_id": "hawkesprocesssimulator",
+      "parent_id": "hawkes_process_root",
+      "name": "hawkesprocesssimulator",
+      "description": "Simulates a univariate Hawkes self-exciting point process over the interval [0, T] using Ogata's thinning algorithm. Given baseline intensity mu, excitation amplitude alpha, and exponential decay rate beta, draws stochastic event times whose conditional intensity is \u03bb(t) = \u03bc + \u03a3\u1d62 \u03b1\u00b7exp(\u2212\u03b2(t\u2212t\u1d62)) for all past events t\u1d62 < t. Returns the full realisation as an array of arrival times.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "mu",
+          "type_desc": "float",
+          "constraints": "required argument"
+        },
+        {
+          "name": "alpha",
+          "type_desc": "float",
+          "constraints": "required argument"
+        },
+        {
+          "name": "beta",
+          "type_desc": "float",
+          "constraints": "required argument"
+        },
+        {
+          "name": "T",
+          "type_desc": "float",
+          "constraints": "required argument"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "np.ndarray",
+          "constraints": "function return value"
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(mu: float, alpha: float, beta: float, T: float) -> np.ndarray",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "Direct callable atom in the consolidated module.",
+      "critic_notes": "Signature derived from the Python wrapper definition.",
+      "decomposition_rationale": "Leaf atom."
+    }
+  ],
+  "edges": []
+}

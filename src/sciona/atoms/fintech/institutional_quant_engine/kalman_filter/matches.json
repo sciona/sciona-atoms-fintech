@@ -1,0 +1,134 @@
+[
+  {
+    "pdg_node": {
+      "predicate_id": "kalmanfilterinit",
+      "statement": "(process_variance: float \u2014 diagonal process-noise variance (Q), measurement_variance: float \u2014 diagonal measurement-noise variance (R), estimated_measurement_variance: float \u2014 initial error covariance estimate (P) and prior state estimate (X)) -> tuple[float \u2014 initial error covariance, float \u2014 process-noise covariance, float \u2014 measurement-noise covariance, float \u2014 prior state estimate]",
+      "informal_desc": "Bootstraps the Kalman filter state by initialising the error covariance matrix P, process-noise covariance Q, measurement-noise covariance R, and the prior state estimate X. No computation is performed; all values are stored as immutable starting state for downstream kernels.",
+      "prover": "python",
+      "context": {}
+    },
+    "verified_match": {
+      "candidate": {
+        "declaration": {
+          "name": "kalmanfilterinit",
+          "type_signature": "(process_variance: float \u2014 diagonal process-noise variance (Q), measurement_variance: float \u2014 diagonal measurement-noise variance (R), estimated_measurement_variance: float \u2014 initial error covariance estimate (P) and prior state estimate (X)) -> tuple[float \u2014 initial error covariance, float \u2014 process-noise covariance, float \u2014 measurement-noise covariance, float \u2014 prior state estimate]",
+          "docstring": "Bootstraps the Kalman filter state by initialising the error covariance matrix P, process-noise covariance Q, measurement-noise covariance R, and the prior state estimate X. No computation is performed; all values are stored as immutable starting state for downstream kernels.",
+          "conceptual_summary": "RecursiveEstimatorHyperparameterSeedInitializer. Establishes the immutable prior probability scaffold for a Bayesian recursive estimator by encoding four scalar uncertainty parameters into a fixed initial state manifold. It partitions total system uncertainty into two orthogonal noise sources \u2014 latent-state transition noise and observation noise \u2014 alongside an initial belief covariance and a prior latent-state estimate, creating a complete probabilistic starting configuration. No algebraic transformation occurs; the operation is a pure structured assignment that seeds the downstream iterative update kernel with a well-defined prior distribution.. Applications: Robotics & autonomous navigation: seeding the prior belief state of a localization filter that fuses inertial odometry (high process noise) with sparse GPS fixes (high measurement noise) to track a mobile agent's position over time., Computational neuroscience: initializing the prior parameters of a Bayesian brain model that infers latent neural firing rates from noisy electrophysiological recordings, where process noise captures neural state variability and measurement noise captures electrode noise., Climate & geophysical modeling: bootstrapping a sequential data-assimilation system that blends a numerical weather prediction model (process noise = model uncertainty) with sparse satellite observations (measurement noise = instrument error) to estimate atmospheric state variables., Quantitative signal processing / IoT sensor fusion: configuring the initial uncertainty hyperparameters for a recursive smoothing algorithm that tracks a slowly drifting physical quantity (e.g., temperature, pressure, altitude) from a noisy low-cost MEMS sensor stream.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      },
+      "verified": true,
+      "compiler_output": "",
+      "proof_term": "",
+      "error_message": "",
+      "verification_level": "type_checked"
+    },
+    "all_candidates": [
+      {
+        "declaration": {
+          "name": "kalmanfilterinit",
+          "type_signature": "(process_variance: float \u2014 diagonal process-noise variance (Q), measurement_variance: float \u2014 diagonal measurement-noise variance (R), estimated_measurement_variance: float \u2014 initial error covariance estimate (P) and prior state estimate (X)) -> tuple[float \u2014 initial error covariance, float \u2014 process-noise covariance, float \u2014 measurement-noise covariance, float \u2014 prior state estimate]",
+          "docstring": "Bootstraps the Kalman filter state by initialising the error covariance matrix P, process-noise covariance Q, measurement-noise covariance R, and the prior state estimate X. No computation is performed; all values are stored as immutable starting state for downstream kernels.",
+          "conceptual_summary": "RecursiveEstimatorHyperparameterSeedInitializer. Establishes the immutable prior probability scaffold for a Bayesian recursive estimator by encoding four scalar uncertainty parameters into a fixed initial state manifold. It partitions total system uncertainty into two orthogonal noise sources \u2014 latent-state transition noise and observation noise \u2014 alongside an initial belief covariance and a prior latent-state estimate, creating a complete probabilistic starting configuration. No algebraic transformation occurs; the operation is a pure structured assignment that seeds the downstream iterative update kernel with a well-defined prior distribution.. Applications: Robotics & autonomous navigation: seeding the prior belief state of a localization filter that fuses inertial odometry (high process noise) with sparse GPS fixes (high measurement noise) to track a mobile agent's position over time., Computational neuroscience: initializing the prior parameters of a Bayesian brain model that infers latent neural firing rates from noisy electrophysiological recordings, where process noise captures neural state variability and measurement noise captures electrode noise., Climate & geophysical modeling: bootstrapping a sequential data-assimilation system that blends a numerical weather prediction model (process noise = model uncertainty) with sparse satellite observations (measurement noise = instrument error) to estimate atmospheric state variables., Quantitative signal processing / IoT sensor fusion: configuring the initial uncertainty hyperparameters for a recursive smoothing algorithm that tracks a slowly drifting physical quantity (e.g., temperature, pressure, altitude) from a noisy low-cost MEMS sensor stream.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      }
+    ],
+    "all_verifications": [
+      {
+        "candidate": {
+          "declaration": {
+            "name": "kalmanfilterinit",
+            "type_signature": "(process_variance: float \u2014 diagonal process-noise variance (Q), measurement_variance: float \u2014 diagonal measurement-noise variance (R), estimated_measurement_variance: float \u2014 initial error covariance estimate (P) and prior state estimate (X)) -> tuple[float \u2014 initial error covariance, float \u2014 process-noise covariance, float \u2014 measurement-noise covariance, float \u2014 prior state estimate]",
+            "docstring": "Bootstraps the Kalman filter state by initialising the error covariance matrix P, process-noise covariance Q, measurement-noise covariance R, and the prior state estimate X. No computation is performed; all values are stored as immutable starting state for downstream kernels.",
+            "conceptual_summary": "RecursiveEstimatorHyperparameterSeedInitializer. Establishes the immutable prior probability scaffold for a Bayesian recursive estimator by encoding four scalar uncertainty parameters into a fixed initial state manifold. It partitions total system uncertainty into two orthogonal noise sources \u2014 latent-state transition noise and observation noise \u2014 alongside an initial belief covariance and a prior latent-state estimate, creating a complete probabilistic starting configuration. No algebraic transformation occurs; the operation is a pure structured assignment that seeds the downstream iterative update kernel with a well-defined prior distribution.. Applications: Robotics & autonomous navigation: seeding the prior belief state of a localization filter that fuses inertial odometry (high process noise) with sparse GPS fixes (high measurement noise) to track a mobile agent's position over time., Computational neuroscience: initializing the prior parameters of a Bayesian brain model that infers latent neural firing rates from noisy electrophysiological recordings, where process noise captures neural state variability and measurement noise captures electrode noise., Climate & geophysical modeling: bootstrapping a sequential data-assimilation system that blends a numerical weather prediction model (process noise = model uncertainty) with sparse satellite observations (measurement noise = instrument error) to estimate atmospheric state variables., Quantitative signal processing / IoT sensor fusion: configuring the initial uncertainty hyperparameters for a recursive smoothing algorithm that tracks a slowly drifting physical quantity (e.g., temperature, pressure, altitude) from a noisy low-cost MEMS sensor stream.",
+            "source_lib": "ingester",
+            "prover": "python",
+            "raw_code": ""
+          },
+          "score": 1.0,
+          "retrieval_method": "ingester"
+        },
+        "verified": true,
+        "compiler_output": "",
+        "proof_term": "",
+        "error_message": "",
+        "verification_level": "type_checked"
+      }
+    ]
+  },
+  {
+    "pdg_node": {
+      "predicate_id": "kalmanmeasurementupdate",
+      "statement": "(P: float \u2014 error covariance (state_in), Q: float \u2014 process-noise covariance (static), R: float \u2014 measurement-noise covariance (static), X: float \u2014 prior state estimate (state_in), measurement: float \u2014 scalar observation) -> tuple[float \u2014 updated error covariance (state_out), float \u2014 posterior state estimate (state_out)]",
+      "informal_desc": "Pure functional Kalman predict-and-update kernel. Consumes the current immutable state tuple (P, Q, R, X) together with a scalar measurement and produces a brand-new state tuple (P_new, X_new). Internally fuses the time-update (predict) step \u2014 advancing P by Q \u2014 with the measurement-update step that computes the Kalman gain, corrects the state estimate X, and contracts P by the complement of the gain. Returns new objects; the input state is never mutated.",
+      "prover": "python",
+      "context": {}
+    },
+    "verified_match": {
+      "candidate": {
+        "declaration": {
+          "name": "kalmanmeasurementupdate",
+          "type_signature": "(P: float \u2014 error covariance (state_in), Q: float \u2014 process-noise covariance (static), R: float \u2014 measurement-noise covariance (static), X: float \u2014 prior state estimate (state_in), measurement: float \u2014 scalar observation) -> tuple[float \u2014 updated error covariance (state_out), float \u2014 posterior state estimate (state_out)]",
+          "docstring": "Pure functional Kalman predict-and-update kernel. Consumes the current immutable state tuple (P, Q, R, X) together with a scalar measurement and produces a brand-new state tuple (P_new, X_new). Internally fuses the time-update (predict) step \u2014 advancing P by Q \u2014 with the measurement-update step that computes the Kalman gain, corrects the state estimate X, and contracts P by the complement of the gain. Returns new objects; the input state is never mutated.",
+          "conceptual_summary": "ScalarGaussianPriorObservationFuser. Accepts a prior scalar estimate and its associated uncertainty (covariance), advances the uncertainty forward in time by additive process-noise, then computes an optimal convex-combination weight (the gain) from the ratio of prior uncertainty to total uncertainty (prior + observation noise). Uses that gain to blend the prior estimate toward the scalar observation and to contract the uncertainty by the complement of the gain \u2014 yielding a posterior estimate that is the minimum-variance unbiased fusion of two competing Gaussian beliefs. The entire operation is a pure function: all inputs are read-only and a new (posterior-estimate, posterior-uncertainty) pair is returned.. Applications: Geophysical sensor fusion: continuously refining an estimate of subsurface temperature or pressure at a fixed depth by blending a slow-drift model (Q) with noisy point-sensor readings (R), producing a running posterior depth-state used by autonomous drilling controllers., Epidemiological prevalence tracking: maintaining a running scalar estimate of the true infection rate in a population where each new aggregate test-batch yields a noisy count; Q captures day-to-day biological drift and R captures sampling variability, producing a posterior prevalence used to trigger intervention thresholds., Adaptive signal denoising in telecommunications: estimating the true amplitude of a slowly varying carrier envelope from a stream of noisy sampled observations, where Q models the envelope's random walk and R models receiver noise, enabling real-time gain-control with minimal lag., Robotic proprioception calibration: tracking the latent scalar bias-drift of an inertial measurement unit (e.g., gyroscope zero-offset) by fusing a Brownian-motion drift model with intermittent zero-velocity calibration pulses, producing a continuously corrected bias estimate that feeds downstream attitude computation.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      },
+      "verified": true,
+      "compiler_output": "",
+      "proof_term": "",
+      "error_message": "",
+      "verification_level": "type_checked"
+    },
+    "all_candidates": [
+      {
+        "declaration": {
+          "name": "kalmanmeasurementupdate",
+          "type_signature": "(P: float \u2014 error covariance (state_in), Q: float \u2014 process-noise covariance (static), R: float \u2014 measurement-noise covariance (static), X: float \u2014 prior state estimate (state_in), measurement: float \u2014 scalar observation) -> tuple[float \u2014 updated error covariance (state_out), float \u2014 posterior state estimate (state_out)]",
+          "docstring": "Pure functional Kalman predict-and-update kernel. Consumes the current immutable state tuple (P, Q, R, X) together with a scalar measurement and produces a brand-new state tuple (P_new, X_new). Internally fuses the time-update (predict) step \u2014 advancing P by Q \u2014 with the measurement-update step that computes the Kalman gain, corrects the state estimate X, and contracts P by the complement of the gain. Returns new objects; the input state is never mutated.",
+          "conceptual_summary": "ScalarGaussianPriorObservationFuser. Accepts a prior scalar estimate and its associated uncertainty (covariance), advances the uncertainty forward in time by additive process-noise, then computes an optimal convex-combination weight (the gain) from the ratio of prior uncertainty to total uncertainty (prior + observation noise). Uses that gain to blend the prior estimate toward the scalar observation and to contract the uncertainty by the complement of the gain \u2014 yielding a posterior estimate that is the minimum-variance unbiased fusion of two competing Gaussian beliefs. The entire operation is a pure function: all inputs are read-only and a new (posterior-estimate, posterior-uncertainty) pair is returned.. Applications: Geophysical sensor fusion: continuously refining an estimate of subsurface temperature or pressure at a fixed depth by blending a slow-drift model (Q) with noisy point-sensor readings (R), producing a running posterior depth-state used by autonomous drilling controllers., Epidemiological prevalence tracking: maintaining a running scalar estimate of the true infection rate in a population where each new aggregate test-batch yields a noisy count; Q captures day-to-day biological drift and R captures sampling variability, producing a posterior prevalence used to trigger intervention thresholds., Adaptive signal denoising in telecommunications: estimating the true amplitude of a slowly varying carrier envelope from a stream of noisy sampled observations, where Q models the envelope's random walk and R models receiver noise, enabling real-time gain-control with minimal lag., Robotic proprioception calibration: tracking the latent scalar bias-drift of an inertial measurement unit (e.g., gyroscope zero-offset) by fusing a Brownian-motion drift model with intermittent zero-velocity calibration pulses, producing a continuously corrected bias estimate that feeds downstream attitude computation.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      }
+    ],
+    "all_verifications": [
+      {
+        "candidate": {
+          "declaration": {
+            "name": "kalmanmeasurementupdate",
+            "type_signature": "(P: float \u2014 error covariance (state_in), Q: float \u2014 process-noise covariance (static), R: float \u2014 measurement-noise covariance (static), X: float \u2014 prior state estimate (state_in), measurement: float \u2014 scalar observation) -> tuple[float \u2014 updated error covariance (state_out), float \u2014 posterior state estimate (state_out)]",
+            "docstring": "Pure functional Kalman predict-and-update kernel. Consumes the current immutable state tuple (P, Q, R, X) together with a scalar measurement and produces a brand-new state tuple (P_new, X_new). Internally fuses the time-update (predict) step \u2014 advancing P by Q \u2014 with the measurement-update step that computes the Kalman gain, corrects the state estimate X, and contracts P by the complement of the gain. Returns new objects; the input state is never mutated.",
+            "conceptual_summary": "ScalarGaussianPriorObservationFuser. Accepts a prior scalar estimate and its associated uncertainty (covariance), advances the uncertainty forward in time by additive process-noise, then computes an optimal convex-combination weight (the gain) from the ratio of prior uncertainty to total uncertainty (prior + observation noise). Uses that gain to blend the prior estimate toward the scalar observation and to contract the uncertainty by the complement of the gain \u2014 yielding a posterior estimate that is the minimum-variance unbiased fusion of two competing Gaussian beliefs. The entire operation is a pure function: all inputs are read-only and a new (posterior-estimate, posterior-uncertainty) pair is returned.. Applications: Geophysical sensor fusion: continuously refining an estimate of subsurface temperature or pressure at a fixed depth by blending a slow-drift model (Q) with noisy point-sensor readings (R), producing a running posterior depth-state used by autonomous drilling controllers., Epidemiological prevalence tracking: maintaining a running scalar estimate of the true infection rate in a population where each new aggregate test-batch yields a noisy count; Q captures day-to-day biological drift and R captures sampling variability, producing a posterior prevalence used to trigger intervention thresholds., Adaptive signal denoising in telecommunications: estimating the true amplitude of a slowly varying carrier envelope from a stream of noisy sampled observations, where Q models the envelope's random walk and R models receiver noise, enabling real-time gain-control with minimal lag., Robotic proprioception calibration: tracking the latent scalar bias-drift of an inertial measurement unit (e.g., gyroscope zero-offset) by fusing a Brownian-motion drift model with intermittent zero-velocity calibration pulses, producing a continuously corrected bias estimate that feeds downstream attitude computation.",
+            "source_lib": "ingester",
+            "prover": "python",
+            "raw_code": ""
+          },
+          "score": 1.0,
+          "retrieval_method": "ingester"
+        },
+        "verified": true,
+        "compiler_output": "",
+        "proof_term": "",
+        "error_message": "",
+        "verification_level": "type_checked"
+      }
+    ]
+  }
+]

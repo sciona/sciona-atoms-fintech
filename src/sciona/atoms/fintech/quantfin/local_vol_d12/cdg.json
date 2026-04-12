@@ -1,0 +1,331 @@
+{
+  "nodes": [
+    {
+      "node_id": "local_vol_root",
+      "parent_id": null,
+      "name": "Local Volatility Surface",
+      "description": "Local-volatility helpers derived from a Dupire-style implied-volatility surface.",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "decomposed",
+      "children": [
+        "var",
+        "localvol",
+        "flat_vol",
+        "interpolated_vol",
+        "allfort"
+      ],
+      "depth": 0,
+      "type_signature": "",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "var",
+      "parent_id": "local_vol_root",
+      "name": "VarianceFromVol",
+      "description": "Compute implied variance at one strike and maturity from a local-volatility surface.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "s",
+          "type_desc": "float",
+          "constraints": "positive strike"
+        },
+        {
+          "name": "t",
+          "type_desc": "float",
+          "constraints": "non-negative time"
+        },
+        {
+          "name": "t_prime",
+          "type_desc": "float",
+          "constraints": "non-negative time-from-zero"
+        },
+        {
+          "name": "v",
+          "type_desc": "float",
+          "constraints": "implied volatility"
+        },
+        {
+          "name": "vs",
+          "type_desc": "Mapping[str, float | complex | str | bool]",
+          "constraints": "volatility-surface context"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "variance",
+          "type_desc": "float",
+          "constraints": "non-negative scalar"
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(s: float, t: float, t_prime: float, v: float, vs: surface context mapping) -> float",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "localvol",
+      "parent_id": "local_vol_root",
+      "name": "DupireLocalVol",
+      "description": "Compute Dupire local volatility at one strike and maturity.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "dwdt",
+          "type_desc": "float",
+          "constraints": "time derivative of total variance"
+        },
+        {
+          "name": "k",
+          "type_desc": "float",
+          "constraints": "positive stock or strike level"
+        },
+        {
+          "name": "otherwise",
+          "type_desc": "float",
+          "constraints": "non-negative fallback volatility"
+        },
+        {
+          "name": "rcurve",
+          "type_desc": "Mapping[str, float | complex | str | bool]",
+          "constraints": "rate-curve context"
+        },
+        {
+          "name": "s0",
+          "type_desc": "float",
+          "constraints": "positive initial spot"
+        },
+        {
+          "name": "solution",
+          "type_desc": "float",
+          "constraints": "Dupire denominator"
+        },
+        {
+          "name": "sqrt",
+          "type_desc": "float->float callable",
+          "constraints": "square-root function"
+        },
+        {
+          "name": "t",
+          "type_desc": "float",
+          "constraints": "non-negative time to maturity"
+        },
+        {
+          "name": "v",
+          "type_desc": "float",
+          "constraints": "implied variance"
+        },
+        {
+          "name": "w",
+          "type_desc": "float",
+          "constraints": "total implied variance"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "local_volatility",
+          "type_desc": "float",
+          "constraints": "non-negative scalar"
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(dwdt: float, k: float, otherwise: float, rcurve: rate-curve context mapping, s0: float, solution: float, sqrt: float->float callable, t: float, v: float, w: float) -> float",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "flat_vol",
+      "parent_id": "local_vol_root",
+      "name": "FlatVol",
+      "description": "Return the constant implied volatility from a flat volatility surface.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "x",
+          "type_desc": "float",
+          "constraints": "finite stored volatility"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "volatility",
+          "type_desc": "float",
+          "constraints": "non-negative scalar"
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(x: float) -> float",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "interpolated_vol",
+      "parent_id": "local_vol_root",
+      "name": "InterpolatedVol",
+      "description": "Interpolate implied volatility from a strike-maturity quote grid.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "interpolatedVs",
+          "type_desc": "list[float]",
+          "constraints": "strike-interpolated vol values at each maturity"
+        },
+        {
+          "name": "mats",
+          "type_desc": "list[object]",
+          "constraints": "maturity objects"
+        },
+        {
+          "name": "mats_prime",
+          "type_desc": "list[float]",
+          "constraints": "maturities converted to floats"
+        },
+        {
+          "name": "quotes",
+          "type_desc": "dict[tuple[float, float], float]",
+          "constraints": "quoted implied volatilities"
+        },
+        {
+          "name": "strike",
+          "type_desc": "float",
+          "constraints": "positive strike"
+        },
+        {
+          "name": "sts",
+          "type_desc": "list[float]",
+          "constraints": "grid strikes"
+        },
+        {
+          "name": "t",
+          "type_desc": "object",
+          "constraints": "target maturity object"
+        },
+        {
+          "name": "tInterp",
+          "type_desc": "Callable[..., float]",
+          "constraints": "time interpolator"
+        },
+        {
+          "name": "timeFromZero",
+          "type_desc": "Callable[..., float]",
+          "constraints": "maturity-to-float converter"
+        },
+        {
+          "name": "vInterp",
+          "type_desc": "Callable[..., float]",
+          "constraints": "strike interpolator"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "volatility",
+          "type_desc": "float",
+          "constraints": "non-negative scalar"
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(interpolatedVs: list[float], mats: list[object], mats_prime: list[float], quotes: dict[(float, float), float], strike: float, sts: list[float], t: object, tInterp: callable, timeFromZero: callable, vInterp: callable) -> float",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "allfort",
+      "parent_id": "local_vol_root",
+      "name": "AllForT",
+      "description": "Extract all quoted volatilities for one maturity slice.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "map",
+          "type_desc": "Callable[..., list[float]]",
+          "constraints": "map-like higher-order function"
+        },
+        {
+          "name": "quotes",
+          "type_desc": "dict[tuple[float, float], float]",
+          "constraints": "quoted implied volatilities"
+        },
+        {
+          "name": "sts",
+          "type_desc": "list[float]",
+          "constraints": "grid strikes"
+        },
+        {
+          "name": "t_prime",
+          "type_desc": "float",
+          "constraints": "target maturity value"
+        },
+        {
+          "name": "x",
+          "type_desc": "float",
+          "constraints": "workspace strike scalar"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "quote_slice",
+          "type_desc": "list[float]",
+          "constraints": "one quoted volatility per strike"
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(map: callable, quotes: dict[(float, float), float], sts: list[float], t_prime: float, x: float) -> list[float]",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    }
+  ],
+  "edges": [],
+  "metadata": {
+    "source": "ingester",
+    "class_name": "localVol"
+  }
+}

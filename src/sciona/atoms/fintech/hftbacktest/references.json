@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.1",
+  "atoms": {
+    "ageoa.hftbacktest.evaluate_spread_conditions@ageoa/hftbacktest/atoms.py:67": {
+      "references": [
+        {
+          "ref_id": "gueant2013inventory",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Exact GLFT attribution."
+          }
+        },
+        {
+          "ref_id": "repo_hftbacktest",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored hftbacktest repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.hftbacktest.initialize_glft_state@ageoa/hftbacktest/atoms.py:19": {
+      "references": [
+        {
+          "ref_id": "gueant2013inventory",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Exact GLFT attribution."
+          }
+        },
+        {
+          "ref_id": "repo_hftbacktest",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored hftbacktest repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.hftbacktest.update_glft_coefficients@ageoa/hftbacktest/atoms.py:37": {
+      "references": [
+        {
+          "ref_id": "gueant2013inventory",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Exact GLFT attribution."
+          }
+        },
+        {
+          "ref_id": "repo_hftbacktest",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored hftbacktest repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "nodes": [
+    {
+      "node_id": "fractional_diff_root",
+      "parent_id": null,
+      "name": "ageoa.institutional_quant_engine.fractional_diff",
+      "description": "Consolidated module for ageoa.institutional_quant_engine.fractional_diff.",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "decomposed",
+      "children": [
+        "fractional_differentiator"
+      ],
+      "depth": 0,
+      "type_signature": "module",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "Grouped atoms sharing an upstream family or module.",
+      "critic_notes": "Auto-generated module CDG for consolidation.",
+      "decomposition_rationale": "Replaces singleton atom subpackages with a flat module layout."
+    },
+    {
+      "node_id": "fractional_differentiator",
+      "parent_id": "fractional_diff_root",
+      "name": "fractional_differentiator",
+      "description": "Computes the fractional differentiation of a time series. It first calculates the necessary weights based on the differentiation order 'd' and then applies them to the series, dropping terms below a specified threshold.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "series",
+          "type_desc": "pd.Series",
+          "constraints": "required argument"
+        },
+        {
+          "name": "d",
+          "type_desc": "float",
+          "constraints": "required argument"
+        },
+        {
+          "name": "threshold",
+          "type_desc": "float",
+          "constraints": "required argument"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "pd.Series",
+          "constraints": "function return value"
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(series: pd.Series, d: float, threshold: float) -> pd.Series",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "Direct callable atom in the consolidated module.",
+      "critic_notes": "Signature derived from the Python wrapper definition.",
+      "decomposition_rationale": "Leaf atom."
+    }
+  ],
+  "edges": []
+}

@@ -1,0 +1,134 @@
+[
+  {
+    "pdg_node": {
+      "predicate_id": "initializemarketmakerstate",
+      "statement": "(s0: float, inventory: float) -> StateModelSpec {gamma: float, k: float, q: float, s: float, sigma: float}",
+      "informal_desc": "Construct the immutable market-making state object with model parameters and initial market/inventory values.",
+      "prover": "python",
+      "context": {}
+    },
+    "verified_match": {
+      "candidate": {
+        "declaration": {
+          "name": "initializemarketmakerstate",
+          "type_signature": "(s0: float, inventory: float) -> StateModelSpec {gamma: float, k: float, q: float, s: float, sigma: float}",
+          "docstring": "Construct the immutable market-making state object with model parameters and initial market/inventory values.",
+          "conceptual_summary": "InitializeImmutableParameterizedState. Creates a single immutable state record by binding runtime initial conditions to a preconfigured set of model coefficients. The transform maps two scalar inputs into designated state coordinates and preserves all coefficients as persistent fields in a typed container. This establishes a canonical initial condition for downstream iterative or recursive updates.. Applications: Initialize a control-system state vector for a robot with fixed controller gains and initial pose/error terms., Seed a compartmental simulation in computational biology with fixed rate constants and initial population levels., Create an initial hidden-state object in signal processing with preset noise parameters and starting estimate values., Instantiate a finite-element or PDE solver run-state with fixed material constants and initial field amplitudes.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      },
+      "verified": true,
+      "compiler_output": "",
+      "proof_term": "",
+      "error_message": "",
+      "verification_level": "type_checked"
+    },
+    "all_candidates": [
+      {
+        "declaration": {
+          "name": "initializemarketmakerstate",
+          "type_signature": "(s0: float, inventory: float) -> StateModelSpec {gamma: float, k: float, q: float, s: float, sigma: float}",
+          "docstring": "Construct the immutable market-making state object with model parameters and initial market/inventory values.",
+          "conceptual_summary": "InitializeImmutableParameterizedState. Creates a single immutable state record by binding runtime initial conditions to a preconfigured set of model coefficients. The transform maps two scalar inputs into designated state coordinates and preserves all coefficients as persistent fields in a typed container. This establishes a canonical initial condition for downstream iterative or recursive updates.. Applications: Initialize a control-system state vector for a robot with fixed controller gains and initial pose/error terms., Seed a compartmental simulation in computational biology with fixed rate constants and initial population levels., Create an initial hidden-state object in signal processing with preset noise parameters and starting estimate values., Instantiate a finite-element or PDE solver run-state with fixed material constants and initial field amplitudes.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      }
+    ],
+    "all_verifications": [
+      {
+        "candidate": {
+          "declaration": {
+            "name": "initializemarketmakerstate",
+            "type_signature": "(s0: float, inventory: float) -> StateModelSpec {gamma: float, k: float, q: float, s: float, sigma: float}",
+            "docstring": "Construct the immutable market-making state object with model parameters and initial market/inventory values.",
+            "conceptual_summary": "InitializeImmutableParameterizedState. Creates a single immutable state record by binding runtime initial conditions to a preconfigured set of model coefficients. The transform maps two scalar inputs into designated state coordinates and preserves all coefficients as persistent fields in a typed container. This establishes a canonical initial condition for downstream iterative or recursive updates.. Applications: Initialize a control-system state vector for a robot with fixed controller gains and initial pose/error terms., Seed a compartmental simulation in computational biology with fixed rate constants and initial population levels., Create an initial hidden-state object in signal processing with preset noise parameters and starting estimate values., Instantiate a finite-element or PDE solver run-state with fixed material constants and initial field amplitudes.",
+            "source_lib": "ingester",
+            "prover": "python",
+            "raw_code": ""
+          },
+          "score": 1.0,
+          "retrieval_method": "ingester"
+        },
+        "verified": true,
+        "compiler_output": "",
+        "proof_term": "",
+        "error_message": "",
+        "verification_level": "type_checked"
+      }
+    ]
+  },
+  {
+    "pdg_node": {
+      "predicate_id": "computeinventoryadjustedquotes",
+      "statement": "(state_model: StateModelSpec {gamma: float, k: float, q: float, s: float, sigma: float}) -> QuotePair {bid: float, ask: float}",
+      "informal_desc": "Deterministically compute market quotes from the current immutable state without mutating persistent values.",
+      "prover": "python",
+      "context": {}
+    },
+    "verified_match": {
+      "candidate": {
+        "declaration": {
+          "name": "computeinventoryadjustedquotes",
+          "type_signature": "(state_model: StateModelSpec {gamma: float, k: float, q: float, s: float, sigma: float}) -> QuotePair {bid: float, ask: float}",
+          "docstring": "Deterministically compute market quotes from the current immutable state without mutating persistent values.",
+          "conceptual_summary": "Deterministic State-to-Ordered-Boundary Projection. Transforms an immutable 5-scalar state vector into a 2-scalar ordered boundary pair using a closed-form arithmetic mapping. The mapping computes a central reference value from baseline and signed imbalance terms, then applies a width/offset term driven by dispersion and sensitivity parameters to produce lower and upper bounds. No persistent state is modified, so identical inputs always yield identical outputs.. Applications: Autonomous control: compute lower/upper actuator command limits from current system offset, gain parameters, and noise scale., Clinical decision support: derive asymmetric intervention thresholds around a physiological baseline using uncertainty and patient-state imbalance., Distributed systems: generate dynamic lower/upper throttling bounds from queue imbalance, latency variance, and tuning coefficients., Materials process engineering: set real-time acceptable process-window bounds from measured drift, volatility, and risk tolerance parameters.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      },
+      "verified": true,
+      "compiler_output": "",
+      "proof_term": "",
+      "error_message": "",
+      "verification_level": "type_checked"
+    },
+    "all_candidates": [
+      {
+        "declaration": {
+          "name": "computeinventoryadjustedquotes",
+          "type_signature": "(state_model: StateModelSpec {gamma: float, k: float, q: float, s: float, sigma: float}) -> QuotePair {bid: float, ask: float}",
+          "docstring": "Deterministically compute market quotes from the current immutable state without mutating persistent values.",
+          "conceptual_summary": "Deterministic State-to-Ordered-Boundary Projection. Transforms an immutable 5-scalar state vector into a 2-scalar ordered boundary pair using a closed-form arithmetic mapping. The mapping computes a central reference value from baseline and signed imbalance terms, then applies a width/offset term driven by dispersion and sensitivity parameters to produce lower and upper bounds. No persistent state is modified, so identical inputs always yield identical outputs.. Applications: Autonomous control: compute lower/upper actuator command limits from current system offset, gain parameters, and noise scale., Clinical decision support: derive asymmetric intervention thresholds around a physiological baseline using uncertainty and patient-state imbalance., Distributed systems: generate dynamic lower/upper throttling bounds from queue imbalance, latency variance, and tuning coefficients., Materials process engineering: set real-time acceptable process-window bounds from measured drift, volatility, and risk tolerance parameters.",
+          "source_lib": "ingester",
+          "prover": "python",
+          "raw_code": ""
+        },
+        "score": 1.0,
+        "retrieval_method": "ingester"
+      }
+    ],
+    "all_verifications": [
+      {
+        "candidate": {
+          "declaration": {
+            "name": "computeinventoryadjustedquotes",
+            "type_signature": "(state_model: StateModelSpec {gamma: float, k: float, q: float, s: float, sigma: float}) -> QuotePair {bid: float, ask: float}",
+            "docstring": "Deterministically compute market quotes from the current immutable state without mutating persistent values.",
+            "conceptual_summary": "Deterministic State-to-Ordered-Boundary Projection. Transforms an immutable 5-scalar state vector into a 2-scalar ordered boundary pair using a closed-form arithmetic mapping. The mapping computes a central reference value from baseline and signed imbalance terms, then applies a width/offset term driven by dispersion and sensitivity parameters to produce lower and upper bounds. No persistent state is modified, so identical inputs always yield identical outputs.. Applications: Autonomous control: compute lower/upper actuator command limits from current system offset, gain parameters, and noise scale., Clinical decision support: derive asymmetric intervention thresholds around a physiological baseline using uncertainty and patient-state imbalance., Distributed systems: generate dynamic lower/upper throttling bounds from queue imbalance, latency variance, and tuning coefficients., Materials process engineering: set real-time acceptable process-window bounds from measured drift, volatility, and risk tolerance parameters.",
+            "source_lib": "ingester",
+            "prover": "python",
+            "raw_code": ""
+          },
+          "score": 1.0,
+          "retrieval_method": "ingester"
+        },
+        "verified": true,
+        "compiler_output": "",
+        "proof_term": "",
+        "error_message": "",
+        "verification_level": "type_checked"
+      }
+    ]
+  }
+]

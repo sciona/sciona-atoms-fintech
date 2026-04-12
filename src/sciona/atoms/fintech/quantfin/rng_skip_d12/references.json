@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.1",
+  "atoms": {
+    "ageoa.quantfin.rng_skip_d12.addmod64@ageoa/quantfin/rng_skip_d12/atoms.py:209": {
+      "references": [
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.rng_skip_d12.mulmod64_inner_step@ageoa/quantfin/rng_skip_d12/atoms.py:394": {
+      "references": [
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.rng_skip_d12.powmod64_inner_step@ageoa/quantfin/rng_skip_d12/atoms.py:440": {
+      "references": [
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.rng_skip_d12.mulmod64@ageoa/quantfin/rng_skip_d12/atoms.py:239": {
+      "references": [
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.rng_skip_d12.next@ageoa/quantfin/rng_skip_d12/atoms.py:333": {
+      "references": [
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.rng_skip_d12.powmod64@ageoa/quantfin/rng_skip_d12/atoms.py:272": {
+      "references": [
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.rng_skip_d12.randomdouble@ageoa/quantfin/rng_skip_d12/atoms.py:141": {
+      "references": [
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.rng_skip_d12.randomint64@ageoa/quantfin/rng_skip_d12/atoms.py:176": {
+      "references": [
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.rng_skip_d12.randomint@ageoa/quantfin/rng_skip_d12/atoms.py:74": {
+      "references": [
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.rng_skip_d12.randomword32@ageoa/quantfin/rng_skip_d12/atoms.py:37": {
+      "references": [
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.rng_skip_d12.randomword64@ageoa/quantfin/rng_skip_d12/atoms.py:106": {
+      "references": [
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.rng_skip_d12.skip@ageoa/quantfin/rng_skip_d12/atoms.py:304": {
+      "references": [
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quantfin.rng_skip_d12.split@ageoa/quantfin/rng_skip_d12/atoms.py:364": {
+      "references": [
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    }
+  }
+}

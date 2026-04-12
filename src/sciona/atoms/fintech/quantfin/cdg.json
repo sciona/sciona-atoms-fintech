@@ -1,0 +1,113 @@
+{
+  "nodes": [
+    {
+      "node_id": "QuantFin_root",
+      "parent_id": null,
+      "name": "QuantFin",
+      "description": "Ingested pipeline from QuantFin",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "decomposed",
+      "children": [
+        "functional_monte_carlo",
+        "volatility_surface_modeling"
+      ],
+      "depth": 0,
+      "type_signature": "",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "functional_monte_carlo",
+      "parent_id": "QuantFin_root",
+      "name": "functional_monte_carlo",
+      "description": "Generates stochastic paths and evaluates contingent claims using functional constraints.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "data",
+          "type_desc": "object",
+          "constraints": "valid input",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "object",
+          "constraints": "valid output",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(...) -> object",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "volatility_surface_modeling",
+      "parent_id": "QuantFin_root",
+      "name": "volatility_surface_modeling",
+      "description": "Interpolates and calibrates an implied variance surface.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "data",
+          "type_desc": "object",
+          "constraints": "valid input",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "object",
+          "constraints": "valid output",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(...) -> object",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    }
+  ],
+  "edges": [],
+  "metadata": {
+    "source": "ingester",
+    "class_name": "QuantFin"
+  }
+}

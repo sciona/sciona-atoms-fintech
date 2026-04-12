@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.1",
+  "atoms": {
+    "ageoa.quant_engine.calculate_ofi@ageoa/quant_engine/atoms.py:27": {
+      "references": [
+        {
+          "ref_id": "cont2014ofi",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Order-flow imbalance attribution."
+          }
+        },
+        {
+          "ref_id": "kissell2013algo",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "medium",
+            "notes": "Broad execution-algorithm attribution for local quant_engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quant_engine.execute_passive@ageoa/quant_engine/atoms.py:115": {
+      "references": [
+        {
+          "ref_id": "almgren2000",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Execution scheduling attribution."
+          }
+        },
+        {
+          "ref_id": "kissell2013algo",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "medium",
+            "notes": "Broad execution-algorithm attribution for local quant_engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quant_engine.execute_pov@ageoa/quant_engine/atoms.py:84": {
+      "references": [
+        {
+          "ref_id": "almgren2000",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Execution scheduling attribution."
+          }
+        },
+        {
+          "ref_id": "kissell2013algo",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "medium",
+            "notes": "Broad execution-algorithm attribution for local quant_engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "ageoa.quant_engine.execute_vwap@ageoa/quant_engine/atoms.py:61": {
+      "references": [
+        {
+          "ref_id": "almgren2000",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Execution scheduling attribution."
+          }
+        },
+        {
+          "ref_id": "kissell2013algo",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "medium",
+            "notes": "Broad execution-algorithm attribution for local quant_engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    }
+  }
+}

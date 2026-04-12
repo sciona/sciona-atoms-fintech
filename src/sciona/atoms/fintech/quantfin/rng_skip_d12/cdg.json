@@ -1,0 +1,889 @@
+{
+  "nodes": [
+    {
+      "node_id": "skip_root",
+      "parent_id": null,
+      "name": "skip",
+      "description": "Ingested pipeline from skip",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "decomposed",
+      "children": [
+        "randomword32",
+        "randomint",
+        "randomword64",
+        "randomdouble",
+        "randomint64",
+        "addmod64",
+        "mulmod64",
+        "powmod64",
+        "skip",
+        "next",
+        "split",
+        "mulmod64_inner_step",
+        "powmod64_inner_step"
+      ],
+      "depth": 0,
+      "type_signature": "",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "randomword32",
+      "parent_id": "skip_root",
+      "name": "Randomword32",
+      "description": "Atomic operation: Randomword32",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "c",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "state",
+          "type_desc": "Any",
+          "constraints": "valid state object",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "state'",
+          "type_desc": "Any",
+          "constraints": "valid state object",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "x",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "xor",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(c: Any, state: Any, state': Any, x: Any, xor: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "randomint",
+      "parent_id": "skip_root",
+      "name": "Randomint",
+      "description": "Atomic operation: Randomint",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "fromIntegral",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "g",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "g'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "i",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(fromIntegral: Any, g: Any, g': Any, i: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "randomword64",
+      "parent_id": "skip_root",
+      "name": "Randomword64",
+      "description": "Atomic operation: Randomword64",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "buildWord64''",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "x",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "x''",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "y1",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "y2",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(buildWord64'': Any, x: Any, x'': Any, y1: Any, y2: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "randomdouble",
+      "parent_id": "skip_root",
+      "name": "Randomdouble",
+      "description": "Atomic operation: Randomdouble",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "div",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "fromIntegral",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "val",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "x",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "x'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(div: Any, fromIntegral: Any, val: Any, x: Any, x': Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "randomint64",
+      "parent_id": "skip_root",
+      "name": "Randomint64",
+      "description": "Atomic operation: Randomint64",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "fromIntegral",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "g",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "g'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "i",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(fromIntegral: Any, g: Any, g': Any, i: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "addmod64",
+      "parent_id": "skip_root",
+      "name": "Addmod64",
+      "description": "Atomic operation: Addmod64",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "a",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "b",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "m",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "mod",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(a: Any, b: Any, m: Any, mod: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "mulmod64",
+      "parent_id": "skip_root",
+      "name": "Mulmod64",
+      "description": "Atomic operation: Mulmod64",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "a",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "b",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "f",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "m",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(a: Any, b: Any, f: Any, m: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "powmod64",
+      "parent_id": "skip_root",
+      "name": "Powmod64",
+      "description": "Atomic operation: Powmod64",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "a",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "e",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "f",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "m",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(a: Any, e: Any, f: Any, m: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "skip",
+      "parent_id": "skip_root",
+      "name": "Skip",
+      "description": "Atomic operation: Skip",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "d",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "st",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "st'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(d: Any, st: Any, st': Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "next",
+      "parent_id": "skip_root",
+      "name": "Next",
+      "description": "Atomic operation: Next",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "fromIntegral",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "g",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "g'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "w",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(fromIntegral: Any, g: Any, g': Any, w: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "split",
+      "parent_id": "skip_root",
+      "name": "Split",
+      "description": "Atomic operation: Split",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "g",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "skip",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "skipConst",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(g: Any, skip: Any, skipConst: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "mulmod64_inner_step",
+      "parent_id": "skip_root",
+      "name": "Mulmod64InnerStep",
+      "description": "Atomic operation: Mulmod64InnerStep",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "a'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "a1",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "b'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "b1",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "step",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "otherwise",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "r",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "r'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(a': Any, a1: Any, b': Any, b1: Any, step: Any, otherwise: Any, r: Any, r': Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "powmod64_inner_step",
+      "parent_id": "skip_root",
+      "name": "Powmod64InnerStep",
+      "description": "Atomic operation: Powmod64InnerStep",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "acc",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "acc'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "e'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "e1",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "step",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "otherwise",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "sqr",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "sqr'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(acc: Any, acc': Any, e': Any, e1: Any, step: Any, otherwise: Any, sqr: Any, sqr': Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    }
+  ],
+  "edges": [],
+  "metadata": {
+    "source": "ingester",
+    "class_name": "skip"
+  }
+}

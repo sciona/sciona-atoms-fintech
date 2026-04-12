@@ -1,0 +1,138 @@
+{
+  "nodes": [
+    {
+      "node_id": "kalman_filter_root",
+      "parent_id": null,
+      "name": "KalmanFilter",
+      "description": "Scalar Kalman filter initialization and measurement update workflow.",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "decomposed",
+      "children": [
+        "kalmanfilterinit",
+        "kalmanmeasurementupdate"
+      ],
+      "depth": 0,
+      "type_signature": "",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "kalmanfilterinit",
+      "parent_id": "kalman_filter_root",
+      "name": "KalmanFilterInit",
+      "description": "Initialize scalar Kalman covariances and a zero-valued prior estimate.",
+      "concept_type": "state_init",
+      "inputs": [
+        {
+          "name": "process_variance",
+          "type_desc": "float",
+          "constraints": "> 0",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "measurement_variance",
+          "type_desc": "float",
+          "constraints": "> 0",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "estimated_measurement_variance",
+          "type_desc": "float",
+          "constraints": "> 0",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "state",
+          "type_desc": "KalmanState",
+          "constraints": "contains x, p, q, r",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(process_variance: float, measurement_variance: float, estimated_measurement_variance: float) -> KalmanState",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "Prepare a scalar Kalman prior state from fixed covariance hyperparameters.",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "kalmanmeasurementupdate",
+      "parent_id": "kalman_filter_root",
+      "name": "KalmanMeasurementUpdate",
+      "description": "Run one scalar Kalman predict/update transition for a new measurement.",
+      "concept_type": "posterior_update",
+      "inputs": [
+        {
+          "name": "prior_state",
+          "type_desc": "KalmanState",
+          "constraints": "contains x, p, q, r",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "measurement",
+          "type_desc": "float",
+          "constraints": "scalar observation",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "posterior_state",
+          "type_desc": "KalmanState",
+          "constraints": "updated x and p with q and r preserved",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(prior_state: KalmanState, measurement: float) -> KalmanState",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "Fuse one scalar measurement into the prior Kalman state.",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "kalmanfilterinit",
+      "target_id": "kalmanmeasurementupdate",
+      "output_name": "state",
+      "input_name": "prior_state",
+      "source_type": "KalmanState",
+      "target_type": "KalmanState",
+      "requires_glue": false
+    }
+  ],
+  "metadata": {
+    "source": "hand_refined",
+    "class_name": "KalmanFilter"
+  }
+}

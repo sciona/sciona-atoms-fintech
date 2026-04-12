@@ -1,0 +1,1642 @@
+{
+  "nodes": [
+    {
+      "node_id": "runSimulationAnti_root",
+      "parent_id": null,
+      "name": "runSimulationAnti",
+      "description": "Ingested pipeline from runSimulationAnti",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "decomposed",
+      "children": [
+        "runmc",
+        "runsimulation",
+        "runsimulationanti",
+        "quicksim",
+        "quicksimanti",
+        "evolve",
+        "maxstep",
+        "simulatestate",
+        "runsim",
+        "process",
+        "process",
+        "process",
+        "process",
+        "insertcf",
+        "insertcf",
+        "avg",
+        "insertcflist",
+        "insertcflist"
+      ],
+      "depth": 0,
+      "type_signature": "",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "runmc",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Runmc",
+      "description": "Atomic operation: Runmc",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "evalState",
+          "type_desc": "Any",
+          "constraints": "valid state object",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "evalStateT",
+          "type_desc": "Any",
+          "constraints": "valid state object",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "flip",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "initState",
+          "type_desc": "Any",
+          "constraints": "valid state object",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "lift",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "mc",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "randState",
+          "type_desc": "Any",
+          "constraints": "valid state object",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "sampleRVarTWith",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(evalState: Any, evalStateT: Any, flip: Any, initState: Any, lift: Any, mc: Any, randState: Any, sampleRVarTWith: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "runsimulation",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Runsimulation",
+      "description": "Atomic operation: Runsimulation",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "anti",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "ccs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "modl",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "run",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "runMC",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "seed",
+          "type_desc": "Any",
+          "constraints": "valid PRNG key or seed",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "trials",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "undefined",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(anti: Any, ccs: Any, modl: Any, run: Any, runMC: Any, seed: Any, trials: Any, undefined: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "runsimulationanti",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Runsimulationanti",
+      "description": "Atomic operation: Runsimulationanti",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "ccs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "modl",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "runSim",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "seed",
+          "type_desc": "Any",
+          "constraints": "valid PRNG key or seed",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "trials",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(ccs: Any, modl: Any, runSim: Any, seed: Any, trials: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "quicksim",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Quicksim",
+      "description": "Atomic operation: Quicksim",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "mdl",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "opts",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "pureMT",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "runSimulation",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "trials",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(mdl: Any, opts: Any, pureMT: Any, runSimulation: Any, trials: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "quicksimanti",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Quicksimanti",
+      "description": "Atomic operation: Quicksimanti",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "mdl",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "opts",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "pureMT",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "runSimulationAnti",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "trials",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(mdl: Any, opts: Any, pureMT: Any, runSimulationAnti: Any, trials: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "evolve",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Evolve",
+      "description": "Atomic operation: Evolve",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "anti",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "evolve",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "evolve'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "get",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "maxStep",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "mdl",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "ms",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "t1",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "t2",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "timeDiff",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "timeOffset",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "unless",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(anti: Any, evolve: Any, evolve': Any, get: Any, maxStep: Any, mdl: Any, ms: Any, t1: Any, t2: Any, timeDiff: Any, timeOffset: Any, unless: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "maxstep",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Maxstep",
+      "description": "Atomic operation: Maxstep",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "_trigger",
+          "type_desc": "NoneType",
+          "constraints": "sentinel input for zero-parameter factory",
+          "required": false,
+          "default_value_repr": "None"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "() -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "simulatestate",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Simulatestate",
+      "description": "Atomic operation: Simulatestate",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "anti",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "avg",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "ccb",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "modl",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "replicateM",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "singleTrial",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "trials",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(anti: Any, avg: Any, ccb: Any, modl: Any, replicateM: Any, singleTrial: Any, trials: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "runsim",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Runsim",
+      "description": "Atomic operation: Runsim",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "ccs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "div",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "modl",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "runSimulation",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "seed",
+          "type_desc": "Any",
+          "constraints": "valid PRNG key or seed",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "trials",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "x",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(ccs: Any, div: Any, modl: Any, runSimulation: Any, seed: Any, trials: Any, x: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "process",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Process",
+      "description": "Atomic operation: Process",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "allcfs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "amt",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "anti",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "c",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "ccs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "cfList",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "cfs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "cft",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "d",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "discCFs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "discount",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "evolve",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "flip",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "foldl'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "fst",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "gets",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "insert",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "insertCF",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "insertCFList",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "map",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "mf",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "modl",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "newCFs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "obs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "obsMap",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "obsMap'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "process",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "t",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "xs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(allcfs: Any, amt: Any, anti: Any, c: Any, ccs: Any, cfList: Any, cfs: Any, cft: Any, d: Any, discCFs: Any, discount: Any, evolve: Any, flip: Any, foldl': Any, fst: Any, gets: Any, insert: Any, insertCF: Any, insertCFList: Any, map: Any, mf: Any, modl: Any, newCFs: Any, obs: Any, obsMap: Any, obsMap': Any, process: Any, t: Any, xs: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "process",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Process",
+      "description": "Atomic operation: Process",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "anti",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "ccs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "cfList",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "discCFs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "evolve",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "flip",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "foldl'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "fst",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "gets",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "insert",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "insertCF",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "insertCFList",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "map",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "mf",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "modl",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "newCFs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "obs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "obsMap",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "obsMap'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "process",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "t",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "xs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(anti: Any, ccs: Any, cfList: Any, discCFs: Any, evolve: Any, flip: Any, foldl': Any, fst: Any, gets: Any, insert: Any, insertCF: Any, insertCFList: Any, map: Any, mf: Any, modl: Any, newCFs: Any, obs: Any, obsMap: Any, obsMap': Any, process: Any, t: Any, xs: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "process",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Process",
+      "description": "Atomic operation: Process",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "anti",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "cf",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "cfAmount",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "cfTime",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "cfs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "d",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "discCFs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "discount",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "evolve",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "modl",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "obsMap",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "process",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(anti: Any, cf: Any, cfAmount: Any, cfTime: Any, cfs: Any, d: Any, discCFs: Any, discount: Any, evolve: Any, modl: Any, obsMap: Any, process: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "process",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Process",
+      "description": "Atomic operation: Process",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "discCFs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "return",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(discCFs: Any, return: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "insertcf",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Insertcf",
+      "description": "Atomic operation: Insertcf",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "amt",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "amt'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "cfs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "insertCF",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "otherwise",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "t",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "t'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(amt: Any, amt': Any, cfs: Any, insertCF: Any, otherwise: Any, t: Any, t': Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "insertcf",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Insertcf",
+      "description": "Atomic operation: Insertcf",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "cf",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(cf: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "avg",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Avg",
+      "description": "Atomic operation: Avg",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "fromIntegral",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "sum",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "trials",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "v",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(fromIntegral: Any, sum: Any, trials: Any, v: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "insertcflist",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Insertcflist",
+      "description": "Atomic operation: Insertcflist",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "cfList",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "flip",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "foldl'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "insertCF",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "xs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(cfList: Any, flip: Any, foldl': Any, insertCF: Any, xs: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "insertcflist",
+      "parent_id": "runSimulationAnti_root",
+      "name": "Insertcflist",
+      "description": "Atomic operation: Insertcflist",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "cfList",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "flip",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "foldl'",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "insertCF",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "xs",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "Any",
+          "constraints": "valid Any",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(cfList: Any, flip: Any, foldl': Any, insertCF: Any, xs: Any) -> Any",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    }
+  ],
+  "edges": [],
+  "metadata": {
+    "source": "ingester",
+    "class_name": "runSimulationAnti"
+  }
+}

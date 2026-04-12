@@ -1,0 +1,124 @@
+{
+  "nodes": [
+    {
+      "node_id": "QueueTracker_root",
+      "parent_id": null,
+      "name": "QueueTracker",
+      "description": "Ingested pipeline from QueueTracker",
+      "concept_type": "custom",
+      "inputs": [],
+      "outputs": [],
+      "status": "decomposed",
+      "children": [
+        "initializeorderstate",
+        "updatequeueontrade"
+      ],
+      "depth": 0,
+      "type_signature": "",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "initializeorderstate",
+      "parent_id": "QueueTracker_root",
+      "name": "InitializeOrderState",
+      "description": "Initializes the state of a new order within the queue, capturing its initial quantity and the volume of orders ahead of it.",
+      "concept_type": "prior_init",
+      "inputs": [
+        {
+          "name": "my_order_id",
+          "type_desc": "str",
+          "constraints": "Unique identifier for the order."
+        },
+        {
+          "name": "my_qty",
+          "type_desc": "float",
+          "constraints": "Initial quantity of the order."
+        },
+        {
+          "name": "orders_ahead",
+          "type_desc": "float",
+          "constraints": "Initial quantity of orders in the queue ahead of this one."
+        }
+      ],
+      "outputs": [
+        {
+          "name": "initial_order_state",
+          "type_desc": "OrderState",
+          "constraints": "A data structure representing the initial state, containing my_qty, orders_ahead, and is_filled status."
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(my_order_id: string, my_qty: float, orders_ahead: float) -> OrderState",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "InitializePrioritizedEntity. Instantiates a state record for a new entity entering a sequenced or prioritized system. The transform captures the entity's intrinsic scalar magnitude and the cumulative magnitude of all entities preceding it, packaging these values into an initial state vector with a default status flag.. Applications: In particle physics simulations, initializing a new particle's state with its energy and the cumulative energy of prior particles in a detector event., In epidemiology, seeding a new infection case with its initial viral load and the total number of existing cases in the population to model its spread potential., In network engineering, creating a record for a new data packet in a buffer, noting its size and the total size of packets ahead of it for Quality-of-Service (QoS) latency calculations.",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    },
+    {
+      "node_id": "updatequeueontrade",
+      "parent_id": "QueueTracker_root",
+      "name": "UpdateQueueOnTrade",
+      "description": "Processes an incoming market trade, reducing the queue ahead and potentially filling the order. This is a deterministic state transition.",
+      "concept_type": "sequential_filter",
+      "inputs": [
+        {
+          "name": "current_order_state",
+          "type_desc": "OrderState",
+          "constraints": "The current state of the order before the trade."
+        },
+        {
+          "name": "trade_qty",
+          "type_desc": "float",
+          "constraints": "The quantity of the executed market trade."
+        }
+      ],
+      "outputs": [
+        {
+          "name": "next_order_state",
+          "type_desc": "OrderState",
+          "constraints": "A new data structure representing the updated state of the order after the trade."
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(current_order_state: OrderState, trade_qty: float) -> OrderState",
+      "matched_primitive": null,
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": false,
+      "conceptual_summary": "CumulativeThresholdedDecrement. Applies a scalar input to decrement a primary quantitative metric within a state object. If the input exceeds the current value of the primary metric, the remainder is used to increment a secondary metric in the state object. This represents a deterministic state transition where consuming one resource can trigger the accumulation of another.. Applications: Inventory Management: Depleting stock from a primary warehouse and then sourcing from a secondary one once the first is empty., Cellular Biology: Modeling the consumption of a primary energy source (like glucose) by a cell, and switching to a secondary source (like ketones) upon depletion., Digital Signal Processing: Simulating a 'bucket' integrator where an input signal fills a primary register, and overflow is accumulated in a secondary register., Nuclear Physics: Tracking the absorption of incident radiation by a shield material, where exceeding the primary shield's capacity leads to energy deposition in a secondary layer.",
+      "critic_notes": "",
+      "decomposition_rationale": ""
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "initializeorderstate",
+      "target_id": "updatequeueontrade",
+      "output_name": "initial_order_state",
+      "input_name": "current_order_state",
+      "source_type": "OrderState",
+      "target_type": "OrderState",
+      "requires_glue": false
+    }
+  ],
+  "metadata": {
+    "source": "ingester",
+    "class_name": "QueueTracker"
+  }
+}

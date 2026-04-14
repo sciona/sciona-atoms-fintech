@@ -1,15 +1,21 @@
 from __future__ import annotations
 
-from ageoa.ghost.abstract import AbstractArray, AbstractDistribution, AbstractScalar, AbstractSignal
+from sciona.ghost.abstract import AbstractArray, AbstractDistribution, AbstractScalar, AbstractSignal
 
-def witness_simulate_heston_paths(*args, **kwargs) -> AbstractArray:
+
+def witness_simulate_heston_paths(
+    initial_state: AbstractArray,
+    n_steps: AbstractScalar,
+) -> AbstractArray:
+    """Describe the simulated Heston path tensor produced from the initial state."""
+    _ = n_steps
     result = AbstractArray(
-        shape=(1,),
+        shape=initial_state.shape,
         dtype="float64",)
     
     return result
 
-from ageoa.ghost.abstract import AbstractArray, AbstractDistribution, AbstractMCMCTrace, AbstractRNGState, AbstractScalar, AbstractSignal
+from sciona.ghost.abstract import AbstractArray, AbstractDistribution, AbstractMCMCTrace, AbstractRNGState, AbstractScalar, AbstractSignal
 
 
 def witness_hestonpathsampler(trace: AbstractMCMCTrace, target: AbstractDistribution, rng: AbstractRNGState) -> tuple[AbstractMCMCTrace, AbstractRNGState]:

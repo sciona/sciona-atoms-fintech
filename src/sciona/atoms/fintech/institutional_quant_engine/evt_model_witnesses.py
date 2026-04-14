@@ -1,8 +1,14 @@
 from __future__ import annotations
 
-from ageoa.ghost.abstract import AbstractArray, AbstractDistribution, AbstractScalar, AbstractSignal
+from sciona.ghost.abstract import AbstractArray, AbstractDistribution, AbstractScalar, AbstractSignal
 
-def witness_fit_gpd_tail(returns: AbstractArray, *args, **kwargs) -> AbstractArray:
+
+def witness_fit_gpd_tail(
+    returns: AbstractArray,
+    threshold: AbstractArray,
+) -> AbstractArray:
+    """Describe the fitted tail-parameter vector from EVT thresholding."""
+    _ = threshold
     result = AbstractArray(
         shape=returns.shape,
         dtype="float64",)

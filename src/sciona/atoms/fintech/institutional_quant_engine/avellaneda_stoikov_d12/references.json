@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1",
   "atoms": {
-    "ageoa.institutional_quant_engine.avellaneda_stoikov_d12.marketmakerstateinit@ageoa/institutional_quant_engine/avellaneda_stoikov_d12/atoms.py:16": {
+    "sciona.atoms.fintech.institutional_quant_engine.avellaneda_stoikov_d12.marketmakerstateinit@sciona/atoms/fintech/institutional_quant_engine/avellaneda_stoikov_d12/atoms.py:16": {
       "references": [
         {
           "ref_id": "avellaneda2008",
@@ -26,7 +26,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "ageoa.institutional_quant_engine.avellaneda_stoikov_d12.optimalquotecalculation@ageoa/institutional_quant_engine/avellaneda_stoikov_d12/atoms.py:43": {
+    "sciona.atoms.fintech.institutional_quant_engine.avellaneda_stoikov_d12.optimalquotecalculation@sciona/atoms/fintech/institutional_quant_engine/avellaneda_stoikov_d12/atoms.py:43": {
       "references": [
         {
           "ref_id": "avellaneda2008",

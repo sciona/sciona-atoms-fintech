@@ -3,8 +3,8 @@
     {
       "node_id": "almgren_chriss_root",
       "parent_id": null,
-      "name": "ageoa.institutional_quant_engine.almgren_chriss",
-      "description": "Consolidated module for ageoa.institutional_quant_engine.almgren_chriss.",
+      "name": "sciona.institutional_quant_engine.almgren_chriss",
+      "description": "Consolidated module for sciona.institutional_quant_engine.almgren_chriss.",
       "concept_type": "custom",
       "inputs": [],
       "outputs": [],

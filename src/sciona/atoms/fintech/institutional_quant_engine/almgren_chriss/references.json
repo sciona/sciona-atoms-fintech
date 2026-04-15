@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1",
   "atoms": {
-    "ageoa.institutional_quant_engine.almgren_chriss.computeoptimaltrajectory@ageoa/institutional_quant_engine/almgren_chriss.py:16": {
+    "sciona.atoms.fintech.institutional_quant_engine.almgren_chriss.computeoptimaltrajectory@sciona/atoms/fintech/institutional_quant_engine/almgren_chriss/almgren_chriss.py:16": {
       "references": [
         {
           "ref_id": "almgren2000",

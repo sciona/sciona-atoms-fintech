@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1",
   "atoms": {
-    "ageoa.institutional_quant_engine.queue_estimator.initializeorderstate@ageoa/institutional_quant_engine/queue_estimator/atoms.py:23": {
+    "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.initializeorderstate@sciona/atoms/fintech/institutional_quant_engine/queue_estimator/atoms.py:23": {
       "references": [
         {
           "ref_id": "repo_institutional_quant_engine",
@@ -16,7 +16,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "ageoa.institutional_quant_engine.queue_estimator.updatequeueontrade@ageoa/institutional_quant_engine/queue_estimator/atoms.py:53": {
+    "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.updatequeueontrade@sciona/atoms/fintech/institutional_quant_engine/queue_estimator/atoms.py:53": {
       "references": [
         {
           "ref_id": "repo_institutional_quant_engine",

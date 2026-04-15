@@ -3,8 +3,8 @@
     {
       "node_id": "supply_chain_root",
       "parent_id": null,
-      "name": "ageoa.institutional_quant_engine.supply_chain",
-      "description": "Consolidated module for ageoa.institutional_quant_engine.supply_chain.",
+      "name": "sciona.institutional_quant_engine.supply_chain",
+      "description": "Consolidated module for sciona.institutional_quant_engine.supply_chain.",
       "concept_type": "custom",
       "inputs": [],
       "outputs": [],

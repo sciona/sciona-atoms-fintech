@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1",
   "atoms": {
-    "ageoa.quant_engine.calculate_ofi@ageoa/quant_engine/atoms.py:27": {
+    "sciona.atoms.fintech.quant_engine.calculate_ofi@sciona/atoms/fintech/quant_engine/atoms.py:27": {
       "references": [
         {
           "ref_id": "cont2014ofi",
@@ -26,7 +26,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "ageoa.quant_engine.execute_passive@ageoa/quant_engine/atoms.py:115": {
+    "sciona.atoms.fintech.quant_engine.execute_passive@sciona/atoms/fintech/quant_engine/atoms.py:115": {
       "references": [
         {
           "ref_id": "almgren2000",
@@ -51,7 +51,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "ageoa.quant_engine.execute_pov@ageoa/quant_engine/atoms.py:84": {
+    "sciona.atoms.fintech.quant_engine.execute_pov@sciona/atoms/fintech/quant_engine/atoms.py:84": {
       "references": [
         {
           "ref_id": "almgren2000",
@@ -76,7 +76,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "ageoa.quant_engine.execute_vwap@ageoa/quant_engine/atoms.py:61": {
+    "sciona.atoms.fintech.quant_engine.execute_vwap@sciona/atoms/fintech/quant_engine/atoms.py:61": {
       "references": [
         {
           "ref_id": "almgren2000",

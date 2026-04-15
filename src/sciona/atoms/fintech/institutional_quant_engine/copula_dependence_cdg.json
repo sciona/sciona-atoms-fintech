@@ -3,8 +3,8 @@
     {
       "node_id": "copula_dependence_root",
       "parent_id": null,
-      "name": "ageoa.institutional_quant_engine.copula_dependence",
-      "description": "Consolidated module for ageoa.institutional_quant_engine.copula_dependence.",
+      "name": "sciona.institutional_quant_engine.copula_dependence",
+      "description": "Consolidated module for sciona.institutional_quant_engine.copula_dependence.",
       "concept_type": "custom",
       "inputs": [],
       "outputs": [],

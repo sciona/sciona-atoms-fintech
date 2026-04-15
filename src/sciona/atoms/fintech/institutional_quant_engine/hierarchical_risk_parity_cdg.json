@@ -3,8 +3,8 @@
     {
       "node_id": "hierarchical_risk_parity_root",
       "parent_id": null,
-      "name": "ageoa.institutional_quant_engine.hierarchical_risk_parity",
-      "description": "Consolidated module for ageoa.institutional_quant_engine.hierarchical_risk_parity.",
+      "name": "sciona.institutional_quant_engine.hierarchical_risk_parity",
+      "description": "Consolidated module for sciona.institutional_quant_engine.hierarchical_risk_parity.",
       "concept_type": "custom",
       "inputs": [],
       "outputs": [],

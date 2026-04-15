@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1",
   "atoms": {
-    "ageoa.quantfin.char_func_option_d12.cf@ageoa/quantfin/char_func_option_d12/atoms.py:168": {
+    "sciona.atoms.fintech.quantfin.char_func_option_d12.cf@sciona/atoms/fintech/quantfin/char_func_option_d12/atoms.py:168": {
       "references": [
         {
           "ref_id": "heston1993",
@@ -26,7 +26,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "ageoa.quantfin.char_func_option_d12.charfuncoption@ageoa/quantfin/char_func_option_d12/atoms.py:26": {
+    "sciona.atoms.fintech.quantfin.char_func_option_d12.charfuncoption@sciona/atoms/fintech/quantfin/char_func_option_d12/atoms.py:26": {
       "references": [
         {
           "ref_id": "heston1993",
@@ -51,7 +51,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "ageoa.quantfin.char_func_option_d12.f@ageoa/quantfin/char_func_option_d12/atoms.py:125": {
+    "sciona.atoms.fintech.quantfin.char_func_option_d12.f@sciona/atoms/fintech/quantfin/char_func_option_d12/atoms.py:125": {
       "references": [
         {
           "ref_id": "heston1993",

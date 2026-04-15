@@ -3,8 +3,8 @@
     {
       "node_id": "triangular_arbitrage_root",
       "parent_id": null,
-      "name": "ageoa.institutional_quant_engine.triangular_arbitrage",
-      "description": "Consolidated module for ageoa.institutional_quant_engine.triangular_arbitrage.",
+      "name": "sciona.institutional_quant_engine.triangular_arbitrage",
+      "description": "Consolidated module for sciona.institutional_quant_engine.triangular_arbitrage.",
       "concept_type": "custom",
       "inputs": [],
       "outputs": [],

@@ -3,8 +3,8 @@
     {
       "node_id": "hawkes_process_root",
       "parent_id": null,
-      "name": "ageoa.institutional_quant_engine.hawkes_process",
-      "description": "Consolidated module for ageoa.institutional_quant_engine.hawkes_process.",
+      "name": "sciona.institutional_quant_engine.hawkes_process",
+      "description": "Consolidated module for sciona.institutional_quant_engine.hawkes_process.",
       "concept_type": "custom",
       "inputs": [],
       "outputs": [],

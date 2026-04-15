@@ -3,8 +3,8 @@
     {
       "node_id": "order_flow_imbalance_root",
       "parent_id": null,
-      "name": "ageoa.institutional_quant_engine.order_flow_imbalance",
-      "description": "Consolidated module for ageoa.institutional_quant_engine.order_flow_imbalance.",
+      "name": "sciona.institutional_quant_engine.order_flow_imbalance",
+      "description": "Consolidated module for sciona.institutional_quant_engine.order_flow_imbalance.",
       "concept_type": "custom",
       "inputs": [],
       "outputs": [],

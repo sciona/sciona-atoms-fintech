@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1",
   "atoms": {
-    "ageoa.quantfin.tdma_solver_d12.cotraversevec@ageoa/quantfin/tdma_solver_d12/atoms.py:147": {
+    "sciona.atoms.fintech.quantfin.tdma_solver_d12.cotraversevec@sciona/atoms/fintech/quantfin/tdma_solver_d12/atoms.py:147": {
       "references": [
         {
           "ref_id": "repo_quantfin",
@@ -16,7 +16,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "ageoa.quantfin.tdma_solver_d12.tdmasolver@ageoa/quantfin/tdma_solver_d12/atoms.py:28": {
+    "sciona.atoms.fintech.quantfin.tdma_solver_d12.tdmasolver@sciona/atoms/fintech/quantfin/tdma_solver_d12/atoms.py:28": {
       "references": [
         {
           "ref_id": "repo_quantfin",

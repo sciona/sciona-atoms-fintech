@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1",
   "atoms": {
-    "ageoa.institutional_quant_engine.almgren_chriss_v2.optimalexecutiontrajectory@ageoa/institutional_quant_engine/almgren_chriss_v2/atoms.py:31": {
+    "sciona.atoms.fintech.institutional_quant_engine.almgren_chriss_v2.optimalexecutiontrajectory@sciona/atoms/fintech/institutional_quant_engine/almgren_chriss_v2/atoms.py:31": {
       "references": [
         {
           "ref_id": "almgren2000",
@@ -26,7 +26,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "ageoa.institutional_quant_engine.almgren_chriss_v2.riskaversioninit@ageoa/institutional_quant_engine/almgren_chriss_v2/atoms.py:16": {
+    "sciona.atoms.fintech.institutional_quant_engine.almgren_chriss_v2.riskaversioninit@sciona/atoms/fintech/institutional_quant_engine/almgren_chriss_v2/atoms.py:16": {
       "references": [
         {
           "ref_id": "almgren2000",

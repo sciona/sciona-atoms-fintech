@@ -3,8 +3,8 @@
     {
       "node_id": "dynamic_hedge_root",
       "parent_id": null,
-      "name": "ageoa.institutional_quant_engine.dynamic_hedge",
-      "description": "Consolidated module for ageoa.institutional_quant_engine.dynamic_hedge.",
+      "name": "sciona.institutional_quant_engine.dynamic_hedge",
+      "description": "Consolidated module for sciona.institutional_quant_engine.dynamic_hedge.",
       "concept_type": "custom",
       "inputs": [],
       "outputs": [],

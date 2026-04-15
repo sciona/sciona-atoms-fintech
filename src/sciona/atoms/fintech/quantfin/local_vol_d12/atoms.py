@@ -115,7 +115,7 @@ def localvol(
 # vol  — flat surface lookup (single value)
 # ---------------------------------------------------------------------------
 
-@register_atom(witness_vol)
+@register_atom(witness_vol, name="vol_flat_surface")
 @icontract.require(lambda x: isinstance(x, float), "x must be a float")
 @icontract.ensure(lambda result: isinstance(result, float) and result >= 0.0, "vol must be non-negative")
 def vol(x: float) -> float:
@@ -138,7 +138,7 @@ def vol(x: float) -> float:
 # vol  — grid surface lookup (interpolated)
 # ---------------------------------------------------------------------------
 
-@register_atom(witness_vol)
+@register_atom(witness_vol, name="vol_interpolated_surface")
 @icontract.require(lambda strike: isinstance(strike, float) and strike > 0.0, "strike must be a positive float")
 @icontract.ensure(lambda result: isinstance(result, float) and result >= 0.0, "vol must be non-negative")
 def vol(

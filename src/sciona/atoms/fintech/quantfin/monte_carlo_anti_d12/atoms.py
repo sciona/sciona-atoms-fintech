@@ -394,7 +394,7 @@ def runsim(
 # process  — full cash-flow processing (variant 1: with remaining CFs)
 # ---------------------------------------------------------------------------
 
-@register_atom(witness_process)
+@register_atom(witness_process, name="process_with_pending_cashflows")
 @icontract.require(lambda discCFs: isinstance(discCFs, (int, float)), "discCFs must be numeric")
 @icontract.ensure(lambda result: isinstance(result, float), "result must be a float")
 def process(
@@ -492,7 +492,7 @@ def process(
 # process  — variant 2: processors remain, no pending CFs
 # ---------------------------------------------------------------------------
 
-@register_atom(witness_process)
+@register_atom(witness_process, name="process_with_observation_only")
 @icontract.require(lambda discCFs: isinstance(discCFs, (int, float)), "discCFs must be numeric")
 @icontract.ensure(lambda result: isinstance(result, float), "result must be a float")
 def process(
@@ -565,7 +565,7 @@ def process(
 # process  — variant 3: only cash flows remain
 # ---------------------------------------------------------------------------
 
-@register_atom(witness_process)
+@register_atom(witness_process, name="process_with_cashflows_only")
 @icontract.require(lambda discCFs: isinstance(discCFs, float), "discCFs must be a float")
 @icontract.ensure(lambda result: isinstance(result, float), "result must be a float")
 def process(
@@ -620,7 +620,7 @@ def process(
 # process  — variant 4: base case
 # ---------------------------------------------------------------------------
 
-@register_atom(witness_process)
+@register_atom(witness_process, name="process_base_case")
 @icontract.require(lambda discCFs: isinstance(discCFs, float), "discCFs must be a float")
 @icontract.ensure(lambda result: isinstance(result, float), "result must be a float")
 def process(
@@ -647,7 +647,7 @@ def process(
 # insertcf  — insert a cash flow in sorted order (recursive case)
 # ---------------------------------------------------------------------------
 
-@register_atom(witness_insertcf)
+@register_atom(witness_insertcf, name="insertcf_recursive")
 @icontract.require(lambda cfs: isinstance(cfs, list), "cfs must be a list")
 @icontract.ensure(lambda result: isinstance(result, list), "result must be a list")
 def insertcf(
@@ -690,7 +690,7 @@ def insertcf(
 # insertcf  — base case (empty list)
 # ---------------------------------------------------------------------------
 
-@register_atom(witness_insertcf)
+@register_atom(witness_insertcf, name="insertcf_singleton")
 @icontract.require(lambda cf: cf is not None, "cf must not be None")
 @icontract.ensure(lambda result: isinstance(result, list) and len(result) == 1, "result must be a single-element list")
 def insertcf(
@@ -742,7 +742,7 @@ def avg(
 # insertcflist  — insert multiple CFs (variant 1)
 # ---------------------------------------------------------------------------
 
-@register_atom(witness_insertcflist)
+@register_atom(witness_insertcflist, name="insertcflist_fold")
 @icontract.require(lambda cfList: isinstance(cfList, list), "cfList must be a list")
 @icontract.ensure(lambda result: isinstance(result, list), "result must be a list")
 def insertcflist(
@@ -778,7 +778,7 @@ def insertcflist(
 # insertcflist  — variant 2
 # ---------------------------------------------------------------------------
 
-@register_atom(witness_insertcflist)
+@register_atom(witness_insertcflist, name="insertcflist_fold_alt")
 @icontract.require(lambda xs: isinstance(xs, list), "xs must be a list")
 @icontract.ensure(lambda result: isinstance(result, list), "result must be a list")
 def insertcflist(

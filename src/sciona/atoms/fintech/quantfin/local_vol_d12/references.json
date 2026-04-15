@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1",
   "atoms": {
-    "ageoa.quantfin.local_vol_d12.allfort@ageoa/quantfin/local_vol_d12/atoms.py:186": {
+    "sciona.atoms.fintech.quantfin.local_vol_d12.allfort@sciona/atoms/fintech/quantfin/local_vol_d12/atoms.py:186": {
       "references": [
         {
           "ref_id": "gatheral2006",
@@ -26,7 +26,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "ageoa.quantfin.local_vol_d12.localvol@ageoa/quantfin/local_vol_d12/atoms.py:60": {
+    "sciona.atoms.fintech.quantfin.local_vol_d12.localvol@sciona/atoms/fintech/quantfin/local_vol_d12/atoms.py:60": {
       "references": [
         {
           "ref_id": "gatheral2006",
@@ -51,7 +51,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "ageoa.quantfin.local_vol_d12.var@ageoa/quantfin/local_vol_d12/atoms.py:25": {
+    "sciona.atoms.fintech.quantfin.local_vol_d12.var@sciona/atoms/fintech/quantfin/local_vol_d12/atoms.py:25": {
       "references": [
         {
           "ref_id": "gatheral2006",
@@ -76,7 +76,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "ageoa.quantfin.local_vol_d12.vol@ageoa/quantfin/local_vol_d12/atoms.py:113": {
+    "sciona.atoms.fintech.quantfin.local_vol_d12.vol_flat_surface@sciona/atoms/fintech/quantfin/local_vol_d12/atoms.py:113": {
       "references": [
         {
           "ref_id": "gatheral2006",
@@ -101,7 +101,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "ageoa.quantfin.local_vol_d12.vol@ageoa/quantfin/local_vol_d12/atoms.py:136": {
+    "sciona.atoms.fintech.quantfin.local_vol_d12.vol_interpolated_surface@sciona/atoms/fintech/quantfin/local_vol_d12/atoms.py:136": {
       "references": [
         {
           "ref_id": "gatheral2006",

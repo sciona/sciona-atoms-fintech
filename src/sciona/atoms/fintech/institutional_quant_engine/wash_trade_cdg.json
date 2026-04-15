@@ -3,8 +3,8 @@
     {
       "node_id": "wash_trade_root",
       "parent_id": null,
-      "name": "ageoa.institutional_quant_engine.wash_trade",
-      "description": "Consolidated module for ageoa.institutional_quant_engine.wash_trade.",
+      "name": "sciona.institutional_quant_engine.wash_trade",
+      "description": "Consolidated module for sciona.institutional_quant_engine.wash_trade.",
       "concept_type": "custom",
       "inputs": [],
       "outputs": [],

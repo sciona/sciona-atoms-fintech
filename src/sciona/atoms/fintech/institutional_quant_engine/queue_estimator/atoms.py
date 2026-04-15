@@ -5,7 +5,7 @@ from __future__ import annotations
 import numpy as np
 
 import icontract
-from ageoa.ghost.registry import register_atom
+from sciona.ghost.registry import register_atom
 
 from .state_models import OrderState
 from .witnesses import witness_initializeorderstate, witness_updatequeueontrade

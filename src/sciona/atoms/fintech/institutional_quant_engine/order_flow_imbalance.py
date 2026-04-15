@@ -5,7 +5,7 @@ from collections.abc import Mapping
 import numpy as np
 
 import icontract
-from ageoa.ghost.registry import register_atom
+from sciona.ghost.registry import register_atom
 from .order_flow_imbalance_witnesses import witness_orderflowimbalanceevaluation
 
 # Witness functions should be imported from the generated witnesses module

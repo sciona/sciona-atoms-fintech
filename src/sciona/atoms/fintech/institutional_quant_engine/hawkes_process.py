@@ -3,7 +3,7 @@ from __future__ import annotations
 import numpy as np
 
 import icontract
-from ageoa.ghost.registry import register_atom
+from sciona.ghost.registry import register_atom
 from .hawkes_process_witnesses import witness_sample_hawkes_event_trajectory
 
 # Witness functions should be imported from the generated witnesses module
@@ -44,7 +44,7 @@ def sample_hawkes_event_trajectory(mu: float, alpha: float, beta: float, T: floa
 import numpy as np
 
 import icontract
-from ageoa.ghost.registry import register_atom
+from sciona.ghost.registry import register_atom
 from .hawkes_process_witnesses import witness_hawkesprocesssimulator
 
 # Witness functions should be imported from the generated witnesses module

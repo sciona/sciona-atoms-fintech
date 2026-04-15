@@ -6,7 +6,7 @@ import numpy as np
 import icontract
 from typing import Any, Callable, TypeAlias
 
-from ageoa.ghost.registry import register_atom
+from sciona.ghost.registry import register_atom
 from .witnesses import (
     witness_avg,
     witness_evolve,

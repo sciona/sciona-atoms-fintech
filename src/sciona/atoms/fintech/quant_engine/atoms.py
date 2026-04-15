@@ -6,10 +6,10 @@ from typing import Tuple
 
 import icontract
 
-from ageoa.ghost.registry import register_atom
+from sciona.ghost.registry import register_atom
 from .witnesses import witness_calculate_ofi, witness_execute_passive, witness_execute_pov, witness_execute_vwap
-from ageoa.quant_engine.state_models import LimitQueueState
-from ageoa.quant_engine.witnesses import (
+from sciona.atoms.fintech.quant_engine.state_models import LimitQueueState
+from sciona.atoms.fintech.quant_engine.witnesses import (
     witness_calculate_ofi,
     witness_execute_passive,
     witness_execute_pov,

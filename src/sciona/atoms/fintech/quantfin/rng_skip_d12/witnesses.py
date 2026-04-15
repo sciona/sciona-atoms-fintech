@@ -1,5 +1,5 @@
 from __future__ import annotations
-from ageoa.ghost.abstract import AbstractArray, AbstractScalar, AbstractDistribution, AbstractSignal
+from sciona.ghost.abstract import AbstractArray, AbstractScalar, AbstractDistribution, AbstractSignal
 
 
 def witness_randomword32(c: AbstractArray, state: AbstractArray, state_prime: AbstractArray, x: AbstractArray, xor: AbstractArray) -> AbstractArray:

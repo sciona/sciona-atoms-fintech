@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import numpy as np
 import icontract
-from ageoa.ghost.registry import register_atom
+from sciona.ghost.registry import register_atom
 from .heston_model_witnesses import witness_simulate_heston_paths
 
 
@@ -48,7 +48,7 @@ def simulate_heston_paths(S0: float, v0: float, kappa: float, theta: float, sigm
 import numpy as np
 
 import icontract
-from ageoa.ghost.registry import register_atom
+from sciona.ghost.registry import register_atom
 from .heston_model_witnesses import witness_hestonpathsampler
 
 

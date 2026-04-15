@@ -8,7 +8,7 @@ Boolean: Any = Any
 
 import numpy as np
 import icontract
-from ageoa.ghost.registry import register_atom
+from sciona.ghost.registry import register_atom
 from .wash_trade_witnesses import witness_detect_wash_trade_rings
 
 

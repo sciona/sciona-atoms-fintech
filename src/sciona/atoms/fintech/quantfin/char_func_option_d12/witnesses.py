@@ -1,5 +1,5 @@
 from __future__ import annotations
-from ageoa.ghost.abstract import AbstractArray, AbstractScalar
+from sciona.ghost.abstract import AbstractArray, AbstractScalar
 
 
 def witness_charfuncoption(arg0: AbstractScalar, cf: AbstractScalar, charFuncMart: AbstractScalar, d: AbstractScalar, damp: AbstractScalar, damp_prime: AbstractScalar, disc: AbstractScalar, exp: AbstractScalar, f: AbstractScalar, fg: AbstractScalar, func1: AbstractScalar, func2: AbstractScalar, i: AbstractScalar, intF: AbstractScalar, k: AbstractScalar, leftTerm: AbstractScalar, log: AbstractScalar, model: AbstractScalar, opt: AbstractScalar, p1: AbstractScalar, p2: AbstractScalar, pi: AbstractScalar, q: AbstractScalar, realPart: AbstractScalar, rightTerm: AbstractScalar, s: AbstractScalar, strike: AbstractScalar, tmat: AbstractScalar, v: AbstractScalar, v_prime: AbstractScalar, x: AbstractScalar, yc: AbstractScalar) -> AbstractScalar:

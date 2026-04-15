@@ -7,7 +7,7 @@ import numpy as np
 import icontract
 from typing import Protocol
 
-from ageoa.ghost.registry import register_atom
+from sciona.ghost.registry import register_atom
 from .witnesses import witness_allfort, witness_localvol, witness_var, witness_vol
 
 import ctypes

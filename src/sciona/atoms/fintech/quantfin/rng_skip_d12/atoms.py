@@ -6,7 +6,7 @@ import numpy as np
 import icontract
 from typing import Callable, Tuple
 
-from ageoa.ghost.registry import register_atom
+from sciona.ghost.registry import register_atom
 from .witnesses import (
     witness_addmod64,
     witness_mulmod64,

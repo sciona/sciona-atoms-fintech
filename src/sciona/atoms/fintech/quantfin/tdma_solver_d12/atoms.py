@@ -7,7 +7,7 @@ import icontract
 from collections.abc import Callable, Iterable, Sequence
 from typing import TypeAlias
 
-from ageoa.ghost.registry import register_atom
+from sciona.ghost.registry import register_atom
 from .witnesses import witness_cotraversevec, witness_tdmasolver
 
 import ctypes

@@ -6,7 +6,7 @@ from typing import Any, Callable
 import numpy as np
 
 import icontract
-from ageoa.ghost.registry import register_atom
+from sciona.ghost.registry import register_atom
 
 
 from .witnesses import witness_computeinventoryadjustedquotes, witness_initializemarketmakerstate

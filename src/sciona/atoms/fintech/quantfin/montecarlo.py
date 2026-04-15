@@ -3,13 +3,13 @@ from typing import Dict
 
 import numpy as np
 
-from ageoa.ghost.registry import register_atom
-from ageoa.quantfin.models import (
+from sciona.ghost.registry import register_atom
+from sciona.atoms.fintech.quantfin.models import (
     ContingentClaim,
     DiscretizeModel,
     SeededMonteCarloSimulator,
 )
-from ageoa.quantfin.witnesses import witness_run_simulation, witness_run_simulation_anti, witness_quick_sim_anti
+from sciona.atoms.fintech.quantfin.witnesses import witness_run_simulation, witness_run_simulation_anti, witness_quick_sim_anti
 
 SIMULATOR_REGISTRY: Dict[str, SeededMonteCarloSimulator] = {}
 

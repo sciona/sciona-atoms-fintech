@@ -5,7 +5,7 @@ from collections.abc import Sequence
 import numpy as np
 
 import icontract
-from ageoa.ghost.registry import register_atom
+from sciona.ghost.registry import register_atom
 from .pin_model_witnesses import witness_pinlikelihoodevaluation
 
 # Witness functions should be imported from the generated witnesses module
@@ -43,7 +43,7 @@ def pinlikelihoodevaluation(
 import numpy as np
 
 import icontract
-from ageoa.ghost.registry import register_atom
+from sciona.ghost.registry import register_atom
 from .pin_model_witnesses import witness_pinlikelihoodevaluator
 
 

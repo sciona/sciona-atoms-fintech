@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from ageoa.ghost.abstract import AbstractArray, AbstractDistribution, AbstractScalar, AbstractSignal
+from sciona.ghost.abstract import AbstractArray, AbstractDistribution, AbstractScalar, AbstractSignal
 
 def witness_fractional_differentiator(series: AbstractArray, d: AbstractScalar, threshold: AbstractScalar) -> AbstractArray:
     """Shape-and-type check for fractional differentiator. Returns output metadata without running the real computation."""

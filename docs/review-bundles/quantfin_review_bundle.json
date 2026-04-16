@@ -1,0 +1,298 @@
+{
+  "authoritative_sources": [
+    {
+      "confidence": "medium",
+      "notes": "Local-volatility / vol-surface attribution.",
+      "ref_id": "gatheral2006"
+    },
+    {
+      "confidence": "high",
+      "notes": "Monte Carlo pricing attribution.",
+      "ref_id": "glasserman2003"
+    },
+    {
+      "confidence": "high",
+      "notes": "Characteristic-function option pricing attribution.",
+      "ref_id": "heston1993"
+    },
+    {
+      "confidence": "high",
+      "notes": "Upstream implementation is mapped to the vendored quantfin repository.",
+      "ref_id": "repo_quantfin"
+    }
+  ],
+  "bundle_scope": "provider_owned_review_batch",
+  "bundle_version": "1.0",
+  "conditional_rows": 2,
+  "covered_rows": 7,
+  "developer_semantic_verdict": "aligned_to_registered_atoms",
+  "family": "sciona.atoms.fintech.quantfin",
+  "limitations": [
+    "Some rows remain source-limited to the upstream repository record and are not yet backed by an external literature citation."
+  ],
+  "provider_repo": "sciona-atoms-fintech",
+  "ready_rows": 5,
+  "required_actions": [
+    "Add external citations for source-limited rows before merging them into the central audit manifest."
+  ],
+  "review_record_path": "docs/review-records/quantfin.md",
+  "review_status": "reviewed",
+  "rows": [
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.quantfin.functional_monte_carlo",
+        "sciona.atoms.fintech.quantfin.volatility_surface_modeling"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "medium",
+          "notes": "Local-volatility / vol-surface attribution.",
+          "ref_id": "gatheral2006"
+        },
+        {
+          "confidence": "high",
+          "notes": "Monte Carlo pricing attribution.",
+          "ref_id": "glasserman2003"
+        },
+        {
+          "confidence": "high",
+          "notes": "Upstream implementation is mapped to the vendored quantfin repository.",
+          "ref_id": "repo_quantfin"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "cdg.json",
+        "references.json",
+        "uncertainty.json"
+      ],
+      "limitations": [],
+      "module": "sciona.atoms.fintech.quantfin.atoms",
+      "required_actions": [],
+      "review_record_path": "docs/review-records/quantfin.md",
+      "review_status": "reviewed",
+      "row_id": "atoms",
+      "semantic_verdict": "supported",
+      "trust_readiness": "ready"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.quantfin.char_func_option_d12.cf",
+        "sciona.atoms.fintech.quantfin.char_func_option_d12.charfuncoption",
+        "sciona.atoms.fintech.quantfin.char_func_option_d12.f"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Characteristic-function option pricing attribution.",
+          "ref_id": "heston1993"
+        },
+        {
+          "confidence": "high",
+          "notes": "Upstream implementation is mapped to the vendored quantfin repository.",
+          "ref_id": "repo_quantfin"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "char_func_option_d12/cdg.json",
+        "char_func_option_d12/matches.json",
+        "char_func_option_d12/references.json"
+      ],
+      "limitations": [],
+      "module": "sciona.atoms.fintech.quantfin.char_func_option_d12.atoms",
+      "required_actions": [],
+      "review_record_path": "docs/review-records/quantfin.md",
+      "review_status": "reviewed",
+      "row_id": "char_func_option_d12/atoms",
+      "semantic_verdict": "supported",
+      "trust_readiness": "ready"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.quantfin.local_vol_d12.allfort",
+        "sciona.atoms.fintech.quantfin.local_vol_d12.localvol",
+        "sciona.atoms.fintech.quantfin.local_vol_d12.var",
+        "sciona.atoms.fintech.quantfin.local_vol_d12.vol_flat_surface",
+        "sciona.atoms.fintech.quantfin.local_vol_d12.vol_interpolated_surface"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "medium",
+          "notes": "Local-volatility / vol-surface attribution.",
+          "ref_id": "gatheral2006"
+        },
+        {
+          "confidence": "high",
+          "notes": "Upstream implementation is mapped to the vendored quantfin repository.",
+          "ref_id": "repo_quantfin"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "local_vol_d12/cdg.json",
+        "local_vol_d12/matches.json",
+        "local_vol_d12/references.json"
+      ],
+      "limitations": [],
+      "module": "sciona.atoms.fintech.quantfin.local_vol_d12.atoms",
+      "required_actions": [],
+      "review_record_path": "docs/review-records/quantfin.md",
+      "review_status": "reviewed",
+      "row_id": "local_vol_d12/atoms",
+      "semantic_verdict": "supported",
+      "trust_readiness": "ready"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.avg",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.evolve",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.insertcf_recursive",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.insertcf_singleton",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.insertcflist_fold",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.insertcflist_fold_alt",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.maxstep",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.process_base_case",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.process_with_cashflows_only",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.process_with_observation_only",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.process_with_pending_cashflows",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.quicksim",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.quicksimanti",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.runmc",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.runsim",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.runsimulation",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.runsimulationanti",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.simulatestate"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Monte Carlo pricing attribution.",
+          "ref_id": "glasserman2003"
+        },
+        {
+          "confidence": "high",
+          "notes": "Upstream implementation is mapped to the vendored quantfin repository.",
+          "ref_id": "repo_quantfin"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "monte_carlo_anti_d12/cdg.json",
+        "monte_carlo_anti_d12/matches.json",
+        "monte_carlo_anti_d12/references.json"
+      ],
+      "limitations": [],
+      "module": "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.atoms",
+      "required_actions": [],
+      "review_record_path": "docs/review-records/quantfin.md",
+      "review_status": "reviewed",
+      "row_id": "monte_carlo_anti_d12/atoms",
+      "semantic_verdict": "supported",
+      "trust_readiness": "ready"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.quantfin.quick_sim_anti",
+        "sciona.atoms.fintech.quantfin.run_simulation",
+        "sciona.atoms.fintech.quantfin.run_simulation_anti"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Monte Carlo pricing attribution.",
+          "ref_id": "glasserman2003"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "cdg.json",
+        "references.json",
+        "uncertainty.json"
+      ],
+      "limitations": [],
+      "module": "sciona.atoms.fintech.quantfin.montecarlo",
+      "required_actions": [],
+      "review_record_path": "docs/review-records/quantfin.md",
+      "review_status": "reviewed",
+      "row_id": "montecarlo",
+      "semantic_verdict": "supported",
+      "trust_readiness": "ready"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.addmod64",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.mulmod64",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.mulmod64_inner_step",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.next",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.powmod64",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.powmod64_inner_step",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.randomdouble",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.randomint",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.randomint64",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.randomword32",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.randomword64",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.skip",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.split"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Upstream implementation is mapped to the vendored quantfin repository.",
+          "ref_id": "repo_quantfin"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "rng_skip_d12/cdg.json",
+        "rng_skip_d12/matches.json",
+        "rng_skip_d12/references.json"
+      ],
+      "limitations": [
+        "Provenance currently rests on the upstream repository record only."
+      ],
+      "module": "sciona.atoms.fintech.quantfin.rng_skip_d12.atoms",
+      "required_actions": [
+        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
+      ],
+      "review_record_path": "docs/review-records/quantfin.md",
+      "review_status": "reviewed",
+      "row_id": "rng_skip_d12/atoms",
+      "semantic_verdict": "source_limited",
+      "trust_readiness": "conditional"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.quantfin.tdma_solver_d12.cotraversevec",
+        "sciona.atoms.fintech.quantfin.tdma_solver_d12.tdmasolver"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Upstream implementation is mapped to the vendored quantfin repository.",
+          "ref_id": "repo_quantfin"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "tdma_solver_d12/cdg.json",
+        "tdma_solver_d12/matches.json",
+        "tdma_solver_d12/references.json"
+      ],
+      "limitations": [
+        "Provenance currently rests on the upstream repository record only."
+      ],
+      "module": "sciona.atoms.fintech.quantfin.tdma_solver_d12.atoms",
+      "required_actions": [
+        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
+      ],
+      "review_record_path": "docs/review-records/quantfin.md",
+      "review_status": "reviewed",
+      "row_id": "tdma_solver_d12/atoms",
+      "semantic_verdict": "source_limited",
+      "trust_readiness": "conditional"
+    }
+  ],
+  "semantic_verdict": "mixed",
+  "trust_readiness": "mixed"
+}

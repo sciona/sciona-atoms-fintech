@@ -1,0 +1,574 @@
+{
+  "authoritative_sources": [
+    {
+      "confidence": "high",
+      "notes": "Execution scheduling attribution.",
+      "ref_id": "almgren2000"
+    },
+    {
+      "confidence": "high",
+      "notes": "Market-making attribution.",
+      "ref_id": "avellaneda2008"
+    },
+    {
+      "confidence": "high",
+      "notes": "Kalman-based state estimation attribution.",
+      "ref_id": "kalman1960"
+    },
+    {
+      "confidence": "high",
+      "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+      "ref_id": "repo_institutional_quant_engine"
+    }
+  ],
+  "bundle_scope": "provider_owned_review_batch",
+  "bundle_version": "1.0",
+  "conditional_rows": 13,
+  "covered_rows": 18,
+  "developer_semantic_verdict": "aligned_to_registered_atoms",
+  "family": "sciona.atoms.fintech.institutional_quant_engine",
+  "limitations": [
+    "Some rows remain source-limited to the upstream repository record and are not yet backed by an external literature citation."
+  ],
+  "provider_repo": "sciona-atoms-fintech",
+  "ready_rows": 5,
+  "required_actions": [
+    "Add external citations for source-limited rows before merging them into the central audit manifest."
+  ],
+  "review_record_path": "docs/review-records/institutional_quant_engine.md",
+  "review_status": "reviewed",
+  "rows": [
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.almgren_chriss.computeoptimaltrajectory"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Execution scheduling attribution.",
+          "ref_id": "almgren2000"
+        },
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "almgren_chriss/cdg.json",
+        "almgren_chriss/matches.json",
+        "almgren_chriss/references.json"
+      ],
+      "limitations": [],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.almgren_chriss.atoms",
+      "required_actions": [],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "almgren_chriss/atoms",
+      "semantic_verdict": "supported",
+      "trust_readiness": "ready"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.almgren_chriss_v2.optimalexecutiontrajectory",
+        "sciona.atoms.fintech.institutional_quant_engine.almgren_chriss_v2.riskaversioninit"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Execution scheduling attribution.",
+          "ref_id": "almgren2000"
+        },
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "almgren_chriss_v2/cdg.json",
+        "almgren_chriss_v2/matches.json",
+        "almgren_chriss_v2/references.json"
+      ],
+      "limitations": [],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.almgren_chriss_v2.atoms",
+      "required_actions": [],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "almgren_chriss_v2/atoms",
+      "semantic_verdict": "supported",
+      "trust_readiness": "ready"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.avellaneda_stoikov.computeinventoryadjustedquotes",
+        "sciona.atoms.fintech.institutional_quant_engine.avellaneda_stoikov.initializemarketmakerstate"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Market-making attribution.",
+          "ref_id": "avellaneda2008"
+        },
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "avellaneda_stoikov/cdg.json",
+        "avellaneda_stoikov/matches.json",
+        "avellaneda_stoikov/references.json"
+      ],
+      "limitations": [],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.avellaneda_stoikov.atoms",
+      "required_actions": [],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "avellaneda_stoikov/atoms",
+      "semantic_verdict": "supported",
+      "trust_readiness": "ready"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.avellaneda_stoikov_d12.marketmakerstateinit",
+        "sciona.atoms.fintech.institutional_quant_engine.avellaneda_stoikov_d12.optimalquotecalculation"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Market-making attribution.",
+          "ref_id": "avellaneda2008"
+        },
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "avellaneda_stoikov_d12/cdg.json",
+        "avellaneda_stoikov_d12/matches.json",
+        "avellaneda_stoikov_d12/references.json"
+      ],
+      "limitations": [],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.avellaneda_stoikov_d12.atoms",
+      "required_actions": [],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "avellaneda_stoikov_d12/atoms",
+      "semantic_verdict": "supported",
+      "trust_readiness": "ready"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.simulate_copula_dependence"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "copula_dependence_cdg.json"
+      ],
+      "limitations": [
+        "Provenance currently rests on the upstream repository record only."
+      ],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.copula_dependence",
+      "required_actions": [
+        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
+      ],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "copula_dependence",
+      "semantic_verdict": "source_limited",
+      "trust_readiness": "conditional"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.kalman_hedge_ratio"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "dynamic_hedge_cdg.json"
+      ],
+      "limitations": [
+        "Provenance currently rests on the upstream repository record only."
+      ],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.dynamic_hedge",
+      "required_actions": [
+        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
+      ],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "dynamic_hedge",
+      "semantic_verdict": "source_limited",
+      "trust_readiness": "conditional"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.fit_gpd_tail"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "evt_model_cdg.json"
+      ],
+      "limitations": [
+        "Provenance currently rests on the upstream repository record only."
+      ],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.evt_model",
+      "required_actions": [
+        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
+      ],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "evt_model",
+      "semantic_verdict": "source_limited",
+      "trust_readiness": "conditional"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.fractional_differentiator"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "fractional_diff_cdg.json"
+      ],
+      "limitations": [
+        "Provenance currently rests on the upstream repository record only."
+      ],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.fractional_diff",
+      "required_actions": [
+        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
+      ],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "fractional_diff",
+      "semantic_verdict": "source_limited",
+      "trust_readiness": "conditional"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.hawkesprocesssimulator",
+        "sciona.atoms.fintech.institutional_quant_engine.sample_hawkes_event_trajectory"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "hawkes_process_cdg.json"
+      ],
+      "limitations": [
+        "Provenance currently rests on the upstream repository record only."
+      ],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.hawkes_process",
+      "required_actions": [
+        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
+      ],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "hawkes_process",
+      "semantic_verdict": "source_limited",
+      "trust_readiness": "conditional"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.hestonpathsampler",
+        "sciona.atoms.fintech.institutional_quant_engine.simulate_heston_paths"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "heston_model_cdg.json"
+      ],
+      "limitations": [
+        "Provenance currently rests on the upstream repository record only."
+      ],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.heston_model",
+      "required_actions": [
+        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
+      ],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "heston_model",
+      "semantic_verdict": "source_limited",
+      "trust_readiness": "conditional"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.compute_hrp_weights",
+        "sciona.atoms.fintech.institutional_quant_engine.hrppipelinerun"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "hierarchical_risk_parity_cdg.json"
+      ],
+      "limitations": [
+        "Provenance currently rests on the upstream repository record only."
+      ],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.hierarchical_risk_parity",
+      "required_actions": [
+        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
+      ],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "hierarchical_risk_parity",
+      "semantic_verdict": "source_limited",
+      "trust_readiness": "conditional"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.kalman_filter.kalmanfilterinit",
+        "sciona.atoms.fintech.institutional_quant_engine.kalman_filter.kalmanmeasurementupdate"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Kalman-based state estimation attribution.",
+          "ref_id": "kalman1960"
+        },
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "kalman_filter/cdg.json",
+        "kalman_filter/matches.json",
+        "kalman_filter/references.json"
+      ],
+      "limitations": [],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.kalman_filter.atoms",
+      "required_actions": [],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "kalman_filter/atoms",
+      "semantic_verdict": "supported",
+      "trust_readiness": "ready"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.orderflowimbalanceevaluation"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "order_flow_imbalance_cdg.json"
+      ],
+      "limitations": [
+        "Provenance currently rests on the upstream repository record only."
+      ],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.order_flow_imbalance",
+      "required_actions": [
+        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
+      ],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "order_flow_imbalance",
+      "semantic_verdict": "source_limited",
+      "trust_readiness": "conditional"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.pinlikelihoodevaluation",
+        "sciona.atoms.fintech.institutional_quant_engine.pinlikelihoodevaluator"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "pin_model_cdg.json"
+      ],
+      "limitations": [
+        "Provenance currently rests on the upstream repository record only."
+      ],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.pin_model",
+      "required_actions": [
+        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
+      ],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "pin_model",
+      "semantic_verdict": "source_limited",
+      "trust_readiness": "conditional"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.initializeorderstate",
+        "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.updatequeueontrade"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "queue_estimator/cdg.json",
+        "queue_estimator/matches.json",
+        "queue_estimator/references.json"
+      ],
+      "limitations": [
+        "Provenance currently rests on the upstream repository record only."
+      ],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.atoms",
+      "required_actions": [
+        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
+      ],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "queue_estimator/atoms",
+      "semantic_verdict": "source_limited",
+      "trust_readiness": "conditional"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.propagate_supply_shock"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "supply_chain_cdg.json"
+      ],
+      "limitations": [
+        "Provenance currently rests on the upstream repository record only."
+      ],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.supply_chain",
+      "required_actions": [
+        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
+      ],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "supply_chain",
+      "semantic_verdict": "source_limited",
+      "trust_readiness": "conditional"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.detect_triangular_arbitrage"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "triangular_arbitrage_cdg.json"
+      ],
+      "limitations": [
+        "Provenance currently rests on the upstream repository record only."
+      ],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.triangular_arbitrage",
+      "required_actions": [
+        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
+      ],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "triangular_arbitrage",
+      "semantic_verdict": "source_limited",
+      "trust_readiness": "conditional"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.institutional_quant_engine.detect_wash_trade_rings"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
+          "ref_id": "repo_institutional_quant_engine"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "wash_trade_cdg.json"
+      ],
+      "limitations": [
+        "Provenance currently rests on the upstream repository record only."
+      ],
+      "module": "sciona.atoms.fintech.institutional_quant_engine.wash_trade",
+      "required_actions": [
+        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
+      ],
+      "review_record_path": "docs/review-records/institutional_quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "wash_trade",
+      "semantic_verdict": "source_limited",
+      "trust_readiness": "conditional"
+    }
+  ],
+  "semantic_verdict": "mixed",
+  "trust_readiness": "mixed"
+}

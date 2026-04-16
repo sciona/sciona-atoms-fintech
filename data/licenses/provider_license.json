@@ -1,0 +1,33 @@
+{
+  "provider_repo": "sciona-atoms-fintech",
+  "manifest_version": "1.0",
+  "repo_default_license": {
+    "license_spdx": "NOASSERTION",
+    "status": "unknown",
+    "confidence": "low",
+    "reason": "No repo-level LICENSE, COPYING, or NOTICE file is present in this scratch tree and no verified upstream license source has been added yet."
+  },
+  "family_overrides": [],
+  "unresolved_families": [
+    {
+      "family": "sciona.atoms.fintech.hftbacktest",
+      "status": "unknown",
+      "reason": "No verified upstream license source is available yet."
+    },
+    {
+      "family": "sciona.atoms.fintech.institutional_quant_engine",
+      "status": "unknown",
+      "reason": "No verified upstream license source is available yet."
+    },
+    {
+      "family": "sciona.atoms.fintech.quant_engine",
+      "status": "unknown",
+      "reason": "No verified upstream license source is available yet."
+    },
+    {
+      "family": "sciona.atoms.fintech.quantfin",
+      "status": "unknown",
+      "reason": "No verified upstream license source is available yet."
+    }
+  ]
+}

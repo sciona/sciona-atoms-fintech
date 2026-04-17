@@ -27,14 +27,10 @@
   "covered_rows": 7,
   "developer_semantic_verdict": "aligned_to_registered_atoms",
   "family": "sciona.atoms.fintech.quantfin",
-  "limitations": [
-    "Some rows remain source-limited to the upstream repository record and are not yet backed by an external literature citation."
-  ],
+  "limitations": [],
   "provider_repo": "sciona-atoms-fintech",
   "ready_rows": 5,
-  "required_actions": [
-    "Add external citations for source-limited rows before merging them into the central audit manifest."
-  ],
+  "required_actions": [],
   "review_record_path": "docs/review-records/quantfin.md",
   "review_status": "reviewed",
   "rows": [

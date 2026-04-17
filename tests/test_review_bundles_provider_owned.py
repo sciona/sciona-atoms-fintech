@@ -9,6 +9,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 BUNDLE_PATHS = [
     REPO_ROOT / "docs/review-bundles/quantfin_review_bundle.json",
     REPO_ROOT / "docs/review-bundles/institutional_quant_engine_review_bundle.json",
+    REPO_ROOT / "docs/review-bundles/hftbacktest_review_bundle.json",
 ]
 
 
@@ -25,4 +26,3 @@ def test_provider_owned_review_bundles_map_to_registered_atoms() -> None:
             for atom_key in row["atom_keys"]:
                 leaf = atom_key.rsplit(".", 1)[-1]
                 assert leaf in registry, f"missing registry entry for {leaf} in {row['module']}"
-

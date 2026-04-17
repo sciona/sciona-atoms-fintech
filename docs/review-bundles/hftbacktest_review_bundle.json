@@ -1,0 +1,61 @@
+{
+  "authoritative_sources": [
+    {
+      "confidence": "high",
+      "notes": "Canonical GLFT inventory-risk market-making attribution.",
+      "ref_id": "gueant2013inventory"
+    },
+    {
+      "confidence": "high",
+      "notes": "Upstream implementation is mapped to the vendored hftbacktest repository.",
+      "ref_id": "repo_hftbacktest"
+    }
+  ],
+  "bundle_scope": "provider_owned_review_batch",
+  "bundle_version": "1.0",
+  "conditional_rows": 0,
+  "covered_rows": 1,
+  "developer_semantic_verdict": "aligned_to_registered_atoms",
+  "family": "sciona.atoms.fintech.hftbacktest",
+  "limitations": [],
+  "provider_repo": "sciona-atoms-fintech",
+  "ready_rows": 1,
+  "required_actions": [],
+  "review_record_path": "docs/review-records/hftbacktest.md",
+  "review_status": "reviewed",
+  "rows": [
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.hftbacktest.initialize_glft_state",
+        "sciona.atoms.fintech.hftbacktest.update_glft_coefficients",
+        "sciona.atoms.fintech.hftbacktest.evaluate_spread_conditions"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Canonical GLFT inventory-risk market-making attribution.",
+          "ref_id": "gueant2013inventory"
+        },
+        {
+          "confidence": "high",
+          "notes": "Upstream implementation is mapped to the vendored hftbacktest repository.",
+          "ref_id": "repo_hftbacktest"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "hftbacktest/cdg.json",
+        "hftbacktest/matches.json",
+        "hftbacktest/references.json"
+      ],
+      "limitations": [],
+      "module": "sciona.atoms.fintech.hftbacktest.atoms",
+      "required_actions": [],
+      "review_record_path": "docs/review-records/hftbacktest.md",
+      "review_status": "reviewed",
+      "row_id": "hftbacktest/atoms",
+      "semantic_verdict": "supported",
+      "trust_readiness": "ready"
+    }
+  ]
+}

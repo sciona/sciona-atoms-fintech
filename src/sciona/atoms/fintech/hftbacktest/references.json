@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1",
   "atoms": {
-    "sciona.atoms.fintech.hftbacktest.evaluate_spread_conditions@sciona/atoms/fintech/hftbacktest/atoms.py:67": {
+    "sciona.atoms.fintech.hftbacktest.evaluate_spread_conditions@sciona/atoms/fintech/hftbacktest/atoms.py:103": {
       "references": [
         {
           "ref_id": "gueant2013inventory",
@@ -26,7 +26,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.hftbacktest.initialize_glft_state@sciona/atoms/fintech/hftbacktest/atoms.py:19": {
+    "sciona.atoms.fintech.hftbacktest.initialize_glft_state@sciona/atoms/fintech/hftbacktest/atoms.py:44": {
       "references": [
         {
           "ref_id": "gueant2013inventory",
@@ -51,7 +51,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.hftbacktest.update_glft_coefficients@sciona/atoms/fintech/hftbacktest/atoms.py:37": {
+    "sciona.atoms.fintech.hftbacktest.update_glft_coefficients@sciona/atoms/fintech/hftbacktest/atoms.py:69": {
       "references": [
         {
           "ref_id": "gueant2013inventory",

@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections.abc import Mapping
 import numpy as np
 import icontract
-from typing import Protocol
+from typing import Callable, Protocol
 
 from sciona.ghost.registry import register_atom
 from .witnesses import witness_allfort, witness_localvol, witness_var, witness_vol
@@ -118,7 +118,7 @@ def localvol(
 @register_atom(witness_vol, name="vol_flat_surface")
 @icontract.require(lambda x: isinstance(x, float), "x must be a float")
 @icontract.ensure(lambda result: isinstance(result, float) and result >= 0.0, "vol must be non-negative")
-def vol(x: float) -> float:
+def vol_flat_surface(x: float) -> float:
     """Return the constant implied volatility from a flat surface.
 
     For a flat volatility surface the vol is the same at every strike
@@ -141,7 +141,7 @@ def vol(x: float) -> float:
 @register_atom(witness_vol, name="vol_interpolated_surface")
 @icontract.require(lambda strike: isinstance(strike, float) and strike > 0.0, "strike must be a positive float")
 @icontract.ensure(lambda result: isinstance(result, float) and result >= 0.0, "vol must be non-negative")
-def vol(
+def vol_interpolated_surface(
     interpolatedVs: list,
     mats: list,
     mats_prime: list,
@@ -181,6 +181,11 @@ def vol(
     # interpolatedVs[i] = vInterp(strike, sts, quotes_at_mat_i)
     # Final interpolation along time using tInterp
     return float(tInterp(t_val, mats_prime, interpolatedVs))
+
+
+# Preserve the historical generic export name. It previously resolved to the
+# interpolated implementation because that wrapper was defined last.
+vol = vol_interpolated_surface
 
 
 # ---------------------------------------------------------------------------

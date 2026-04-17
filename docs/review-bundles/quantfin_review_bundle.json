@@ -19,17 +19,22 @@
       "confidence": "high",
       "notes": "Upstream implementation is mapped to the vendored quantfin repository.",
       "ref_id": "repo_quantfin"
+    },
+    {
+      "confidence": "high",
+      "notes": "External MWC64X documentation covering the generator and stream-skipping design used by rng_skip_d12.",
+      "ref_id": "thomas2011mwc64x"
     }
   ],
   "bundle_scope": "provider_owned_review_batch",
   "bundle_version": "1.0",
-  "conditional_rows": 2,
+  "conditional_rows": 1,
   "covered_rows": 7,
   "developer_semantic_verdict": "aligned_to_registered_atoms",
   "family": "sciona.atoms.fintech.quantfin",
   "limitations": [],
   "provider_repo": "sciona-atoms-fintech",
-  "ready_rows": 5,
+  "ready_rows": 6,
   "required_actions": [],
   "review_record_path": "docs/review-records/quantfin.md",
   "review_status": "reviewed",
@@ -236,6 +241,11 @@
           "confidence": "high",
           "notes": "Upstream implementation is mapped to the vendored quantfin repository.",
           "ref_id": "repo_quantfin"
+        },
+        {
+          "confidence": "high",
+          "notes": "External MWC64X documentation covering the generator and stream-skipping design used by this row.",
+          "ref_id": "thomas2011mwc64x"
         }
       ],
       "developer_semantic_verdict": "aligned_to_registered_atoms",
@@ -244,18 +254,14 @@
         "rng_skip_d12/matches.json",
         "rng_skip_d12/references.json"
       ],
-      "limitations": [
-        "Provenance currently rests on the upstream repository record only."
-      ],
+      "limitations": [],
       "module": "sciona.atoms.fintech.quantfin.rng_skip_d12.atoms",
-      "required_actions": [
-        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
-      ],
+      "required_actions": [],
       "review_record_path": "docs/review-records/quantfin.md",
       "review_status": "reviewed",
       "row_id": "rng_skip_d12/atoms",
-      "semantic_verdict": "source_limited",
-      "trust_readiness": "conditional"
+      "semantic_verdict": "supported",
+      "trust_readiness": "ready"
     },
     {
       "atom_keys": [

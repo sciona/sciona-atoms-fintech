@@ -57,16 +57,7 @@ def test_quantfin_local_vol_d12_row_is_ready_and_importable() -> None:
     assert module.vol is module.vol_interpolated_surface
 
 
-def test_quantfin_local_vol_d12_neighboring_rng_skip_row_stays_conditional() -> None:
+def test_quantfin_bundle_rollup_counts() -> None:
     bundle = _load_bundle()
-    rng_skip_row = _row_by_id(bundle, "rng_skip_d12/atoms")
-
-    assert rng_skip_row["review_status"] == "reviewed"
-    assert rng_skip_row["semantic_verdict"] == "source_limited"
-    assert rng_skip_row["trust_readiness"] == "conditional"
-    assert _effective_notes(bundle, rng_skip_row, "limitations") == [
-        "Provenance currently rests on the upstream repository record only."
-    ]
-    assert _effective_notes(bundle, rng_skip_row, "required_actions") == [
-        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
-    ]
+    assert bundle["ready_rows"] == 6
+    assert bundle["conditional_rows"] == 1

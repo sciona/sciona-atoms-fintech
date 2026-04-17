@@ -44,16 +44,12 @@ def test_quantfin_char_func_option_row_is_not_poisoned_by_bundle_level_blockers(
     assert _effective_notes(bundle, char_func_row, "required_actions") == []
 
 
-def test_quantfin_rng_skip_row_remains_source_limited_and_conditional() -> None:
+def test_quantfin_rng_skip_row_is_ready_with_external_citation() -> None:
     bundle = _load_bundle()
     rng_skip_row = _row_by_id(bundle, "rng_skip_d12/atoms")
 
     assert rng_skip_row["review_status"] == "reviewed"
-    assert rng_skip_row["semantic_verdict"] == "source_limited"
-    assert rng_skip_row["trust_readiness"] == "conditional"
-    assert _effective_notes(bundle, rng_skip_row, "limitations") == [
-        "Provenance currently rests on the upstream repository record only."
-    ]
-    assert _effective_notes(bundle, rng_skip_row, "required_actions") == [
-        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
-    ]
+    assert rng_skip_row["semantic_verdict"] == "supported"
+    assert rng_skip_row["trust_readiness"] == "ready"
+    assert _effective_notes(bundle, rng_skip_row, "limitations") == []
+    assert _effective_notes(bundle, rng_skip_row, "required_actions") == []

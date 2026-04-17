@@ -7,6 +7,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 BUNDLE_PATHS = [
+    REPO_ROOT / "docs/review-bundles/quant_engine_review_bundle.json",
     REPO_ROOT / "docs/review-bundles/quantfin_review_bundle.json",
     REPO_ROOT / "docs/review-bundles/institutional_quant_engine_review_bundle.json",
     REPO_ROOT / "docs/review-bundles/hftbacktest_review_bundle.json",

@@ -1,0 +1,95 @@
+{
+  "authoritative_sources": [
+    {
+      "confidence": "high",
+      "notes": "Execution scheduling attribution for the local execution wrappers.",
+      "ref_id": "almgren2000"
+    },
+    {
+      "confidence": "high",
+      "notes": "Order-flow imbalance attribution for the OFI wrapper.",
+      "ref_id": "cont2014ofi"
+    },
+    {
+      "confidence": "medium",
+      "notes": "Broad execution-algorithm attribution for the local quant_engine family.",
+      "ref_id": "kissell2013algo"
+    }
+  ],
+  "bundle_scope": "provider_owned_review_batch",
+  "bundle_version": "1.0",
+  "conditional_rows": 0,
+  "covered_rows": 2,
+  "developer_semantic_verdict": "aligned_to_registered_atoms",
+  "family": "sciona.atoms.fintech.quant_engine",
+  "limitations": [],
+  "provider_repo": "sciona-atoms-fintech",
+  "ready_rows": 2,
+  "required_actions": [],
+  "review_record_path": "docs/review-records/quant_engine.md",
+  "review_status": "reviewed",
+  "rows": [
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.quant_engine.calculate_ofi"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Order-flow imbalance attribution for the OFI wrapper.",
+          "ref_id": "cont2014ofi"
+        },
+        {
+          "confidence": "medium",
+          "notes": "Broad execution-algorithm attribution for the local quant_engine family.",
+          "ref_id": "kissell2013algo"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "cdg.json",
+        "references.json"
+      ],
+      "limitations": [],
+      "module": "sciona.atoms.fintech.quant_engine.atoms",
+      "required_actions": [],
+      "review_record_path": "docs/review-records/quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "calculate_ofi",
+      "semantic_verdict": "supported",
+      "trust_readiness": "ready"
+    },
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.quant_engine.execute_passive",
+        "sciona.atoms.fintech.quant_engine.execute_pov",
+        "sciona.atoms.fintech.quant_engine.execute_vwap"
+      ],
+      "authoritative_sources": [
+        {
+          "confidence": "high",
+          "notes": "Execution scheduling attribution for the local execution wrappers.",
+          "ref_id": "almgren2000"
+        },
+        {
+          "confidence": "medium",
+          "notes": "Broad execution-algorithm attribution for the local quant_engine family.",
+          "ref_id": "kissell2013algo"
+        }
+      ],
+      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "evidence_files": [
+        "cdg.json",
+        "references.json"
+      ],
+      "limitations": [],
+      "module": "sciona.atoms.fintech.quant_engine.atoms",
+      "required_actions": [],
+      "review_record_path": "docs/review-records/quant_engine.md",
+      "review_status": "reviewed",
+      "row_id": "execution_atoms",
+      "semantic_verdict": "supported",
+      "trust_readiness": "ready"
+    }
+  ]
+}

@@ -33,24 +33,32 @@
         {
           "name": "series",
           "type_desc": "pd.Series",
-          "constraints": "required argument"
+          "constraints": "Numeric time series to transform.",
+          "required": true,
+          "default_value_repr": ""
         },
         {
           "name": "d",
           "type_desc": "float",
-          "constraints": "required argument"
+          "constraints": "Fractional differentiation order in [0, 1].",
+          "required": true,
+          "default_value_repr": ""
         },
         {
           "name": "threshold",
           "type_desc": "float",
-          "constraints": "required argument"
+          "constraints": "Positive cutoff for retaining binomial weights.",
+          "required": true,
+          "default_value_repr": ""
         }
       ],
       "outputs": [
         {
           "name": "result",
           "type_desc": "pd.Series",
-          "constraints": "function return value"
+          "constraints": "Fractionally differenced series after dropping initial incomplete windows.",
+          "required": true,
+          "default_value_repr": ""
         }
       ],
       "status": "atomic",

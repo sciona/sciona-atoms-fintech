@@ -79,7 +79,7 @@
   "family": "sciona.atoms.fintech.institutional_quant_engine",
   "limitations": [],
   "provider_repo": "sciona-atoms-fintech",
-  "ready_rows": 15,
+  "ready_rows": 17,
   "required_actions": [],
   "review_record_path": "docs/review-records/institutional_quant_engine.md",
   "review_status": "reviewed",
@@ -329,25 +329,28 @@
           "ref_id": "repo_institutional_quant_engine"
         }
       ],
-      "developer_semantic_verdict": "semantic_drift_requires_repair",
+      "developer_semantic_verdict": "aligned_after_remediation",
       "evidence_files": [
         "fractional_diff_cdg.json",
-        "REMEDIATION.md"
+        "references.json",
+        "uncertainty.json"
       ],
-      "limitations": [
-        "Current implementation is lagged for d=0 instead of acting as an identity transform, indicating semantic drift from fractional differentiation."
-      ],
+      "limitations": [],
       "module": "sciona.atoms.fintech.institutional_quant_engine.fractional_diff",
-      "required_actions": [
-        "Repair fractional-differentiation indexing/weight application and add identity/deterministic behavior tests before publication."
-      ],
+      "required_actions": [],
+      "has_references": true,
+      "references_status": "pass",
+      "parity_coverage_level": "positive_and_negative",
+      "parity_test_status": "pass",
+      "parity_fixture_count": 2,
+      "parity_case_count": 2,
       "review_record_path": "docs/review-records/institutional_quant_engine.md",
       "review_status": "reviewed",
       "row_id": "fractional_diff",
-      "semantic_verdict": "semantic_drift",
-      "trust_readiness": "not_ready",
+      "semantic_verdict": "supported",
+      "trust_readiness": "ready",
       "source_paths": [
-        "src/sciona/atoms/fintech/institutional_quant_engine/fractional_diff.py:16"
+        "src/sciona/atoms/fintech/institutional_quant_engine/fractional_diff.py:19"
       ]
     },
     {
@@ -679,29 +682,32 @@
           "ref_id": "repo_institutional_quant_engine"
         }
       ],
-      "developer_semantic_verdict": "semantic_drift_requires_repair",
+      "developer_semantic_verdict": "aligned_after_remediation",
       "evidence_files": [
         "wash_trade_cdg.json",
-        "REMEDIATION.md"
+        "references.json",
+        "uncertainty.json"
       ],
-      "limitations": [
-        "Current implementation only checks powers up to length 5, so larger wash-trading rings are silently missed despite the general detector name."
-      ],
+      "limitations": [],
       "module": "sciona.atoms.fintech.institutional_quant_engine.wash_trade",
-      "required_actions": [
-        "Replace bounded cycle scanning with complete directed-cycle detection or narrow the public contract to bounded rings before publication."
-      ],
+      "required_actions": [],
+      "has_references": true,
+      "references_status": "pass",
+      "parity_coverage_level": "positive_and_negative",
+      "parity_test_status": "pass",
+      "parity_fixture_count": 2,
+      "parity_case_count": 2,
       "review_record_path": "docs/review-records/institutional_quant_engine.md",
       "review_status": "reviewed",
       "row_id": "wash_trade",
-      "semantic_verdict": "semantic_drift",
-      "trust_readiness": "not_ready",
+      "semantic_verdict": "supported",
+      "trust_readiness": "ready",
       "source_paths": [
-        "src/sciona/atoms/fintech/institutional_quant_engine/wash_trade.py:21"
+        "src/sciona/atoms/fintech/institutional_quant_engine/wash_trade.py:17"
       ]
     }
   ],
   "semantic_verdict": "mixed",
   "trust_readiness": "mixed",
-  "not_ready_rows": 3
+  "not_ready_rows": 1
 }

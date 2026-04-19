@@ -10,31 +10,39 @@ from .fractional_diff_witnesses import witness_fractional_differentiator
 # Witness functions should be imported from the generated witnesses module
 
 @register_atom(witness_fractional_differentiator)
+@icontract.require(lambda series: isinstance(series, pd.Series), "series must be a pandas Series")
 @icontract.require(lambda d: isinstance(d, (float, int, np.number)), "d must be numeric")
-@icontract.require(lambda threshold: isinstance(threshold, (float, int, np.number)), "threshold must be numeric")
-@icontract.ensure(lambda result: result is not None, "fractional_differentiator output must not be None")
+@icontract.require(lambda d: 0.0 <= float(d) <= 1.0, "d must be in [0, 1]")
+@icontract.require(lambda threshold: isinstance(threshold, (float, int, np.number)) and float(threshold) > 0.0, "threshold must be positive")
+@icontract.ensure(lambda result: isinstance(result, pd.Series), "fractional_differentiator must return a Series")
+@icontract.ensure(lambda result: result.notna().all(), "fractional_differentiator output must not contain NaN")
 def fractional_differentiator(series: pd.Series, d: float, threshold: float) -> pd.Series:
-    """Computes the fractional differentiation of a time series. It first calculates the necessary weights based on the differentiation order 'd' and then applies them to the series, dropping terms below a specified threshold.
+    """Return a fixed-width fractional difference of a numeric time series.
 
-    Args:
-        series: Input time series data.
-        d: The order of differentiation, where 0 <= d <= 1.
-        threshold: Threshold for dropping small weights to control memory usage. A smaller value means more terms are kept.
-
-    Returns:
-        The fractionally differentiated series.
+    The retained binomial weights are applied to windows that include the
+    current observation. With ``d == 0`` this returns the original series,
+    preserving the standard identity case.
     """
-    # Compute fractional differentiation weights
+    values = pd.to_numeric(series, errors="coerce").astype(float)
+    if values.empty:
+        return pd.Series(index=series.index, dtype="float64")
+
     w = [1.0]
-    for k in range(1, len(series)):
-        w_new = -w[-1] / k * (d - k + 1)
-        if abs(w_new) < threshold:
+    order = float(d)
+    cutoff = float(threshold)
+    for k in range(1, len(values)):
+        w_new = -w[-1] / k * (order - k + 1.0)
+        if abs(w_new) < cutoff:
             break
         w.append(w_new)
-    weights = np.array(w[::-1])
+
+    weights = np.asarray(w[::-1], dtype=np.float64)
     width = len(weights)
-    df_fd = pd.Series(index=series.index, dtype='float64')
-    for i in range(width, len(series)):
-        window = series.iloc[i - width:i].values
-        df_fd.iloc[i] = np.dot(weights, window)
-    return df_fd.dropna()
+    if width > len(values):
+        raise ValueError("series is too short for the retained fractional-difference weights")
+
+    result = pd.Series(index=values.index, dtype="float64")
+    for i in range(width - 1, len(values)):
+        window = values.iloc[i - width + 1 : i + 1].to_numpy(dtype=np.float64)
+        result.iloc[i] = float(np.dot(weights, window))
+    return result.dropna()

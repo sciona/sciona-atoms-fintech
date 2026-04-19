@@ -1,10 +1,6 @@
 from __future__ import annotations
 
-from typing import Any
-Boolean: Any = Any
-
-"""Auto-generated atom wrappers following the sciona pattern."""
-
+"""Wash-trade ring detection over directed participant graphs."""
 
 import numpy as np
 import icontract
@@ -13,29 +9,33 @@ from .wash_trade_witnesses import witness_detect_wash_trade_rings
 
 
 @register_atom(witness_detect_wash_trade_rings)
-@icontract.require(lambda trade_graph: trade_graph.ndim >= 1, "trade_graph must have at least one dimension")
-@icontract.require(lambda trade_graph: trade_graph is not None, "trade_graph cannot be None")
 @icontract.require(lambda trade_graph: isinstance(trade_graph, np.ndarray), "trade_graph must be np.ndarray")
-@icontract.ensure(lambda result: isinstance(result, np.ndarray), "result must be np.ndarray")
-@icontract.ensure(lambda result: result is not None, "result must not be None")
+@icontract.require(lambda trade_graph: trade_graph.ndim == 2, "trade_graph must be a matrix")
+@icontract.require(lambda trade_graph: trade_graph.shape[0] == trade_graph.shape[1], "trade_graph must be square")
+@icontract.ensure(lambda result, trade_graph: result.shape == (trade_graph.shape[0],), "result must have one flag per participant")
+@icontract.ensure(lambda result: result.dtype == np.bool_, "result must be a boolean mask")
 def detect_wash_trade_rings(trade_graph: np.ndarray) -> np.ndarray:
-    """Detects wash trading rings in a directed trade graph by identifying simple cycles that indicate coordinated market manipulation.
+    """Flag participants that belong to any directed trading cycle.
 
-    Args:
-        trade_graph: Directed adjacency matrix of trades between participants, shape (n_traders, n_traders)
-
-    Returns:
-        Boolean mask of participants flagged as part of a wash-trading ring, shape (n_traders,)
+    Positive entries in ``trade_graph[i, j]`` indicate trades from participant
+    ``i`` to participant ``j``. The returned mask is true for every node that
+    can reach itself through one or more directed edges.
     """
-    # Detect wash trading rings via cycle detection in adjacency matrix
-    n = trade_graph.shape[0]
+    adjacency = np.asarray(trade_graph > 0, dtype=bool)
+    n = int(adjacency.shape[0])
     flagged = np.zeros(n, dtype=bool)
-    # A trader is in a wash ring if there's a cycle through them
-    # Check: A^k has nonzero diagonal for cycle of length k
-    A = (trade_graph > 0).astype(float)
-    power = A.copy()
-    for k in range(2, min(n + 1, 6)):  # check cycles up to length 5
-        power = power @ A
-        diag = np.diag(power)
-        flagged |= (diag > 0)
-    return flagged.astype(np.float64)
+
+    for start in range(n):
+        stack = list(np.flatnonzero(adjacency[start]))
+        seen: set[int] = set()
+        while stack:
+            node = int(stack.pop())
+            if node == start:
+                flagged[start] = True
+                break
+            if node in seen:
+                continue
+            seen.add(node)
+            stack.extend(int(next_node) for next_node in np.flatnonzero(adjacency[node]))
+
+    return flagged

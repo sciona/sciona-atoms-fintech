@@ -76,6 +76,23 @@
       ],
       "auto_attribution_runs": []
     },
+    "sciona.atoms.fintech.institutional_quant_engine.fractional_diff.fractional_differentiator@sciona/atoms/fintech/institutional_quant_engine/fractional_diff.py:19": {
+      "references": [
+        {
+          "ref_id": "repo_institutional_quant_engine",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual_source_alignment",
+            "matched_nodes": [
+              "../ageo-atoms/third_party/Institutional-Quant-Engine/research_math/34_fractional_diff_stationarity.py:15"
+            ],
+            "confidence": "high",
+            "notes": "Source-aligned fixed-width fractional-difference implementation with corrected current-observation indexing."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
     "sciona.atoms.fintech.institutional_quant_engine.hawkes_process.sample_hawkes_event_trajectory@sciona/atoms/fintech/institutional_quant_engine/hawkes_process.py:17": {
       "references": [
         {
@@ -296,6 +313,33 @@
             "matched_nodes": [],
             "confidence": "high",
             "notes": "Primary repository attribution for Institutional-Quant-Engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.wash_trade.detect_wash_trade_rings@sciona/atoms/fintech/institutional_quant_engine/wash_trade.py:17": {
+      "references": [
+        {
+          "ref_id": "clrs2009",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "medium",
+            "notes": "Directed graph reachability and cycle detection attribution for participant ring detection."
+          }
+        },
+        {
+          "ref_id": "repo_institutional_quant_engine",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual_source_alignment",
+            "matched_nodes": [
+              "../ageo-atoms/third_party/Institutional-Quant-Engine/ops_compliance/50_trade_surveillance_wash_graph.py:17"
+            ],
+            "confidence": "high",
+            "notes": "Source script uses directed simple-cycle detection to identify wash-trading rings."
           }
         }
       ],

@@ -28,6 +28,13 @@
       "uncertainty_notes": [],
       "source_review": "manual_pubrev_001"
     },
+    "sciona.atoms.fintech.institutional_quant_engine.fractional_diff.fractional_differentiator@sciona/atoms/fintech/institutional_quant_engine/fractional_diff.py:19": {
+      "review_confidence": "medium",
+      "uncertainty_notes": [
+        "Fixed-width fractional differencing follows the local source model but intentionally corrects current-observation indexing so d=0 is identity-preserving."
+      ],
+      "source_review": "manual_remediation_reingest"
+    },
     "sciona.atoms.fintech.institutional_quant_engine.hawkes_process.sample_hawkes_event_trajectory@sciona/atoms/fintech/institutional_quant_engine/hawkes_process.py:17": {
       "review_confidence": "high",
       "uncertainty_notes": [],
@@ -80,6 +87,13 @@
         "Detector enumerates direct 3-currency cycles and returns profitable cycle factors, not reconstructed currency paths."
       ],
       "source_review": "manual_pubrev_001"
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.wash_trade.detect_wash_trade_rings@sciona/atoms/fintech/institutional_quant_engine/wash_trade.py:17": {
+      "review_confidence": "medium",
+      "uncertainty_notes": [
+        "Flags participants in directed cycles from an adjacency matrix; it does not evaluate timestamps, quantities, or intent."
+      ],
+      "source_review": "manual_remediation_reingest"
     }
   }
 }

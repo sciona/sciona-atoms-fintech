@@ -13,6 +13,7 @@ SAFE_ROWS = {
     "copula_dependence",
     "dynamic_hedge",
     "evt_model",
+    "fractional_diff",
     "hawkes_process",
     "heston_model",
     "hierarchical_risk_parity",
@@ -20,12 +21,11 @@ SAFE_ROWS = {
     "queue_estimator/atoms",
     "supply_chain",
     "triangular_arbitrage",
+    "wash_trade",
 }
 
 HELD_ROWS = {
-    "fractional_diff",
     "pin_model",
-    "wash_trade",
 }
 
 
@@ -70,9 +70,9 @@ def test_pubrev_001_safe_rows_are_ready_and_not_bundle_blocked() -> None:
     bundle = _load_bundle()
     rows = _rows_by_id(bundle)
 
-    assert bundle["ready_rows"] == 15
+    assert bundle["ready_rows"] == 17
     assert bundle["conditional_rows"] == 0
-    assert bundle["not_ready_rows"] == 3
+    assert bundle["not_ready_rows"] == 1
     assert bundle["limitations"] == []
     assert bundle["required_actions"] == []
 

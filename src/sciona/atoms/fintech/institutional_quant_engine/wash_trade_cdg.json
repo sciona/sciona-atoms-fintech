@@ -27,20 +27,24 @@
       "node_id": "detect_wash_trade_rings",
       "parent_id": "wash_trade_root",
       "name": "detect_wash_trade_rings",
-      "description": "Detects wash trading rings in a directed trade graph by identifying simple cycles that indicate coordinated market manipulation.",
+      "description": "Flag participants that belong to any directed trading cycle.",
       "concept_type": "custom",
       "inputs": [
         {
           "name": "trade_graph",
-          "type_desc": "np.ndarray",
-          "constraints": "required argument"
+          "type_desc": "NDArray[np.float64]",
+          "constraints": "Square directed adjacency matrix with positive entries for observed trades.",
+          "required": true,
+          "default_value_repr": ""
         }
       ],
       "outputs": [
         {
           "name": "result",
-          "type_desc": "np.ndarray",
-          "constraints": "function return value"
+          "type_desc": "NDArray[np.bool_]",
+          "constraints": "Boolean participant mask for nodes that participate in directed cycles.",
+          "required": true,
+          "default_value_repr": ""
         }
       ],
       "status": "atomic",

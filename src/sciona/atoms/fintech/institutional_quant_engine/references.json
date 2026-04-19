@@ -1,0 +1,305 @@
+{
+  "schema_version": "1.1",
+  "atoms": {
+    "sciona.atoms.fintech.institutional_quant_engine.copula_dependence.simulate_copula_dependence@sciona/atoms/fintech/institutional_quant_engine/copula_dependence.py:17": {
+      "references": [
+        {
+          "ref_id": "nelsen2006copulas",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Copula dependence modeling attribution."
+          }
+        },
+        {
+          "ref_id": "repo_institutional_quant_engine",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Primary repository attribution for Institutional-Quant-Engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.dynamic_hedge.kalman_hedge_ratio@sciona/atoms/fintech/institutional_quant_engine/dynamic_hedge.py:19": {
+      "references": [
+        {
+          "ref_id": "kalman1960",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Kalman filtering and dynamic state-estimation attribution."
+          }
+        },
+        {
+          "ref_id": "repo_institutional_quant_engine",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Primary repository attribution for Institutional-Quant-Engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.evt_model.fit_gpd_tail@sciona/atoms/fintech/institutional_quant_engine/evt_model.py:16": {
+      "references": [
+        {
+          "ref_id": "coles2001evt",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "EVT and generalized Pareto tail modeling attribution."
+          }
+        },
+        {
+          "ref_id": "repo_institutional_quant_engine",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Primary repository attribution for Institutional-Quant-Engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.hawkes_process.sample_hawkes_event_trajectory@sciona/atoms/fintech/institutional_quant_engine/hawkes_process.py:17": {
+      "references": [
+        {
+          "ref_id": "hawkes1971",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Foundational Hawkes self-exciting point-process attribution."
+          }
+        },
+        {
+          "ref_id": "repo_institutional_quant_engine",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Primary repository attribution for Institutional-Quant-Engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.hawkes_process.hawkesprocesssimulator@sciona/atoms/fintech/institutional_quant_engine/hawkes_process.py:57": {
+      "references": [
+        {
+          "ref_id": "hawkes1971",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Foundational Hawkes self-exciting point-process attribution."
+          }
+        },
+        {
+          "ref_id": "repo_institutional_quant_engine",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Primary repository attribution for Institutional-Quant-Engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.heston_model.simulate_heston_paths@sciona/atoms/fintech/institutional_quant_engine/heston_model.py:20": {
+      "references": [
+        {
+          "ref_id": "heston1993",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Heston stochastic-volatility model attribution."
+          }
+        },
+        {
+          "ref_id": "repo_institutional_quant_engine",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Primary repository attribution for Institutional-Quant-Engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.heston_model.hestonpathsampler@sciona/atoms/fintech/institutional_quant_engine/heston_model.py:66": {
+      "references": [
+        {
+          "ref_id": "heston1993",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Heston stochastic-volatility model attribution."
+          }
+        },
+        {
+          "ref_id": "repo_institutional_quant_engine",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Primary repository attribution for Institutional-Quant-Engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.hierarchical_risk_parity.compute_hrp_weights@sciona/atoms/fintech/institutional_quant_engine/hierarchical_risk_parity.py:15": {
+      "references": [
+        {
+          "ref_id": "lopezdeprado2016hrp",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Hierarchical Risk Parity attribution."
+          }
+        },
+        {
+          "ref_id": "repo_institutional_quant_engine",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Primary repository attribution for Institutional-Quant-Engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.hierarchical_risk_parity.hrppipelinerun@sciona/atoms/fintech/institutional_quant_engine/hierarchical_risk_parity.py:75": {
+      "references": [
+        {
+          "ref_id": "lopezdeprado2016hrp",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Hierarchical Risk Parity attribution."
+          }
+        },
+        {
+          "ref_id": "repo_institutional_quant_engine",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Primary repository attribution for Institutional-Quant-Engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.order_flow_imbalance.orderflowimbalanceevaluation@sciona/atoms/fintech/institutional_quant_engine/order_flow_imbalance.py:17": {
+      "references": [
+        {
+          "ref_id": "cont2014ofi",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Order-flow imbalance and order-book event attribution."
+          }
+        },
+        {
+          "ref_id": "repo_institutional_quant_engine",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Primary repository attribution for Institutional-Quant-Engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.supply_chain.propagate_supply_shock@sciona/atoms/fintech/institutional_quant_engine/supply_chain.py:18": {
+      "references": [
+        {
+          "ref_id": "shuman2013gsp",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "medium",
+            "notes": "Graph-network propagation attribution for supply-chain adjacency propagation."
+          }
+        },
+        {
+          "ref_id": "repo_institutional_quant_engine",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Primary repository attribution for Institutional-Quant-Engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.triangular_arbitrage.detect_triangular_arbitrage@sciona/atoms/fintech/institutional_quant_engine/triangular_arbitrage.py:15": {
+      "references": [
+        {
+          "ref_id": "clrs2009",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "medium",
+            "notes": "Graph cycle-search attribution for triangular arbitrage detection."
+          }
+        },
+        {
+          "ref_id": "repo_institutional_quant_engine",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Primary repository attribution for Institutional-Quant-Engine atoms."
+          }
+        }
+      ],
+      "auto_attribution_runs": []
+    }
+  }
+}

@@ -1,8 +1,18 @@
 {
   "schema_version": "1.1",
   "atoms": {
-    "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.initializeorderstate@sciona/atoms/fintech/institutional_quant_engine/queue_estimator/atoms.py:23": {
+    "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.initializeorderstate@sciona/atoms/fintech/institutional_quant_engine/queue_estimator/atoms.py:22": {
       "references": [
+        {
+          "ref_id": "cont2014ofi",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Order-book event and displayed-queue consumption attribution."
+          }
+        },
         {
           "ref_id": "repo_institutional_quant_engine",
           "match_metadata": {
@@ -16,8 +26,18 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.updatequeueontrade@sciona/atoms/fintech/institutional_quant_engine/queue_estimator/atoms.py:53": {
+    "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.updatequeueontrade@sciona/atoms/fintech/institutional_quant_engine/queue_estimator/atoms.py:45": {
       "references": [
+        {
+          "ref_id": "cont2014ofi",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [],
+            "confidence": "high",
+            "notes": "Order-book event and displayed-queue consumption attribution."
+          }
+        },
         {
           "ref_id": "repo_institutional_quant_engine",
           "match_metadata": {

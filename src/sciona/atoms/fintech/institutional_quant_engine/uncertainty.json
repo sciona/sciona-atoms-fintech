@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "atom": "simulate_copula_dependence",
+  "estimates": [
+    {
+      "mode": "empirical",
+      "scalar_factor": 1.0,
+      "confidence": 0.8,
+      "n_trials": 0,
+      "epsilon": 0,
+      "input_regime": "manual publishability review over institutional_quant_engine market-model, risk, graph, and arbitrage atoms",
+      "notes": "Provider review metadata below records per-atom confidence and limitations; this top-level estimate keeps the file compatible with the Supabase uncertainty backfill."
+    }
+  ],
+  "atoms": {
+    "sciona.atoms.fintech.institutional_quant_engine.copula_dependence.simulate_copula_dependence@sciona/atoms/fintech/institutional_quant_engine/copula_dependence.py:17": {
+      "review_confidence": "high",
+      "uncertainty_notes": [],
+      "source_review": "manual_pubrev_001"
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.dynamic_hedge.kalman_hedge_ratio@sciona/atoms/fintech/institutional_quant_engine/dynamic_hedge.py:19": {
+      "review_confidence": "high",
+      "uncertainty_notes": [],
+      "source_review": "manual_pubrev_001"
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.evt_model.fit_gpd_tail@sciona/atoms/fintech/institutional_quant_engine/evt_model.py:16": {
+      "review_confidence": "high",
+      "uncertainty_notes": [],
+      "source_review": "manual_pubrev_001"
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.hawkes_process.sample_hawkes_event_trajectory@sciona/atoms/fintech/institutional_quant_engine/hawkes_process.py:17": {
+      "review_confidence": "high",
+      "uncertainty_notes": [],
+      "source_review": "manual_pubrev_001"
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.hawkes_process.hawkesprocesssimulator@sciona/atoms/fintech/institutional_quant_engine/hawkes_process.py:57": {
+      "review_confidence": "high",
+      "uncertainty_notes": [],
+      "source_review": "manual_pubrev_001"
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.heston_model.simulate_heston_paths@sciona/atoms/fintech/institutional_quant_engine/heston_model.py:20": {
+      "review_confidence": "medium",
+      "uncertainty_notes": [
+        "Euler-style discretization; output is a simulation primitive rather than a calibrated pricing model."
+      ],
+      "source_review": "manual_pubrev_001"
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.heston_model.hestonpathsampler@sciona/atoms/fintech/institutional_quant_engine/heston_model.py:66": {
+      "review_confidence": "medium",
+      "uncertainty_notes": [
+        "Euler-style discretization; output is a simulation primitive rather than a calibrated pricing model."
+      ],
+      "source_review": "manual_pubrev_001"
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.hierarchical_risk_parity.compute_hrp_weights@sciona/atoms/fintech/institutional_quant_engine/hierarchical_risk_parity.py:15": {
+      "review_confidence": "high",
+      "uncertainty_notes": [],
+      "source_review": "manual_pubrev_001"
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.hierarchical_risk_parity.hrppipelinerun@sciona/atoms/fintech/institutional_quant_engine/hierarchical_risk_parity.py:75": {
+      "review_confidence": "high",
+      "uncertainty_notes": [],
+      "source_review": "manual_pubrev_001"
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.order_flow_imbalance.orderflowimbalanceevaluation@sciona/atoms/fintech/institutional_quant_engine/order_flow_imbalance.py:17": {
+      "review_confidence": "high",
+      "uncertainty_notes": [],
+      "source_review": "manual_pubrev_001"
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.supply_chain.propagate_supply_shock@sciona/atoms/fintech/institutional_quant_engine/supply_chain.py:18": {
+      "review_confidence": "medium",
+      "uncertainty_notes": [
+        "Network propagation is source-supported but the implementation assumes a stable weighted DAG and does not validate acyclicity."
+      ],
+      "source_review": "manual_pubrev_001"
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.triangular_arbitrage.detect_triangular_arbitrage@sciona/atoms/fintech/institutional_quant_engine/triangular_arbitrage.py:15": {
+      "review_confidence": "medium",
+      "uncertainty_notes": [
+        "Detector enumerates direct 3-currency cycles and returns profitable cycle factors, not reconstructed currency paths."
+      ],
+      "source_review": "manual_pubrev_001"
+    }
+  }
+}

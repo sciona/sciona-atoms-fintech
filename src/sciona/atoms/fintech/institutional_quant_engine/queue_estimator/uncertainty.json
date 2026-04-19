@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "atom": "initializeorderstate",
+  "estimates": [
+    {
+      "mode": "empirical",
+      "scalar_factor": 1.0,
+      "confidence": 0.8,
+      "n_trials": 0,
+      "epsilon": 0,
+      "input_regime": "manual publishability review over queue estimator state initialization and trade-update atoms",
+      "notes": "Provider review metadata below records per-atom confidence and limitations; this top-level estimate keeps the file compatible with the Supabase uncertainty backfill."
+    }
+  ],
+  "atoms": {
+    "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.initializeorderstate@sciona/atoms/fintech/institutional_quant_engine/queue_estimator/atoms.py:22": {
+      "review_confidence": "medium",
+      "uncertainty_notes": [
+        "Initializer uses a fixed displayed queue-ahead default and should be interpreted as a deterministic state seed, not market-data reconstruction."
+      ],
+      "source_review": "manual_pubrev_001"
+    },
+    "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.updatequeueontrade@sciona/atoms/fintech/institutional_quant_engine/queue_estimator/atoms.py:45": {
+      "review_confidence": "high",
+      "uncertainty_notes": [
+        "Trade-only queue consumption model; cancellations and priority changes are intentionally out of scope."
+      ],
+      "source_review": "manual_pubrev_001"
+    }
+  }
+}

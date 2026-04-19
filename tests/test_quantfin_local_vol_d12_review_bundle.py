@@ -60,4 +60,5 @@ def test_quantfin_local_vol_d12_row_is_ready_and_importable() -> None:
 def test_quantfin_bundle_rollup_counts() -> None:
     bundle = _load_bundle()
     assert bundle["ready_rows"] == 6
-    assert bundle["conditional_rows"] == 1
+    assert bundle["conditional_rows"] == 0
+    assert bundle["not_ready_rows"] == 1

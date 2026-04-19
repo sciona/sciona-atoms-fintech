@@ -1,8 +1,38 @@
 # REMEDIATION
 
-This file tracks pubrev-001 atoms that should remain unpublished until the
+This file tracks provider publishability-review atoms that should remain unpublished until the
 implementation, public name, metadata, and behavior tests describe the same
 contract.
+
+## Quantfin
+
+### `sciona.atoms.fintech.quantfin.tdma_solver_d12.tdmasolver`
+
+Status: keep unpublished for now.
+
+Why it is blocked:
+- Upstream `Quant.Math.Utilities.tdmaSolver` accepts four vectors: sub-diagonal, main diagonal, super-diagonal, and right-hand side.
+- The generated Python atom exposes many translation-internal helper/workspace arguments (`forM_`, `fromList`, `read`, `write`, `x`, `xn`, and related intermediates).
+- The implementation computes a Thomas-algorithm solution from selected list arguments, but the public call surface does not match the upstream source contract and is not suitable for catalog publication.
+
+Proposed fixes:
+1. Add a source-aligned wrapper that accepts only the four coefficient/right-hand-side vectors, validates equal lengths and non-zero pivots, and delegates to a tested Thomas sweep.
+2. Add deterministic tests against a known tridiagonal linear system and singular-pivot rejection.
+3. Reenter publication review only after references, review bundle source paths, uncertainty notes if needed, and behavior tests all describe the same public API.
+
+### `sciona.atoms.fintech.quantfin.tdma_solver_d12.cotraversevec`
+
+Status: keep unpublished for now.
+
+Why it is blocked:
+- Upstream `Quant.Math.Utilities.cotraverseVec` accepts an aggregation function, output length, and functor-wrapped unboxed vectors.
+- The generated Python atom exposes helper arguments (`enumFromN`, `fmap`, and `map`) that are implementation mechanics rather than the upstream public API.
+- The behavior can emulate co-traversal when callers provide those helpers, but that is not source-aligned enough for publication.
+
+Proposed fixes:
+1. Replace the generated call surface with a direct Python API for the aggregation function, output length, and wrapped vectors.
+2. Add tests proving index-wise aggregation across multiple vectors and preserving output length/order.
+3. Reenter publication review only after the review bundle no longer marks this row as `semantic_drift`.
 
 ## Institutional Quant Engine
 

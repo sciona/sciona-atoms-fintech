@@ -26,7 +26,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.quick_sim_anti@sciona/atoms/fintech/quantfin/montecarlo.py:101": {
+    "sciona.atoms.fintech.quantfin.montecarlo.quick_sim_anti@sciona/atoms/fintech/quantfin/montecarlo.py:101": {
       "references": [
         {
           "ref_id": "glasserman2003",
@@ -37,11 +37,23 @@
             "confidence": "high",
             "notes": "Monte Carlo pricing attribution."
           }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [
+              "Quant.MonteCarlo.quickSimAnti"
+            ],
+            "confidence": "high",
+            "notes": "Upstream quickSimAnti delegates to runSimulationAnti with default pureMT 500 seed."
+          }
         }
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.run_simulation@sciona/atoms/fintech/quantfin/montecarlo.py:40": {
+    "sciona.atoms.fintech.quantfin.montecarlo.run_simulation@sciona/atoms/fintech/quantfin/montecarlo.py:40": {
       "references": [
         {
           "ref_id": "glasserman2003",
@@ -52,11 +64,23 @@
             "confidence": "high",
             "notes": "Monte Carlo pricing attribution."
           }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [
+              "Quant.MonteCarlo.runSimulation"
+            ],
+            "confidence": "high",
+            "notes": "Upstream runSimulation runs simulateState through runMC with an explicit initial random state and trial count."
+          }
         }
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.run_simulation_anti@sciona/atoms/fintech/quantfin/montecarlo.py:71": {
+    "sciona.atoms.fintech.quantfin.montecarlo.run_simulation_anti@sciona/atoms/fintech/quantfin/montecarlo.py:71": {
       "references": [
         {
           "ref_id": "glasserman2003",
@@ -66,6 +90,18 @@
             "matched_nodes": [],
             "confidence": "high",
             "notes": "Monte Carlo pricing attribution."
+          }
+        },
+        {
+          "ref_id": "repo_quantfin",
+          "match_metadata": {
+            "similarity_score": null,
+            "match_type": "manual",
+            "matched_nodes": [
+              "Quant.MonteCarlo.runSimulationAnti"
+            ],
+            "confidence": "high",
+            "notes": "Upstream runSimulationAnti averages antithetic and regular runSimulation calls over half the requested trials."
           }
         }
       ],

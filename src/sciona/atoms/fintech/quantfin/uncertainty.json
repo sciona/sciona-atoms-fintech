@@ -1,4 +1,5 @@
 {
+  "schema_version": "1.0",
   "atom": "functional_monte_carlo",
   "estimates": [
     {
@@ -10,5 +11,42 @@
       "input_regime": "multi-arg perturbation, shapes={'data': '(256,)'}",
       "notes": "perturbation harness, 500/500 trials, perturbed params: ['data']"
     }
-  ]
+  ],
+  "atoms": {
+    "sciona.atoms.fintech.quantfin.functional_monte_carlo@sciona/atoms/fintech/quantfin/atoms.py:19": {
+      "review_confidence": "medium",
+      "uncertainty_notes": [
+        "Seeded GBM-style path generator; publication readiness rests on the documented stochastic wrapper semantics, not calibrated model accuracy."
+      ],
+      "source_review": "manual_quantfin_review"
+    },
+    "sciona.atoms.fintech.quantfin.montecarlo.quick_sim_anti@sciona/atoms/fintech/quantfin/montecarlo.py:101": {
+      "review_confidence": "high",
+      "uncertainty_notes": [
+        "Monte Carlo estimator variance is simulator-dependent; this atom fixes the seed boundary and antithetic split semantics only."
+      ],
+      "source_review": "manual_pubrev_010"
+    },
+    "sciona.atoms.fintech.quantfin.montecarlo.run_simulation@sciona/atoms/fintech/quantfin/montecarlo.py:40": {
+      "review_confidence": "high",
+      "uncertainty_notes": [
+        "Estimator uncertainty is delegated to the registered seeded simulator and trial count."
+      ],
+      "source_review": "manual_pubrev_010"
+    },
+    "sciona.atoms.fintech.quantfin.montecarlo.run_simulation_anti@sciona/atoms/fintech/quantfin/montecarlo.py:71": {
+      "review_confidence": "high",
+      "uncertainty_notes": [
+        "Antithetic variance reduction depends on simulator implementation; this atom verifies the source-aligned half-trial averaging contract."
+      ],
+      "source_review": "manual_pubrev_010"
+    },
+    "sciona.atoms.fintech.quantfin.volatility_surface_modeling@sciona/atoms/fintech/quantfin/atoms.py:61": {
+      "review_confidence": "medium",
+      "uncertainty_notes": [
+        "Interpolation output is deterministic for supplied quotes; calibration/model uncertainty is outside this wrapper."
+      ],
+      "source_review": "manual_quantfin_review"
+    }
+  }
 }

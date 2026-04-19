@@ -28,9 +28,9 @@
   ],
   "bundle_scope": "provider_owned_review_batch",
   "bundle_version": "1.0",
-  "conditional_rows": 1,
+  "conditional_rows": 0,
   "covered_rows": 7,
-  "developer_semantic_verdict": "aligned_to_registered_atoms",
+  "developer_semantic_verdict": "mixed",
   "family": "sciona.atoms.fintech.quantfin",
   "limitations": [],
   "provider_repo": "sciona-atoms-fintech",
@@ -194,15 +194,20 @@
     },
     {
       "atom_keys": [
-        "sciona.atoms.fintech.quantfin.quick_sim_anti",
-        "sciona.atoms.fintech.quantfin.run_simulation",
-        "sciona.atoms.fintech.quantfin.run_simulation_anti"
+        "sciona.atoms.fintech.quantfin.montecarlo.quick_sim_anti",
+        "sciona.atoms.fintech.quantfin.montecarlo.run_simulation",
+        "sciona.atoms.fintech.quantfin.montecarlo.run_simulation_anti"
       ],
       "authoritative_sources": [
         {
           "confidence": "high",
           "notes": "Monte Carlo pricing attribution.",
           "ref_id": "glasserman2003"
+        },
+        {
+          "confidence": "high",
+          "notes": "Upstream Hackage quantfin source defines runSimulation, runSimulationAnti, and quickSimAnti with the same seeded simulation and antithetic split semantics.",
+          "ref_id": "repo_quantfin"
         }
       ],
       "developer_semantic_verdict": "aligned_to_registered_atoms",
@@ -218,7 +223,12 @@
       "review_status": "reviewed",
       "row_id": "montecarlo",
       "semantic_verdict": "supported",
-      "trust_readiness": "ready"
+      "trust_readiness": "ready",
+      "source_paths": [
+        "src/sciona/atoms/fintech/quantfin/montecarlo.py:101",
+        "src/sciona/atoms/fintech/quantfin/montecarlo.py:40",
+        "src/sciona/atoms/fintech/quantfin/montecarlo.py:71"
+      ]
     },
     {
       "atom_keys": [
@@ -275,26 +285,32 @@
           "ref_id": "repo_quantfin"
         }
       ],
-      "developer_semantic_verdict": "aligned_to_registered_atoms",
+      "developer_semantic_verdict": "source_api_drift_requires_repair",
       "evidence_files": [
         "tdma_solver_d12/cdg.json",
         "tdma_solver_d12/matches.json",
-        "tdma_solver_d12/references.json"
+        "tdma_solver_d12/references.json",
+        "REMEDIATION.md"
       ],
       "limitations": [
-        "Provenance currently rests on the upstream repository record only."
+        "Generated Python call surfaces expose translation-internal helper arguments rather than the compact upstream quantfin tdmaSolver and cotraverseVec APIs."
       ],
       "module": "sciona.atoms.fintech.quantfin.tdma_solver_d12.atoms",
       "required_actions": [
-        "Add an external authoritative citation before promoting this row to fully trusted manifest status."
+        "Replace or wrap the generated APIs so tdmasolver accepts the four coefficient/right-hand-side vectors and cotraversevec accepts the upstream function, length, and vector container shape before publication."
       ],
       "review_record_path": "docs/review-records/quantfin.md",
       "review_status": "reviewed",
       "row_id": "tdma_solver_d12/atoms",
-      "semantic_verdict": "source_limited",
-      "trust_readiness": "conditional"
+      "semantic_verdict": "semantic_drift",
+      "trust_readiness": "not_ready",
+      "source_paths": [
+        "src/sciona/atoms/fintech/quantfin/tdma_solver_d12/atoms.py:157",
+        "src/sciona/atoms/fintech/quantfin/tdma_solver_d12/atoms.py:38"
+      ]
     }
   ],
   "semantic_verdict": "mixed",
-  "trust_readiness": "mixed"
+  "trust_readiness": "mixed",
+  "not_ready_rows": 1
 }

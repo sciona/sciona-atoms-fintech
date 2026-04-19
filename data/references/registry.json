@@ -1,0 +1,345 @@
+{
+  "schema_version": "1.0",
+  "references": {
+    "almgren2000": {
+      "ref_id": "almgren2000",
+      "type": "paper",
+      "title": "Optimal Execution of Portfolio Transactions",
+      "authors": [
+        "Robert Almgren",
+        "Neil Chriss"
+      ],
+      "year": 2000,
+      "venue": "Journal of Risk",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Canonical Almgren-Chriss execution paper."
+      },
+      "url": "https://www.smallake.kr/wp-content/uploads/2016/03/optliq.pdf"
+    },
+    "avellaneda2008": {
+      "ref_id": "avellaneda2008",
+      "type": "paper",
+      "title": "High-frequency trading in a limit order book",
+      "authors": [
+        "Marco Avellaneda",
+        "Sasha Stoikov"
+      ],
+      "year": 2008,
+      "venue": "Quantitative Finance",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Canonical Avellaneda-Stoikov market-making paper."
+      },
+      "doi": "10.1080/14697680701381228",
+      "url": "https://doi.org/10.1080/14697680701381228"
+    },
+    "clrs2009": {
+      "ref_id": "clrs2009",
+      "type": "book",
+      "title": "Introduction to Algorithms",
+      "authors": [
+        "Thomas H. Cormen",
+        "Charles E. Leiserson",
+        "Ronald L. Rivest",
+        "Clifford Stein"
+      ],
+      "year": 2009,
+      "venue": "MIT Press",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Broad textbook reference for classical algorithm implementations."
+      },
+      "url": "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/"
+    },
+    "coles2001evt": {
+      "ref_id": "coles2001evt",
+      "type": "book",
+      "title": "An Introduction to Statistical Modeling of Extreme Values",
+      "authors": [
+        "Stuart Coles"
+      ],
+      "year": 2001,
+      "venue": "Springer",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Standard EVT reference used for GPD tail fitting attribution."
+      },
+      "url": "https://link.springer.com/book/10.1007/978-1-4471-3675-0"
+    },
+    "cont2014ofi": {
+      "ref_id": "cont2014ofi",
+      "type": "paper",
+      "title": "The Price Impact of Order Book Events",
+      "authors": [
+        "Rama Cont",
+        "Arseniy Kukanov",
+        "Sasha Stoikov"
+      ],
+      "year": 2014,
+      "venue": "Journal of Financial Econometrics",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Canonical order flow imbalance and order-book event reference."
+      },
+      "doi": "10.1093/jjfinec/nbt003",
+      "url": "https://doi.org/10.1093/jjfinec/nbt003"
+    },
+    "gatheral2006": {
+      "ref_id": "gatheral2006",
+      "type": "book",
+      "title": "The Volatility Surface: A Practitioner's Guide",
+      "authors": [
+        "Jim Gatheral"
+      ],
+      "year": 2006,
+      "venue": "Wiley",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Standard local-volatility and implied-volatility surface reference."
+      },
+      "url": "https://onlinelibrary.wiley.com/doi/book/10.1002/9781119203643"
+    },
+    "glasserman2003": {
+      "ref_id": "glasserman2003",
+      "type": "book",
+      "title": "Monte Carlo Methods in Financial Engineering",
+      "authors": [
+        "Paul Glasserman"
+      ],
+      "year": 2003,
+      "venue": "Springer",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Standard quantitative finance Monte Carlo reference."
+      },
+      "doi": "10.1007/978-0-387-21617-1",
+      "url": "https://doi.org/10.1007/978-0-387-21617-1"
+    },
+    "gueant2013inventory": {
+      "ref_id": "gueant2013inventory",
+      "type": "paper",
+      "title": "Dealing with the Inventory Risk: a solution to the market making problem",
+      "authors": [
+        "Olivier Gu\u00e9ant",
+        "Charles-Albert Lehalle",
+        "Joaquin Fernandez-Tapia"
+      ],
+      "year": 2013,
+      "venue": "Mathematics and Financial Economics",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Canonical GLFT inventory-risk market-making paper."
+      },
+      "doi": "10.1007/s11579-012-0086-0",
+      "url": "https://doi.org/10.1007/s11579-012-0086-0"
+    },
+    "hawkes1971": {
+      "ref_id": "hawkes1971",
+      "type": "paper",
+      "title": "Spectra of some self-exciting and mutually exciting point processes",
+      "authors": [
+        "Alan G. Hawkes"
+      ],
+      "year": 1971,
+      "venue": "Biometrika",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Foundational Hawkes process paper."
+      },
+      "doi": "10.1093/biomet/58.1.83",
+      "url": "https://doi.org/10.1093/biomet/58.1.83"
+    },
+    "heston1993": {
+      "ref_id": "heston1993",
+      "type": "paper",
+      "title": "A Closed-Form Solution for Options with Stochastic Volatility with Applications to Bond and Currency Options",
+      "authors": [
+        "Steven L. Heston"
+      ],
+      "year": 1993,
+      "venue": "The Review of Financial Studies",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Canonical Heston stochastic volatility paper."
+      },
+      "doi": "10.1093/rfs/6.2.327",
+      "url": "https://doi.org/10.1093/rfs/6.2.327"
+    },
+    "kalman1960": {
+      "ref_id": "kalman1960",
+      "type": "paper",
+      "title": "A New Approach to Linear Filtering and Prediction Problems",
+      "authors": [
+        "R. E. Kalman"
+      ],
+      "year": 1960,
+      "venue": "Transactions of the ASME Journal of Basic Engineering",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Foundational Kalman filter paper."
+      },
+      "doi": "10.1115/1.3662552",
+      "url": "https://doi.org/10.1115/1.3662552"
+    },
+    "kissell2013algo": {
+      "ref_id": "kissell2013algo",
+      "type": "book",
+      "title": "The Science of Algorithmic Trading and Portfolio Management",
+      "authors": [
+        "Robert Kissell"
+      ],
+      "year": 2013,
+      "venue": "Academic Press",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Broad execution-algorithm reference for local quant_engine atoms without a unique upstream paper."
+      },
+      "url": "https://www.sciencedirect.com/book/9780124016897/the-science-of-algorithmic-trading-and-portfolio-management"
+    },
+    "lopezdeprado2016hrp": {
+      "ref_id": "lopezdeprado2016hrp",
+      "type": "paper",
+      "title": "Building Diversified Portfolios that Outperform Out of Sample",
+      "authors": [
+        "Marcos L\u00f3pez de Prado"
+      ],
+      "year": 2016,
+      "venue": "The Journal of Portfolio Management",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Canonical hierarchical risk parity reference."
+      },
+      "doi": "10.3905/jpm.2016.42.4.059",
+      "url": "https://doi.org/10.3905/jpm.2016.42.4.059"
+    },
+    "nelsen2006copulas": {
+      "ref_id": "nelsen2006copulas",
+      "type": "book",
+      "title": "An Introduction to Copulas",
+      "authors": [
+        "Roger B. Nelsen"
+      ],
+      "year": 2006,
+      "venue": "Springer",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Standard reference for copula modeling."
+      },
+      "url": "https://link.springer.com/book/10.1007/0-387-28678-0"
+    },
+    "repo_hftbacktest": {
+      "ref_id": "repo_hftbacktest",
+      "type": "repository",
+      "title": "hftbacktest",
+      "authors": [],
+      "year": null,
+      "venue": "GitHub",
+      "url": "https://github.com/nkaz001/hftbacktest",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Repository citation for the upstream implementation used by this atom."
+      }
+    },
+    "repo_institutional_quant_engine": {
+      "ref_id": "repo_institutional_quant_engine",
+      "type": "repository",
+      "title": "Institutional-Quant-Engine",
+      "authors": [],
+      "year": null,
+      "venue": "GitHub",
+      "url": "https://github.com/Rakeshks7/Institutional-Quant-Engine",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Repository citation for the upstream implementation used by this atom."
+      }
+    },
+    "repo_quantfin": {
+      "ref_id": "repo_quantfin",
+      "type": "repository",
+      "title": "quantfin",
+      "authors": [],
+      "year": null,
+      "venue": "GitHub",
+      "url": "https://github.com/boundedvariation/quantfin",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Repository citation for the upstream implementation used by this atom."
+      }
+    },
+    "shuman2013gsp": {
+      "ref_id": "shuman2013gsp",
+      "type": "paper",
+      "title": "The Emerging Field of Signal Processing on Graphs: Extending High-Dimensional Data Analysis to Networks and Other Irregular Domains",
+      "authors": [
+        "David I. Shuman",
+        "Sunil K. Narang",
+        "Pascal Frossard",
+        "Antonio Ortega",
+        "Pierre Vandergheynst"
+      ],
+      "year": 2013,
+      "venue": "IEEE Signal Processing Magazine",
+      "match_metadata": {
+        "similarity_score": null,
+        "match_type": "manual",
+        "matched_nodes": [],
+        "confidence": "high",
+        "notes": "Canonical graph signal processing reference for graph connectivity, Laplacian spectra, and graph filter behavior."
+      },
+      "doi": "10.1109/MSP.2012.2235192",
+      "url": "https://doi.org/10.1109/MSP.2012.2235192"
+    }
+  }
+}

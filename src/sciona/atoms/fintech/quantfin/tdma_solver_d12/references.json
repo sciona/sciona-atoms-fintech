@@ -1,31 +1,35 @@
 {
   "schema_version": "1.1",
   "atoms": {
-    "sciona.atoms.fintech.quantfin.tdma_solver_d12.cotraversevec@sciona/atoms/fintech/quantfin/tdma_solver_d12/atoms.py:147": {
+    "sciona.atoms.fintech.quantfin.tdma_solver_d12.tdma_solver@sciona/atoms/fintech/quantfin/tdma_solver_d12/atoms.py:47": {
       "references": [
         {
           "ref_id": "repo_quantfin",
           "match_metadata": {
             "similarity_score": null,
             "match_type": "manual",
-            "matched_nodes": [],
+            "matched_nodes": [
+              "Quant.Math.Utilities.tdmaSolver"
+            ],
             "confidence": "high",
-            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+            "notes": "Python atom mirrors the vendored Haskell tdmaSolver contract: four coefficient/right-hand-side vectors and Thomas-algorithm forward/back substitution."
           }
         }
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.tdma_solver_d12.tdmasolver@sciona/atoms/fintech/quantfin/tdma_solver_d12/atoms.py:28": {
+    "sciona.atoms.fintech.quantfin.tdma_solver_d12.cotraverse_vec@sciona/atoms/fintech/quantfin/tdma_solver_d12/atoms.py:96": {
       "references": [
         {
           "ref_id": "repo_quantfin",
           "match_metadata": {
             "similarity_score": null,
             "match_type": "manual",
-            "matched_nodes": [],
+            "matched_nodes": [
+              "Quant.Math.Utilities.cotraverseVec"
+            ],
             "confidence": "high",
-            "notes": "Upstream implementation is mapped to the vendored quantfin repository."
+            "notes": "Python atom preserves cotraverseVec's index-wise extraction across a vector container followed by caller-provided aggregation."
           }
         }
       ],

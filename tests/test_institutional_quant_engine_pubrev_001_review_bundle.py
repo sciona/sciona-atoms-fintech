@@ -24,11 +24,6 @@ SAFE_ROWS = {
     "wash_trade",
 }
 
-HELD_ROWS = {
-    "pin_model",
-}
-
-
 def _load_bundle() -> dict[str, object]:
     return json.loads(BUNDLE_PATH.read_text())
 
@@ -72,7 +67,7 @@ def test_pubrev_001_safe_rows_are_ready_and_not_bundle_blocked() -> None:
 
     assert bundle["ready_rows"] == 17
     assert bundle["conditional_rows"] == 0
-    assert bundle["not_ready_rows"] == 1
+    assert bundle["not_ready_rows"] == 0
     assert bundle["limitations"] == []
     assert bundle["required_actions"] == []
 
@@ -85,23 +80,18 @@ def test_pubrev_001_safe_rows_are_ready_and_not_bundle_blocked() -> None:
         assert row["source_paths"]
 
 
-def test_pubrev_001_held_rows_remain_unpublished_with_remediation() -> None:
+def test_pubrev_001_no_held_rows_remain_in_bundle() -> None:
     rows = _rows_by_id(_load_bundle())
 
-    for row_id in HELD_ROWS:
-        row = rows[row_id]
-        assert row["semantic_verdict"] == "semantic_drift"
-        assert row["trust_readiness"] == "not_ready"
-        assert row["developer_semantic_verdict"] == "semantic_drift_requires_repair"
-        assert row["limitations"]
-        assert row["required_actions"]
-        assert "REMEDIATION.md" in row["evidence_files"]
+    assert "pin_model" not in rows
+    assert all(row["trust_readiness"] == "ready" for row in rows.values())
+    assert all(row["semantic_verdict"] == "supported" for row in rows.values())
 
 
 def test_pubrev_001_atom_keys_are_exact_importable_fqdns() -> None:
     rows = _rows_by_id(_load_bundle())
 
-    for row_id in SAFE_ROWS | HELD_ROWS:
+    for row_id in SAFE_ROWS:
         atom_keys = rows[row_id]["atom_keys"]
         assert isinstance(atom_keys, list)
         for atom_key in atom_keys:

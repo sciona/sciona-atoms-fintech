@@ -1,134 +1,68 @@
 [
   {
     "pdg_node": {
-      "predicate_id": "tdmasolver",
-      "statement": "(a: Any, aL: Any, ai: Any, b: Any, bL: Any, bi: Any, c: Any, c': Any, cL: Any, cf: Any, ci: Any, ci1: Any, ci1': Any, d: Any, d': Any, dL: Any, df: Any, di: Any, di1': Any, forM_: Any, fromList: Any, head: Any, last: Any, length: Any, map: Any, new: Any, read: Any, reverse: Any, runST: Any, thaw: Any, toList: Any, unsafeFreeze: Any, write: Any, x: Any, xi1: Any, xn: Any) -> Any",
-      "informal_desc": "",
-      "prover": "python",
-      "context": {}
+      "predicate_id": "tdma_solver",
+      "statement": "(sub_diagonal: Sequence[float], diagonal: Sequence[float], super_diagonal: Sequence[float], rhs: Sequence[float]) -> list[float]",
+      "informal_desc": "Solve a tridiagonal system using quantfin's tdmaSolver contract.",
+      "prover": "manual_source_review",
+      "context": {
+        "source": "../ageo-atoms/third_party/quantfin/src/Quant/Math/Utilities.hs:13"
+      }
     },
     "verified_match": {
       "candidate": {
         "declaration": {
-          "name": "tdmasolver",
-          "type_signature": "(a: Any, aL: Any, ai: Any, b: Any, bL: Any, bi: Any, c: Any, c': Any, cL: Any, cf: Any, ci: Any, ci1: Any, ci1': Any, d: Any, d': Any, dL: Any, df: Any, di: Any, di1': Any, forM_: Any, fromList: Any, head: Any, last: Any, length: Any, map: Any, new: Any, read: Any, reverse: Any, runST: Any, thaw: Any, toList: Any, unsafeFreeze: Any, write: Any, x: Any, xi1: Any, xn: Any) -> Any",
-          "docstring": "",
-          "conceptual_summary": "",
-          "source_lib": "ingester",
-          "prover": "python",
-          "raw_code": ""
+          "name": "tdma_solver",
+          "type_signature": "(sub_diagonal: Sequence[float], diagonal: Sequence[float], super_diagonal: Sequence[float], rhs: Sequence[float]) -> list[float]",
+          "docstring": "Solve a tridiagonal linear system with the Thomas algorithm.",
+          "conceptual_summary": "Source-aligned Python equivalent of Quant.Math.Utilities.tdmaSolver.",
+          "source_lib": "quantfin",
+          "prover": "manual_source_review",
+          "raw_code": "tdmaSolver aL bL cL dL = ... forward sweep ... back substitution"
         },
         "score": 1.0,
-        "retrieval_method": "ingester"
+        "retrieval_method": "manual_source_review"
       },
       "verified": true,
       "compiler_output": "",
       "proof_term": "",
       "error_message": "",
-      "verification_level": "type_checked"
+      "verification_level": "source_reviewed"
     },
-    "all_candidates": [
-      {
-        "declaration": {
-          "name": "tdmasolver",
-          "type_signature": "(a: Any, aL: Any, ai: Any, b: Any, bL: Any, bi: Any, c: Any, c': Any, cL: Any, cf: Any, ci: Any, ci1: Any, ci1': Any, d: Any, d': Any, dL: Any, df: Any, di: Any, di1': Any, forM_: Any, fromList: Any, head: Any, last: Any, length: Any, map: Any, new: Any, read: Any, reverse: Any, runST: Any, thaw: Any, toList: Any, unsafeFreeze: Any, write: Any, x: Any, xi1: Any, xn: Any) -> Any",
-          "docstring": "",
-          "conceptual_summary": "",
-          "source_lib": "ingester",
-          "prover": "python",
-          "raw_code": ""
-        },
-        "score": 1.0,
-        "retrieval_method": "ingester"
-      }
-    ],
-    "all_verifications": [
-      {
-        "candidate": {
-          "declaration": {
-            "name": "tdmasolver",
-            "type_signature": "(a: Any, aL: Any, ai: Any, b: Any, bL: Any, bi: Any, c: Any, c': Any, cL: Any, cf: Any, ci: Any, ci1: Any, ci1': Any, d: Any, d': Any, dL: Any, df: Any, di: Any, di1': Any, forM_: Any, fromList: Any, head: Any, last: Any, length: Any, map: Any, new: Any, read: Any, reverse: Any, runST: Any, thaw: Any, toList: Any, unsafeFreeze: Any, write: Any, x: Any, xi1: Any, xn: Any) -> Any",
-            "docstring": "",
-            "conceptual_summary": "",
-            "source_lib": "ingester",
-            "prover": "python",
-            "raw_code": ""
-          },
-          "score": 1.0,
-          "retrieval_method": "ingester"
-        },
-        "verified": true,
-        "compiler_output": "",
-        "proof_term": "",
-        "error_message": "",
-        "verification_level": "type_checked"
-      }
-    ]
+    "all_candidates": [],
+    "all_verifications": []
   },
   {
     "pdg_node": {
-      "predicate_id": "cotraversevec",
-      "statement": "(enumFromN: Any, f: Any, fmap: Any, i: Any, l: Any, m: Any, map: Any) -> Any",
-      "informal_desc": "",
-      "prover": "python",
-      "context": {}
+      "predicate_id": "cotraverse_vec",
+      "statement": "(aggregator: Callable[[Sequence[float]], float], length: int, vectors: Sequence[Sequence[float]]) -> list[float]",
+      "informal_desc": "Apply an aggregator to each index-aligned slice across a vector container.",
+      "prover": "manual_source_review",
+      "context": {
+        "source": "../ageo-atoms/third_party/quantfin/src/Quant/Math/Utilities.hs:48"
+      }
     },
     "verified_match": {
       "candidate": {
         "declaration": {
-          "name": "cotraversevec",
-          "type_signature": "(enumFromN: Any, f: Any, fmap: Any, i: Any, l: Any, m: Any, map: Any) -> Any",
-          "docstring": "",
-          "conceptual_summary": "",
-          "source_lib": "ingester",
-          "prover": "python",
-          "raw_code": ""
+          "name": "cotraverse_vec",
+          "type_signature": "(aggregator: Callable[[Sequence[float]], float], length: int, vectors: Sequence[Sequence[float]]) -> list[float]",
+          "docstring": "Aggregate index-aligned slices across a container of vectors.",
+          "conceptual_summary": "Source-aligned Python equivalent of Quant.Math.Utilities.cotraverseVec.",
+          "source_lib": "quantfin",
+          "prover": "manual_source_review",
+          "raw_code": "cotraverseVec f l m = U.map (\\i -> f (fmap (U.!i) m)) (U.enumFromN 0 l)"
         },
         "score": 1.0,
-        "retrieval_method": "ingester"
+        "retrieval_method": "manual_source_review"
       },
       "verified": true,
       "compiler_output": "",
       "proof_term": "",
       "error_message": "",
-      "verification_level": "type_checked"
+      "verification_level": "source_reviewed"
     },
-    "all_candidates": [
-      {
-        "declaration": {
-          "name": "cotraversevec",
-          "type_signature": "(enumFromN: Any, f: Any, fmap: Any, i: Any, l: Any, m: Any, map: Any) -> Any",
-          "docstring": "",
-          "conceptual_summary": "",
-          "source_lib": "ingester",
-          "prover": "python",
-          "raw_code": ""
-        },
-        "score": 1.0,
-        "retrieval_method": "ingester"
-      }
-    ],
-    "all_verifications": [
-      {
-        "candidate": {
-          "declaration": {
-            "name": "cotraversevec",
-            "type_signature": "(enumFromN: Any, f: Any, fmap: Any, i: Any, l: Any, m: Any, map: Any) -> Any",
-            "docstring": "",
-            "conceptual_summary": "",
-            "source_lib": "ingester",
-            "prover": "python",
-            "raw_code": ""
-          },
-          "score": 1.0,
-          "retrieval_method": "ingester"
-        },
-        "verified": true,
-        "compiler_output": "",
-        "proof_term": "",
-        "error_message": "",
-        "verification_level": "type_checked"
-      }
-    ]
+    "all_candidates": [],
+    "all_verifications": []
   }
 ]

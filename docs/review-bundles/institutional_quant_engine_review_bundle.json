@@ -64,17 +64,12 @@
       "confidence": "medium",
       "notes": "Intended fractional-differentiation reference used for remediation review.",
       "ref_id": "lopezdeprado2018afml"
-    },
-    {
-      "confidence": "high",
-      "notes": "Intended Probability of Informed Trading reference used for remediation review.",
-      "ref_id": "easley1996pin"
     }
   ],
   "bundle_scope": "provider_owned_review_batch",
   "bundle_version": "1.0",
   "conditional_rows": 0,
-  "covered_rows": 18,
+  "covered_rows": 17,
   "developer_semantic_verdict": "aligned_to_registered_atoms",
   "family": "sciona.atoms.fintech.institutional_quant_engine",
   "limitations": [],
@@ -529,45 +524,6 @@
     },
     {
       "atom_keys": [
-        "sciona.atoms.fintech.institutional_quant_engine.pin_model.pinlikelihoodevaluation",
-        "sciona.atoms.fintech.institutional_quant_engine.pin_model.pinlikelihoodevaluator"
-      ],
-      "authoritative_sources": [
-        {
-          "confidence": "high",
-          "notes": "Intended Probability of Informed Trading reference used for remediation review.",
-          "ref_id": "easley1996pin"
-        },
-        {
-          "confidence": "high",
-          "notes": "Primary repository attribution for Institutional-Quant-Engine atoms.",
-          "ref_id": "repo_institutional_quant_engine"
-        }
-      ],
-      "developer_semantic_verdict": "semantic_drift_requires_repair",
-      "evidence_files": [
-        "pin_model_cdg.json",
-        "REMEDIATION.md"
-      ],
-      "limitations": [
-        "Current implementation returns a summed squared-error score against expected buy/sell counts, not a PIN likelihood or log-likelihood."
-      ],
-      "module": "sciona.atoms.fintech.institutional_quant_engine.pin_model",
-      "required_actions": [
-        "Implement the Easley PIN likelihood/log-likelihood with parameter-domain tests before publication, or rename the atom to its squared-error behavior."
-      ],
-      "review_record_path": "docs/review-records/institutional_quant_engine.md",
-      "review_status": "reviewed",
-      "row_id": "pin_model",
-      "semantic_verdict": "semantic_drift",
-      "trust_readiness": "not_ready",
-      "source_paths": [
-        "src/sciona/atoms/fintech/institutional_quant_engine/pin_model.py:18",
-        "src/sciona/atoms/fintech/institutional_quant_engine/pin_model.py:55"
-      ]
-    },
-    {
-      "atom_keys": [
         "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.initializeorderstate",
         "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.updatequeueontrade"
       ],
@@ -707,7 +663,7 @@
       ]
     }
   ],
-  "semantic_verdict": "mixed",
-  "trust_readiness": "mixed",
-  "not_ready_rows": 1
+  "semantic_verdict": "supported",
+  "trust_readiness": "ready",
+  "not_ready_rows": 0
 }

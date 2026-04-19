@@ -30,11 +30,11 @@
   "bundle_version": "1.0",
   "conditional_rows": 0,
   "covered_rows": 7,
-  "developer_semantic_verdict": "mixed",
+  "developer_semantic_verdict": "aligned_to_registered_atoms",
   "family": "sciona.atoms.fintech.quantfin",
   "limitations": [],
   "provider_repo": "sciona-atoms-fintech",
-  "ready_rows": 6,
+  "ready_rows": 7,
   "required_actions": [],
   "review_record_path": "docs/review-records/quantfin.md",
   "review_status": "reviewed",
@@ -275,8 +275,8 @@
     },
     {
       "atom_keys": [
-        "sciona.atoms.fintech.quantfin.tdma_solver_d12.cotraversevec",
-        "sciona.atoms.fintech.quantfin.tdma_solver_d12.tdmasolver"
+        "sciona.atoms.fintech.quantfin.tdma_solver_d12.cotraverse_vec",
+        "sciona.atoms.fintech.quantfin.tdma_solver_d12.tdma_solver"
       ],
       "authoritative_sources": [
         {
@@ -285,32 +285,34 @@
           "ref_id": "repo_quantfin"
         }
       ],
-      "developer_semantic_verdict": "source_api_drift_requires_repair",
+      "developer_semantic_verdict": "aligned_after_remediation",
       "evidence_files": [
         "tdma_solver_d12/cdg.json",
         "tdma_solver_d12/matches.json",
         "tdma_solver_d12/references.json",
-        "REMEDIATION.md"
+        "tdma_solver_d12/uncertainty.json"
       ],
-      "limitations": [
-        "Generated Python call surfaces expose translation-internal helper arguments rather than the compact upstream quantfin tdmaSolver and cotraverseVec APIs."
-      ],
+      "limitations": [],
       "module": "sciona.atoms.fintech.quantfin.tdma_solver_d12.atoms",
-      "required_actions": [
-        "Replace or wrap the generated APIs so tdmasolver accepts the four coefficient/right-hand-side vectors and cotraversevec accepts the upstream function, length, and vector container shape before publication."
-      ],
+      "required_actions": [],
+      "has_references": true,
+      "references_status": "pass",
+      "parity_coverage_level": "positive_and_negative",
+      "parity_test_status": "pass",
+      "parity_fixture_count": 3,
+      "parity_case_count": 3,
       "review_record_path": "docs/review-records/quantfin.md",
       "review_status": "reviewed",
       "row_id": "tdma_solver_d12/atoms",
-      "semantic_verdict": "semantic_drift",
-      "trust_readiness": "not_ready",
+      "semantic_verdict": "supported",
+      "trust_readiness": "ready",
       "source_paths": [
-        "src/sciona/atoms/fintech/quantfin/tdma_solver_d12/atoms.py:157",
-        "src/sciona/atoms/fintech/quantfin/tdma_solver_d12/atoms.py:38"
+        "src/sciona/atoms/fintech/quantfin/tdma_solver_d12/atoms.py:96",
+        "src/sciona/atoms/fintech/quantfin/tdma_solver_d12/atoms.py:47"
       ]
     }
   ],
-  "semantic_verdict": "mixed",
-  "trust_readiness": "mixed",
-  "not_ready_rows": 1
+  "semantic_verdict": "supported",
+  "trust_readiness": "ready",
+  "not_ready_rows": 0
 }

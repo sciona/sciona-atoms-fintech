@@ -11,7 +11,6 @@ from sciona.atoms.fintech.quantfin.models import ContingentClaim, DiscretizeMode
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 BUNDLE_PATH = REPO_ROOT / "docs/review-bundles/quantfin_review_bundle.json"
-REMEDIATION_PATH = REPO_ROOT / "REMEDIATION.md"
 FAMILY_ROOT = REPO_ROOT / "src/sciona/atoms/fintech/quantfin"
 
 MONTECARLO_ATOMS = {
@@ -20,8 +19,8 @@ MONTECARLO_ATOMS = {
     "sciona.atoms.fintech.quantfin.montecarlo.run_simulation_anti",
 }
 TDMA_ATOMS = {
-    "sciona.atoms.fintech.quantfin.tdma_solver_d12.cotraversevec",
-    "sciona.atoms.fintech.quantfin.tdma_solver_d12.tdmasolver",
+    "sciona.atoms.fintech.quantfin.tdma_solver_d12.cotraverse_vec",
+    "sciona.atoms.fintech.quantfin.tdma_solver_d12.tdma_solver",
 }
 
 
@@ -79,26 +78,29 @@ def test_pubrev_010_montecarlo_atoms_are_ready_with_exact_fqdns() -> None:
         assert review_key in uncertainty_atoms
 
 
-def test_pubrev_010_tdma_atoms_remain_unpublished_with_remediation() -> None:
+def test_pubrev_010_tdma_atoms_are_ready_with_source_aligned_contracts() -> None:
     bundle = _load_bundle()
     row = _rows_by_id(bundle)["tdma_solver_d12/atoms"]
 
-    assert bundle["ready_rows"] == 6
+    assert bundle["ready_rows"] == 7
     assert bundle["conditional_rows"] == 0
-    assert bundle["not_ready_rows"] == 1
+    assert bundle["not_ready_rows"] == 0
     assert set(row["atom_keys"]) == TDMA_ATOMS
     assert row["review_status"] == "reviewed"
-    assert row["semantic_verdict"] == "semantic_drift"
-    assert row["trust_readiness"] == "not_ready"
-    assert row["developer_semantic_verdict"] == "source_api_drift_requires_repair"
-    assert row["limitations"]
-    assert row["required_actions"]
-    assert "REMEDIATION.md" in row["evidence_files"]
+    assert row["semantic_verdict"] == "supported"
+    assert row["trust_readiness"] == "ready"
+    assert row["developer_semantic_verdict"] == "aligned_after_remediation"
+    assert row["limitations"] == []
+    assert row["required_actions"] == []
+    assert "REMEDIATION.md" not in row["evidence_files"]
 
-    remediation = REMEDIATION_PATH.read_text()
-    for atom_key in TDMA_ATOMS:
-        assert callable(_resolve_atom(atom_key))
-        assert atom_key in remediation
+    reference_atoms = _reference_atoms("tdma_solver_d12/references.json")
+    uncertainty_atoms = _uncertainty_atoms("tdma_solver_d12/uncertainty.json")
+    for atom_key, source_path in zip(row["atom_keys"], row["source_paths"], strict=True):
+        assert callable(_resolve_atom(str(atom_key)))
+        review_key = f"{atom_key}@{str(source_path).removeprefix('src/')}"
+        assert review_key in reference_atoms
+        assert review_key in uncertainty_atoms
 
 
 def test_pubrev_010_montecarlo_behavior_matches_upstream_split_contract() -> None:

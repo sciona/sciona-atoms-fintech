@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "atom": "tdma_solver_d12",
+  "estimates": [
+    {
+      "mode": "source_review",
+      "scalar_factor": 1.0,
+      "confidence": 0.9,
+      "n_trials": 2,
+      "epsilon": 1e-12,
+      "input_regime": "deterministic tridiagonal solve and index-wise vector aggregation fixtures",
+      "notes": "Source-aligned API repair verified with positive and rejection behavior tests."
+    }
+  ],
+  "atoms": {
+    "sciona.atoms.fintech.quantfin.tdma_solver_d12.tdma_solver@sciona/atoms/fintech/quantfin/tdma_solver_d12/atoms.py:47": {
+      "review_confidence": "high",
+      "uncertainty_notes": [
+        "Deterministic Thomas-algorithm result; numerical uncertainty is limited to floating-point conditioning of the supplied tridiagonal system."
+      ],
+      "source_review": "manual_quantfin_tdma_reingest"
+    },
+    "sciona.atoms.fintech.quantfin.tdma_solver_d12.cotraverse_vec@sciona/atoms/fintech/quantfin/tdma_solver_d12/atoms.py:96": {
+      "review_confidence": "high",
+      "uncertainty_notes": [
+        "Deterministic aggregation; uncertainty is controlled by the caller-provided aggregation function."
+      ],
+      "source_review": "manual_quantfin_tdma_reingest"
+    }
+  }
+}

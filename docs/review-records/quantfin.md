@@ -3,9 +3,9 @@
 Provider slice: `sciona-atoms-fintech`
 Bundle: `docs/review-bundles/quantfin_review_bundle.json`
 Rows covered: 7
-Ready rows: 6
+Ready rows: 7
 Conditional rows: 0
-Not-ready rows: 1
+Not-ready rows: 0
 
 ## Authoritative sources
 - `gatheral2006`: Local-volatility / vol-surface attribution.
@@ -17,4 +17,4 @@ Not-ready rows: 1
 ## Scope notes
 The pubrev-010 Monte Carlo row is publishable after direct source inspection against upstream `Quant.MonteCarlo`: `run_simulation` delegates to a seeded simulator, `run_simulation_anti` splits trials across antithetic and regular passes, and `quick_sim_anti` uses the fixed seed `500`.
 
-The `tdma_solver_d12` row remains unpublished. Upstream `Quant.Math.Utilities` exposes compact `tdmaSolver aL bL cL dL` and `cotraverseVec f l m` APIs, while the generated Python atoms expose translation-internal helper arguments. Keep this row in remediation until the public Python call surfaces and focused behavior tests match the source contract.
+The `tdma_solver_d12` row was reingested from upstream `Quant.Math.Utilities` with compact Python APIs: `tdma_solver(sub_diagonal, diagonal, super_diagonal, rhs)` mirrors `tdmaSolver aL bL cL dL`, and `cotraverse_vec(aggregator, length, vectors)` mirrors `cotraverseVec f l m`. Focused behavior tests cover a known tridiagonal solve, zero-pivot rejection, and index-wise vector co-traversal.

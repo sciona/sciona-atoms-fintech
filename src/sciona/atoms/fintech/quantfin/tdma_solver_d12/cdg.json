@@ -1,17 +1,17 @@
 {
   "nodes": [
     {
-      "node_id": "tdmaSolver_root",
+      "node_id": "tdma_solver_d12_root",
       "parent_id": null,
-      "name": "tdmaSolver",
-      "description": "Ingested pipeline from tdmaSolver",
+      "name": "tdma_solver_d12",
+      "description": "Source-aligned quantfin tridiagonal utility atoms.",
       "concept_type": "custom",
       "inputs": [],
       "outputs": [],
       "status": "decomposed",
       "children": [
-        "tdmasolver",
-        "cotraversevec"
+        "tdma_solver",
+        "cotraverse_vec"
       ],
       "depth": 0,
       "type_signature": "",
@@ -22,347 +22,42 @@
       "is_opaque": false,
       "is_external": false,
       "parallelizable": false,
-      "conceptual_summary": "",
+      "conceptual_summary": "Compact Python equivalents of quantfin's tdmaSolver and cotraverseVec utilities.",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "The two upstream functions have separate public contracts and no shared runtime state."
     },
     {
-      "node_id": "tdmasolver",
-      "parent_id": "tdmaSolver_root",
-      "name": "Tdmasolver",
-      "description": "Atomic operation: Tdmasolver",
+      "node_id": "tdma_solver",
+      "parent_id": "tdma_solver_d12_root",
+      "name": "tdma_solver",
+      "description": "Solve a tridiagonal linear system from sub-diagonal, main diagonal, super-diagonal, and right-hand-side vectors.",
       "concept_type": "custom",
       "inputs": [
         {
-          "name": "a",
-          "type_desc": "Any",
-          "constraints": "valid Any",
+          "name": "sub_diagonal",
+          "type_desc": "Sequence[float]",
+          "constraints": "finite non-empty vector; same length as diagonal, super_diagonal, and rhs",
           "required": true,
           "default_value_repr": ""
         },
         {
-          "name": "aL",
-          "type_desc": "Any",
-          "constraints": "valid Any",
+          "name": "diagonal",
+          "type_desc": "Sequence[float]",
+          "constraints": "finite non-empty vector; same length as sub_diagonal, super_diagonal, and rhs",
           "required": true,
           "default_value_repr": ""
         },
         {
-          "name": "ai",
-          "type_desc": "Any",
-          "constraints": "valid Any",
+          "name": "super_diagonal",
+          "type_desc": "Sequence[float]",
+          "constraints": "finite non-empty vector; same length as sub_diagonal, diagonal, and rhs",
           "required": true,
           "default_value_repr": ""
         },
         {
-          "name": "b",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "bL",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "bi",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "c",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "c'",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "cL",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "cf",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "ci",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "ci1",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "ci1'",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "d",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "d'",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "dL",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "df",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "di",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "di1'",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "forM_",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "fromList",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "head",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "last",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "length",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "map",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "new",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "read",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "reverse",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "runST",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "thaw",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "toList",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "unsafeFreeze",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "write",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "x",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "xi1",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "xn",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        }
-      ],
-      "outputs": [
-        {
-          "name": "result",
-          "type_desc": "Any",
-          "constraints": "valid Any",
-          "required": true,
-          "default_value_repr": ""
-        }
-      ],
-      "status": "atomic",
-      "children": [],
-      "depth": 1,
-      "type_signature": "(a: Any, aL: Any, ai: Any, b: Any, bL: Any, bi: Any, c: Any, c': Any, cL: Any, cf: Any, ci: Any, ci1: Any, ci1': Any, d: Any, d': Any, dL: Any, df: Any, di: Any, di1': Any, forM_: Any, fromList: Any, head: Any, last: Any, length: Any, map: Any, new: Any, read: Any, reverse: Any, runST: Any, thaw: Any, toList: Any, unsafeFreeze: Any, write: Any, x: Any, xi1: Any, xn: Any) -> Any",
-      "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
-      "primitive_binding_source": "",
-      "is_optional": false,
-      "is_opaque": false,
-      "is_external": false,
-      "parallelizable": false,
-      "conceptual_summary": "",
-      "critic_notes": "",
-      "decomposition_rationale": ""
-    },
-    {
-      "node_id": "cotraversevec",
-      "parent_id": "tdmaSolver_root",
-      "name": "CotraverseVec",
-      "description": "Map an index-wise aggregation across a functor of numeric vectors to produce one aggregated vector.",
-      "concept_type": "custom",
-      "inputs": [
-        {
-          "name": "enumFromN",
-          "type_desc": "Callable[[int, int], list[int]]",
-          "constraints": "constructs the index range to traverse",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "f",
-          "type_desc": "Callable[[list[float]], float]",
-          "constraints": "aggregates one projected slice into a scalar",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "fmap",
-          "type_desc": "Callable[[Callable[[list[float]], float], list[list[float]]], list[float]]",
-          "constraints": "maps a projection over the wrapped vector collection",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "i",
-          "type_desc": "int",
-          "constraints": "starting index for traversal",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "l",
-          "type_desc": "int",
-          "constraints": "positive output vector length",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "m",
-          "type_desc": "list[list[float]]",
-          "constraints": "functor-wrapped collection of numeric vectors",
-          "required": true,
-          "default_value_repr": ""
-        },
-        {
-          "name": "map",
-          "type_desc": "Callable[[Callable[[int], float], list[int]], list[float]]",
-          "constraints": "materializes the output vector over the provided indices",
+          "name": "rhs",
+          "type_desc": "Sequence[float]",
+          "constraints": "finite non-empty vector; same length as sub_diagonal, diagonal, and super_diagonal",
           "required": true,
           "default_value_repr": ""
         }
@@ -371,15 +66,13 @@
         {
           "name": "result",
           "type_desc": "list[float]",
-          "constraints": "aggregated numeric vector",
-          "required": true,
-          "default_value_repr": ""
+          "constraints": "finite solution vector with length equal to diagonal"
         }
       ],
       "status": "atomic",
       "children": [],
       "depth": 1,
-      "type_signature": "(enumFromN: index-range factory, f: projected-slice aggregator, fmap: projection mapper over numeric vectors, i: int, l: int, m: wrapped numeric vectors, map: index mapper) -> list[float]",
+      "type_signature": "(sub_diagonal: Sequence[float], diagonal: Sequence[float], super_diagonal: Sequence[float], rhs: Sequence[float]) -> list[float]",
       "matched_primitive": null,
       "primitive_binding_confidence": 0.0,
       "primitive_binding_source": "",
@@ -387,14 +80,60 @@
       "is_opaque": false,
       "is_external": false,
       "parallelizable": false,
-      "conceptual_summary": "",
+      "conceptual_summary": "Thomas-algorithm solve for tridiagonal systems.",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "Matches upstream Quant.Math.Utilities.tdmaSolver."
+    },
+    {
+      "node_id": "cotraverse_vec",
+      "parent_id": "tdma_solver_d12_root",
+      "name": "cotraverse_vec",
+      "description": "Apply an aggregator to each index-aligned slice across a container of equal-length vectors.",
+      "concept_type": "custom",
+      "inputs": [
+        {
+          "name": "aggregator",
+          "type_desc": "Callable[[Sequence[float]], float]",
+          "constraints": "callable aggregation function returning a finite scalar",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "length",
+          "type_desc": "int",
+          "constraints": "positive requested output length",
+          "required": true,
+          "default_value_repr": ""
+        },
+        {
+          "name": "vectors",
+          "type_desc": "Sequence[Sequence[float]]",
+          "constraints": "non-empty vector container; each vector has at least length entries",
+          "required": true,
+          "default_value_repr": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type_desc": "list[float]",
+          "constraints": "finite aggregated vector with requested length"
+        }
+      ],
+      "status": "atomic",
+      "children": [],
+      "depth": 1,
+      "type_signature": "(aggregator: Callable[[Sequence[float]], float], length: int, vectors: Sequence[Sequence[float]]) -> list[float]",
+      "matched_primitive": null,
+      "primitive_binding_confidence": 0.0,
+      "primitive_binding_source": "",
+      "is_optional": false,
+      "is_opaque": false,
+      "is_external": false,
+      "parallelizable": true,
+      "conceptual_summary": "Index-wise co-traversal over a vector container.",
+      "critic_notes": "",
+      "decomposition_rationale": "Matches upstream Quant.Math.Utilities.cotraverseVec."
     }
-  ],
-  "edges": [],
-  "metadata": {
-    "source": "ingester",
-    "class_name": "tdmaSolver"
-  }
+  ]
 }

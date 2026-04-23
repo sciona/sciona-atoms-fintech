@@ -32,7 +32,7 @@
       "parent_id": "local_vol_root",
       "name": "VarianceFromVol",
       "description": "Compute implied variance at one strike and maturity from a local-volatility surface.",
-      "concept_type": "custom",
+      "concept_type": "analysis",
       "inputs": [
         {
           "name": "s",
@@ -85,7 +85,7 @@
       "parent_id": "local_vol_root",
       "name": "DupireLocalVol",
       "description": "Compute Dupire local volatility at one strike and maturity.",
-      "concept_type": "custom",
+      "concept_type": "analysis",
       "inputs": [
         {
           "name": "dwdt",
@@ -163,7 +163,7 @@
       "parent_id": "local_vol_root",
       "name": "FlatVol",
       "description": "Return the constant implied volatility from a flat volatility surface.",
-      "concept_type": "custom",
+      "concept_type": "analysis",
       "inputs": [
         {
           "name": "x",
@@ -196,7 +196,7 @@
       "parent_id": "local_vol_root",
       "name": "InterpolatedVol",
       "description": "Interpolate implied volatility from a strike-maturity quote grid.",
-      "concept_type": "custom",
+      "concept_type": "signal_transform",
       "inputs": [
         {
           "name": "interpolatedVs",
@@ -274,7 +274,7 @@
       "parent_id": "local_vol_root",
       "name": "AllForT",
       "description": "Extract all quoted volatilities for one maturity slice.",
-      "concept_type": "custom",
+      "concept_type": "data_extraction",
       "inputs": [
         {
           "name": "map",

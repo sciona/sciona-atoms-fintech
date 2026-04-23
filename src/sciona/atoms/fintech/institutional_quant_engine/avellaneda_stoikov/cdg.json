@@ -29,7 +29,7 @@
       "parent_id": "MarketMaker_root",
       "name": "InitializeMarketMakerState",
       "description": "Construct the immutable market-making state object with model parameters and initial market/inventory values.",
-      "concept_type": "custom",
+      "concept_type": "data_assembly",
       "inputs": [
         {
           "name": "s0",

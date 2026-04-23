@@ -31,7 +31,7 @@
       "parent_id": "tdma_solver_d12_root",
       "name": "tdma_solver",
       "description": "Solve a tridiagonal linear system from sub-diagonal, main diagonal, super-diagonal, and right-hand-side vectors.",
-      "concept_type": "custom",
+      "concept_type": "optimization",
       "inputs": [
         {
           "name": "sub_diagonal",
@@ -89,7 +89,7 @@
       "parent_id": "tdma_solver_d12_root",
       "name": "cotraverse_vec",
       "description": "Apply an aggregator to each index-aligned slice across a container of equal-length vectors.",
-      "concept_type": "custom",
+      "concept_type": "arithmetic",
       "inputs": [
         {
           "name": "aggregator",

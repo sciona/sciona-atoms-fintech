@@ -218,7 +218,7 @@
       "parent_id": "char_func_option_root",
       "name": "IntegrandF",
       "description": "Evaluate the real-valued Fourier integrand for characteristic-function pricing.",
-      "concept_type": "custom",
+      "concept_type": "signal_transform",
       "inputs": [
         {
           "name": "exp",
@@ -286,7 +286,7 @@
       "parent_id": "char_func_option_root",
       "name": "CharacteristicFunction",
       "description": "Evaluate the martingale-corrected characteristic function at one complex frequency.",
-      "concept_type": "custom",
+      "concept_type": "analysis",
       "inputs": [
         {
           "name": "charFuncMart",

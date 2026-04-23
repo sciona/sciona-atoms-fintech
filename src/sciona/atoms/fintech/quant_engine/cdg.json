@@ -33,7 +33,7 @@
       "parent_id": "QuantEngine_root",
       "name": "calculate_ofi",
       "description": "Calculate Order Flow Imbalance (OFI), the net directional pressure from competing bid/ask flow levels, and append to state stream.",
-      "concept_type": "custom",
+      "concept_type": "sorting",
       "inputs": [
         {
           "name": "bid_px",

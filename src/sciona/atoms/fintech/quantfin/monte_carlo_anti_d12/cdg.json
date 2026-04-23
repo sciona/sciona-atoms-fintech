@@ -135,7 +135,7 @@
       "parent_id": "runSimulationAnti_root",
       "name": "Runsimulation",
       "description": "Atomic operation: Runsimulation",
-      "concept_type": "custom",
+      "concept_type": "sampler",
       "inputs": [
         {
           "name": "anti",
@@ -223,7 +223,7 @@
       "parent_id": "runSimulationAnti_root",
       "name": "Runsimulationanti",
       "description": "Atomic operation: Runsimulationanti",
-      "concept_type": "custom",
+      "concept_type": "sampler",
       "inputs": [
         {
           "name": "ccs",
@@ -579,7 +579,7 @@
       "parent_id": "runSimulationAnti_root",
       "name": "Simulatestate",
       "description": "Atomic operation: Simulatestate",
-      "concept_type": "custom",
+      "concept_type": "sampler",
       "inputs": [
         {
           "name": "anti",

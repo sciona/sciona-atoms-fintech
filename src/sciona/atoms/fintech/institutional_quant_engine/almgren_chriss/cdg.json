@@ -28,7 +28,7 @@
       "parent_id": "almgren_chriss_root",
       "name": "computeoptimaltrajectory",
       "description": "Computes the optimal share-execution trajectory over the planning horizon given risk preference.",
-      "concept_type": "custom",
+      "concept_type": "analysis",
       "inputs": [
         {
           "name": "total_shares",

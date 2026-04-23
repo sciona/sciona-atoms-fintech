@@ -31,7 +31,7 @@
       "parent_id": "QuantFin_root",
       "name": "functional_monte_carlo",
       "description": "Generates stochastic paths and evaluates contingent claims using functional constraints.",
-      "concept_type": "custom",
+      "concept_type": "analysis",
       "inputs": [
         {
           "name": "data",
@@ -70,7 +70,7 @@
       "parent_id": "QuantFin_root",
       "name": "volatility_surface_modeling",
       "description": "Interpolates and calibrates an implied variance surface.",
-      "concept_type": "custom",
+      "concept_type": "signal_transform",
       "inputs": [
         {
           "name": "data",

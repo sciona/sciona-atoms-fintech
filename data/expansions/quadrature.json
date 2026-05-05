@@ -1,0 +1,113 @@
+{
+  "asset_id": "family.quadrature.expansions.fintech.v1",
+  "asset_version": "fintech.phase1.v1",
+  "family": "quadrature",
+  "domain": "fintech",
+  "name": "Fintech Quadrature Expansion Inventory",
+  "summary": "Provider refinements for Fourier and local-volatility integration contexts in option-pricing CDGs.",
+  "operations": [
+    {
+      "rule_name": "insert_domain_coverage_check_after_sample",
+      "operation_type": "diagnostic",
+      "applies_to": "quadrature",
+      "source_cdg_path": "src/sciona/atoms/fintech/quantfin/char_func_option_d12/cdg.json",
+      "runtime_diagnostic": "max_gap_ratio",
+      "name": "Check Domain Coverage",
+      "intent": "Verify quadrature points cover the Fourier integration domain.",
+      "dejargonized_summary": "Add a sampling coverage check after choosing integration points.",
+      "trigger": {
+        "metric_name": "max_gap_ratio",
+        "comparison": "gt",
+        "threshold": 0.1,
+        "required_intermediate_keys": ["max_gap_ratio"]
+      },
+      "action_classes": ["gate_or_validate"],
+      "rewrite": {
+        "before_summary": "Sampled integration points feed integrand evaluation directly.",
+        "after_summary": "A domain-coverage check is inserted after sampling.",
+        "information_flow_effect": "Adds evidence that the integration domain is adequately sampled."
+      }
+    },
+    {
+      "rule_name": "insert_integrand_smoothness_analysis_before_evaluate",
+      "operation_type": "precondition",
+      "applies_to": "quadrature",
+      "source_cdg_path": "src/sciona/atoms/fintech/quantfin/char_func_option_d12/cdg.json",
+      "runtime_diagnostic": "integrand_max_derivative",
+      "name": "Analyze Integrand Smoothness",
+      "intent": "Flag rough Fourier integrands before option-pricing evaluation.",
+      "dejargonized_summary": "Add an integrand smoothness check before evaluating the integral.",
+      "trigger": {
+        "metric_name": "integrand_max_derivative",
+        "comparison": "gt",
+        "threshold": 1000000.0,
+        "required_intermediate_keys": ["integrand_max_derivative"]
+      },
+      "action_classes": ["precondition", "gate_or_validate"],
+      "rewrite": {
+        "before_summary": "Integrand evaluation consumes sampled points directly.",
+        "after_summary": "A smoothness analysis is inserted before integrand evaluation.",
+        "information_flow_effect": "Adds roughness evidence that can justify refinement or damping changes."
+      }
+    },
+    {
+      "rule_name": "insert_singularity_detection_after_evaluate",
+      "operation_type": "validation",
+      "applies_to": "quadrature",
+      "source_cdg_path": "src/sciona/atoms/fintech/quantfin/char_func_option_d12/cdg.json",
+      "runtime_diagnostic": "integrand_max_value",
+      "name": "Detect Singularity",
+      "intent": "Detect extreme integrand values after characteristic-function evaluation.",
+      "dejargonized_summary": "Add a singularity check after evaluating the integrand.",
+      "trigger": {
+        "metric_name": "integrand_max_value",
+        "comparison": "gt",
+        "threshold": 10000000000.0,
+        "required_intermediate_keys": ["integrand_max_value"]
+      },
+      "action_classes": ["gate_or_validate"],
+      "rewrite": {
+        "before_summary": "Integrand values flow to error estimation directly.",
+        "after_summary": "A singularity detector is inserted after integrand evaluation.",
+        "information_flow_effect": "Adds evidence for pathological integrand magnitude."
+      }
+    },
+    {
+      "rule_name": "insert_convergence_monitor_after_refine",
+      "operation_type": "diagnostic",
+      "applies_to": "quadrature",
+      "source_cdg_path": "src/sciona/atoms/fintech/quantfin/local_vol_d12/cdg.json",
+      "runtime_diagnostic": "quadrature_convergence_rate",
+      "name": "Monitor Quadrature Convergence",
+      "intent": "Track slow convergence after option-pricing integration refinement.",
+      "dejargonized_summary": "Add a convergence-rate check after refinement.",
+      "trigger": {
+        "metric_name": "quadrature_convergence_rate",
+        "comparison": "gte",
+        "threshold": 0.5,
+        "required_intermediate_keys": ["quadrature_convergence_rate"]
+      },
+      "action_classes": ["gate_or_validate"],
+      "rewrite": {
+        "before_summary": "Refined integral estimates flow downstream without convergence-rate evidence.",
+        "after_summary": "A convergence monitor is inserted after refinement.",
+        "information_flow_effect": "Adds evidence that refinement is reducing integration error."
+      }
+    }
+  ],
+  "audit": {
+    "provenance": "sciona-atoms-fintech CDG expansion standardization",
+    "source_kind": "provider_asset",
+    "review_status": "transitional",
+    "rationale": "Characteristic-function and local-volatility option-pricing atoms provide plausible quadrature contexts.",
+    "dejargonized_summary": "These checks make integration pipelines report sample coverage, integrand roughness, singular values, and convergence.",
+    "uncertainty_notes": ["CDG mappings identify plausible fintech contexts; trigger semantics mirror matcher diagnostics."],
+    "references": [
+      {
+        "title": "Matcher quadrature expansion rules",
+        "note": "Rule names and trigger metrics mirror sciona/principal/expansion_rules/quadrature.py."
+      }
+    ],
+    "maintainers": ["sciona-atoms-fintech"]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "asset_id": "family.optimization.expansions.fintech.v1",
+  "asset_version": "fintech.phase1.v1",
+  "family": "optimization",
+  "domain": "fintech",
+  "name": "Fintech Optimization Expansion Inventory",
+  "summary": "Provider refinements for portfolio construction, execution scheduling, and market-making optimization CDGs.",
+  "operations": [
+    {
+      "rule_name": "insert_vanishing_gradient_detection_after_compute_gradient",
+      "operation_type": "diagnostic",
+      "applies_to": "optimization",
+      "source_cdg_path": "src/sciona/atoms/fintech/institutional_quant_engine/almgren_chriss_v2/cdg.json",
+      "runtime_diagnostic": "gradient_min_norm",
+      "name": "Detect Vanishing Gradient",
+      "intent": "Surface flat-gradient failure during execution or portfolio objective optimization.",
+      "dejargonized_summary": "Add a check for gradients that have become too small to guide updates.",
+      "trigger": {
+        "metric_name": "gradient_min_norm",
+        "comparison": "lt",
+        "threshold": 1e-15,
+        "required_intermediate_keys": ["gradient_min_norm"]
+      },
+      "action_classes": ["gate_or_validate"],
+      "rewrite": {
+        "before_summary": "Optimizer updates may proceed without explicit gradient-scale evidence.",
+        "after_summary": "A vanishing-gradient diagnostic is inserted after gradient computation.",
+        "information_flow_effect": "Adds optimization health evidence without changing the output contract."
+      }
+    },
+    {
+      "rule_name": "insert_loss_landscape_analysis_before_update",
+      "operation_type": "diagnostic",
+      "applies_to": "optimization",
+      "source_cdg_path": "src/sciona/atoms/fintech/institutional_quant_engine/hierarchical_risk_parity_cdg.json",
+      "runtime_diagnostic": "hessian_condition_number",
+      "name": "Analyze Loss Landscape",
+      "intent": "Flag ill-conditioned curvature before optimizer parameter updates.",
+      "dejargonized_summary": "Add a curvature check before applying the next optimization update.",
+      "trigger": {
+        "metric_name": "hessian_condition_number",
+        "comparison": "gt",
+        "threshold": 10000000000.0,
+        "required_intermediate_keys": ["hessian_condition_number"]
+      },
+      "action_classes": ["precondition", "gate_or_validate"],
+      "rewrite": {
+        "before_summary": "Parameter updates consume objective information directly.",
+        "after_summary": "A loss-landscape diagnostic is inserted before the update.",
+        "information_flow_effect": "Adds curvature-risk evidence for optimizer stability."
+      }
+    },
+    {
+      "rule_name": "insert_constraint_violation_check_after_update",
+      "operation_type": "validation",
+      "applies_to": "optimization",
+      "source_cdg_path": "src/sciona/atoms/fintech/institutional_quant_engine/almgren_chriss/cdg.json",
+      "runtime_diagnostic": "max_constraint_violation",
+      "name": "Check Constraint Violation",
+      "intent": "Validate updated schedules or weights against feasibility constraints.",
+      "dejargonized_summary": "Add a feasibility check after the optimizer updates its solution.",
+      "trigger": {
+        "metric_name": "max_constraint_violation",
+        "comparison": "gt",
+        "threshold": 0.0,
+        "required_intermediate_keys": ["max_constraint_violation"]
+      },
+      "action_classes": ["gate_or_validate"],
+      "rewrite": {
+        "before_summary": "Updated optimization outputs flow downstream directly.",
+        "after_summary": "A constraint-violation check is inserted after the update.",
+        "information_flow_effect": "Adds explicit feasibility evidence for execution and allocation outputs."
+      }
+    },
+    {
+      "rule_name": "insert_convergence_rate_monitoring_after_check",
+      "operation_type": "diagnostic",
+      "applies_to": "optimization",
+      "source_cdg_path": "src/sciona/atoms/fintech/hftbacktest/cdg.json",
+      "runtime_diagnostic": "convergence_order",
+      "name": "Monitor Convergence Rate",
+      "intent": "Track slow convergence in iterative calibration or execution objectives.",
+      "dejargonized_summary": "Add a convergence-rate check after the optimizer checks stopping criteria.",
+      "trigger": {
+        "metric_name": "convergence_order",
+        "comparison": "lt",
+        "threshold": 0.5,
+        "required_intermediate_keys": ["convergence_order"]
+      },
+      "action_classes": ["gate_or_validate"],
+      "rewrite": {
+        "before_summary": "Convergence checks may not expose rate-quality evidence.",
+        "after_summary": "A convergence-rate monitor is inserted after the stopping check.",
+        "information_flow_effect": "Adds evidence that the optimization is moving fast enough to trust."
+      }
+    }
+  ],
+  "audit": {
+    "provenance": "sciona-atoms-fintech CDG expansion standardization",
+    "source_kind": "provider_asset",
+    "review_status": "transitional",
+    "rationale": "Fintech includes execution, allocation, and calibration CDGs that map to matcher optimization runtime rules.",
+    "dejargonized_summary": "These checks make optimization pipelines report gradient scale, curvature, feasibility, and convergence quality.",
+    "uncertainty_notes": ["CDG mappings identify plausible fintech contexts; trigger semantics mirror matcher diagnostics."],
+    "references": [
+      {
+        "title": "Matcher optimization expansion rules",
+        "note": "Rule names and trigger metrics mirror sciona/principal/expansion_rules/optimization.py."
+      }
+    ],
+    "maintainers": ["sciona-atoms-fintech"]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "asset_id": "family.linear_algebra.expansions.fintech.v1",
+  "asset_version": "fintech.phase1.v1",
+  "family": "linear_algebra",
+  "domain": "fintech",
+  "name": "Fintech Linear Algebra Expansion Inventory",
+  "summary": "Provider refinements for tridiagonal solvers, covariance updates, and matrix-weighted portfolio CDGs.",
+  "operations": [
+    {
+      "rule_name": "insert_conditioning_check_before_factorize",
+      "operation_type": "precondition",
+      "applies_to": "linear_algebra",
+      "source_cdg_path": "src/sciona/atoms/fintech/quantfin/tdma_solver_d12/cdg.json",
+      "runtime_diagnostic": "matrix_condition_number",
+      "name": "Check Matrix Conditioning",
+      "intent": "Detect ill-conditioned pricing or covariance systems before factorization.",
+      "dejargonized_summary": "Add a matrix conditioning check before solving or factorizing.",
+      "trigger": {
+        "metric_name": "matrix_condition_number",
+        "comparison": "gt",
+        "threshold": 1000000000000.0,
+        "required_intermediate_keys": ["matrix_condition_number"]
+      },
+      "action_classes": ["precondition", "gate_or_validate"],
+      "rewrite": {
+        "before_summary": "Matrix factorization starts from raw coefficients.",
+        "after_summary": "A conditioning check is inserted before factorization.",
+        "information_flow_effect": "Adds numerical-stability evidence before solving."
+      }
+    },
+    {
+      "rule_name": "insert_decomposition_accuracy_after_factorize",
+      "operation_type": "validation",
+      "applies_to": "linear_algebra",
+      "source_cdg_path": "src/sciona/atoms/fintech/institutional_quant_engine/kalman_filter/cdg.json",
+      "runtime_diagnostic": "decomposition_residual",
+      "name": "Validate Decomposition Accuracy",
+      "intent": "Validate matrix decomposition residuals used by covariance or solver steps.",
+      "dejargonized_summary": "Add a residual check after matrix factorization.",
+      "trigger": {
+        "metric_name": "decomposition_residual",
+        "comparison": "gt",
+        "threshold": 1e-8,
+        "required_intermediate_keys": ["decomposition_residual"]
+      },
+      "action_classes": ["gate_or_validate"],
+      "rewrite": {
+        "before_summary": "Factorization output flows downstream directly.",
+        "after_summary": "A decomposition-accuracy validation is inserted after factorization.",
+        "information_flow_effect": "Adds reconstruction-error evidence for the factorization."
+      }
+    },
+    {
+      "rule_name": "insert_rank_deficiency_detection_before_solve",
+      "operation_type": "precondition",
+      "applies_to": "linear_algebra",
+      "source_cdg_path": "src/sciona/atoms/fintech/institutional_quant_engine/hierarchical_risk_parity_cdg.json",
+      "runtime_diagnostic": "rank_deficit",
+      "name": "Detect Rank Deficiency",
+      "intent": "Identify singular or rank-deficient covariance systems before solving.",
+      "dejargonized_summary": "Add a rank check before solving a matrix system.",
+      "trigger": {
+        "metric_name": "rank_deficit",
+        "comparison": "gt",
+        "threshold": 0.0,
+        "required_intermediate_keys": ["rank_deficit"]
+      },
+      "action_classes": ["precondition", "gate_or_validate"],
+      "rewrite": {
+        "before_summary": "Solve stages may consume rank-deficient inputs.",
+        "after_summary": "A rank-deficiency detector is inserted before solve or transform.",
+        "information_flow_effect": "Adds matrix-rank evidence before downstream allocation or pricing logic."
+      }
+    },
+    {
+      "rule_name": "insert_iterative_convergence_after_solve",
+      "operation_type": "diagnostic",
+      "applies_to": "linear_algebra",
+      "source_cdg_path": "src/sciona/atoms/fintech/quantfin/tdma_solver_d12/cdg.json",
+      "runtime_diagnostic": "iterative_convergence_rate",
+      "name": "Monitor Iterative Convergence",
+      "intent": "Detect stalled residual convergence after an iterative linear solve.",
+      "dejargonized_summary": "Add a residual-convergence check after solving.",
+      "trigger": {
+        "metric_name": "iterative_convergence_rate",
+        "comparison": "gt",
+        "threshold": 0.99,
+        "required_intermediate_keys": ["iterative_convergence_rate"]
+      },
+      "action_classes": ["gate_or_validate"],
+      "rewrite": {
+        "before_summary": "Solver output flows downstream without residual-rate evidence.",
+        "after_summary": "An iterative-convergence monitor is inserted after solve or transform.",
+        "information_flow_effect": "Adds residual-decay evidence for solver reliability."
+      }
+    }
+  ],
+  "audit": {
+    "provenance": "sciona-atoms-fintech CDG expansion standardization",
+    "source_kind": "provider_asset",
+    "review_status": "transitional",
+    "rationale": "Fintech pricing, covariance, and portfolio atoms include matrix solve and transformation contexts.",
+    "dejargonized_summary": "These checks make matrix pipelines report conditioning, factorization accuracy, rank, and residual convergence.",
+    "uncertainty_notes": ["CDG mappings identify plausible fintech contexts; trigger semantics mirror matcher diagnostics."],
+    "references": [
+      {
+        "title": "Matcher linear_algebra expansion rules",
+        "note": "Rule names and trigger metrics mirror sciona/principal/expansion_rules/linear_algebra.py."
+      }
+    ],
+    "maintainers": ["sciona-atoms-fintech"]
+  }
+}

@@ -84,13 +84,13 @@ def runmc(
 
 
 # ---------------------------------------------------------------------------
-# runsimulation
+# run_simulation
 # ---------------------------------------------------------------------------
 
 @register_atom(witness_runsimulation)
 @icontract.require(lambda trials: isinstance(trials, int) and trials > 0, "trials must be a positive integer")
 @icontract.ensure(lambda result: isinstance(result, float), "result must be a float")
-def runsimulation(
+def run_simulation(
     anti: bool,
     ccs: ClaimBasket,
     modl: PricingModel,
@@ -123,13 +123,13 @@ def runsimulation(
 
 
 # ---------------------------------------------------------------------------
-# runsimulationanti
+# run_simulation_anti
 # ---------------------------------------------------------------------------
 
 @register_atom(witness_runsimulationanti)
 @icontract.require(lambda trials: isinstance(trials, int) and trials > 0, "trials must be a positive integer")
 @icontract.ensure(lambda result: isinstance(result, float), "result must be a float")
-def runsimulationanti(
+def run_simulation_anti(
     ccs: ClaimBasket,
     modl: PricingModel,
     runSim: Callable,
@@ -159,13 +159,13 @@ def runsimulationanti(
 
 
 # ---------------------------------------------------------------------------
-# quicksim
+# quick_sim
 # ---------------------------------------------------------------------------
 
 @register_atom(witness_quicksim)
 @icontract.require(lambda trials: isinstance(trials, int) and trials > 0, "trials must be a positive integer")
 @icontract.ensure(lambda result: isinstance(result, float), "result must be a float")
-def quicksim(
+def quick_sim(
     mdl: PricingModel,
     opts: ClaimBasket,
     pureMT: Callable,
@@ -192,13 +192,13 @@ def quicksim(
 
 
 # ---------------------------------------------------------------------------
-# quicksimanti
+# quick_sim_anti
 # ---------------------------------------------------------------------------
 
 @register_atom(witness_quicksimanti)
 @icontract.require(lambda trials: isinstance(trials, int) and trials > 0, "trials must be a positive integer")
 @icontract.ensure(lambda result: isinstance(result, float), "result must be a float")
-def quicksimanti(
+def quick_sim_anti(
     mdl: PricingModel,
     opts: ClaimBasket,
     pureMT: Callable,
@@ -315,13 +315,13 @@ def maxstep() -> float:
 
 
 # ---------------------------------------------------------------------------
-# simulatestate
+# simulate_state
 # ---------------------------------------------------------------------------
 
 @register_atom(witness_simulatestate)
 @icontract.require(lambda trials: isinstance(trials, int) and trials > 0, "trials must be a positive integer")
 @icontract.ensure(lambda result: isinstance(result, float), "result must be a float")
-def simulatestate(
+def simulate_state(
     anti: bool,
     avg: Callable,
     ccb: list,
@@ -644,13 +644,13 @@ def process(
 
 
 # ---------------------------------------------------------------------------
-# insertcf  — insert a cash flow in sorted order (recursive case)
+# insert_cf  — insert a cash flow in sorted order (recursive case)
 # ---------------------------------------------------------------------------
 
 @register_atom(witness_insertcf, name="insertcf_recursive")
 @icontract.require(lambda cfs: isinstance(cfs, list), "cfs must be a list")
 @icontract.ensure(lambda result: isinstance(result, list), "result must be a list")
-def insertcf(
+def insert_cf(
     amt: float,
     amt_prime: float,
     cfs: list,
@@ -687,13 +687,13 @@ def insertcf(
 
 
 # ---------------------------------------------------------------------------
-# insertcf  — base case (empty list)
+# insert_cf  — base case (empty list)
 # ---------------------------------------------------------------------------
 
 @register_atom(witness_insertcf, name="insertcf_singleton")
 @icontract.require(lambda cf: cf is not None, "cf must not be None")
 @icontract.ensure(lambda result: isinstance(result, list) and len(result) == 1, "result must be a single-element list")
-def insertcf(
+def insert_cf(
     cf: CashFlow,
 ) -> list:
     """Insert a cash flow into an empty list (base case).
@@ -739,13 +739,13 @@ def avg(
 
 
 # ---------------------------------------------------------------------------
-# insertcflist  — insert multiple CFs (variant 1)
+# insert_cf_list  — insert multiple CFs (variant 1)
 # ---------------------------------------------------------------------------
 
 @register_atom(witness_insertcflist, name="insertcflist_fold")
 @icontract.require(lambda cfList: isinstance(cfList, list), "cfList must be a list")
 @icontract.ensure(lambda result: isinstance(result, list), "result must be a list")
-def insertcflist(
+def insert_cf_list(
     cfList: list,
     flip: Callable,
     foldl_prime: Callable,
@@ -775,13 +775,13 @@ def insertcflist(
 
 
 # ---------------------------------------------------------------------------
-# insertcflist  — variant 2
+# insert_cf_list  — variant 2
 # ---------------------------------------------------------------------------
 
 @register_atom(witness_insertcflist, name="insertcflist_fold_alt")
 @icontract.require(lambda xs: isinstance(xs, list), "xs must be a list")
 @icontract.ensure(lambda result: isinstance(result, list), "result must be a list")
-def insertcflist(
+def insert_cf_list(
     cfList: list,
     flip: Callable,
     foldl_prime: Callable,
@@ -824,8 +824,8 @@ def _runmc_ffi(evalState, evalStateT, flip, initState, lift, mc, randState, samp
     return _func(evalState, evalStateT, flip, initState, lift, mc, randState, sampleRVarTWith)
 
 def _runsimulation_ffi(anti, ccs, modl, run, runMC, seed, trials, undefined):
-    """Wrapper that calls the Haskell version of runsimulation."""
-    _lib = ctypes.CDLL("./runsimulation.so")
+    """Wrapper that calls the Haskell version of run_simulation."""
+    _lib = ctypes.CDLL("./run_simulation.so")
     _func_name = 'placeholder'
     _func = _lib[_func_name]
     _func.argtypes = [ctypes.c_void_p] * 8
@@ -834,7 +834,7 @@ def _runsimulation_ffi(anti, ccs, modl, run, runMC, seed, trials, undefined):
 
 def _runsimulationanti_ffi(ccs, modl, runSim, seed, trials):
     """Call the Haskell version of run-simulation-anti. Passes arguments through and returns the result."""
-    _lib = ctypes.CDLL("./runsimulationanti.so")
+    _lib = ctypes.CDLL("./run_simulation_anti.so")
     _func_name = 'placeholder'
     _func = _lib[_func_name]
     _func.argtypes = [ctypes.c_void_p] * 5
@@ -842,8 +842,8 @@ def _runsimulationanti_ffi(ccs, modl, runSim, seed, trials):
     return _func(ccs, modl, runSim, seed, trials)
 
 def _quicksim_ffi(mdl, opts, pureMT, runSimulation, trials):
-    """Wrapper that calls the Haskell version of quicksim."""
-    _lib = ctypes.CDLL("./quicksim.so")
+    """Wrapper that calls the Haskell version of quick_sim."""
+    _lib = ctypes.CDLL("./quick_sim.so")
     _func_name = 'placeholder'
     _func = _lib[_func_name]
     _func.argtypes = [ctypes.c_void_p] * 5
@@ -851,8 +851,8 @@ def _quicksim_ffi(mdl, opts, pureMT, runSimulation, trials):
     return _func(mdl, opts, pureMT, runSimulation, trials)
 
 def _quicksimanti_ffi(mdl, opts, pureMT, runSimulationAnti, trials):
-    """Wrapper that calls the Haskell version of quicksimanti."""
-    _lib = ctypes.CDLL("./quicksimanti.so")
+    """Wrapper that calls the Haskell version of quick_sim_anti."""
+    _lib = ctypes.CDLL("./quick_sim_anti.so")
     _func_name = 'placeholder'
     _func = _lib[_func_name]
     _func.argtypes = [ctypes.c_void_p] * 5
@@ -877,8 +877,8 @@ def _maxstep_ffi():
     return _func()
 
 def _simulatestate_ffi(anti, avg, ccb, modl, replicateM, singleTrial, trials):
-    """Wrapper that calls the Haskell version of simulatestate."""
-    _lib = ctypes.CDLL("./simulatestate.so")
+    """Wrapper that calls the Haskell version of simulate_state."""
+    _lib = ctypes.CDLL("./simulate_state.so")
     _func_name = 'placeholder'
     _func = _lib[_func_name]
     _func.argtypes = [ctypes.c_void_p] * 7
@@ -931,8 +931,8 @@ def _process_base_ffi(discCFs, return_val):
     return _func(discCFs, return_val)
 
 def _insertcf_ffi(amt, amt_prime, cfs, insertCF, otherwise, t, t_prime):
-    """Wrapper that calls the Haskell version of insertcf (recursive)."""
-    _lib = ctypes.CDLL("./insertcf.so")
+    """Wrapper that calls the Haskell version of insert_cf (recursive)."""
+    _lib = ctypes.CDLL("./insert_cf.so")
     _func_name = 'placeholder'
     _func = _lib[_func_name]
     _func.argtypes = [ctypes.c_void_p] * 7
@@ -940,8 +940,8 @@ def _insertcf_ffi(amt, amt_prime, cfs, insertCF, otherwise, t, t_prime):
     return _func(amt, amt_prime, cfs, insertCF, otherwise, t, t_prime)
 
 def _insertcf_base_ffi(cf):
-    """Wrapper that calls the Haskell version of insertcf (base case)."""
-    _lib = ctypes.CDLL("./insertcf.so")
+    """Wrapper that calls the Haskell version of insert_cf (base case)."""
+    _lib = ctypes.CDLL("./insert_cf.so")
     _func_name = 'placeholder'
     _func = _lib[_func_name]
     _func.argtypes = [ctypes.c_void_p]
@@ -958,8 +958,8 @@ def _avg_ffi(fromIntegral, sum, trials, v):
     return _func(fromIntegral, sum, trials, v)
 
 def _insertcflist_ffi(cfList, flip, foldl_prime, insertCF, xs):
-    """Wrapper that calls the Haskell version of insertcflist."""
-    _lib = ctypes.CDLL("./insertcflist.so")
+    """Wrapper that calls the Haskell version of insert_cf_list."""
+    _lib = ctypes.CDLL("./insert_cf_list.so")
     _func_name = 'placeholder'
     _func = _lib[_func_name]
     _func.argtypes = [ctypes.c_void_p] * 5

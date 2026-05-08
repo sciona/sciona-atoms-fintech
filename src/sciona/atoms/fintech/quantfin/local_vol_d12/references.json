@@ -26,7 +26,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.local_vol_d12.localvol@sciona/atoms/fintech/quantfin/local_vol_d12/atoms.py:60": {
+    "sciona.atoms.fintech.quantfin.local_vol_d12.local_vol@sciona/atoms/fintech/quantfin/local_vol_d12/atoms.py:60": {
       "references": [
         {
           "ref_id": "gatheral2006",

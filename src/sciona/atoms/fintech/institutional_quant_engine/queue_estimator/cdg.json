@@ -10,8 +10,8 @@
       "outputs": [],
       "status": "decomposed",
       "children": [
-        "initializeorderstate",
-        "updatequeueontrade"
+        "initialize_order_state",
+        "update_queue_on_trade"
       ],
       "depth": 0,
       "type_signature": "",
@@ -25,9 +25,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "initializeorderstate",
+      "node_id": "initialize_order_state",
       "parent_id": "QueueTracker_root",
-      "name": "InitializeOrderState",
+      "name": "initialize_order_state",
       "description": "Initializes the state of a new order within the queue, capturing its initial quantity and the volume of orders ahead of it.",
       "concept_type": "prior_init",
       "inputs": [
@@ -68,9 +68,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "updatequeueontrade",
+      "node_id": "update_queue_on_trade",
       "parent_id": "QueueTracker_root",
-      "name": "UpdateQueueOnTrade",
+      "name": "update_queue_on_trade",
       "description": "Processes an incoming market trade, reducing the queue ahead and potentially filling the order. This is a deterministic state transition.",
       "concept_type": "sequential_filter",
       "inputs": [
@@ -108,8 +108,8 @@
   ],
   "edges": [
     {
-      "source_id": "initializeorderstate",
-      "target_id": "updatequeueontrade",
+      "source_id": "initialize_order_state",
+      "target_id": "update_queue_on_trade",
       "output_name": "initial_order_state",
       "input_name": "current_order_state",
       "source_type": "OrderState",

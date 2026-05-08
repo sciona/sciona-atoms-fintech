@@ -11,7 +11,7 @@
       "status": "decomposed",
       "children": [
         "var",
-        "localvol",
+        "local_vol",
         "flat_vol",
         "interpolated_vol",
         "allfort"
@@ -81,9 +81,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "localvol",
+      "node_id": "local_vol",
       "parent_id": "local_vol_root",
-      "name": "DupireLocalVol",
+      "name": "local_vol",
       "description": "Compute Dupire local volatility at one strike and maturity.",
       "concept_type": "analysis",
       "inputs": [
@@ -161,7 +161,7 @@
     {
       "node_id": "flat_vol",
       "parent_id": "local_vol_root",
-      "name": "FlatVol",
+      "name": "flat_vol",
       "description": "Return the constant implied volatility from a flat volatility surface.",
       "concept_type": "analysis",
       "inputs": [
@@ -194,7 +194,7 @@
     {
       "node_id": "interpolated_vol",
       "parent_id": "local_vol_root",
-      "name": "InterpolatedVol",
+      "name": "interpolated_vol",
       "description": "Interpolate implied volatility from a strike-maturity quote grid.",
       "concept_type": "signal_transform",
       "inputs": [

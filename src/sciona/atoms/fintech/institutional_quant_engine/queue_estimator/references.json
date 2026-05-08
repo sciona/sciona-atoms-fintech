@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1",
   "atoms": {
-    "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.initializeorderstate@sciona/atoms/fintech/institutional_quant_engine/queue_estimator/atoms.py:22": {
+    "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.initialize_order_state@sciona/atoms/fintech/institutional_quant_engine/queue_estimator/atoms.py:22": {
       "references": [
         {
           "ref_id": "cont2014ofi",
@@ -26,7 +26,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.updatequeueontrade@sciona/atoms/fintech/institutional_quant_engine/queue_estimator/atoms.py:45": {
+    "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.update_queue_on_trade@sciona/atoms/fintech/institutional_quant_engine/queue_estimator/atoms.py:45": {
       "references": [
         {
           "ref_id": "cont2014ofi",

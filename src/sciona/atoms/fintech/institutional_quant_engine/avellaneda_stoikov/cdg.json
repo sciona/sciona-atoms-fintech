@@ -10,8 +10,8 @@
       "outputs": [],
       "status": "decomposed",
       "children": [
-        "initializemarketmakerstate",
-        "computeinventoryadjustedquotes"
+        "initialize_market_maker_state",
+        "compute_inventory_adjusted_quotes"
       ],
       "depth": 0,
       "type_signature": "",
@@ -25,9 +25,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "initializemarketmakerstate",
+      "node_id": "initialize_market_maker_state",
       "parent_id": "MarketMaker_root",
-      "name": "InitializeMarketMakerState",
+      "name": "initialize_market_maker_state",
       "description": "Construct the immutable market-making state object with model parameters and initial market/inventory values.",
       "concept_type": "data_assembly",
       "inputs": [
@@ -63,9 +63,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "computeinventoryadjustedquotes",
+      "node_id": "compute_inventory_adjusted_quotes",
       "parent_id": "MarketMaker_root",
-      "name": "ComputeInventoryAdjustedQuotes",
+      "name": "compute_inventory_adjusted_quotes",
       "description": "Deterministically compute market quotes from the current immutable state without mutating persistent values.",
       "concept_type": "arithmetic",
       "inputs": [
@@ -98,8 +98,8 @@
   ],
   "edges": [
     {
-      "source_id": "initializemarketmakerstate",
-      "target_id": "computeinventoryadjustedquotes",
+      "source_id": "initialize_market_maker_state",
+      "target_id": "compute_inventory_adjusted_quotes",
       "output_name": "state_model",
       "input_name": "state_model",
       "source_type": "StateModelSpec",

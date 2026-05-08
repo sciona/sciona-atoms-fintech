@@ -67,7 +67,7 @@
   },
   {
     "pdg_node": {
-      "predicate_id": "localvol",
+      "predicate_id": "local_vol",
       "statement": "(dwdt: Any, k: Any, otherwise: Any, rcurve: Any, s0: Any, solution: Any, sqrt: Any, t: Any, v: Any, w: Any) -> Any",
       "informal_desc": "",
       "prover": "python",
@@ -76,7 +76,7 @@
     "verified_match": {
       "candidate": {
         "declaration": {
-          "name": "localvol",
+          "name": "local_vol",
           "type_signature": "(dwdt: Any, k: Any, otherwise: Any, rcurve: Any, s0: Any, solution: Any, sqrt: Any, t: Any, v: Any, w: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -96,7 +96,7 @@
     "all_candidates": [
       {
         "declaration": {
-          "name": "localvol",
+          "name": "local_vol",
           "type_signature": "(dwdt: Any, k: Any, otherwise: Any, rcurve: Any, s0: Any, solution: Any, sqrt: Any, t: Any, v: Any, w: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -112,7 +112,7 @@
       {
         "candidate": {
           "declaration": {
-            "name": "localvol",
+            "name": "local_vol",
             "type_signature": "(dwdt: Any, k: Any, otherwise: Any, rcurve: Any, s0: Any, solution: Any, sqrt: Any, t: Any, v: Any, w: Any) -> Any",
             "docstring": "",
             "conceptual_summary": "",

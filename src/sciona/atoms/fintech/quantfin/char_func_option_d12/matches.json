@@ -1,7 +1,7 @@
 [
   {
     "pdg_node": {
-      "predicate_id": "charfuncoption",
+      "predicate_id": "char_func_option",
       "statement": "(: Any, cf: Any, charFuncMart: Any, d: Any, damp: Any, damp': Any, disc: Any, exp: Any, f: Any, fg: Any, func1: Any, func2: Any, i: Any, intF: Any, k: Any, leftTerm: Any, log: Any, model: Any, opt: Any, p1: Any, p2: Any, pi: Any, q: Any, realPart: Any, rightTerm: Any, s: Any, strike: Any, tmat: Any, v: Any, v': Any, x: Any, yc: Any) -> Any",
       "informal_desc": "",
       "prover": "python",
@@ -10,7 +10,7 @@
     "verified_match": {
       "candidate": {
         "declaration": {
-          "name": "charfuncoption",
+          "name": "char_func_option",
           "type_signature": "(: Any, cf: Any, charFuncMart: Any, d: Any, damp: Any, damp': Any, disc: Any, exp: Any, f: Any, fg: Any, func1: Any, func2: Any, i: Any, intF: Any, k: Any, leftTerm: Any, log: Any, model: Any, opt: Any, p1: Any, p2: Any, pi: Any, q: Any, realPart: Any, rightTerm: Any, s: Any, strike: Any, tmat: Any, v: Any, v': Any, x: Any, yc: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -30,7 +30,7 @@
     "all_candidates": [
       {
         "declaration": {
-          "name": "charfuncoption",
+          "name": "char_func_option",
           "type_signature": "(: Any, cf: Any, charFuncMart: Any, d: Any, damp: Any, damp': Any, disc: Any, exp: Any, f: Any, fg: Any, func1: Any, func2: Any, i: Any, intF: Any, k: Any, leftTerm: Any, log: Any, model: Any, opt: Any, p1: Any, p2: Any, pi: Any, q: Any, realPart: Any, rightTerm: Any, s: Any, strike: Any, tmat: Any, v: Any, v': Any, x: Any, yc: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -46,7 +46,7 @@
       {
         "candidate": {
           "declaration": {
-            "name": "charfuncoption",
+            "name": "char_func_option",
             "type_signature": "(: Any, cf: Any, charFuncMart: Any, d: Any, damp: Any, damp': Any, disc: Any, exp: Any, f: Any, fg: Any, func1: Any, func2: Any, i: Any, intF: Any, k: Any, leftTerm: Any, log: Any, model: Any, opt: Any, p1: Any, p2: Any, pi: Any, q: Any, realPart: Any, rightTerm: Any, s: Any, strike: Any, tmat: Any, v: Any, v': Any, x: Any, yc: Any) -> Any",
             "docstring": "",
             "conceptual_summary": "",

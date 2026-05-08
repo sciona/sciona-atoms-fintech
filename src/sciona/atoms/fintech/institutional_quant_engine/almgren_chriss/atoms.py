@@ -13,7 +13,7 @@ from .witnesses import witness_computeoptimaltrajectory
 @icontract.require(lambda days: days is not None, "days cannot be None")
 @icontract.require(lambda risk_aversion: risk_aversion is not None, "risk_aversion cannot be None")
 @icontract.ensure(lambda result: result is not None, "ComputeOptimalTrajectory output must not be None")
-def computeoptimaltrajectory(total_shares: float, days: int, risk_aversion: float) -> np.ndarray:
+def compute_optimal_trajectory(total_shares: float, days: int, risk_aversion: float) -> np.ndarray:
     """Computes the optimal share-execution trajectory over the planning horizon given risk preference.
 
     Args:

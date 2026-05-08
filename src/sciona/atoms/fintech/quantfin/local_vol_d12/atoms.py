@@ -58,14 +58,14 @@ def var(
 
 
 # ---------------------------------------------------------------------------
-# localvol  — Dupire local volatility
+# local_vol  — Dupire local volatility
 # ---------------------------------------------------------------------------
 
 @register_atom(witness_localvol)
 @icontract.require(lambda s0: isinstance(s0, float) and s0 > 0.0, "s0 -- initial spot must be positive")
 @icontract.require(lambda k: isinstance(k, float) and k > 0.0, "k -- current stock level must be positive")
 @icontract.ensure(lambda result: isinstance(result, float) and result >= 0.0, "local vol must be non-negative")
-def localvol(
+def local_vol(
     dwdt: float,
     k: float,
     otherwise: float,
@@ -237,8 +237,8 @@ def _var_ffi(s, t, t_prime, v, vs):
     return _func(s, t, t_prime, v, vs)
 
 def _localvol_ffi(dwdt, k, otherwise, rcurve, s0, solution, sqrt, t, v, w):
-    """Wrapper that calls the Haskell version of localvol."""
-    _lib = ctypes.CDLL("./localvol.so")
+    """Wrapper that calls the Haskell version of local_vol."""
+    _lib = ctypes.CDLL("./local_vol.so")
     _func_name = 'placeholder'
     _func = _lib[_func_name]
     _func.argtypes = [ctypes.c_void_p] * 10

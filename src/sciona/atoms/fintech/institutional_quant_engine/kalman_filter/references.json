@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1",
   "atoms": {
-    "sciona.atoms.fintech.institutional_quant_engine.kalman_filter.kalmanfilterinit@sciona/atoms/fintech/institutional_quant_engine/kalman_filter/atoms.py:28": {
+    "sciona.atoms.fintech.institutional_quant_engine.kalman_filter.kalman_filter_init@sciona/atoms/fintech/institutional_quant_engine/kalman_filter/atoms.py:28": {
       "references": [
         {
           "ref_id": "kalman1960",
@@ -26,7 +26,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.institutional_quant_engine.kalman_filter.kalmanmeasurementupdate@sciona/atoms/fintech/institutional_quant_engine/kalman_filter/atoms.py:65": {
+    "sciona.atoms.fintech.institutional_quant_engine.kalman_filter.kalman_measurement_update@sciona/atoms/fintech/institutional_quant_engine/kalman_filter/atoms.py:65": {
       "references": [
         {
           "ref_id": "kalman1960",

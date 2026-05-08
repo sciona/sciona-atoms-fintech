@@ -1,7 +1,7 @@
 [
   {
     "pdg_node": {
-      "predicate_id": "computeoptimaltrajectory",
+      "predicate_id": "compute_optimal_trajectory",
       "statement": "(total_shares: float, days: int, risk_aversion: float) -> np.ndarray",
       "informal_desc": "Computes the optimal share-execution trajectory over the planning horizon given risk preference.",
       "prover": "python",
@@ -10,7 +10,7 @@
     "verified_match": {
       "candidate": {
         "declaration": {
-          "name": "computeoptimaltrajectory",
+          "name": "compute_optimal_trajectory",
           "type_signature": "(total_shares: float, days: int, risk_aversion: float) -> np.ndarray",
           "docstring": "Computes the optimal share-execution trajectory over the planning horizon given risk preference.",
           "conceptual_summary": "Computes a monotone liquidation schedule over a finite horizon by linearly reducing remaining inventory at each step.",
@@ -30,7 +30,7 @@
     "all_candidates": [
       {
         "declaration": {
-          "name": "computeoptimaltrajectory",
+          "name": "compute_optimal_trajectory",
           "type_signature": "(total_shares: float, days: int, risk_aversion: float) -> np.ndarray",
           "docstring": "Computes the optimal share-execution trajectory over the planning horizon given risk preference.",
           "conceptual_summary": "Computes a monotone liquidation schedule over a finite horizon by linearly reducing remaining inventory at each step.",
@@ -46,7 +46,7 @@
       {
         "candidate": {
           "declaration": {
-            "name": "computeoptimaltrajectory",
+            "name": "compute_optimal_trajectory",
             "type_signature": "(total_shares: float, days: int, risk_aversion: float) -> np.ndarray",
             "docstring": "Computes the optimal share-execution trajectory over the planning horizon given risk preference.",
             "conceptual_summary": "Computes a monotone liquidation schedule over a finite horizon by linearly reducing remaining inventory at each step.",

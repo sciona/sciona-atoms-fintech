@@ -1,7 +1,7 @@
 [
   {
     "pdg_node": {
-      "predicate_id": "randomword32",
+      "predicate_id": "random_word_32",
       "statement": "(c: Any, state: Any, state': Any, x: Any, xor: Any) -> Any",
       "informal_desc": "",
       "prover": "python",
@@ -10,7 +10,7 @@
     "verified_match": {
       "candidate": {
         "declaration": {
-          "name": "randomword32",
+          "name": "random_word_32",
           "type_signature": "(c: Any, state: Any, state': Any, x: Any, xor: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -30,7 +30,7 @@
     "all_candidates": [
       {
         "declaration": {
-          "name": "randomword32",
+          "name": "random_word_32",
           "type_signature": "(c: Any, state: Any, state': Any, x: Any, xor: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -46,7 +46,7 @@
       {
         "candidate": {
           "declaration": {
-            "name": "randomword32",
+            "name": "random_word_32",
             "type_signature": "(c: Any, state: Any, state': Any, x: Any, xor: Any) -> Any",
             "docstring": "",
             "conceptual_summary": "",
@@ -67,7 +67,7 @@
   },
   {
     "pdg_node": {
-      "predicate_id": "randomint",
+      "predicate_id": "random_int",
       "statement": "(fromIntegral: Any, g: Any, g': Any, i: Any) -> Any",
       "informal_desc": "",
       "prover": "python",
@@ -76,7 +76,7 @@
     "verified_match": {
       "candidate": {
         "declaration": {
-          "name": "randomint",
+          "name": "random_int",
           "type_signature": "(fromIntegral: Any, g: Any, g': Any, i: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -96,7 +96,7 @@
     "all_candidates": [
       {
         "declaration": {
-          "name": "randomint",
+          "name": "random_int",
           "type_signature": "(fromIntegral: Any, g: Any, g': Any, i: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -112,7 +112,7 @@
       {
         "candidate": {
           "declaration": {
-            "name": "randomint",
+            "name": "random_int",
             "type_signature": "(fromIntegral: Any, g: Any, g': Any, i: Any) -> Any",
             "docstring": "",
             "conceptual_summary": "",
@@ -133,7 +133,7 @@
   },
   {
     "pdg_node": {
-      "predicate_id": "randomword64",
+      "predicate_id": "random_word_64",
       "statement": "(buildWord64'': Any, x: Any, x'': Any, y1: Any, y2: Any) -> Any",
       "informal_desc": "",
       "prover": "python",
@@ -142,7 +142,7 @@
     "verified_match": {
       "candidate": {
         "declaration": {
-          "name": "randomword64",
+          "name": "random_word_64",
           "type_signature": "(buildWord64'': Any, x: Any, x'': Any, y1: Any, y2: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -162,7 +162,7 @@
     "all_candidates": [
       {
         "declaration": {
-          "name": "randomword64",
+          "name": "random_word_64",
           "type_signature": "(buildWord64'': Any, x: Any, x'': Any, y1: Any, y2: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -178,7 +178,7 @@
       {
         "candidate": {
           "declaration": {
-            "name": "randomword64",
+            "name": "random_word_64",
             "type_signature": "(buildWord64'': Any, x: Any, x'': Any, y1: Any, y2: Any) -> Any",
             "docstring": "",
             "conceptual_summary": "",
@@ -199,7 +199,7 @@
   },
   {
     "pdg_node": {
-      "predicate_id": "randomdouble",
+      "predicate_id": "random_double",
       "statement": "(div: Any, fromIntegral: Any, val: Any, x: Any, x': Any) -> Any",
       "informal_desc": "",
       "prover": "python",
@@ -208,7 +208,7 @@
     "verified_match": {
       "candidate": {
         "declaration": {
-          "name": "randomdouble",
+          "name": "random_double",
           "type_signature": "(div: Any, fromIntegral: Any, val: Any, x: Any, x': Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -228,7 +228,7 @@
     "all_candidates": [
       {
         "declaration": {
-          "name": "randomdouble",
+          "name": "random_double",
           "type_signature": "(div: Any, fromIntegral: Any, val: Any, x: Any, x': Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -244,7 +244,7 @@
       {
         "candidate": {
           "declaration": {
-            "name": "randomdouble",
+            "name": "random_double",
             "type_signature": "(div: Any, fromIntegral: Any, val: Any, x: Any, x': Any) -> Any",
             "docstring": "",
             "conceptual_summary": "",
@@ -265,7 +265,7 @@
   },
   {
     "pdg_node": {
-      "predicate_id": "randomint64",
+      "predicate_id": "random_int_64",
       "statement": "(fromIntegral: Any, g: Any, g': Any, i: Any) -> Any",
       "informal_desc": "",
       "prover": "python",
@@ -274,7 +274,7 @@
     "verified_match": {
       "candidate": {
         "declaration": {
-          "name": "randomint64",
+          "name": "random_int_64",
           "type_signature": "(fromIntegral: Any, g: Any, g': Any, i: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -294,7 +294,7 @@
     "all_candidates": [
       {
         "declaration": {
-          "name": "randomint64",
+          "name": "random_int_64",
           "type_signature": "(fromIntegral: Any, g: Any, g': Any, i: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -310,7 +310,7 @@
       {
         "candidate": {
           "declaration": {
-            "name": "randomint64",
+            "name": "random_int_64",
             "type_signature": "(fromIntegral: Any, g: Any, g': Any, i: Any) -> Any",
             "docstring": "",
             "conceptual_summary": "",
@@ -331,7 +331,7 @@
   },
   {
     "pdg_node": {
-      "predicate_id": "addmod64",
+      "predicate_id": "add_mod_64",
       "statement": "(a: Any, b: Any, m: Any, mod: Any) -> Any",
       "informal_desc": "",
       "prover": "python",
@@ -340,7 +340,7 @@
     "verified_match": {
       "candidate": {
         "declaration": {
-          "name": "addmod64",
+          "name": "add_mod_64",
           "type_signature": "(a: Any, b: Any, m: Any, mod: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -360,7 +360,7 @@
     "all_candidates": [
       {
         "declaration": {
-          "name": "addmod64",
+          "name": "add_mod_64",
           "type_signature": "(a: Any, b: Any, m: Any, mod: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -376,7 +376,7 @@
       {
         "candidate": {
           "declaration": {
-            "name": "addmod64",
+            "name": "add_mod_64",
             "type_signature": "(a: Any, b: Any, m: Any, mod: Any) -> Any",
             "docstring": "",
             "conceptual_summary": "",
@@ -397,7 +397,7 @@
   },
   {
     "pdg_node": {
-      "predicate_id": "mulmod64",
+      "predicate_id": "mul_mod_64",
       "statement": "(a: Any, b: Any, f: Any, m: Any) -> Any",
       "informal_desc": "",
       "prover": "python",
@@ -406,7 +406,7 @@
     "verified_match": {
       "candidate": {
         "declaration": {
-          "name": "mulmod64",
+          "name": "mul_mod_64",
           "type_signature": "(a: Any, b: Any, f: Any, m: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -426,7 +426,7 @@
     "all_candidates": [
       {
         "declaration": {
-          "name": "mulmod64",
+          "name": "mul_mod_64",
           "type_signature": "(a: Any, b: Any, f: Any, m: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -442,7 +442,7 @@
       {
         "candidate": {
           "declaration": {
-            "name": "mulmod64",
+            "name": "mul_mod_64",
             "type_signature": "(a: Any, b: Any, f: Any, m: Any) -> Any",
             "docstring": "",
             "conceptual_summary": "",
@@ -463,7 +463,7 @@
   },
   {
     "pdg_node": {
-      "predicate_id": "powmod64",
+      "predicate_id": "pow_mod_64",
       "statement": "(a: Any, e: Any, f: Any, m: Any) -> Any",
       "informal_desc": "",
       "prover": "python",
@@ -472,7 +472,7 @@
     "verified_match": {
       "candidate": {
         "declaration": {
-          "name": "powmod64",
+          "name": "pow_mod_64",
           "type_signature": "(a: Any, e: Any, f: Any, m: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -492,7 +492,7 @@
     "all_candidates": [
       {
         "declaration": {
-          "name": "powmod64",
+          "name": "pow_mod_64",
           "type_signature": "(a: Any, e: Any, f: Any, m: Any) -> Any",
           "docstring": "",
           "conceptual_summary": "",
@@ -508,7 +508,7 @@
       {
         "candidate": {
           "declaration": {
-            "name": "powmod64",
+            "name": "pow_mod_64",
             "type_signature": "(a: Any, e: Any, f: Any, m: Any) -> Any",
             "docstring": "",
             "conceptual_summary": "",

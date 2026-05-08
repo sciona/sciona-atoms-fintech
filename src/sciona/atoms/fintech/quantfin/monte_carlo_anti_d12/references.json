@@ -276,7 +276,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.quicksim@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:158": {
+    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.quick_sim@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:158": {
       "references": [
         {
           "ref_id": "glasserman2003",
@@ -301,7 +301,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.quicksimanti@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:191": {
+    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.quick_sim_anti@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:191": {
       "references": [
         {
           "ref_id": "glasserman2003",
@@ -376,7 +376,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.runsimulation@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:83": {
+    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.run_simulation@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:83": {
       "references": [
         {
           "ref_id": "glasserman2003",
@@ -401,7 +401,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.runsimulationanti@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:122": {
+    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.run_simulation_anti@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:122": {
       "references": [
         {
           "ref_id": "glasserman2003",
@@ -426,7 +426,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.simulatestate@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:301": {
+    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.simulate_state@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:301": {
       "references": [
         {
           "ref_id": "glasserman2003",

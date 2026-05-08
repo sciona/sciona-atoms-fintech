@@ -13,7 +13,7 @@ from .witnesses import witness_marketmakerstateinit, witness_optimalquotecalcula
 @icontract.require(lambda s0: s0 > 0, "s0 must be positive")
 @icontract.require(lambda inventory: isinstance(inventory, (float, int, np.number)), "inventory must be numeric")
 @icontract.ensure(lambda result: all(r is not None for r in result), "MarketMakerStateInit all outputs must not be None")
-def marketmakerstateinit(s0: float, inventory: float) -> tuple[float, float, float, float, float]:
+def market_maker_state_init(s0: float, inventory: float) -> tuple[float, float, float, float, float]:
     """Bootstraps the market-maker's immutable parameter state from a supplied initial mid-price and inventory position, materialising the five scalar fields - risk-aversion (gamma), market-depth (k), inventory (q), mid-price (s), and volatility (sigma) - that all downstream computations consume as pure inputs.
 
     Args:
@@ -40,7 +40,7 @@ def marketmakerstateinit(s0: float, inventory: float) -> tuple[float, float, flo
 @icontract.require(lambda s: isinstance(s, (float, int, np.number)), "s must be numeric")
 @icontract.require(lambda sigma: isinstance(sigma, (float, int, np.number)), "sigma must be numeric")
 @icontract.ensure(lambda result: all(r is not None for r in result), "OptimalQuoteCalculation all outputs must not be None")
-def optimalquotecalculation(gamma: float, k: float, q: float, s: float, sigma: float) -> tuple[float, float, float, float]:
+def optimal_quote_calculation(gamma: float, k: float, q: float, s: float, sigma: float) -> tuple[float, float, float, float]:
     """Computes optimal bid and ask quotes using the Avellaneda-Stoikov market-making framework, deriving a reservation price and optimal spread from the current inventory, volatility, and market-depth parameters.
 
     Args:

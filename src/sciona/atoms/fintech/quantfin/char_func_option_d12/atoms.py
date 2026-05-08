@@ -58,7 +58,7 @@ class IntegrandFunction(Protocol):
 
 
 # ---------------------------------------------------------------------------
-# charfuncoption
+# char_func_option
 # ---------------------------------------------------------------------------
 
 @register_atom(witness_charfuncoption)
@@ -66,7 +66,7 @@ class IntegrandFunction(Protocol):
 @icontract.require(lambda tmat: isinstance(tmat, float) and tmat > 0.0, "tmat -- time to maturity must be positive")
 @icontract.require(lambda damp: isinstance(damp, float), "damp must be a float")
 @icontract.ensure(lambda result: isinstance(result, float), "result must be a float")
-def charfuncoption(
+def char_func_option(
     arg0: float,
     cf: ComplexFunction,
     charFuncMart: MartingaleCharacteristicBuilder,
@@ -242,8 +242,8 @@ def cf(
 # ---------------------------------------------------------------------------
 
 def _charfuncoption_ffi(arg0, cf, charFuncMart, d, damp, damp_prime, disc, exp, f, fg, func1, func2, i, intF, k, leftTerm, log, model, opt, p1, p2, pi, q, realPart, rightTerm, s, strike, tmat, v, v_prime, x, yc):
-    """Wrapper that calls the Haskell version of charfuncoption."""
-    _lib = ctypes.CDLL("./charfuncoption.so")
+    """Wrapper that calls the Haskell version of char_func_option."""
+    _lib = ctypes.CDLL("./char_func_option.so")
     _func_name = 'placeholder'
     _func = _lib[_func_name]
     _func.argtypes = [ctypes.c_void_p] * 32

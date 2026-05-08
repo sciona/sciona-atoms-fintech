@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1",
   "atoms": {
-    "sciona.atoms.fintech.quantfin.rng_skip_d12.addmod64@sciona/atoms/fintech/quantfin/rng_skip_d12/atoms.py:209": {
+    "sciona.atoms.fintech.quantfin.rng_skip_d12.add_mod_64@sciona/atoms/fintech/quantfin/rng_skip_d12/atoms.py:209": {
       "references": [
         {
           "ref_id": "repo_quantfin",
@@ -46,7 +46,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.rng_skip_d12.mulmod64@sciona/atoms/fintech/quantfin/rng_skip_d12/atoms.py:239": {
+    "sciona.atoms.fintech.quantfin.rng_skip_d12.mul_mod_64@sciona/atoms/fintech/quantfin/rng_skip_d12/atoms.py:239": {
       "references": [
         {
           "ref_id": "repo_quantfin",
@@ -76,7 +76,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.rng_skip_d12.powmod64@sciona/atoms/fintech/quantfin/rng_skip_d12/atoms.py:272": {
+    "sciona.atoms.fintech.quantfin.rng_skip_d12.pow_mod_64@sciona/atoms/fintech/quantfin/rng_skip_d12/atoms.py:272": {
       "references": [
         {
           "ref_id": "repo_quantfin",
@@ -91,7 +91,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.rng_skip_d12.randomdouble@sciona/atoms/fintech/quantfin/rng_skip_d12/atoms.py:141": {
+    "sciona.atoms.fintech.quantfin.rng_skip_d12.random_double@sciona/atoms/fintech/quantfin/rng_skip_d12/atoms.py:141": {
       "references": [
         {
           "ref_id": "repo_quantfin",
@@ -106,7 +106,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.rng_skip_d12.randomint64@sciona/atoms/fintech/quantfin/rng_skip_d12/atoms.py:176": {
+    "sciona.atoms.fintech.quantfin.rng_skip_d12.random_int_64@sciona/atoms/fintech/quantfin/rng_skip_d12/atoms.py:176": {
       "references": [
         {
           "ref_id": "repo_quantfin",
@@ -121,7 +121,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.rng_skip_d12.randomint@sciona/atoms/fintech/quantfin/rng_skip_d12/atoms.py:74": {
+    "sciona.atoms.fintech.quantfin.rng_skip_d12.random_int@sciona/atoms/fintech/quantfin/rng_skip_d12/atoms.py:74": {
       "references": [
         {
           "ref_id": "repo_quantfin",
@@ -136,7 +136,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.rng_skip_d12.randomword32@sciona/atoms/fintech/quantfin/rng_skip_d12/atoms.py:37": {
+    "sciona.atoms.fintech.quantfin.rng_skip_d12.random_word_32@sciona/atoms/fintech/quantfin/rng_skip_d12/atoms.py:37": {
       "references": [
         {
           "ref_id": "repo_quantfin",
@@ -151,7 +151,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.rng_skip_d12.randomword64@sciona/atoms/fintech/quantfin/rng_skip_d12/atoms.py:106": {
+    "sciona.atoms.fintech.quantfin.rng_skip_d12.random_word_64@sciona/atoms/fintech/quantfin/rng_skip_d12/atoms.py:106": {
       "references": [
         {
           "ref_id": "repo_quantfin",

@@ -10,14 +10,14 @@
       "outputs": [],
       "status": "decomposed",
       "children": [
-        "randomword32",
-        "randomint",
-        "randomword64",
-        "randomdouble",
-        "randomint64",
-        "addmod64",
-        "mulmod64",
-        "powmod64",
+        "random_word_32",
+        "random_int",
+        "random_word_64",
+        "random_double",
+        "random_int_64",
+        "add_mod_64",
+        "mul_mod_64",
+        "pow_mod_64",
         "skip",
         "next",
         "split",
@@ -27,7 +27,7 @@
       "depth": 0,
       "type_signature": "",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -38,9 +38,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "randomword32",
+      "node_id": "random_word_32",
       "parent_id": "skip_root",
-      "name": "Randomword32",
+      "name": "random_word_32",
       "description": "Atomic operation: Randomword32",
       "concept_type": "custom",
       "inputs": [
@@ -94,7 +94,7 @@
       "depth": 1,
       "type_signature": "(c: Any, state: Any, state': Any, x: Any, xor: Any) -> Any",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -105,9 +105,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "randomint",
+      "node_id": "random_int",
       "parent_id": "skip_root",
-      "name": "Randomint",
+      "name": "random_int",
       "description": "Atomic operation: Randomint",
       "concept_type": "custom",
       "inputs": [
@@ -154,7 +154,7 @@
       "depth": 1,
       "type_signature": "(fromIntegral: Any, g: Any, g': Any, i: Any) -> Any",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -165,9 +165,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "randomword64",
+      "node_id": "random_word_64",
       "parent_id": "skip_root",
-      "name": "Randomword64",
+      "name": "random_word_64",
       "description": "Atomic operation: Randomword64",
       "concept_type": "custom",
       "inputs": [
@@ -221,7 +221,7 @@
       "depth": 1,
       "type_signature": "(buildWord64'': Any, x: Any, x'': Any, y1: Any, y2: Any) -> Any",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -232,9 +232,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "randomdouble",
+      "node_id": "random_double",
       "parent_id": "skip_root",
-      "name": "Randomdouble",
+      "name": "random_double",
       "description": "Atomic operation: Randomdouble",
       "concept_type": "custom",
       "inputs": [
@@ -288,7 +288,7 @@
       "depth": 1,
       "type_signature": "(div: Any, fromIntegral: Any, val: Any, x: Any, x': Any) -> Any",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -299,9 +299,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "randomint64",
+      "node_id": "random_int_64",
       "parent_id": "skip_root",
-      "name": "Randomint64",
+      "name": "random_int_64",
       "description": "Atomic operation: Randomint64",
       "concept_type": "custom",
       "inputs": [
@@ -348,7 +348,7 @@
       "depth": 1,
       "type_signature": "(fromIntegral: Any, g: Any, g': Any, i: Any) -> Any",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -359,9 +359,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "addmod64",
+      "node_id": "add_mod_64",
       "parent_id": "skip_root",
-      "name": "Addmod64",
+      "name": "add_mod_64",
       "description": "Atomic operation: Addmod64",
       "concept_type": "custom",
       "inputs": [
@@ -408,7 +408,7 @@
       "depth": 1,
       "type_signature": "(a: Any, b: Any, m: Any, mod: Any) -> Any",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -419,9 +419,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "mulmod64",
+      "node_id": "mul_mod_64",
       "parent_id": "skip_root",
-      "name": "Mulmod64",
+      "name": "mul_mod_64",
       "description": "Atomic operation: Mulmod64",
       "concept_type": "custom",
       "inputs": [
@@ -468,7 +468,7 @@
       "depth": 1,
       "type_signature": "(a: Any, b: Any, f: Any, m: Any) -> Any",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -479,9 +479,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "powmod64",
+      "node_id": "pow_mod_64",
       "parent_id": "skip_root",
-      "name": "Powmod64",
+      "name": "pow_mod_64",
       "description": "Atomic operation: Powmod64",
       "concept_type": "custom",
       "inputs": [
@@ -528,7 +528,7 @@
       "depth": 1,
       "type_signature": "(a: Any, e: Any, f: Any, m: Any) -> Any",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -581,7 +581,7 @@
       "depth": 1,
       "type_signature": "(d: Any, st: Any, st': Any) -> Any",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -641,7 +641,7 @@
       "depth": 1,
       "type_signature": "(fromIntegral: Any, g: Any, g': Any, w: Any) -> Any",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -694,7 +694,7 @@
       "depth": 1,
       "type_signature": "(g: Any, skip: Any, skipConst: Any) -> Any",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -707,7 +707,7 @@
     {
       "node_id": "mulmod64_inner_step",
       "parent_id": "skip_root",
-      "name": "Mulmod64InnerStep",
+      "name": "mulmod64_inner_step",
       "description": "Atomic operation: Mulmod64InnerStep",
       "concept_type": "custom",
       "inputs": [
@@ -782,7 +782,7 @@
       "depth": 1,
       "type_signature": "(a': Any, a1: Any, b': Any, b1: Any, step: Any, otherwise: Any, r: Any, r': Any) -> Any",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -795,7 +795,7 @@
     {
       "node_id": "powmod64_inner_step",
       "parent_id": "skip_root",
-      "name": "Powmod64InnerStep",
+      "name": "powmod64_inner_step",
       "description": "Atomic operation: Powmod64InnerStep",
       "concept_type": "custom",
       "inputs": [
@@ -870,7 +870,7 @@
       "depth": 1,
       "type_signature": "(acc: Any, acc': Any, e': Any, e1: Any, step: Any, otherwise: Any, sqr: Any, sqr': Any) -> Any",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,

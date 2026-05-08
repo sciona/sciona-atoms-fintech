@@ -10,13 +10,13 @@
       "outputs": [],
       "status": "decomposed",
       "children": [
-        "marketmakerstateinit",
-        "optimalquotecalculation"
+        "market_maker_state_init",
+        "optimal_quote_calculation"
       ],
       "depth": 0,
       "type_signature": "",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -27,9 +27,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "marketmakerstateinit",
+      "node_id": "market_maker_state_init",
       "parent_id": "MarketMaker_root",
-      "name": "MarketMakerStateInit",
+      "name": "market_maker_state_init",
       "description": "Bootstraps the market-maker's immutable parameter state from a supplied initial mid-price and inventory position, materialising the five scalar fields — risk-aversion (gamma), market-depth (k), inventory (q), mid-price (s), and volatility (sigma) — that all downstream computations consume as pure inputs.",
       "concept_type": "state_init",
       "inputs": [
@@ -90,7 +90,7 @@
       "depth": 1,
       "type_signature": "(s0: float, inventory: float) -> tuple[float, float, float, float, float]",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -101,9 +101,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "optimalquotecalculation",
+      "node_id": "optimal_quote_calculation",
       "parent_id": "MarketMaker_root",
-      "name": "OptimalQuoteCalculation",
+      "name": "optimal_quote_calculation",
       "description": "Applies the Avellaneda-Stoikov closed-form formulae to derive (1) the inventory-skewed reservation price r = s − q·γ·σ² and (2) the symmetric optimal half-spread δ = γ·σ²·T + (2/γ)·ln(1 + γ/k), yielding a firm bid quote (r − δ/2) and ask quote (r + δ/2) that maximise expected utility under inventory risk.",
       "concept_type": "arithmetic",
       "inputs": [
@@ -178,7 +178,7 @@
       "depth": 1,
       "type_signature": "(gamma: float, k: float, q: float, s: float, sigma: float) -> tuple[float, float, float, float]",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -191,8 +191,8 @@
   ],
   "edges": [
     {
-      "source_id": "marketmakerstateinit",
-      "target_id": "optimalquotecalculation",
+      "source_id": "market_maker_state_init",
+      "target_id": "optimal_quote_calculation",
       "output_name": "gamma",
       "input_name": "gamma",
       "source_type": "float",
@@ -200,8 +200,8 @@
       "requires_glue": false
     },
     {
-      "source_id": "marketmakerstateinit",
-      "target_id": "optimalquotecalculation",
+      "source_id": "market_maker_state_init",
+      "target_id": "optimal_quote_calculation",
       "output_name": "k",
       "input_name": "k",
       "source_type": "float",
@@ -209,8 +209,8 @@
       "requires_glue": false
     },
     {
-      "source_id": "marketmakerstateinit",
-      "target_id": "optimalquotecalculation",
+      "source_id": "market_maker_state_init",
+      "target_id": "optimal_quote_calculation",
       "output_name": "q",
       "input_name": "q",
       "source_type": "float",
@@ -218,8 +218,8 @@
       "requires_glue": false
     },
     {
-      "source_id": "marketmakerstateinit",
-      "target_id": "optimalquotecalculation",
+      "source_id": "market_maker_state_init",
+      "target_id": "optimal_quote_calculation",
       "output_name": "s",
       "input_name": "s",
       "source_type": "float",
@@ -227,8 +227,8 @@
       "requires_glue": false
     },
     {
-      "source_id": "marketmakerstateinit",
-      "target_id": "optimalquotecalculation",
+      "source_id": "market_maker_state_init",
+      "target_id": "optimal_quote_calculation",
       "output_name": "sigma",
       "input_name": "sigma",
       "source_type": "float",

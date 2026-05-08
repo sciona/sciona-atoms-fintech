@@ -11,7 +11,7 @@ def witness_runmc(evalState: AbstractArray, evalStateT: AbstractArray, flip: Abs
     return result
 
 def witness_runsimulation(anti: AbstractArray, ccs: AbstractArray, modl: AbstractArray, run: AbstractArray, runMC: AbstractArray, seed: AbstractArray, trials: AbstractArray, undefined: AbstractArray) -> AbstractArray:
-    """Shape-and-type check for runsimulation. Returns output metadata without running the real computation."""
+    """Shape-and-type check for run_simulation. Returns output metadata without running the real computation."""
     result = AbstractArray(
         shape=anti.shape,
         dtype="float64",
@@ -19,7 +19,7 @@ def witness_runsimulation(anti: AbstractArray, ccs: AbstractArray, modl: Abstrac
     return result
 
 def witness_runsimulationanti(ccs: AbstractArray, modl: AbstractArray, runSim: AbstractArray, seed: AbstractArray, trials: AbstractArray) -> AbstractArray:
-    """Shape-and-type check for runsimulationanti. Returns output metadata without running the real computation."""
+    """Shape-and-type check for run_simulation_anti. Returns output metadata without running the real computation."""
     result = AbstractArray(
         shape=ccs.shape,
         dtype="float64",
@@ -27,7 +27,7 @@ def witness_runsimulationanti(ccs: AbstractArray, modl: AbstractArray, runSim: A
     return result
 
 def witness_quicksim(mdl: AbstractArray, opts: AbstractArray, pureMT: AbstractArray, runSimulation: AbstractArray, trials: AbstractArray) -> AbstractArray:
-    """Shape-and-type check for quicksim. Returns output metadata without running the real computation."""
+    """Shape-and-type check for quick_sim. Returns output metadata without running the real computation."""
     result = AbstractArray(
         shape=mdl.shape,
         dtype="float64",
@@ -35,7 +35,7 @@ def witness_quicksim(mdl: AbstractArray, opts: AbstractArray, pureMT: AbstractAr
     return result
 
 def witness_quicksimanti(mdl: AbstractArray, opts: AbstractArray, pureMT: AbstractArray, runSimulationAnti: AbstractArray, trials: AbstractArray) -> AbstractArray:
-    """Shape-and-type check for quicksimanti. Returns output metadata without running the real computation."""
+    """Shape-and-type check for quick_sim_anti. Returns output metadata without running the real computation."""
     result = AbstractArray(
         shape=mdl.shape,
         dtype="float64",
@@ -55,7 +55,7 @@ def witness_maxstep() -> AbstractArray:
     return AbstractArray(shape=(1,), dtype="float64")
 
 def witness_simulatestate(anti: AbstractArray, avg: AbstractArray, ccb: AbstractArray, modl: AbstractArray, replicateM: AbstractArray, singleTrial: AbstractArray, trials: AbstractArray) -> AbstractArray:
-    """Shape-and-type check for simulatestate. Returns output metadata without running the real computation."""
+    """Shape-and-type check for simulate_state. Returns output metadata without running the real computation."""
     result = AbstractArray(
         shape=anti.shape,
         dtype="float64",
@@ -103,7 +103,7 @@ def witness_process(discCFs: AbstractArray, return_val: AbstractArray) -> Abstra
     return result
 
 def witness_insertcf(amt: AbstractArray, amt_prime: AbstractArray, cfs: AbstractArray, insertCF: AbstractArray, otherwise: AbstractArray, t: AbstractArray, t_prime: AbstractArray) -> AbstractArray:
-    """Shape-and-type check for insertcf. Returns output metadata without running the real computation."""
+    """Shape-and-type check for insert_cf. Returns output metadata without running the real computation."""
     result = AbstractArray(
         shape=amt.shape,
         dtype="float64",
@@ -111,7 +111,7 @@ def witness_insertcf(amt: AbstractArray, amt_prime: AbstractArray, cfs: Abstract
     return result
 
 def witness_insertcf(cf: AbstractArray) -> AbstractArray:
-    """Shape-and-type check for insertcf. Returns output metadata without running the real computation."""
+    """Shape-and-type check for insert_cf. Returns output metadata without running the real computation."""
     result = AbstractArray(
         shape=cf.shape,
         dtype="float64",
@@ -127,7 +127,7 @@ def witness_avg(fromIntegral: AbstractArray, sum: AbstractArray, trials: Abstrac
     return result
 
 def witness_insertcflist(cfList: AbstractArray, flip: AbstractArray, foldl_prime: AbstractArray, insertCF: AbstractArray, xs: AbstractArray) -> AbstractArray:
-    """Shape-and-type check for insertcflist. Returns output metadata without running the real computation."""
+    """Shape-and-type check for insert_cf_list. Returns output metadata without running the real computation."""
     result = AbstractArray(
         shape=cfList.shape,
         dtype="float64",
@@ -135,7 +135,7 @@ def witness_insertcflist(cfList: AbstractArray, flip: AbstractArray, foldl_prime
     return result
 
 def witness_insertcflist(cfList: AbstractArray, flip: AbstractArray, foldl_prime: AbstractArray, insertCF: AbstractArray, xs: AbstractArray) -> AbstractArray:
-    """Shape-and-type check for insertcflist. Returns output metadata without running the real computation."""
+    """Shape-and-type check for insert_cf_list. Returns output metadata without running the real computation."""
     result = AbstractArray(
         shape=cfList.shape,
         dtype="float64",

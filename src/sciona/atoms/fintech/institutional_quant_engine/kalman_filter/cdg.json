@@ -10,8 +10,8 @@
       "outputs": [],
       "status": "decomposed",
       "children": [
-        "kalmanfilterinit",
-        "kalmanmeasurementupdate"
+        "kalman_filter_init",
+        "kalman_measurement_update"
       ],
       "depth": 0,
       "type_signature": "",
@@ -25,9 +25,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "kalmanfilterinit",
+      "node_id": "kalman_filter_init",
       "parent_id": "kalman_filter_root",
-      "name": "KalmanFilterInit",
+      "name": "kalman_filter_init",
       "description": "Initialize scalar Kalman covariances and a zero-valued prior estimate.",
       "concept_type": "state_init",
       "inputs": [
@@ -76,9 +76,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "kalmanmeasurementupdate",
+      "node_id": "kalman_measurement_update",
       "parent_id": "kalman_filter_root",
-      "name": "KalmanMeasurementUpdate",
+      "name": "kalman_measurement_update",
       "description": "Run one scalar Kalman predict/update transition for a new measurement.",
       "concept_type": "posterior_update",
       "inputs": [
@@ -122,8 +122,8 @@
   ],
   "edges": [
     {
-      "source_id": "kalmanfilterinit",
-      "target_id": "kalmanmeasurementupdate",
+      "source_id": "kalman_filter_init",
+      "target_id": "kalman_measurement_update",
       "output_name": "state",
       "input_name": "prior_state",
       "source_type": "KalmanState",

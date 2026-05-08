@@ -26,7 +26,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.char_func_option_d12.charfuncoption@sciona/atoms/fintech/quantfin/char_func_option_d12/atoms.py:26": {
+    "sciona.atoms.fintech.quantfin.char_func_option_d12.char_func_option@sciona/atoms/fintech/quantfin/char_func_option_d12/atoms.py:26": {
       "references": [
         {
           "ref_id": "heston1993",

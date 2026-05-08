@@ -10,13 +10,13 @@
       "outputs": [],
       "status": "decomposed",
       "children": [
-        "riskaversioninit",
-        "optimalexecutiontrajectory"
+        "risk_aversion_init",
+        "optimal_execution_trajectory"
       ],
       "depth": 0,
       "type_signature": "",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -27,16 +27,16 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "riskaversioninit",
+      "node_id": "risk_aversion_init",
       "parent_id": "AlmgrenChriss_root",
-      "name": "RiskAversionInit",
+      "name": "risk_aversion_init",
       "description": "Bootstraps the Almgren-Chriss model by storing the scalar risk-aversion parameter that governs the volatility-vs-impact trade-off in all subsequent trajectory computations.",
       "concept_type": "state_init",
       "inputs": [
         {
           "name": "risk_aversion",
           "type_desc": "float",
-          "constraints": "\u2265 0",
+          "constraints": "≥ 0",
           "required": true,
           "default_value_repr": ""
         }
@@ -45,7 +45,7 @@
         {
           "name": "risk_aversion",
           "type_desc": "float",
-          "constraints": "\u2265 0",
+          "constraints": "≥ 0",
           "required": true,
           "default_value_repr": ""
         }
@@ -55,27 +55,27 @@
       "depth": 1,
       "type_signature": "(risk_aversion: float) -> float",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
       "is_external": false,
       "parallelizable": false,
-      "conceptual_summary": "ScalarTradeoffWeightInit. Accepts a single non-negative scalar that encodes the relative penalty weight between two competing optimization objectives, validates its domain constraint (\u2265 0), and persists it as an immutable configuration constant for all downstream computations. This initializer acts as the seed of a parameterized cost functional, fixing the convex combination coefficient that continuously governs how strongly one loss term (e.g., variance, dispersion, uncertainty) is penalized relative to another (e.g., expected cost, throughput, fidelity). The stored constant functions as a Lagrange-multiplier-like hyperparameter that shifts the Pareto frontier traversal point across the feasible solution space.. Applications: Robotics motion planning: initializing a scalar stiffness-vs-energy-expenditure trade-off coefficient in a trajectory optimizer, where higher values penalize joint-torque variance more strongly relative to path length cost, shifting the robot's behavior from aggressive to smooth motion profiles, Bayesian neural network inference: seeding a precision hyperparameter (inverse variance weight) that governs the relative contribution of the KL-divergence regularization term versus the likelihood reconstruction loss in a variational autoencoder's ELBO objective, controlling posterior concentration, Structural engineering topology optimization: storing a compliance-vs-material-volume penalty scalar in a SIMP (Solid Isotropic Material with Penalization) solver, where the constant determines how aggressively mass distribution uncertainty is penalized relative to structural stiffness in each density-field update step, Epidemiological compartmental modeling: binding a non-negative scalar that weights intervention cost (economic disruption) against transmission-rate variance in a stochastic SIR/SEIR optimal-control formulation, fixing the risk-sensitivity level before integrating the Hamilton-Jacobi-Bellman equations forward in time",
+      "conceptual_summary": "ScalarTradeoffWeightInit. Accepts a single non-negative scalar that encodes the relative penalty weight between two competing optimization objectives, validates its domain constraint (≥ 0), and persists it as an immutable configuration constant for all downstream computations. This initializer acts as the seed of a parameterized cost functional, fixing the convex combination coefficient that continuously governs how strongly one loss term (e.g., variance, dispersion, uncertainty) is penalized relative to another (e.g., expected cost, throughput, fidelity). The stored constant functions as a Lagrange-multiplier-like hyperparameter that shifts the Pareto frontier traversal point across the feasible solution space.. Applications: Robotics motion planning: initializing a scalar stiffness-vs-energy-expenditure trade-off coefficient in a trajectory optimizer, where higher values penalize joint-torque variance more strongly relative to path length cost, shifting the robot's behavior from aggressive to smooth motion profiles, Bayesian neural network inference: seeding a precision hyperparameter (inverse variance weight) that governs the relative contribution of the KL-divergence regularization term versus the likelihood reconstruction loss in a variational autoencoder's ELBO objective, controlling posterior concentration, Structural engineering topology optimization: storing a compliance-vs-material-volume penalty scalar in a SIMP (Solid Isotropic Material with Penalization) solver, where the constant determines how aggressively mass distribution uncertainty is penalized relative to structural stiffness in each density-field update step, Epidemiological compartmental modeling: binding a non-negative scalar that weights intervention cost (economic disruption) against transmission-rate variance in a stochastic SIR/SEIR optimal-control formulation, fixing the risk-sensitivity level before integrating the Hamilton-Jacobi-Bellman equations forward in time",
       "critic_notes": "",
       "decomposition_rationale": ""
     },
     {
-      "node_id": "optimalexecutiontrajectory",
+      "node_id": "optimal_execution_trajectory",
       "parent_id": "AlmgrenChriss_root",
-      "name": "OptimalExecutionTrajectory",
+      "name": "optimal_execution_trajectory",
       "description": "Solves the Almgren-Chriss discrete-time optimal liquidation problem: given total shares and a horizon in days, applies dynamic-programming / optimal-control to produce the cost-minimizing share-selling schedule that balances market-impact cost against price-risk, parameterised by risk_aversion.",
       "concept_type": "dynamic_programming",
       "inputs": [
         {
           "name": "risk_aversion",
           "type_desc": "float",
-          "constraints": "\u2265 0",
+          "constraints": "≥ 0",
           "required": true,
           "default_value_repr": ""
         },
@@ -89,7 +89,7 @@
         {
           "name": "days",
           "type_desc": "int",
-          "constraints": "\u2265 1",
+          "constraints": "≥ 1",
           "required": true,
           "default_value_repr": ""
         }
@@ -108,7 +108,7 @@
       "depth": 1,
       "type_signature": "(risk_aversion: float, total_shares: float, days: int) -> list[float]",
       "matched_primitive": null,
-      "primitive_binding_confidence": 0.0,
+      "primitive_binding_confidence": 0,
       "primitive_binding_source": "",
       "is_optional": false,
       "is_opaque": false,
@@ -121,8 +121,8 @@
   ],
   "edges": [
     {
-      "source_id": "riskaversioninit",
-      "target_id": "optimalexecutiontrajectory",
+      "source_id": "risk_aversion_init",
+      "target_id": "optimal_execution_trajectory",
       "output_name": "risk_aversion",
       "input_name": "risk_aversion",
       "source_type": "float",

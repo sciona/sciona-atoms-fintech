@@ -3,7 +3,7 @@ from sciona.ghost.abstract import AbstractArray, AbstractScalar, AbstractDistrib
 
 
 def witness_randomword32(c: AbstractArray, state: AbstractArray, state_prime: AbstractArray, x: AbstractArray, xor: AbstractArray) -> AbstractArray:
-    """Shape-and-type check for randomword32. Returns output metadata without running the real computation."""
+    """Shape-and-type check for random_word_32. Returns output metadata without running the real computation."""
     result = AbstractArray(
         shape=c.shape,
         dtype="float64",
@@ -11,7 +11,7 @@ def witness_randomword32(c: AbstractArray, state: AbstractArray, state_prime: Ab
     return result
 
 def witness_randomint(fromIntegral: AbstractArray, g: AbstractArray, g_prime: AbstractArray, i: AbstractArray) -> AbstractArray:
-    """Shape-and-type check for randomint. Returns output metadata without running the real computation."""
+    """Shape-and-type check for random_int. Returns output metadata without running the real computation."""
     result = AbstractArray(
         shape=fromIntegral.shape,
         dtype="float64",
@@ -19,7 +19,7 @@ def witness_randomint(fromIntegral: AbstractArray, g: AbstractArray, g_prime: Ab
     return result
 
 def witness_randomword64(buildWord64_prime: AbstractArray, x: AbstractArray, x_prime: AbstractArray, y1: AbstractArray, y2: AbstractArray) -> AbstractArray:
-    """Shape-and-type check for randomword64. Returns output metadata without running the real computation."""
+    """Shape-and-type check for random_word_64. Returns output metadata without running the real computation."""
     result = AbstractArray(
         shape=buildWord64_prime.shape,
         dtype="float64",
@@ -27,7 +27,7 @@ def witness_randomword64(buildWord64_prime: AbstractArray, x: AbstractArray, x_p
     return result
 
 def witness_randomdouble(div: AbstractArray, fromIntegral: AbstractArray, val: AbstractArray, x: AbstractArray, x_prime: AbstractArray) -> AbstractArray:
-    """Shape-and-type check for randomdouble. Returns output metadata without running the real computation."""
+    """Shape-and-type check for random_double. Returns output metadata without running the real computation."""
     result = AbstractArray(
         shape=div.shape,
         dtype="float64",
@@ -35,7 +35,7 @@ def witness_randomdouble(div: AbstractArray, fromIntegral: AbstractArray, val: A
     return result
 
 def witness_randomint64(fromIntegral: AbstractArray, g: AbstractArray, g_prime: AbstractArray, i: AbstractArray) -> AbstractArray:
-    """Shape-and-type check for randomint64. Returns output metadata without running the real computation."""
+    """Shape-and-type check for random_int_64. Returns output metadata without running the real computation."""
     result = AbstractArray(
         shape=fromIntegral.shape,
         dtype="float64",
@@ -43,7 +43,7 @@ def witness_randomint64(fromIntegral: AbstractArray, g: AbstractArray, g_prime: 
     return result
 
 def witness_addmod64(a: AbstractArray, b: AbstractArray, m: AbstractArray, mod: AbstractArray) -> AbstractArray:
-    """Shape-and-type check for addmod64. Returns output metadata without running the real computation."""
+    """Shape-and-type check for add_mod_64. Returns output metadata without running the real computation."""
     result = AbstractArray(
         shape=a.shape,
         dtype="float64",
@@ -51,7 +51,7 @@ def witness_addmod64(a: AbstractArray, b: AbstractArray, m: AbstractArray, mod: 
     return result
 
 def witness_mulmod64(a: AbstractArray, b: AbstractArray, f: AbstractArray, m: AbstractArray) -> AbstractArray:
-    """Shape-and-type check for mulmod64. Returns output metadata without running the real computation."""
+    """Shape-and-type check for mul_mod_64. Returns output metadata without running the real computation."""
     result = AbstractArray(
         shape=a.shape,
         dtype="float64",
@@ -59,7 +59,7 @@ def witness_mulmod64(a: AbstractArray, b: AbstractArray, f: AbstractArray, m: Ab
     return result
 
 def witness_powmod64(a: AbstractArray, e: AbstractArray, f: AbstractArray, m: AbstractArray) -> AbstractArray:
-    """Shape-and-type check for powmod64. Returns output metadata without running the real computation."""
+    """Shape-and-type check for pow_mod_64. Returns output metadata without running the real computation."""
     result = AbstractArray(
         shape=a.shape,
         dtype="float64",

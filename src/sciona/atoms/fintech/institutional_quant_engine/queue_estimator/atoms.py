@@ -19,7 +19,7 @@ def _is_numeric_scalar(value: object) -> bool:
 @icontract.require(lambda my_order_id: isinstance(my_order_id, str) and bool(my_order_id), "my_order_id must be a non-empty string")
 @icontract.require(lambda my_qty: _is_numeric_scalar(my_qty) and float(my_qty) >= 0.0, "my_qty must be non-negative")
 @icontract.ensure(lambda result: result.my_qty >= 0.0 and result.orders_ahead >= 0.0, "state quantities must remain non-negative")
-def initializeorderstate(my_order_id: str, my_qty: float) -> OrderState:
+def initialize_order_state(my_order_id: str, my_qty: float) -> OrderState:
     """Create the initial queue state for a newly submitted order.
 
     Args:
@@ -42,7 +42,7 @@ def initializeorderstate(my_order_id: str, my_qty: float) -> OrderState:
 @icontract.require(lambda current_order_state: current_order_state is not None, "current_order_state cannot be None")
 @icontract.require(lambda trade_qty: _is_numeric_scalar(trade_qty) and float(trade_qty) >= 0.0, "trade_qty must be non-negative")
 @icontract.ensure(lambda result: result.my_qty >= 0.0 and result.orders_ahead >= 0.0, "updated state quantities must remain non-negative")
-def updatequeueontrade(current_order_state: OrderState, trade_qty: float) -> OrderState:
+def update_queue_on_trade(current_order_state: OrderState, trade_qty: float) -> OrderState:
     """Advance queue state after an executed trade consumes displayed quantity.
 
     Args:

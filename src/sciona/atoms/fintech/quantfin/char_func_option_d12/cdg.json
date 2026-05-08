@@ -10,7 +10,7 @@
       "outputs": [],
       "status": "decomposed",
       "children": [
-        "charfuncoption",
+        "char_func_option",
         "integrand_f",
         "cf"
       ],
@@ -26,9 +26,9 @@
       "decomposition_rationale": ""
     },
     {
-      "node_id": "charfuncoption",
+      "node_id": "char_func_option",
       "parent_id": "char_func_option_root",
-      "name": "CharFuncOption",
+      "name": "char_func_option",
       "description": "Price a European option via a damped characteristic-function inversion formula.",
       "concept_type": "custom",
       "inputs": [
@@ -216,7 +216,7 @@
     {
       "node_id": "integrand_f",
       "parent_id": "char_func_option_root",
-      "name": "IntegrandF",
+      "name": "integrand_f",
       "description": "Evaluate the real-valued Fourier integrand for characteristic-function pricing.",
       "concept_type": "signal_transform",
       "inputs": [

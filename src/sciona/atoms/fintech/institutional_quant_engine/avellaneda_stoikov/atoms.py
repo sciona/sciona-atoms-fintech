@@ -14,7 +14,7 @@ from .witnesses import witness_computeinventoryadjustedquotes, witness_initializ
 @register_atom(witness_initializemarketmakerstate)
 @icontract.require(lambda inventory: isinstance(inventory, (float, int, np.number)), "inventory must be numeric")
 @icontract.ensure(lambda result: result is not None, "InitializeMarketMakerState output must not be None")
-def initializemarketmakerstate(s0: float, inventory: float) -> dict[str, float]:
+def initialize_market_maker_state(s0: float, inventory: float) -> dict[str, float]:
     """Construct the immutable market-making state object with model parameters and initial market/inventory values.
 
     Args:
@@ -29,7 +29,7 @@ def initializemarketmakerstate(s0: float, inventory: float) -> dict[str, float]:
 @register_atom(witness_computeinventoryadjustedquotes)
 @icontract.require(lambda state_model: isinstance(state_model, dict), "state_model must be a dict")
 @icontract.ensure(lambda result: result is not None, "ComputeInventoryAdjustedQuotes output must not be None")
-def computeinventoryadjustedquotes(state_model: dict[str, float]) -> dict[str, float]:
+def compute_inventory_adjusted_quotes(state_model: dict[str, float]) -> dict[str, float]:
     """Compute inventory-adjusted quotes from the state model.
 
     Args:

@@ -20,7 +20,7 @@ def _is_numeric_scalar(value: object) -> bool:
 @icontract.require(lambda measurement_variance: _is_numeric_scalar(measurement_variance) and float(measurement_variance) > 0.0, "measurement_variance must be positive")
 @icontract.require(lambda estimated_measurement_variance: _is_numeric_scalar(estimated_measurement_variance) and float(estimated_measurement_variance) > 0.0, "estimated_measurement_variance must be positive")
 @icontract.ensure(lambda result: result.p > 0.0 and result.q > 0.0 and result.r > 0.0, "all covariance terms must remain positive")
-def kalmanfilterinit(
+def kalman_filter_init(
     process_variance: float,
     measurement_variance: float,
     estimated_measurement_variance: float,
@@ -48,7 +48,7 @@ def kalmanfilterinit(
 @icontract.require(lambda prior_state: prior_state is not None, "prior_state cannot be None")
 @icontract.require(lambda measurement: _is_numeric_scalar(measurement), "measurement must be numeric")
 @icontract.ensure(lambda result: result.p > 0.0, "posterior covariance must remain positive")
-def kalmanmeasurementupdate(prior_state: KalmanState, measurement: float) -> KalmanState:
+def kalman_measurement_update(prior_state: KalmanState, measurement: float) -> KalmanState:
     """Run one scalar Kalman predict/update step.
 
     Args:

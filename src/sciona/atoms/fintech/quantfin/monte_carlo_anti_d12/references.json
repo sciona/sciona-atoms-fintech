@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1",
   "atoms": {
-    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.avg@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:695": {
+    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.avg@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:718": {
       "references": [
         {
           "ref_id": "glasserman2003",
@@ -26,7 +26,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.evolve@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:224": {
+    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.evolve@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:234": {
       "references": [
         {
           "ref_id": "glasserman2003",
@@ -151,7 +151,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.maxstep@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:281": {
+    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.maxstep@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:304": {
       "references": [
         {
           "ref_id": "glasserman2003",
@@ -276,7 +276,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.quick_sim@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:158": {
+    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.quick_sim@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:168": {
       "references": [
         {
           "ref_id": "glasserman2003",
@@ -301,7 +301,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.quick_sim_anti@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:191": {
+    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.quick_sim_anti@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:201": {
       "references": [
         {
           "ref_id": "glasserman2003",
@@ -326,7 +326,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.runmc@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:39": {
+    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.runmc@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:49": {
       "references": [
         {
           "ref_id": "glasserman2003",
@@ -351,7 +351,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.runsim@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:339": {
+    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.runsim@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:362": {
       "references": [
         {
           "ref_id": "glasserman2003",
@@ -376,7 +376,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.run_simulation@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:83": {
+    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.run_simulation@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:93": {
       "references": [
         {
           "ref_id": "glasserman2003",
@@ -401,7 +401,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.run_simulation_anti@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:122": {
+    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.run_simulation_anti@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:132": {
       "references": [
         {
           "ref_id": "glasserman2003",
@@ -426,7 +426,7 @@
       ],
       "auto_attribution_runs": []
     },
-    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.simulate_state@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:301": {
+    "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.simulate_state@sciona/atoms/fintech/quantfin/monte_carlo_anti_d12/atoms.py:324": {
       "references": [
         {
           "ref_id": "glasserman2003",

@@ -82,7 +82,11 @@
       "parallelizable": false,
       "conceptual_summary": "Thomas-algorithm solve for tridiagonal systems.",
       "critic_notes": "",
-      "decomposition_rationale": "Matches upstream Quant.Math.Utilities.tdmaSolver."
+      "decomposition_rationale": "Matches upstream Quant.Math.Utilities.tdmaSolver.",
+      "time_complexity": "O(n)",
+      "space_complexity": "O(n)",
+      "complexity_reasoning": "Solves a tridiagonal linear system using the Thomas algorithm, performing a forward sweep and back substitution in linear time and space relative to system size.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "cotraverse_vec",
@@ -133,7 +137,11 @@
       "parallelizable": true,
       "conceptual_summary": "Index-wise co-traversal over a vector container.",
       "critic_notes": "",
-      "decomposition_rationale": "Matches upstream Quant.Math.Utilities.cotraverseVec."
+      "decomposition_rationale": "Matches upstream Quant.Math.Utilities.cotraverseVec.",
+      "time_complexity": "O(l * m)",
+      "space_complexity": "O(l + m)",
+      "complexity_reasoning": "Constructs a slice of size m for each of the l indices and applies an aggregator, taking O(l * m) time and allocating O(l) output elements and O(m) temporary slice elements.",
+      "complexity_confidence": 95
     }
   ]
 }

@@ -102,7 +102,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Performs bitwise XOR and masking operations on scalar values in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "random_int",
@@ -162,7 +166,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Performs platform type-conversion on scalar values in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "random_word_64",
@@ -229,7 +237,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Combines two 32-bit word inputs into a single 64-bit word using constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "random_double",
@@ -296,7 +308,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Converts a 64-bit integer to a double and performs a scalar division in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "random_int_64",
@@ -356,7 +372,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Converts a word to a 64-bit signed integer in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "add_mod_64",
@@ -416,7 +436,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Computes modular addition of two 64-bit integers in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "mul_mod_64",
@@ -476,7 +500,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Computes modular multiplication of two 64-bit integers in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "pow_mod_64",
@@ -536,7 +564,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(log e)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Computes modular exponentiation using the binary square-and-multiply algorithm in logarithmic time relative to the exponent.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "skip",
@@ -589,7 +621,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(log d)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Advances the generator state forward by d steps using modular exponentiation in logarithmic time relative to the skip distance.",
+      "complexity_confidence": 95
     },
     {
       "node_id": "next",
@@ -649,7 +685,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Advances the generator by one step and returns a platform integer in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "split",
@@ -702,7 +742,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(log skipConst)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Splits the generator state into two streams by skipping one forward by skipConst in logarithmic time.",
+      "complexity_confidence": 95
     },
     {
       "node_id": "mulmod64_inner_step",
@@ -790,7 +834,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Executes a single shift-and-add iteration for modular multiplication in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "powmod64_inner_step",
@@ -878,7 +926,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Executes a single square-and-multiply iteration for modular exponentiation in constant time and space.",
+      "complexity_confidence": 100
     }
   ],
   "edges": [],

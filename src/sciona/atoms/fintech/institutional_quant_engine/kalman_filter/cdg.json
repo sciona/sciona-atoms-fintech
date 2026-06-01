@@ -73,7 +73,11 @@
       "parallelizable": false,
       "conceptual_summary": "Prepare a scalar Kalman prior state from fixed covariance hyperparameters.",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Initializes and returns a KalmanState object in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "kalman_measurement_update",
@@ -117,7 +121,11 @@
       "parallelizable": false,
       "conceptual_summary": "Fuse one scalar measurement into the prior Kalman state.",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Executes one step of predict/update calculations on scalars in constant time and space.",
+      "complexity_confidence": 100
     }
   ],
   "edges": [

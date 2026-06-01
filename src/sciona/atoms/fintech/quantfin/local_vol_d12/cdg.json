@@ -78,7 +78,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Performs standard scalar floating-point multiplication in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "local_vol",
@@ -156,7 +160,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Evaluates the Dupire local volatility formula via scalar arithmetic and a square root in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "flat_vol",
@@ -189,7 +197,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Retrieves a precomputed constant volatility value from a flat surface in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "interpolated_vol",
@@ -267,7 +279,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(m)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Interpolates along the maturity time axis of size m in linear or logarithmic time relative to the number of grid points.",
+      "complexity_confidence": 95
     },
     {
       "node_id": "allfort",
@@ -320,7 +336,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(s)",
+      "space_complexity": "O(s)",
+      "complexity_reasoning": "Iterates over and looks up a volatility quote for each of the s grid strikes at the specified maturity, producing a list of size s.",
+      "complexity_confidence": 95
     }
   ],
   "edges": [],

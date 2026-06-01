@@ -71,7 +71,11 @@
       "parallelizable": false,
       "conceptual_summary": "initialize_2d_scalar_state. Generates a fixed, two-dimensional state vector represented by two independent scalar floating-point values. This function acts as a factory, providing a deterministic, hardcoded starting point for any system or model requiring a two-parameter initial condition.. Applications: Initializing the starting (x, y) coordinates for a particle in a 2D particle filter for robot localization., Setting the initial proportional and integral gain parameters for a PI controller in a feedback control system before an auto-tuning process begins., Defining the initial population sizes for two interacting species in a Lotka-Volterra predator-prey model., Establishing the starting weights for a two-neuron, single-layer perceptron in a simple neural network.",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Performs a simple zero-parameter initialization returning a two-tuple of constant floats in constant time.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "update_glft_coefficients",
@@ -159,7 +163,11 @@
       "parallelizable": false,
       "conceptual_summary": "iterative_coupled_scalar_update. Calculates the subsequent state of a 2-dimensional system from its preceding state. The transformation is a deterministic function of the two previous state components and a set of scalar control parameters, modeling a single step in a discrete-time evolution.. Applications: Simulating predator-prey population dynamics, where the two state variables represent the populations of two interacting species., Modeling the concentration of two chemical species in a reaction network over a discrete time step., Updating the position and velocity of a simulated physical object in a 2D physics engine, subject to forces defined by the control parameters., Evolving the activation level and fatigue state of a neuron in a computational neuroscience model.",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Computes the model coefficients via a closed-form formula using basic mathematical operations in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "evaluate_spread_conditions",
@@ -310,7 +318,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Computes the half-spread using standard floating-point arithmetic operations in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "validate_spread_to_c1_ratio",
@@ -363,7 +375,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Performs a single conditional check and scalar division in constant time and space.",
+      "complexity_confidence": 100
     }
   ],
   "edges": [

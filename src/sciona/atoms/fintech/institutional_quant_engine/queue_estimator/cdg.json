@@ -65,7 +65,11 @@
       "parallelizable": false,
       "conceptual_summary": "InitializePrioritizedEntity. Instantiates a state record for a new entity entering a sequenced or prioritized system. The transform captures the entity's intrinsic scalar magnitude and the cumulative magnitude of all entities preceding it, packaging these values into an initial state vector with a default status flag.. Applications: In particle physics simulations, initializing a new particle's state with its energy and the cumulative energy of prior particles in a detector event., In epidemiology, seeding a new infection case with its initial viral load and the total number of existing cases in the population to model its spread potential., In network engineering, creating a record for a new data packet in a buffer, noting its size and the total size of packets ahead of it for Quality-of-Service (QoS) latency calculations.",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Constructs and returns an OrderState object in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "update_queue_on_trade",
@@ -103,7 +107,11 @@
       "parallelizable": false,
       "conceptual_summary": "CumulativeThresholdedDecrement. Applies a scalar input to decrement a primary quantitative metric within a state object. If the input exceeds the current value of the primary metric, the remainder is used to increment a secondary metric in the state object. This represents a deterministic state transition where consuming one resource can trigger the accumulation of another.. Applications: Inventory Management: Depleting stock from a primary warehouse and then sourcing from a secondary one once the first is empty., Cellular Biology: Modeling the consumption of a primary energy source (like glucose) by a cell, and switching to a secondary source (like ketones) upon depletion., Digital Signal Processing: Simulating a 'bucket' integrator where an input signal fills a primary register, and overflow is accumulated in a secondary register., Nuclear Physics: Tracking the absorption of incident radiation by a shield material, where exceeding the primary shield's capacity leads to energy deposition in a secondary layer.",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Calculates the updated queue position and filled status via simple scalar arithmetic in constant time and space.",
+      "complexity_confidence": 100
     }
   ],
   "edges": [

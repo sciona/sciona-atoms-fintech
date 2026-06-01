@@ -211,7 +211,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Performs numerical integration of scalar functions over fixed bounds and tolerance in constant time and space.",
+      "complexity_confidence": 95
     },
     {
       "node_id": "integrand_f",
@@ -279,7 +283,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Evaluates a closed-form complex arithmetic expression in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "cf",
@@ -332,7 +340,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Evaluates the martingale-corrected characteristic function at a single complex frequency in constant time and space.",
+      "complexity_confidence": 100
     }
   ],
   "edges": [],

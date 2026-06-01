@@ -100,7 +100,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(n)",
+      "space_complexity": "O(n)",
+      "complexity_reasoning": "Copies the existing ofi_stream list of length n to append a new element and construct the updated state object.",
+      "complexity_confidence": 95
     },
     {
       "node_id": "execute_vwap",
@@ -146,7 +150,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Performs basic comparisons and arithmetic on scalars and copies a fixed-size state object in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "execute_pov",
@@ -192,7 +200,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Updates scalar state variables (inventory and orders ahead) using simple comparisons in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "execute_passive",
@@ -238,7 +250,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Adjusts inventory and queue depth based on trade quantity using constant-time scalar arithmetic.",
+      "complexity_confidence": 100
     }
   ],
   "edges": [],

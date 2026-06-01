@@ -63,7 +63,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(n)",
+      "space_complexity": "O(n)",
+      "complexity_reasoning": "Generates stochastic paths of size n by 100 using NumPy array operations in linear time and space relative to the input dimension.",
+      "complexity_confidence": 95
     },
     {
       "node_id": "volatility_surface_modeling",
@@ -102,7 +106,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(N^3)",
+      "space_complexity": "O(N^2)",
+      "complexity_reasoning": "Performs RBF interpolation on 2D grids, requiring solving an N x N linear system which scales cubically in time and quadratically in space with the number of elements.",
+      "complexity_confidence": 95
     }
   ],
   "edges": [],

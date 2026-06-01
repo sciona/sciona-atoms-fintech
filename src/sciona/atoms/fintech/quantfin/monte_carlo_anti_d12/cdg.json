@@ -128,7 +128,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Runs a single Monte Carlo trial by evaluating nested monadic layers in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "run_simulation",
@@ -216,7 +220,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(trials)",
+      "space_complexity": "O(trials)",
+      "complexity_reasoning": "Executes the Monte Carlo loop for a given number of trials, allocating memory to collect results from all simulation runs.",
+      "complexity_confidence": 95
     },
     {
       "node_id": "run_simulation_anti",
@@ -283,7 +291,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(trials)",
+      "space_complexity": "O(trials)",
+      "complexity_reasoning": "Runs two separate simulation halves of size trials/2 and averages their results, taking linear time and space in the total number of trials.",
+      "complexity_confidence": 95
     },
     {
       "node_id": "quick_sim",
@@ -350,7 +362,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(trials)",
+      "space_complexity": "O(trials)",
+      "complexity_reasoning": "A convenience wrapper running the full Monte Carlo simulation with trials count in linear time and space.",
+      "complexity_confidence": 95
     },
     {
       "node_id": "quick_sim_anti",
@@ -417,7 +433,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(trials)",
+      "space_complexity": "O(trials)",
+      "complexity_reasoning": "A convenience wrapper executing the antithetic simulation with trials count in linear time and space.",
+      "complexity_confidence": 95
     },
     {
       "node_id": "evolve",
@@ -533,7 +553,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(S)",
+      "space_complexity": "O(S)",
+      "complexity_reasoning": "Evolves the model state by recursively dividing the time horizon into S sub-steps of size ms, requiring linear time and recursion depth.",
+      "complexity_confidence": 95
     },
     {
       "node_id": "maxstep",
@@ -572,7 +596,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Returns a preconfigured constant time step value in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "simulate_state",
@@ -653,7 +681,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(trials)",
+      "space_complexity": "O(trials)",
+      "complexity_reasoning": "Replicates single trial runs trials times, collecting their results in a list and averaging them in linear time and space.",
+      "complexity_confidence": 95
     },
     {
       "node_id": "runsim",
@@ -734,7 +766,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(trials)",
+      "space_complexity": "O(trials)",
+      "complexity_reasoning": "Executes a simulation run for trials/2 trials in linear time and space.",
+      "complexity_confidence": 95
     },
     {
       "node_id": "process",
@@ -969,7 +1005,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Processes a single cash flow or observation event by evolving state and discounting a payment in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "process",
@@ -1155,7 +1195,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Processes a single observation event, updates observation state, and evaluates payoffs in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "process",
@@ -1271,7 +1315,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Processes a single cash-flow event by evolving state and discounting the cash flow in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "process",
@@ -1317,7 +1365,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Returns the accumulated discounted cash flows in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "insert_cf",
@@ -1398,7 +1450,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(c)",
+      "space_complexity": "O(c)",
+      "complexity_reasoning": "Inserts a cash flow into a sorted list of length c, taking linear time and recursion depth to find the insertion point.",
+      "complexity_confidence": 95
     },
     {
       "node_id": "insert_cf",
@@ -1437,7 +1493,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Creates and returns a single-element list containing the cash flow in constant time and space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "avg",
@@ -1497,7 +1557,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(trials)",
+      "space_complexity": "O(1)",
+      "complexity_reasoning": "Sums a list of trials values and divides by the trial count, taking linear time and constant auxiliary space.",
+      "complexity_confidence": 100
     },
     {
       "node_id": "insert_cf_list",
@@ -1564,7 +1628,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(k * (c + k))",
+      "space_complexity": "O(c + k)",
+      "complexity_reasoning": "Sequentially inserts k new cash flows into a sorted list of size c, requiring quadratic time in the number of insertions and linear space.",
+      "complexity_confidence": 95
     },
     {
       "node_id": "insert_cf_list",
@@ -1631,7 +1699,11 @@
       "parallelizable": false,
       "conceptual_summary": "",
       "critic_notes": "",
-      "decomposition_rationale": ""
+      "decomposition_rationale": "",
+      "time_complexity": "O(k * (c + k))",
+      "space_complexity": "O(c + k)",
+      "complexity_reasoning": "Sequentially inserts k new cash flows into a sorted list of size c, requiring quadratic time in the number of insertions and linear space.",
+      "complexity_confidence": 95
     }
   ],
   "edges": [],

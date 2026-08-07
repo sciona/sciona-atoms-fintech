@@ -10,7 +10,7 @@ BUNDLE_PATH = REPO_ROOT / "docs/review-bundles" / "quantfin_review_bundle.json"
 LOCAL_VOL_MODULE = "sciona.atoms.fintech.quantfin.local_vol_d12"
 EXPECTED_LOCAL_VOL_KEYS = {
     f"{LOCAL_VOL_MODULE}.allfort",
-    f"{LOCAL_VOL_MODULE}.localvol",
+    f"{LOCAL_VOL_MODULE}.local_vol",
     f"{LOCAL_VOL_MODULE}.var",
     f"{LOCAL_VOL_MODULE}.vol_flat_surface",
     f"{LOCAL_VOL_MODULE}.vol_interpolated_surface",
@@ -59,6 +59,6 @@ def test_quantfin_local_vol_d12_row_is_ready_and_importable() -> None:
 
 def test_quantfin_bundle_rollup_counts() -> None:
     bundle = _load_bundle()
-    assert bundle["ready_rows"] == 6
+    assert bundle["ready_rows"] == 7
     assert bundle["conditional_rows"] == 0
-    assert bundle["not_ready_rows"] == 1
+    assert bundle["not_ready_rows"] == 0

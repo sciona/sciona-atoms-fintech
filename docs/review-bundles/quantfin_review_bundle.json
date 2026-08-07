@@ -79,7 +79,7 @@
     {
       "atom_keys": [
         "sciona.atoms.fintech.quantfin.char_func_option_d12.cf",
-        "sciona.atoms.fintech.quantfin.char_func_option_d12.charfuncoption",
+        "sciona.atoms.fintech.quantfin.char_func_option_d12.char_func_option",
         "sciona.atoms.fintech.quantfin.char_func_option_d12.f"
       ],
       "authoritative_sources": [
@@ -112,7 +112,7 @@
     {
       "atom_keys": [
         "sciona.atoms.fintech.quantfin.local_vol_d12.allfort",
-        "sciona.atoms.fintech.quantfin.local_vol_d12.localvol",
+        "sciona.atoms.fintech.quantfin.local_vol_d12.local_vol",
         "sciona.atoms.fintech.quantfin.local_vol_d12.var",
         "sciona.atoms.fintech.quantfin.local_vol_d12.vol_flat_surface",
         "sciona.atoms.fintech.quantfin.local_vol_d12.vol_interpolated_surface"
@@ -157,13 +157,13 @@
         "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.process_with_cashflows_only",
         "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.process_with_observation_only",
         "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.process_with_pending_cashflows",
-        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.quicksim",
-        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.quicksimanti",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.quick_sim",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.quick_sim_anti",
         "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.runmc",
         "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.runsim",
-        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.runsimulation",
-        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.runsimulationanti",
-        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.simulatestate"
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.run_simulation",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.run_simulation_anti",
+        "sciona.atoms.fintech.quantfin.monte_carlo_anti_d12.simulate_state"
       ],
       "authoritative_sources": [
         {
@@ -232,17 +232,17 @@
     },
     {
       "atom_keys": [
-        "sciona.atoms.fintech.quantfin.rng_skip_d12.addmod64",
-        "sciona.atoms.fintech.quantfin.rng_skip_d12.mulmod64",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.add_mod_64",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.mul_mod_64",
         "sciona.atoms.fintech.quantfin.rng_skip_d12.mulmod64_inner_step",
         "sciona.atoms.fintech.quantfin.rng_skip_d12.next",
-        "sciona.atoms.fintech.quantfin.rng_skip_d12.powmod64",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.pow_mod_64",
         "sciona.atoms.fintech.quantfin.rng_skip_d12.powmod64_inner_step",
-        "sciona.atoms.fintech.quantfin.rng_skip_d12.randomdouble",
-        "sciona.atoms.fintech.quantfin.rng_skip_d12.randomint",
-        "sciona.atoms.fintech.quantfin.rng_skip_d12.randomint64",
-        "sciona.atoms.fintech.quantfin.rng_skip_d12.randomword32",
-        "sciona.atoms.fintech.quantfin.rng_skip_d12.randomword64",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.random_double",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.random_int",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.random_int_64",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.random_word_32",
+        "sciona.atoms.fintech.quantfin.rng_skip_d12.random_word_64",
         "sciona.atoms.fintech.quantfin.rng_skip_d12.skip",
         "sciona.atoms.fintech.quantfin.rng_skip_d12.split"
       ],

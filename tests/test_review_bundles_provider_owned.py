@@ -26,4 +26,7 @@ def test_provider_owned_review_bundles_map_to_registered_atoms() -> None:
             importlib.import_module(row["module"])
             for atom_key in row["atom_keys"]:
                 leaf = atom_key.rsplit(".", 1)[-1]
-                assert leaf in registry, f"missing registry entry for {leaf} in {row['module']}"
+                registry_key = f"{row['module']}.{leaf}"
+                assert registry_key in registry or leaf in registry, (
+                    f"missing registry entry for {registry_key}"
+                )

@@ -1,0 +1,52 @@
+{
+  "bundle_version": "1.0",
+  "bundle_scope": "provider_owned_review_batch",
+  "provider_repo": "sciona-atoms-fintech",
+  "family": "sciona.atoms.fintech.signal_processing",
+  "review_status": "pending",
+  "trust_readiness": "unreviewed",
+  "review_record_path": "docs/review-bundles/signal_processing_review_bundle.json",
+  "authoritative_sources": [],
+  "limitations": [
+    "The local wrappers have behavior contracts and CDG metadata, but no provider-owned reference mapping or semantic review record."
+  ],
+  "blocking_findings": [],
+  "required_actions": [
+    "Add provider-owned reference metadata and complete semantic review before this family is marked ready."
+  ],
+  "rows": [
+    {
+      "atom_keys": [
+        "sciona.atoms.fintech.signal_processing.alpha_isolation",
+        "sciona.atoms.fintech.signal_processing.temporal_date_alignment"
+      ],
+      "module": "sciona.atoms.fintech.signal_processing.atoms",
+      "row_id": "signal_processing/atoms",
+      "review_status": "pending",
+      "trust_readiness": "unreviewed",
+      "semantic_verdict": "unknown",
+      "developer_semantic_verdict": "unknown",
+      "authoritative_sources": [],
+      "evidence_files": [
+        "signal_processing/cdg.json",
+        "signal_processing/atoms.py",
+        "signal_processing/witnesses.py"
+      ],
+      "source_paths": [
+        "src/sciona/atoms/fintech/signal_processing/atoms.py",
+        "src/sciona/atoms/fintech/signal_processing/witnesses.py",
+        "src/sciona/atoms/fintech/signal_processing/cdg.json"
+      ],
+      "has_references": false,
+      "references_status": "missing",
+      "limitations": [
+        "No provider-owned references.json or semantic review record is present for these wrappers."
+      ],
+      "blocking_findings": [],
+      "required_actions": [
+        "Add provider-owned reference metadata and complete semantic review before this family is marked ready."
+      ],
+      "review_record_path": "docs/review-bundles/signal_processing_review_bundle.json"
+    }
+  ]
+}

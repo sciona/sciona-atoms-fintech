@@ -81,7 +81,7 @@
   "rows": [
     {
       "atom_keys": [
-        "sciona.atoms.fintech.institutional_quant_engine.almgren_chriss.computeoptimaltrajectory"
+        "sciona.atoms.fintech.institutional_quant_engine.almgren_chriss.compute_optimal_trajectory"
       ],
       "authoritative_sources": [
         {
@@ -112,8 +112,8 @@
     },
     {
       "atom_keys": [
-        "sciona.atoms.fintech.institutional_quant_engine.almgren_chriss_v2.optimalexecutiontrajectory",
-        "sciona.atoms.fintech.institutional_quant_engine.almgren_chriss_v2.riskaversioninit"
+        "sciona.atoms.fintech.institutional_quant_engine.almgren_chriss_v2.optimal_execution_trajectory",
+        "sciona.atoms.fintech.institutional_quant_engine.almgren_chriss_v2.risk_aversion_init"
       ],
       "authoritative_sources": [
         {
@@ -144,8 +144,8 @@
     },
     {
       "atom_keys": [
-        "sciona.atoms.fintech.institutional_quant_engine.avellaneda_stoikov.computeinventoryadjustedquotes",
-        "sciona.atoms.fintech.institutional_quant_engine.avellaneda_stoikov.initializemarketmakerstate"
+        "sciona.atoms.fintech.institutional_quant_engine.avellaneda_stoikov.compute_inventory_adjusted_quotes",
+        "sciona.atoms.fintech.institutional_quant_engine.avellaneda_stoikov.initialize_market_maker_state"
       ],
       "authoritative_sources": [
         {
@@ -176,8 +176,8 @@
     },
     {
       "atom_keys": [
-        "sciona.atoms.fintech.institutional_quant_engine.avellaneda_stoikov_d12.marketmakerstateinit",
-        "sciona.atoms.fintech.institutional_quant_engine.avellaneda_stoikov_d12.optimalquotecalculation"
+        "sciona.atoms.fintech.institutional_quant_engine.avellaneda_stoikov_d12.market_maker_state_init",
+        "sciona.atoms.fintech.institutional_quant_engine.avellaneda_stoikov_d12.optimal_quote_calculation"
       ],
       "authoritative_sources": [
         {
@@ -458,8 +458,8 @@
     },
     {
       "atom_keys": [
-        "sciona.atoms.fintech.institutional_quant_engine.kalman_filter.kalmanfilterinit",
-        "sciona.atoms.fintech.institutional_quant_engine.kalman_filter.kalmanmeasurementupdate"
+        "sciona.atoms.fintech.institutional_quant_engine.kalman_filter.kalman_filter_init",
+        "sciona.atoms.fintech.institutional_quant_engine.kalman_filter.kalman_measurement_update"
       ],
       "authoritative_sources": [
         {
@@ -524,8 +524,8 @@
     },
     {
       "atom_keys": [
-        "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.initializeorderstate",
-        "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.updatequeueontrade"
+        "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.initialize_order_state",
+        "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.update_queue_on_trade"
       ],
       "authoritative_sources": [
         {

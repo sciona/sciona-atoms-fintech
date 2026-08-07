@@ -20,13 +20,13 @@ EXPECTED_ATOM_KEYS = {
     f"{MONTE_CARLO_MODULE}.process_with_cashflows_only",
     f"{MONTE_CARLO_MODULE}.process_with_observation_only",
     f"{MONTE_CARLO_MODULE}.process_with_pending_cashflows",
-    f"{MONTE_CARLO_MODULE}.quicksim",
-    f"{MONTE_CARLO_MODULE}.quicksimanti",
+    f"{MONTE_CARLO_MODULE}.quick_sim",
+    f"{MONTE_CARLO_MODULE}.quick_sim_anti",
     f"{MONTE_CARLO_MODULE}.runmc",
     f"{MONTE_CARLO_MODULE}.runsim",
-    f"{MONTE_CARLO_MODULE}.runsimulation",
-    f"{MONTE_CARLO_MODULE}.runsimulationanti",
-    f"{MONTE_CARLO_MODULE}.simulatestate",
+    f"{MONTE_CARLO_MODULE}.run_simulation",
+    f"{MONTE_CARLO_MODULE}.run_simulation_anti",
+    f"{MONTE_CARLO_MODULE}.simulate_state",
 }
 EXPECTED_EVIDENCE_FILES = [
     "monte_carlo_anti_d12/cdg.json",
@@ -73,8 +73,10 @@ def test_quantfin_monte_carlo_anti_d12_row_is_ready_and_registered() -> None:
     assert row["evidence_files"] == EXPECTED_EVIDENCE_FILES
     assert {entry["ref_id"] for entry in row["authoritative_sources"]} == EXPECTED_REF_IDS
     assert set(row["atom_keys"]) == EXPECTED_ATOM_KEYS
-    assert {key.rsplit(".", 1)[-1] for key in row["atom_keys"]}.issubset(registry)
+    for key in row["atom_keys"]:
+        leaf = key.rsplit(".", 1)[-1]
+        assert leaf in registry or f"{MONTE_CARLO_MODULE}.atoms.{leaf}" in registry
 
     assert callable(module.runmc)
-    assert callable(module.runsimulationanti)
+    assert callable(module.run_simulation_anti)
     assert callable(module.avg)

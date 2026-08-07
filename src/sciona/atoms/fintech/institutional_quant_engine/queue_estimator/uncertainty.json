@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "atom": "initializeorderstate",
+  "atom": "initialize_order_state",
   "estimates": [
     {
       "mode": "empirical",
@@ -13,14 +13,14 @@
     }
   ],
   "atoms": {
-    "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.initializeorderstate@sciona/atoms/fintech/institutional_quant_engine/queue_estimator/atoms.py:22": {
+    "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.initialize_order_state@sciona/atoms/fintech/institutional_quant_engine/queue_estimator/atoms.py:22": {
       "review_confidence": "medium",
       "uncertainty_notes": [
         "Initializer uses a fixed displayed queue-ahead default and should be interpreted as a deterministic state seed, not market-data reconstruction."
       ],
       "source_review": "manual_pubrev_001"
     },
-    "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.updatequeueontrade@sciona/atoms/fintech/institutional_quant_engine/queue_estimator/atoms.py:45": {
+    "sciona.atoms.fintech.institutional_quant_engine.queue_estimator.update_queue_on_trade@sciona/atoms/fintech/institutional_quant_engine/queue_estimator/atoms.py:45": {
       "review_confidence": "high",
       "uncertainty_notes": [
         "Trade-only queue consumption model; cancellations and priority changes are intentionally out of scope."
